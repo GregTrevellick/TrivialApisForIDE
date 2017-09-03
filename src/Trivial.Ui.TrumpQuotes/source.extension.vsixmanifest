@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
-        <Identity Id="6f3958a5-be00-49a4-b34f-91a70c0db17a" Version="1.0" Language="en-US" Publisher="Greg Trevellick" />
+        <Identity Id="6f3958a5-be00-49a4-b34f-91a70c0db17a" Version="1.0.1" Language="en-US" Publisher="Greg Trevellick" />
         <DisplayName>Drain The Swamp</DisplayName>
         <Description xml:space="preserve">A random Donald Trump quote in a pop-up whenever you open a solution.</Description>
         <MoreInfo>https://github.com/GregTrevellick/TrivialApisForIDE</MoreInfo>
@@ -15,13 +15,11 @@
         <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[11.0,16.0)" />
     </Installation>
     <Dependencies>
-        <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" d:Source="Manual" Version="[4.5,)" />
-      <Dependency Id="Microsoft.VisualStudio.MPF.15.0" DisplayName="Visual Studio MPF 15.0" d:Source="Installed" Version="[15.0]" />
-  </Dependencies>
+    </Dependencies>
     <Prerequisites>
         <Prerequisite Id="Microsoft.VisualStudio.Component.CoreEditor" Version="[15.0,16.0)" DisplayName="Visual Studio core editor" />
     </Prerequisites>
-  <Assets>
-    <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%;PkgdefProjectOutputGroup|" />
-  </Assets>
+    <Assets>
+        <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%;PkgdefProjectOutputGroup|" />
+    </Assets>
 </PackageManifest>
