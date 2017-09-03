@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trivial.Entities", "Trivial
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trivial.Api.Gateway", "Trivial.Api.Gateway\Trivial.Api.Gateway.csproj", "{BF5969FC-16D8-407B-B8A7-BFB41FE22A2E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trivial.Ui.Common", "Trivial.Ui.Common\Trivial.Ui.Common.csproj", "{BCA9D5EC-655B-4CCA-8891-8EC7A7B7BAA3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{BF5969FC-16D8-407B-B8A7-BFB41FE22A2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BF5969FC-16D8-407B-B8A7-BFB41FE22A2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BF5969FC-16D8-407B-B8A7-BFB41FE22A2E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BCA9D5EC-655B-4CCA-8891-8EC7A7B7BAA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCA9D5EC-655B-4CCA-8891-8EC7A7B7BAA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCA9D5EC-655B-4CCA-8891-8EC7A7B7BAA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCA9D5EC-655B-4CCA-8891-8EC7A7B7BAA3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

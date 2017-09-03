@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Trivial.Api.Gateway
+namespace Trivial.Ui.Common
 {
     public class Class1
     {
