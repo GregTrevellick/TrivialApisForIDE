@@ -84,10 +84,9 @@ namespace Trivial.Api.Gateway
             catch(Exception e)
             {
                 Console.WriteLine(e);
-                throw; //gregt todo handle this properly
+                //throw; //gregt todo handle this properly
+                return null;
             }
-
-            return null;
         }
 
         private static string GetUrl(AppName appName)
