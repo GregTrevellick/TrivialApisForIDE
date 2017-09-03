@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
-        <Identity Id="6f3958a5-be00-49a4-b34f-91a70c0db17a" Version="1.0.1" Language="en-US" Publisher="Greg Trevellick" />
+        <Identity Id="bffa1350-ab1e-49d9-a8a7-a3f76d92398c" Version="1.0.1" Language="en-US" Publisher="Greg Trevellick" />
         <DisplayName>Drain The Swamp</DisplayName>
         <Description xml:space="preserve">A random Donald Trump quote in a pop-up whenever you open a solution.</Description>
         <MoreInfo>https://github.com/GregTrevellick/TrivialApisForIDE</MoreInfo>

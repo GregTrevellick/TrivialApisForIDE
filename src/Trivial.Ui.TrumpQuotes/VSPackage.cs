@@ -40,7 +40,7 @@ namespace Trivial.Ui.TrumpQuotes
             solutionEvents.Opened += OnSolutionOpened;
         }
 
-        private void OnSolutionOpened()
+        private static void OnSolutionOpened()
         {
             TriviaHelper.ShowTrivia(AppName.TrumpQuotes, Vsix.Name);
         }
