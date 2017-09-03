@@ -27,7 +27,6 @@ namespace Trivial.Ui.TrumpQuotes
 
         public VSPackage()
         {
-            //gregt call the web service here for performance sake ?
         }
 
         protected override void Initialize()
