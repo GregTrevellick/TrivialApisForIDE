@@ -1,15 +1,15 @@
 ﻿using EnvDTE;
-using System;
+//using System;
 using System.ComponentModel.Design;
-using System.Diagnostics;
+//using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
-using System.Globalization;
+//using System.Globalization;
 using System.Runtime.InteropServices;
-using Microsoft.VisualStudio;
-using Microsoft.VisualStudio.OLE.Interop;
+//using Microsoft.VisualStudio;
+//using Microsoft.VisualStudio.OLE.Interop;
 using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Shell.Interop;
-using Microsoft.Win32;
+//using Microsoft.Win32;
 using Trivial.Entities;
 using Trivial.Ui.Common;
 
