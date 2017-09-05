@@ -47,7 +47,9 @@ namespace Trivial.Ui.TrumpQuotes
 
         private void OnSolutionOpened()
         {
-            if (GeneralOptionsDto.FrequencyInterval > 0)
+            var shouldShowTrivia = TriviaHelper.ShouldShowTrivia(GeneralOptionsDto.NextPopUpDueDate);
+
+            if (shouldShowTrivia)
             {
                 TriviaHelper.ShowTrivia(AppName.TrumpQuotes, Vsix.Name);
             }
@@ -60,7 +62,8 @@ namespace Trivial.Ui.TrumpQuotes
                 var generalOptions = (GeneralOptions)GetDialogPage(typeof(GeneralOptions));
                 return new GeneralOptionsDto
                 {
-                    FrequencyInterval = generalOptions.FrequencyInterval
+                    FrequencyInterval = generalOptions.FrequencyInterval,
+                    NextPopUpDueDate = generalOptions.NextPopUpDueDate
                 };
             }
         }

@@ -6,6 +6,16 @@ namespace Trivial.Ui.Common
 {
     public static class TriviaHelper
     {
+        public static bool ShouldShowTrivia(DateTime nextPopUpDueDate)
+        {
+            if (nextPopUpDueDate >= DateTime.Now)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
         public static void ShowTrivia(AppName appName, string popUpTitle)
         {
             var gatewayResponse = RestClient.GetGatewayResponse(appName);
