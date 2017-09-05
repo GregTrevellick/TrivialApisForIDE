@@ -12,6 +12,7 @@ using Microsoft.VisualStudio.Shell.Interop;
 using Microsoft.Win32;
 using Trivial.Entities;
 using Trivial.Ui.Common;
+using Trivial.Ui.TrumpQuotes.Options;
 
 namespace Trivial.Ui.TrumpQuotes
 {
@@ -20,10 +21,12 @@ namespace Trivial.Ui.TrumpQuotes
     [InstalledProductRegistration(productName: "#110", productDetails: "#112", productId: Vsix.Version, IconResourceID = 400)]
     [Guid(Vsix.Id)]
     [SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1650:ElementDocumentationMustBeSpelledCorrectly", Justification = "pkgdef, VS and vsixmanifest are valid VS terms")]
-    //TODO GREGT [ProvideOptionPage(typeof(OptionsDialogPage), Vsix.Name, "General", 0, 0, supportsAutomation: true)]
+    [ProvideOptionPage(typeof(GeneralOptions), Vsix.Name, CommonConstants.CategorySubLevel, 0, 0, true)]
     public sealed class VSPackage : Package
     {
         private DTE dte;
+        public static GeneralOptions Options { get; private set; }
+
 
         public VSPackage()
         {
@@ -32,6 +35,8 @@ namespace Trivial.Ui.TrumpQuotes
 
         protected override void Initialize()
         {
+            Options = (GeneralOptions)GetDialogPage(typeof(GeneralOptions));
+
             base.Initialize();
 
             IServiceContainer serviceContainer = this as IServiceContainer;
@@ -40,9 +45,24 @@ namespace Trivial.Ui.TrumpQuotes
             solutionEvents.Opened += OnSolutionOpened;
         }
 
-        private static void OnSolutionOpened()
+        private void OnSolutionOpened()
         {
-            TriviaHelper.ShowTrivia(AppName.TrumpQuotes, Vsix.Name);
+            if (GeneralOptionsDto.FrequencyInterval > 0)
+            {
+                TriviaHelper.ShowTrivia(AppName.TrumpQuotes, Vsix.Name);
+            }
+        }
+
+        private GeneralOptionsDto GeneralOptionsDto
+        {
+            get
+            {
+                var generalOptions = (GeneralOptions)GetDialogPage(typeof(GeneralOptions));
+                return new GeneralOptionsDto
+                {
+                    FrequencyInterval = generalOptions.FrequencyInterval
+                };
+            }
         }
     }
 }
