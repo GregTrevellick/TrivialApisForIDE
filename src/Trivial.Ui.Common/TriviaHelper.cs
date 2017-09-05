@@ -6,9 +6,10 @@ namespace Trivial.Ui.Common
 {
     public static class TriviaHelper
     {
-        public static bool ShouldShowTrivia(DateTime nextPopUpDueDate)
+        public static bool ShouldShowTrivia(int frequencyIntervalInDays, DateTime nextPopUpDueDate, int maximumPopUpsPerDay, int popUpsToday)
         {
-            if (nextPopUpDueDate >= DateTime.Now)
+            if ((frequencyIntervalInDays == 0 && popUpsToday < maximumPopUpsPerDay) ||
+                (nextPopUpDueDate >= DateTime.Now && popUpsToday < maximumPopUpsPerDay))
             {
                 return true;
             }
@@ -26,7 +27,7 @@ namespace Trivial.Ui.Common
         private static void GetValue(string popUpBody, string linkText, string linkUri, string popUpTitle)
         {
             if (!string.IsNullOrEmpty(popUpBody))
-            {
+            {   
                 DisplayPopUpMessage(popUpTitle, popUpBody, linkText, linkUri);
             }
         }

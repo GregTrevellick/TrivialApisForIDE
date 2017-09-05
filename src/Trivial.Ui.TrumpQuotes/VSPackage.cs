@@ -47,7 +47,7 @@ namespace Trivial.Ui.TrumpQuotes
 
         private void OnSolutionOpened()
         {
-            var shouldShowTrivia = TriviaHelper.ShouldShowTrivia(GeneralOptionsDto.NextPopUpDueDate);
+            var shouldShowTrivia = TriviaHelper.ShouldShowTrivia(GeneralOptionsDto.FrequencyIntervalInDays, GeneralOptionsDto.NextPopUpDueDate, GeneralOptionsDto.MaximumPopUpsPerDay, GeneralOptionsDto.PopUpsToday);
 
             if (shouldShowTrivia)
             {
@@ -62,8 +62,10 @@ namespace Trivial.Ui.TrumpQuotes
                 var generalOptions = (GeneralOptions)GetDialogPage(typeof(GeneralOptions));
                 return new GeneralOptionsDto
                 {
-                    FrequencyInterval = generalOptions.FrequencyInterval,
-                    NextPopUpDueDate = generalOptions.NextPopUpDueDate
+                    FrequencyIntervalInDays = generalOptions.FrequencyIntervalInDays,
+                    MaximumPopUpsPerDay = generalOptions.MaximumPopUpsPerDay,
+                    NextPopUpDueDate = generalOptions.NextPopUpDueDate,
+                    PopUpsToday = generalOptions.PopUpsToday
                 };
             }
         }

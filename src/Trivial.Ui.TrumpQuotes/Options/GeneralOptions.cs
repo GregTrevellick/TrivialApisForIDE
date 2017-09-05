@@ -18,15 +18,22 @@ namespace Trivial.Ui.TrumpQuotes.Options
     public class GeneralOptions : DialogPage
     {
         [Category(CommonConstants.CategorySubLevel)]
-        [DisplayName("FrequencyInterval")]
-        [Description("FrequencyInterval descr.")]
-        public int FrequencyInterval { get; set; } = 1;
+        [DisplayName("Frequency interval in days")]
+        [Description("Frequency interval in days descr.")]
+        public int FrequencyIntervalInDays { get; set; } = 1;
+
+        [Category(CommonConstants.CategorySubLevel)]
+        [DisplayName("Maximum pop ups per day")]
+        [Description("Maximum pop ups per day descr.")]
+        public int MaximumPopUpsPerDay { get; set; } = 999;
 
         internal DateTime NextPopUpDueDate { get; set; } = DateTime.Now;
 
+        internal int PopUpsToday { get; set; }
+
         protected override void OnApply(PageApplyEventArgs e)
         {
-            VSPackage.Options.NextPopUpDueDate = DateTime.Now.AddDays(FrequencyInterval);
+            VSPackage.Options.NextPopUpDueDate = DateTime.Now.AddDays(FrequencyIntervalInDays);
             VSPackage.Options.SaveSettingsToStorage();
 
             base.OnApply(e);
