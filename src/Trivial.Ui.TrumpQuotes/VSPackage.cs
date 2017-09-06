@@ -27,7 +27,6 @@ namespace Trivial.Ui.TrumpQuotes
         private DTE dte;
         public static GeneralOptions Options { get; private set; }
 
-
         public VSPackage()
         {
             //gregt call the web service here for performance sake ?
@@ -51,7 +50,14 @@ namespace Trivial.Ui.TrumpQuotes
 
             if (shouldShowTrivia)
             {
-                TriviaHelper.ShowTrivia(AppName.TrumpQuotes, Vsix.Name);
+                var generalOptions2Dto = TriviaHelper.ShowTrivia(AppName.TrumpQuotes, Vsix.Name, GeneralOptionsDto.LastPopUpDateTime);
+
+                if (generalOptions2Dto != null)
+                {
+                    Options.LastPopUpDateTime = generalOptions2Dto.LastPopUpDateTime;
+                    Options.PopUpCountToday = generalOptions2Dto.PopUpCountToday;
+                    Options.SaveSettingsToStorage();
+                }
             }
         }
 

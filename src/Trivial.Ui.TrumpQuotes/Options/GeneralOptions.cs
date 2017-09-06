@@ -19,6 +19,7 @@ namespace Trivial.Ui.TrumpQuotes.Options
     {
         internal DateTime LastPopUpDateTime { get; set; } = DateTime.Now;
         internal int PopUpCountToday { get; set; }
+        //////////////////////////////////////////internal bool IsDirty { get; set; }
 
         [Category(CommonConstants.CategorySubLevel)]
         [DisplayName("Suppress popup if previous popup was less than X minutes ago")]
