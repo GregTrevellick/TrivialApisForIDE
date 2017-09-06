@@ -8,13 +8,19 @@ namespace Trivial.Ui.Common
     {
         public static bool ShouldShowTrivia(GeneralOptionsDto generalOptionsDto)
         {
-            if (
-                (generalOptionsDto.PopUpIntervalInMins == 0 && generalOptionsDto.PopUpCountToday < generalOptionsDto.MaximumPopUpsWeekDay) 
+            if (//if weekend and haven't exceeded weekend count
+                ((DateTime.Now.DayOfWeek == DayOfWeek.Saturday || DateTime.Now.DayOfWeek == DayOfWeek.Sunday) &&
+                generalOptionsDto.PopUpCountToday < generalOptionsDto.MaximumPopUpsWeekEnd)
                 ||
-                (generalOptionsDto.LastPopUpDateTime >= DateTime.Now && generalOptionsDto.PopUpCountToday < generalOptionsDto.MaximumPopUpsWeekDay)
-               )
+                //if midweek and haven't exceeded midweek count
+                ((DateTime.Now.DayOfWeek != DayOfWeek.Saturday && DateTime.Now.DayOfWeek != DayOfWeek.Sunday) &&
+                generalOptionsDto.PopUpCountToday < generalOptionsDto.MaximumPopUpsWeekDay))
             {
-                return true;
+                // if last popup more than X minutes ago
+                if (generalOptionsDto.LastPopUpDateTime < DateTime.Now.AddMinutes(-1 * generalOptionsDto.PopUpIntervalInMins))
+                {
+                    return true;
+                }
             }
 
             return false;
@@ -28,8 +34,22 @@ namespace Trivial.Ui.Common
             if (!string.IsNullOrEmpty(popUpBody))
             {   
                 DisplayPopUpMessage(popUpTitle, popUpBody, gatewayResponse.LinkUri);
- //               Update_GeneralOptions_Dot_LastPopUpDateTime(DateTime.Now);
+                UpdateGeneralOptions();
             }
+        }
+
+        private static void UpdateGeneralOptions()
+        {
+            var baseDateTime = DateTime.Now;
+
+            //if last pop up was yesterday, then we have gone past midnight, so reset count for today to zero as it is a new day
+            if (GeneralOptions.LastPopUpDateTime.Date < baseDateTime.Date)
+            {
+                GeneralOptions.PopUpCountToday == 0;
+            }
+
+            GeneralOptions.PopUpCountToday++;
+            GeneralOptions.LastPopUpDateTime = baseDateTime;
         }
 
         private static void DisplayPopUpMessage(string popUpTitle, string popUpBody, string linkUri)

@@ -37,7 +37,7 @@ namespace Trivial.Ui.TrumpQuotes.Options
 
         protected override void OnApply(PageApplyEventArgs e)
         {
-            VSPackage.Options.LastPopUpDateTime = DateTime.Now.AddDays(PopUpIntervalInMins);
+            ///////////////////////////////////////////////////////////////////VSPackage.Options.LastPopUpDateTime = DateTime.Now.AddDays(PopUpIntervalInMins);
             VSPackage.Options.SaveSettingsToStorage();
 
             base.OnApply(e);
