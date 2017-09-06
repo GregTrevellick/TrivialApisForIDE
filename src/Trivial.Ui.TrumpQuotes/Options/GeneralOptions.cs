@@ -17,23 +17,27 @@ namespace Trivial.Ui.TrumpQuotes.Options
 {
     public class GeneralOptions : DialogPage
     {
-        [Category(CommonConstants.CategorySubLevel)]
-        [DisplayName("Frequency interval in days")]
-        [Description("Frequency interval in days descr.")]
-        public int FrequencyIntervalInDays { get; set; } = 1;
+        internal DateTime LastPopUpDateTime { get; set; } = DateTime.Now;
+        internal int PopUpCountToday { get; set; }
 
         [Category(CommonConstants.CategorySubLevel)]
-        [DisplayName("Maximum pop ups per day")]
-        [Description("Maximum pop ups per day descr.")]
-        public int MaximumPopUpsPerDay { get; set; } = 999;
+        [DisplayName("Suppress popup if previous popup was less than X minutes ago")]
+        [Description("Suppress popup if previous popup was less than X minutes ago descr.")]
+        public int PopUpIntervalInMins { get; set; } = 0;
 
-        internal DateTime NextPopUpDueDate { get; set; } = DateTime.Now;
+        [Category(CommonConstants.CategorySubLevel)]
+        [DisplayName("Maximum pop ups Mon-Fri day")]
+        [Description("Maximum pop ups Mon-Fri descr.")]
+        public int MaximumPopUpsWeekDay { get; set; } = 5;
 
-        internal int PopUpsToday { get; set; }
+        [Category(CommonConstants.CategorySubLevel)]
+        [DisplayName("Maximum pop ups Sat-Sun day")]
+        [Description("Maximum pop ups Sat-Sun descr.")]
+        public int MaximumPopUpsWeekEnd { get; set; } = 99;
 
         protected override void OnApply(PageApplyEventArgs e)
         {
-            VSPackage.Options.NextPopUpDueDate = DateTime.Now.AddDays(FrequencyIntervalInDays);
+            VSPackage.Options.LastPopUpDateTime = DateTime.Now.AddDays(PopUpIntervalInMins);
             VSPackage.Options.SaveSettingsToStorage();
 
             base.OnApply(e);

@@ -6,10 +6,13 @@ namespace Trivial.Ui.Common
 {
     public static class TriviaHelper
     {
-        public static bool ShouldShowTrivia(int frequencyIntervalInDays, DateTime nextPopUpDueDate, int maximumPopUpsPerDay, int popUpsToday)
+        public static bool ShouldShowTrivia(GeneralOptionsDto generalOptionsDto)
         {
-            if ((frequencyIntervalInDays == 0 && popUpsToday < maximumPopUpsPerDay) ||
-                (nextPopUpDueDate >= DateTime.Now && popUpsToday < maximumPopUpsPerDay))
+            if (
+                (generalOptionsDto.PopUpIntervalInMins == 0 && generalOptionsDto.PopUpCountToday < generalOptionsDto.MaximumPopUpsWeekDay) 
+                ||
+                (generalOptionsDto.LastPopUpDateTime >= DateTime.Now && generalOptionsDto.PopUpCountToday < generalOptionsDto.MaximumPopUpsWeekDay)
+               )
             {
                 return true;
             }
@@ -21,18 +24,15 @@ namespace Trivial.Ui.Common
         {
             var gatewayResponse = RestClient.GetGatewayResponse(appName);
             var popUpBody = Formatter.GetBody(gatewayResponse.Text, gatewayResponse.Attribution);
-            GetValue(popUpBody, gatewayResponse.Text, gatewayResponse.LinkUri, popUpTitle);
-        }
 
-        private static void GetValue(string popUpBody, string linkText, string linkUri, string popUpTitle)
-        {
             if (!string.IsNullOrEmpty(popUpBody))
             {   
-                DisplayPopUpMessage(popUpTitle, popUpBody, linkText, linkUri);
+                DisplayPopUpMessage(popUpTitle, popUpBody, gatewayResponse.LinkUri);
+ //               Update_GeneralOptions_Dot_LastPopUpDateTime(DateTime.Now);
             }
         }
 
-        private static void DisplayPopUpMessage(string popUpTitle, string popUpBody, string linkText, string linkUri)
+        private static void DisplayPopUpMessage(string popUpTitle, string popUpBody, string linkUri)
         {
             var triviaDialog = new TriviaDialog
             {

@@ -4,9 +4,10 @@ namespace Trivial.Ui.Common
 {
     public class GeneralOptionsDto
     {
-        public int FrequencyIntervalInDays { get; set; }
-        public int MaximumPopUpsPerDay { get; set; }
-        public DateTime NextPopUpDueDate { get; set; }
-        public int PopUpsToday { get; set; }
+        public DateTime LastPopUpDateTime { get; set; }
+        public int MaximumPopUpsWeekDay { get; set; }
+        public int MaximumPopUpsWeekEnd { get; set; }
+        public int PopUpCountToday { get; set; }
+        public int PopUpIntervalInMins { get; set; }
     }
 }
