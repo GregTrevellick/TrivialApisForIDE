@@ -50,12 +50,12 @@ namespace Trivial.Ui.TrumpQuotes
 
             if (shouldShowTrivia)
             {
-                var generalOptions2Dto = TriviaHelper.ShowTrivia(AppName.TrumpQuotes, Vsix.Name, GeneralOptionsDto.LastPopUpDateTime);
+                var hiddenOptionsDto = TriviaHelper.ShowTrivia(AppName.TrumpQuotes, Vsix.Name, GeneralOptionsDto.LastPopUpDateTime);
 
-                if (generalOptions2Dto != null)
+                if (hiddenOptionsDto != null)
                 {
-                    Options.LastPopUpDateTime = generalOptions2Dto.LastPopUpDateTime;
-                    Options.PopUpCountToday = generalOptions2Dto.PopUpCountToday;
+                    Options.LastPopUpDateTime = hiddenOptionsDto.LastPopUpDateTime;
+                    Options.PopUpCountToday = hiddenOptionsDto.PopUpCountToday;
                     Options.SaveSettingsToStorage();
                 }
             }

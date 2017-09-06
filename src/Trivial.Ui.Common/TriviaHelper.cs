@@ -26,9 +26,9 @@ namespace Trivial.Ui.Common
             return false;
         }
 
-        public static GeneralOptions2Dto ShowTrivia(AppName appName, string popUpTitle, DateTime lastPopUpDateTime)
+        public static HiddenOptionsDto ShowTrivia(AppName appName, string popUpTitle, DateTime lastPopUpDateTime)
         {
-            GeneralOptions2Dto generalOptions2Dto = null; 
+            HiddenOptionsDto hiddenOptionsDto = null; 
 
             var gatewayResponse = RestClient.GetGatewayResponse(appName);
             var popUpBody = Formatter.GetBody(gatewayResponse.Text, gatewayResponse.Attribution);
@@ -36,31 +36,31 @@ namespace Trivial.Ui.Common
             if (!string.IsNullOrEmpty(popUpBody))
             {   
                 DisplayPopUpMessage(popUpTitle, popUpBody, gatewayResponse.LinkUri);
-                generalOptions2Dto = GetGeneralOptions2Dto(lastPopUpDateTime);
+                hiddenOptionsDto = GetHiddenOptionsDto(lastPopUpDateTime);
             }
 
-            return generalOptions2Dto;
+            return hiddenOptionsDto;
         }
 
-        private static GeneralOptions2Dto GetGeneralOptions2Dto(DateTime lastPopUpDateTime)
+        private static HiddenOptionsDto GetHiddenOptionsDto(DateTime lastPopUpDateTime)
         {
-            var generalOptions2Dto = new GeneralOptions2Dto();
+            var hiddenOptionsDto = new HiddenOptionsDto();
 
             var baseDateTime = DateTime.Now;
 
             //if last pop up was yesterday, then we have gone past midnight, so reset count for today to zero as it is a new day
             if (lastPopUpDateTime.Date < baseDateTime.Date)
             {
-                generalOptions2Dto.PopUpCountToday = 1;
+                hiddenOptionsDto.PopUpCountToday = 1;
             }
             else
             {
-                generalOptions2Dto.PopUpCountToday++;
+                hiddenOptionsDto.PopUpCountToday++;
             }
 
-            generalOptions2Dto.LastPopUpDateTime = baseDateTime;
+            hiddenOptionsDto.LastPopUpDateTime = baseDateTime;
 
-            return generalOptions2Dto;
+            return hiddenOptionsDto;
         }
 
         //private static void GetGeneralOptionsDto()
