@@ -54,11 +54,16 @@ namespace Trivial.Ui.TrumpQuotes
 
                 if (hiddenOptionsDto != null)
                 {
-                    Options.LastPopUpDateTime = hiddenOptionsDto.LastPopUpDateTime;
-                    Options.PopUpCountToday = hiddenOptionsDto.PopUpCountToday;
-                    Options.SaveSettingsToStorage();
+                    UpdateHiddenOptions(hiddenOptionsDto);
                 }
             }
+        }
+
+        private static void UpdateHiddenOptions(HiddenOptionsDto hiddenOptionsDto)
+        {
+            Options.LastPopUpDateTime = hiddenOptionsDto.LastPopUpDateTime;
+            Options.PopUpCountToday = hiddenOptionsDto.PopUpCountToday;
+            Options.SaveSettingsToStorage();
         }
 
         private GeneralOptionsDto GeneralOptionsDto

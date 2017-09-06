@@ -48,7 +48,7 @@ namespace Trivial.Ui.Common
 
             var baseDateTime = DateTime.Now;
 
-            //if last pop up was yesterday, then we have gone past midnight, so reset count for today to zero as it is a new day
+            //if last pop up was yesterday, then we have gone past midnight, so this is first pop up for today
             if (lastPopUpDateTime.Date < baseDateTime.Date)
             {
                 hiddenOptionsDto.PopUpCountToday = 1;
@@ -62,22 +62,6 @@ namespace Trivial.Ui.Common
 
             return hiddenOptionsDto;
         }
-
-        //private static void GetGeneralOptionsDto()
-        //{
-        //    GeneralOptions.IsDirty = true;
-
-        //    var baseDateTime = DateTime.Now;
-
-        //    //if last pop up was yesterday, then we have gone past midnight, so reset count for today to zero as it is a new day
-        //    if (GeneralOptions.LastPopUpDateTime.Date < baseDateTime.Date)
-        //    {
-        //        GeneralOptions.PopUpCountToday == 0;
-        //    }
-
-        //    GeneralOptions.PopUpCountToday++;
-        //    GeneralOptions.LastPopUpDateTime = baseDateTime;
-        //}
 
         private static void DisplayPopUpMessage(string popUpTitle, string popUpBody, string linkUri)
         {
