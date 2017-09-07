@@ -70,22 +70,24 @@ namespace Trivial.Api.Gateway
         {
             try
             {
-                //gregt TODO async up this call
-                //restClient.ExecuteAsync(restRequest, restResponse => {
-                //   JsonConvert.DeserializeObject<TrumpRootObject>(restResponse.Content);
-                //});
-
                 var restClient = new RestSharp.RestClient(url);
                 var restRequest = new RestRequest(Method.GET);
-
                 var restResponse = restClient.Execute(restRequest);
+                //TODO gregt async up this call ? e.g. restClient.ExecuteAsync(restRequest, restResponse => { JsonConvert.DeserializeObject<TrumpRootObject>(restResponse.Content); });
+
+                if (restResponse.ErrorException != null)
+                {
+                    var message = $"Error retrieving response from {url} - see inner exception.";
+                    throw new ApplicationException(message, restResponse.ErrorException);
+                }
+
                 return restResponse;
             }
-            catch(Exception e)
+            catch(Exception ex)
             {
-                Console.WriteLine(e);
-                //throw; //gregt todo handle this properly
-                return null;
+                Console.WriteLine(ex);
+                var message = $"Error calling web service at {url} - see inner exception.";
+                throw new ApplicationException(message, ex);
             }
         }
 
