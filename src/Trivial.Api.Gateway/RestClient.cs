@@ -40,6 +40,7 @@ namespace Trivial.Api.Gateway
                         break;
                     case AppName.TrumpQuotes:
                         var trumpRootObject = JsonConvert.DeserializeObject<TrumpRootObject>(restResponse.Content);
+                        /////////////////////////////////////////////trumpRootObject = new TrumpRootObject {appeared_at = DateTime.Now, value = "blah gregt"};
                         gatewayResponse = GetGatewayResponse(trumpRootObject);
                         break;
                 }
@@ -91,7 +92,7 @@ namespace Trivial.Api.Gateway
             }
         }
 
-        private static string GetUrl(AppName appName)
+        private static string GetUrl(AppName appName)//gregt put into factory based class or project
         {
             string url = null;
 
