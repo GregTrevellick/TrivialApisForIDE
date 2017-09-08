@@ -24,16 +24,14 @@ namespace Trivial.Ui.Common
     /// </summary>
     public partial class TriviaDialog : DialogWindow
     {
-        //// Use this constructor to provide a Help button and F1 support. gregt
-        //public WpfDialogDw(string helpTopic) : base(helpTopic)
-        //{
-        //    InitializeComponent();
-        //}
-        //
-
         public TriviaDialog()
         {
             InitializeComponent();
+            InitializeTriviaDialog();
+        }
+
+        private void InitializeTriviaDialog()
+        {
             SizeToContent = SizeToContent.WidthAndHeight;
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
         }

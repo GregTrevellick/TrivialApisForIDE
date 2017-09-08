@@ -65,7 +65,7 @@ namespace Trivial.Ui.Common
 
         private static void DisplayPopUpMessage(string popUpTitle, string popUpBody, string linkUri)
         {
-            var triviaDialog = new TriviaDialog
+            var triviaDialog = new TriviaDialog()
             {
                 Title = popUpTitle,
                 AppTextBlock1 = { Text = popUpBody }
