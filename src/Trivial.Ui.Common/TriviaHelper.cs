@@ -23,15 +23,17 @@ namespace Trivial.Ui.Common
         private static bool MidweekAndHaveNotExceededMidweekCount(GeneralOptionsDto generalOptionsDto)//gregt unit test reqd
 
         {
-            return ((DateTime.Now.DayOfWeek != DayOfWeek.Saturday && DateTime.Now.DayOfWeek != DayOfWeek.Sunday) &&
-                    generalOptionsDto.PopUpCountToday < generalOptionsDto.MaximumPopUpsWeekDay);
+            return 
+                DateTime.Now.DayOfWeek != DayOfWeek.Saturday && 
+                DateTime.Now.DayOfWeek != DayOfWeek.Sunday &&
+                generalOptionsDto.PopUpCountToday < generalOptionsDto.MaximumPopUpsWeekDay;
         }
 
         private static bool WeekEndAndHaveNotExceededWeekEndCount(GeneralOptionsDto generalOptionsDto)//gregt unit test reqd
 
         {
-            return ((DateTime.Now.DayOfWeek == DayOfWeek.Saturday || DateTime.Now.DayOfWeek == DayOfWeek.Sunday) &&
-                    generalOptionsDto.PopUpCountToday < generalOptionsDto.MaximumPopUpsWeekEnd);
+            return (DateTime.Now.DayOfWeek == DayOfWeek.Saturday || DateTime.Now.DayOfWeek == DayOfWeek.Sunday) &&
+                    generalOptionsDto.PopUpCountToday < generalOptionsDto.MaximumPopUpsWeekEnd;
         }
 
         private static bool LastPopUpMoreThanXMinutesAgo(GeneralOptionsDto generalOptionsDto)//gregt unit test reqd
