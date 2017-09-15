@@ -1,6 +1,8 @@
 ﻿using Newtonsoft.Json;
 using RestSharp;
 using System;
+using System.Threading;
+using System.Threading.Tasks;
 using Trivial.Api.Gateway.AppModels;
 using Trivial.Entities;
 
@@ -34,24 +36,33 @@ namespace Trivial.Api.Gateway
         {
             var url = GetUrl(appName);
 
-            var gatewayResponse = new GatewayResponse {Text = string.Empty};
+            var gatewayResponse = new GatewayResponse();// {Text = string.Empty};
 
             if (!string.IsNullOrEmpty(url))
             {
-                var restResponse = GetRestResponse(url);
+                var restResponseContent = GetRestResponse(url);
+                //Task<string> task = GetRestResponseAsync(url);
+                //task.Wait();
+                //var restResponseContent = task.Result;
 
                 switch (appName)
                 {
                     case AppName.NumericTrivia:
-                        gatewayResponse = SetGatewayResponseFromRestResponse(restResponse.Content);
+                        gatewayResponse = SetGatewayResponseFromRestResponse(restResponseContent);
                         break;
                     case AppName.TrumpQuotes:
-                        gatewayResponse = SetGatewayResponseFromRestResponseTrump(restResponse.Content);
+                        gatewayResponse = SetGatewayResponseFromRestResponseTrump(restResponseContent);
                         break;
                 }
             }
 
             return gatewayResponse;
+        }
+
+        private static async Task<string> GetRestResponseAsync(string url)
+        {
+            Thread.Sleep(5000);
+            return GetRestResponse(url);
         }
 
         //public async Task<SiLogVrmQuery4Results> Query(string connectionName, VRMQueryParameters parameters)
@@ -72,14 +83,15 @@ namespace Trivial.Api.Gateway
         //    }
         //}
 
-        private static IRestResponse GetRestResponse(string url)
+        /////////////////////////////////////////////private static IRestResponse GetRestResponse(string url)
+        private static string GetRestResponse(string url)
         {
             try
             {
                 var client = new RestClient(url);
                 var request = new RestRequest(Method.GET);
                 var response = client.Execute(request);
-                //TODO gregt async up this call ? e.g. client.ExecuteAsync(request, response => { JsonConvert.DeserializeObject<TrumpRootObject>(response.Content); });
+                //////////////////////////////////////////////////////////////TODO gregt async up this call ? e.g. client.ExecuteAsync(request, response => { JsonConvert.DeserializeObject<TrumpRootObject>(response.Content); });
 
                 if (response.ErrorException != null)
                 {
@@ -87,7 +99,7 @@ namespace Trivial.Api.Gateway
                     throw new ApplicationException(message, response.ErrorException);
                 }
 
-                return response;
+                return response.Content;
             }
             catch(Exception ex)
             {
@@ -129,7 +141,7 @@ namespace Trivial.Api.Gateway
                 }
             }
 
-            gatewayResponse.Attribution = "   Donald J. Trump, POTUS, " + rootObject.appeared_at.Date.ToShortDateString();
+            gatewayResponse.Attribution = "   Donald J. Trump, " + rootObject.appeared_at.Date.ToShortDateString();
             gatewayResponse.LinkText = gatewayResponse.LinkUri;
             gatewayResponse.Text = "\"" + rootObject.value + "\"";
 

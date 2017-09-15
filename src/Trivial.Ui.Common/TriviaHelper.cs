@@ -8,16 +8,10 @@ namespace Trivial.Ui.Common
     {
         public static bool ShouldShowTrivia(GeneralOptionsDto generalOptionsDto)
         {
-            if (//if weekend and haven't exceeded weekend count
-                ((DateTime.Now.DayOfWeek == DayOfWeek.Saturday || DateTime.Now.DayOfWeek == DayOfWeek.Sunday) &&
-                generalOptionsDto.PopUpCountToday < generalOptionsDto.MaximumPopUpsWeekEnd)
-                ||
-                //if midweek and haven't exceeded midweek count
-                ((DateTime.Now.DayOfWeek != DayOfWeek.Saturday && DateTime.Now.DayOfWeek != DayOfWeek.Sunday) &&
-                generalOptionsDto.PopUpCountToday < generalOptionsDto.MaximumPopUpsWeekDay))
+            if (WeekEndAndHaveNotExceededWeekEndCount(generalOptionsDto) || 
+                MidweekAndHaveNotExceededMidweekCount(generalOptionsDto))
             {
-                // if last popup more than X minutes ago
-                if (generalOptionsDto.LastPopUpDateTime < DateTime.Now.AddMinutes(-1 * generalOptionsDto.PopUpIntervalInMins))
+                if (LastPopUpMoreThanXMinutesAgo(generalOptionsDto))
                 {
                     return true;
                 }
@@ -26,7 +20,26 @@ namespace Trivial.Ui.Common
             return false;
         }
 
-        public static HiddenOptionsDto ShowTrivia(AppName appName, string popUpTitle, DateTime lastPopUpDateTime)
+        private static bool MidweekAndHaveNotExceededMidweekCount(GeneralOptionsDto generalOptionsDto)//gregt unit test reqd
+
+        {
+            return ((DateTime.Now.DayOfWeek != DayOfWeek.Saturday && DateTime.Now.DayOfWeek != DayOfWeek.Sunday) &&
+                    generalOptionsDto.PopUpCountToday < generalOptionsDto.MaximumPopUpsWeekDay);
+        }
+
+        private static bool WeekEndAndHaveNotExceededWeekEndCount(GeneralOptionsDto generalOptionsDto)//gregt unit test reqd
+
+        {
+            return ((DateTime.Now.DayOfWeek == DayOfWeek.Saturday || DateTime.Now.DayOfWeek == DayOfWeek.Sunday) &&
+                    generalOptionsDto.PopUpCountToday < generalOptionsDto.MaximumPopUpsWeekEnd);
+        }
+
+        private static bool LastPopUpMoreThanXMinutesAgo(GeneralOptionsDto generalOptionsDto)//gregt unit test reqd
+        {
+            return generalOptionsDto.LastPopUpDateTime < DateTime.Now.AddMinutes(-1 * generalOptionsDto.PopUpIntervalInMins);
+        }
+
+        public static HiddenOptionsDto ShowTrivia(AppName appName, string popUpTitle, DateTime lastPopUpDateTime, int popUpCountToday)
         {
             HiddenOptionsDto hiddenOptionsDto = null; 
 
@@ -36,13 +49,13 @@ namespace Trivial.Ui.Common
             if (!string.IsNullOrEmpty(popUpBody))
             {   
                 DisplayPopUpMessage(popUpTitle, popUpBody, gatewayResponse.LinkUri);
-                hiddenOptionsDto = GetHiddenOptionsDto(lastPopUpDateTime);
+                hiddenOptionsDto = GetHiddenOptionsDto(lastPopUpDateTime, popUpCountToday);
             }
 
             return hiddenOptionsDto;
         }
 
-        private static HiddenOptionsDto GetHiddenOptionsDto(DateTime lastPopUpDateTime)
+        private static HiddenOptionsDto GetHiddenOptionsDto(DateTime lastPopUpDateTime, int popUpCountToday)
         {
             var hiddenOptionsDto = new HiddenOptionsDto();
 
@@ -55,7 +68,7 @@ namespace Trivial.Ui.Common
             }
             else
             {
-                hiddenOptionsDto.PopUpCountToday++;
+                hiddenOptionsDto.PopUpCountToday = popUpCountToday + 1;
             }
 
             hiddenOptionsDto.LastPopUpDateTime = baseDateTime;
