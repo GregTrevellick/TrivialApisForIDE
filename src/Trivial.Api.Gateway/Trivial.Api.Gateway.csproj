@@ -49,7 +49,7 @@
     <Compile Include="AppModels\TrumpRootObject.cs" />
     <Compile Include="GatewayResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RestClient.cs" />
+    <Compile Include="ClientGateway.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

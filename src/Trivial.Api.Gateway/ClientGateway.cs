@@ -6,7 +6,7 @@ using Trivial.Entities;
 
 namespace Trivial.Api.Gateway
 {
-    public static class RestClient
+    public static class ClientGateway
     {
         //GREGT
         //F1 help
@@ -43,12 +43,10 @@ namespace Trivial.Api.Gateway
                 switch (appName)
                 {
                     case AppName.NumericTrivia:
-                        gatewayResponse.Text = restResponse.Content;
+                        gatewayResponse = SetGatewayResponseFromRestResponse(restResponse.Content);
                         break;
                     case AppName.TrumpQuotes:
-                        var trumpRootObject = JsonConvert.DeserializeObject<TrumpRootObject>(restResponse.Content);
-                        /////////////////////////////////////////////trumpRootObject = new TrumpRootObject {appeared_at = DateTime.Now, value = "blah gregt"};
-                        gatewayResponse = GetGatewayResponse(trumpRootObject);
+                        gatewayResponse = SetGatewayResponseFromRestResponseTrump(restResponse.Content);
                         break;
                 }
             }
@@ -78,18 +76,18 @@ namespace Trivial.Api.Gateway
         {
             try
             {
-                var restClient = new RestSharp.RestClient(url);
-                var restRequest = new RestRequest(Method.GET);
-                var restResponse = restClient.Execute(restRequest);
-                //TODO gregt async up this call ? e.g. restClient.ExecuteAsync(restRequest, restResponse => { JsonConvert.DeserializeObject<TrumpRootObject>(restResponse.Content); });
+                var client = new RestClient(url);
+                var request = new RestRequest(Method.GET);
+                var response = client.Execute(request);
+                //TODO gregt async up this call ? e.g. client.ExecuteAsync(request, response => { JsonConvert.DeserializeObject<TrumpRootObject>(response.Content); });
 
-                if (restResponse.ErrorException != null)
+                if (response.ErrorException != null)
                 {
                     var message = $"Error retrieving response from {url} - see inner exception.";
-                    throw new ApplicationException(message, restResponse.ErrorException);
+                    throw new ApplicationException(message, response.ErrorException);
                 }
 
-                return restResponse;
+                return response;
             }
             catch(Exception ex)
             {
@@ -135,6 +133,19 @@ namespace Trivial.Api.Gateway
             gatewayResponse.LinkText = gatewayResponse.LinkUri;
             gatewayResponse.Text = "\"" + rootObject.value + "\"";
 
+            return gatewayResponse;
+        }
+
+        private static GatewayResponse SetGatewayResponseFromRestResponse(string responseContent)
+        {
+            var gatewayResponse = new GatewayResponse { Text = responseContent };
+            return gatewayResponse;
+        }
+
+        private static GatewayResponse SetGatewayResponseFromRestResponseTrump(string responseContent)
+        {
+            var trumpRootObject = JsonConvert.DeserializeObject<TrumpRootObject>(responseContent);
+            var gatewayResponse = GetGatewayResponse(trumpRootObject);
             return gatewayResponse;
         }
     }

@@ -30,7 +30,7 @@ namespace Trivial.Ui.Common
         {
             HiddenOptionsDto hiddenOptionsDto = null; 
 
-            var gatewayResponse = RestClient.GetGatewayResponse(appName);
+            var gatewayResponse = ClientGateway.GetGatewayResponse(appName);
             var popUpBody = Formatter.GetBody(gatewayResponse.Text, gatewayResponse.Attribution);
 
             if (!string.IsNullOrEmpty(popUpBody))

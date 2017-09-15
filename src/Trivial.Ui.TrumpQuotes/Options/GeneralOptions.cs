@@ -28,12 +28,12 @@ namespace Trivial.Ui.TrumpQuotes.Options
         [Category(CommonConstants.CategorySubLevel)]
         [DisplayName("Maximum pop ups Mon-Fri day")]
         [Description("Maximum pop ups Mon-Fri descr.")]
-        public int MaximumPopUpsWeekDay { get; set; } = 5;
+        public int MaximumPopUpsWeekDay { get; set; } = 3;
 
         [Category(CommonConstants.CategorySubLevel)]
         [DisplayName("Maximum pop ups Sat-Sun day")]
         [Description("Maximum pop ups Sat-Sun descr.")]
-        public int MaximumPopUpsWeekEnd { get; set; } = 99;
+        public int MaximumPopUpsWeekEnd { get; set; } = int.MaxValue;
 
         protected override void OnApply(PageApplyEventArgs e)
         {
