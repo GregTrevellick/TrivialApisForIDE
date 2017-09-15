@@ -1,5 +1,4 @@
 ﻿//gregt future - options 
-//02 frequency of delivery
 //03 specify web service timeout
 //50 add app icon to pop up 
 //97 choice of open ide or open sln
@@ -37,9 +36,7 @@ namespace Trivial.Ui.TrumpQuotes.Options
 
         protected override void OnApply(PageApplyEventArgs e)
         {
-            //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////VSPackage.Options.LastPopUpDateTime = DateTime.Now.AddDays(PopUpIntervalInMins);
             VSPackage.Options.SaveSettingsToStorage();
-
             base.OnApply(e);
         }
     }
