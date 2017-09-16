@@ -79,7 +79,7 @@ namespace Trivial.Ui.TrumpQuotes
                     MaximumPopUpsWeekEnd = generalOptions.MaximumPopUpsWeekEndInt,
                     PopUpIntervalInMins = generalOptions.PopUpIntervalInMinsInt,
                     PopUpCountToday = generalOptions.PopUpCountToday,
-                    TimeOutInMilliSeconds = 1000,
+                    TimeOutInMilliSeconds = 1000,//gregthi
                 };
             }
         }
