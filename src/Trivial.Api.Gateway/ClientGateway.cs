@@ -134,8 +134,8 @@ namespace Trivial.Api.Gateway
                     url = "http://numbersapi.com/random/trivia";
                     break;
                 case AppName.TrumpQuotes:
-                    //url = "https://api.tronalddump.io/random/quote";
-                    url = "https://apixxx.xxxtronalddump.io/random/quote";
+                    url = "https://api.tronalddump.io/random/quote";
+                    //url = "https://apixxx.xxxtronalddump.io/random/quote";
                     break;
             }
 

@@ -6,26 +6,31 @@
                          xmlns:shell="clr-namespace:Microsoft.VisualStudio.Shell;assembly=Microsoft.VisualStudio.Shell.15.0"
                          Background="{DynamicResource VsBrush.Window}"
                          Foreground="{DynamicResource VsBrush.WindowText}" >
-    <Span>
-        <TextBlock TextWrapping="Wrap" Name="AppTextBlock1" Margin="20,20,20,20" VerticalAlignment="Top" HorizontalAlignment="Left" >
-            <!--
-            <TextBlock.RenderTransform>
-                <ScaleTransform ScaleX="1.2" ScaleY="1.2" />
-            </TextBlock.RenderTransform>
-            -->
+    <Grid ShowGridLines="true">
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" TextWrapping="Wrap" Name="AppTextBlock1" Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Left" />
+        <TextBlock Grid.Row="1" TextWrapping="Wrap" Name="AppTextBlock2" Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Left" >
+           <Hyperlink Name="AppHyperlink1" RequestNavigate="AppHyperlink1_RequestNavigate" />
         </TextBlock>
-        <TextBlock TextWrapping="Wrap" Name="AppTextBlock2" Margin="20,20,20,20" VerticalAlignment="Bottom" HorizontalAlignment="Left" >
-            <Hyperlink Name="AppHyperlink1" RequestNavigate="AppHyperlink1_RequestNavigate" />
-        </TextBlock>
-        <!--
-        <TextBlock TextWrapping="Wrap" Name="AppTextBlock3" Margin="20,20,20,20" VerticalAlignment="Bottom" HorizontalAlignment="Left">
-            <Image Stretch="None">
-                <Image.Source>
-                    <BitmapImage UriSource="Resources/VsixExtensionIcon_90x90.png"  />
-                </Image.Source>
-            </Image>
-        </TextBlock>
-        -->
-    </Span>
+        <TextBlock Grid.Row="2" TextWrapping="Wrap" Name="AppTextBlock3" Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Left" Text="close btn"/>
+    </Grid>
+    <!--
+    <TextBlock.RenderTransform>
+        <ScaleTransform ScaleX="1.2" ScaleY="1.2" />
+    </TextBlock.RenderTransform>
+    -->
+    <!--
+    <TextBlock TextWrapping="Wrap" Name="AppTextBlock3" Margin="20,20,20,20" VerticalAlignment="Bottom" HorizontalAlignment="Left">
+        <Image Stretch="None">
+            <Image.Source>
+                <BitmapImage UriSource="Resources/VsixExtensionIcon_90x90.png"  />
+            </Image.Source>
+        </Image>
+    </TextBlock>
+    -->   
 </platformUi:DialogWindow>
        
