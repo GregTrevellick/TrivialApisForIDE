@@ -14,7 +14,6 @@ namespace Trivial.Api.Gateway
         //gregtlo F1 help
         //gregtlo Reduce ide popup size
         //gregthi API call timeout
-        //gregthi pop up to have an "Ok" button
 
         //https://icanhazdadjoke.com/api#fetch-a-random-dad-joke 
         //https://quotesondesign.com/api-v4-0/ 
