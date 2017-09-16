@@ -1,6 +1,5 @@
 ﻿//gregtlo add app icon to pop up 
 //gregtlo choice of open ide or open sln
-//gregtlo choice of model dialog or simple dialog
 //gregtlo font size
 
 using System;

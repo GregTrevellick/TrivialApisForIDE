@@ -10,7 +10,6 @@ namespace Trivial.Api.Gateway
     public class ClientGateway
     {
         //gregtlo F1 help
-        //gregtlo Reduce ide popup size
 
         //https://icanhazdadjoke.com/api#fetch-a-random-dad-joke 
         //https://quotesondesign.com/api-v4-0/ 

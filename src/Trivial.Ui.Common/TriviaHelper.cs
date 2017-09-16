@@ -79,7 +79,7 @@ namespace Trivial.Ui.Common
 
         private static void DisplayPopUpMessage(string popUpTitle, string popUpBody, string linkUri)
         {
-            var triviaDialog = new TriviaDialog()
+            var triviaDialog = new TriviaDialog
             {
                 Title = popUpTitle,
                 AppTextBlock1 = { Text = popUpBody }
@@ -92,7 +92,9 @@ namespace Trivial.Ui.Common
                 triviaDialog.AppHyperlink1.Inlines.Add(linkUri);
             }
 
-            triviaDialog.ShowModal();
+           // triviaDialog.ShowModal(); gregtlo offer user option to show as a modal
+            triviaDialog.Show();
+
         }
     }
 }
