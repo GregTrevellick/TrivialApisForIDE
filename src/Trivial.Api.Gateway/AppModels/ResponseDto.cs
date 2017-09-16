@@ -4,6 +4,6 @@
     {
         public string ResponseContent { get; set; }
 
-        public string Testing { get; set; }
+        public string ErrorDetails { get; set; }
     }
 }

@@ -46,9 +46,9 @@ namespace Trivial.Api.Gateway
                 //task.Wait();
                 //var restResponseContent = task.Result;
 
-                if (!string.IsNullOrEmpty(responseDto.Testing))
+                if (!string.IsNullOrEmpty(responseDto.ErrorDetails))
                 {
-                    SetGatewayResponseFromTesting(gatewayResponse, responseDto.Testing);
+                    SetGatewayResponseFromErrorDetails(gatewayResponse, responseDto.ErrorDetails);
                 }
                 else
                 {
@@ -67,9 +67,9 @@ namespace Trivial.Api.Gateway
             return gatewayResponse;
         }
 
-        private static void SetGatewayResponseFromTesting(GatewayResponse gatewayResponse, string testing)
+        private static void SetGatewayResponseFromErrorDetails(GatewayResponse gatewayResponse, string errorDetails)
         {
-            gatewayResponse.Text = testing;
+            gatewayResponse.Text = errorDetails;
         }
 
         private static async Task<ResponseDto> GetRestResponseAsync(string url)
@@ -90,24 +90,37 @@ namespace Trivial.Api.Gateway
                 var response = client.Execute(request);
                 //////////////////////////////////////////////////////////////TODO gregt async up this call ? e.g. client.ExecuteAsync(request, response => { JsonConvert.DeserializeObject<TrumpRootObject>(response.Content); });
 
-                var testing = response.ErrorException.Message + "___" +
-                    response.ErrorMessage + "___" +
-                    response.ResponseStatus + "___" +
-                    response.StatusCode + "___" +
-                    response.StatusDescription + "___" +
-                    response.ErrorException;
+                var errorHasOccured = response.ErrorException != null || !string.IsNullOrEmpty(response.ErrorMessage);//gregt unit test reqd
 
-                if (response.ErrorException != null)
+                if (errorHasOccured)
                 {
-                    responseDto.Testing = testing;
-                }
+                    //gregt unit test reqd
+                    var errorDetails =
+                        "ResponseStatus=" + response.ResponseStatus + Environment.NewLine +
+                        "HttpStatusCode = " + response.StatusCode + "(" + (int)response.StatusCode + ")" + Environment.NewLine +
+                        "StatusDescription=" + response.StatusDescription + Environment.NewLine +
+                        "ErrorMessage=" + response.ErrorMessage + Environment.NewLine;
 
-                responseDto.ResponseContent = response.Content + "   " + testing;
+                    //gregt unit test reqd
+                    if (response.ErrorException != null)
+                    {
+                        errorDetails =
+                            errorDetails + Environment.NewLine +
+                            "ErrorExceptionMessage=" + response.ErrorException.Message + Environment.NewLine +
+                            "ErrorExceptionTargetSite=" + response.ErrorException.TargetSite;
+                    }
+
+                    responseDto.ErrorDetails = errorDetails;
+                }
+                else
+                {
+                    responseDto.ResponseContent = response.Content;
+                }
             }
             catch(Exception ex)
             {
                 Debug.WriteLine(ex);
-                responseDto.Testing = $"Error occured. Possible communication error with {url}";
+                responseDto.ErrorDetails = $"Error occured. Possible communication error with {url}";
             }
 
             return responseDto;
@@ -123,8 +136,8 @@ namespace Trivial.Api.Gateway
                     url = "http://numbersapi.com/random/trivia";
                     break;
                 case AppName.TrumpQuotes:
-                    url = "https://api.tronalddump.io/random/quote";
-                    //url = "https://apixxx.xxxtronalddump.io/random/quote";
+                    //url = "https://api.tronalddump.io/random/quote";
+                    url = "https://apixxx.xxxtronalddump.io/random/quote";
                     break;
             }
 
