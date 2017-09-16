@@ -10,6 +10,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto" />
@@ -20,6 +21,11 @@
            <Hyperlink Name="AppHyperlink1" RequestNavigate="AppHyperlink1_RequestNavigate" />
         </TextBlock>
         <Button Grid.Row="1" Grid.Column="1" Content="Close" Name="AppBtn1" Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Center" Padding="5,5,5,5" Click="AppBtn1_OnClick"/>
+        <TextBlock Grid.Row="2" Grid.ColumnSpan="2" Grid.Column="0" Text="Change frequency of delivery in Tools - Options" TextWrapping="Wrap" Name="AppTextBlock3" Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <TextBlock.RenderTransform>
+                <ScaleTransform ScaleX="0.7" ScaleY="0.7" />
+            </TextBlock.RenderTransform>
+        </TextBlock>
     </Grid>
     <!--
     <TextBlock.RenderTransform>
