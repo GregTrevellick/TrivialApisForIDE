@@ -9,7 +9,7 @@ namespace Trivial.Ui.Common
         public const string DefaultMaximumPopUpsWeekDay = "3";
         public const string DefaultMaximumPopUpsWeekEnd = "99";
         public const string DefaultPopUpIntervalInMins = "0";
-        public static string IntegerInvalid = "Invalid integer value specified for:" + Environment.NewLine + Environment.NewLine;
+        public static string IntegerInvalid = "Invalid integer value specified for ";
         public const string MaximumPopUpsWeekDayDetailedDescription = "Maximum pop ups Mon-Fri descr.";
         public const string MaximumPopUpsWeekDayOptionLabel = "Maximum pop ups Mon-Fri day";
         public const string MaximumPopUpsWeekEndDetailedDescription = "Maximum pop ups Sat-Sun descr.";

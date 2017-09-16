@@ -22,6 +22,7 @@ namespace Trivial.Ui.TrumpQuotes.Options
         private string maximumPopUpsWeekEnd;
         private string popUpIntervalInMins;
 
+        [Category(CommonConstants.CategorySubLevel)]
         [DisplayName(CommonConstants.MaximumPopUpsWeekDayOptionLabel)]
         [Description(CommonConstants.MaximumPopUpsWeekDayDetailedDescription)]
         public string MaximumPopUpsWeekDay 
@@ -54,7 +55,7 @@ namespace Trivial.Ui.TrumpQuotes.Options
         [Category(CommonConstants.CategorySubLevel)]
         [DisplayName(CommonConstants.MaximumPopUpsWeekEndOptionLabel)]
         [Description(CommonConstants.MaximumPopUpsWeekEndDetailedDescription)]
-        public string MaximumPopUpsWeekEnd //{ get; set; } = int.MaxValue;
+        public string MaximumPopUpsWeekEnd 
         {
             get
             {
@@ -116,7 +117,7 @@ namespace Trivial.Ui.TrumpQuotes.Options
             var constantsForAppCommon = new ConstantsForAppCommon();
             MessageBox.Show(
                 constantsForAppCommon.GetInvalidInteger(labelName),
-                constantsForAppCommon.Caption,
+                constantsForAppCommon.GetCaption(Vsix.Name, Vsix.Version),
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Error);
         }
