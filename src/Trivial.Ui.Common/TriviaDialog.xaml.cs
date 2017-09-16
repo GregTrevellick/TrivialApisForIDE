@@ -10,7 +10,18 @@ namespace Trivial.Ui.Common
     /// </summary>
     public partial class TriviaDialog : DialogWindow
     {
+        //// Use this constructor to provide a Help button and F1 support.
+        //public TriviaDialog(string helpTopic) : base(helpTopic)
+        //{
+        //    Init();
+        //}
+
         public TriviaDialog()
+        {
+            Init();
+        }
+
+        private void Init()
         {
             InitializeComponent();
             InitializeTriviaDialog();
@@ -22,9 +33,6 @@ namespace Trivial.Ui.Common
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
             HasMaximizeButton = true;
             HasMinimizeButton = true;
-        
-            //gregtlo any of these worthwhile ?
-            //this.HasHelpButton = true;
         }
 
         private void AppHyperlink1_RequestNavigate(object sender, RequestNavigateEventArgs e)
