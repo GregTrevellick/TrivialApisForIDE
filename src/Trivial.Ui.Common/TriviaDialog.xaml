@@ -8,9 +8,9 @@
                          Foreground="{DynamicResource VsBrush.WindowText}" >
     <Grid ShowGridLines="false">
         <Grid.RowDefinitions>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <TextBlock Grid.Row="0" TextWrapping="Wrap" Name="AppTextBlock1" Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Left" />
         <TextBlock Grid.Row="1" TextWrapping="Wrap" Name="AppTextBlock2" Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Left" >
