@@ -39,7 +39,7 @@ namespace Trivial.Ui.Common
             return generalOptionsDto.LastPopUpDateTime < DateTime.Now.AddMinutes(-1 * generalOptionsDto.PopUpIntervalInMins);
         }
 
-        public static HiddenOptionsDto ShowTrivia(AppName appName, string popUpTitle, DateTime lastPopUpDateTime, int popUpCountToday, int timeOutInMilliSeconds)
+        public static HiddenOptionsDto ShowTrivia(AppName appName, string popUpTitle, DateTime lastPopUpDateTime, int popUpCountToday, int timeOutInMilliSeconds, string optionsName)
         {
             HiddenOptionsDto hiddenOptionsDto = null;
 
@@ -49,7 +49,7 @@ namespace Trivial.Ui.Common
 
             if (!string.IsNullOrEmpty(popUpBody))
             {   
-                DisplayPopUpMessage(popUpTitle, popUpBody, gatewayResponse.LinkUri);
+                DisplayPopUpMessage(popUpTitle, popUpBody, gatewayResponse.LinkUri, optionsName);
                 hiddenOptionsDto = GetHiddenOptionsDto(lastPopUpDateTime, popUpCountToday);
             }
 
@@ -77,9 +77,9 @@ namespace Trivial.Ui.Common
             return hiddenOptionsDto;
         }
 
-        private static void DisplayPopUpMessage(string popUpTitle, string popUpBody, string linkUri)
+        private static void DisplayPopUpMessage(string popUpTitle, string popUpBody, string linkUri, string optionsName)
         {
-            var triviaDialog = new TriviaDialog
+            var triviaDialog = new TriviaDialog(optionsName)
             {
                 Title = popUpTitle,
                 AppTextBlock1 = { Text = popUpBody }

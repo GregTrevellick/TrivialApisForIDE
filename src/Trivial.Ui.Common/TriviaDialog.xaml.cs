@@ -16,24 +16,24 @@ namespace Trivial.Ui.Common
         //    Init();
         //}
 
-        public TriviaDialog()
+        public TriviaDialog(string optionsName)
         {
-            Init();
+            Init(optionsName);
         }
 
-        private void Init()
+        private void Init(string optionsName)
         {
             InitializeComponent();
-            InitializeTriviaDialog();
+            InitializeTriviaDialog(optionsName);
         }
 
-        private void InitializeTriviaDialog()
+        private void InitializeTriviaDialog(string optionsName)
         {
             SizeToContent = SizeToContent.WidthAndHeight;
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
             HasMaximizeButton = true;
             HasMinimizeButton = true;
-            AppTextBlock3.Text = "Change frequency of delivery in Tools > Options > " + this.Title;
+            AppTextBlock3.Text = "Change frequency of pop-up delivery in Tools > Options > " + optionsName;
         }
 
         private void AppHyperlink1_RequestNavigate(object sender, RequestNavigateEventArgs e)
