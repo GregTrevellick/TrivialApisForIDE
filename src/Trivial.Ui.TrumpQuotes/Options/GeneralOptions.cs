@@ -1,6 +1,5 @@
 ﻿//gregtlo add app icon to pop up 
 //gregtlo choice of open ide or open sln
-//gregtlo font size
 
 using System;
 using System.ComponentModel;

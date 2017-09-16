@@ -20,7 +20,7 @@ namespace Trivial.Ui.Common
             return false;
         }
 
-        private static bool MidweekAndHaveNotExceededMidweekCount(GeneralOptionsDto generalOptionsDto)//gregt unit test reqd
+        private static bool MidweekAndHaveNotExceededMidweekCount(GeneralOptionsDto generalOptionsDto)//gregtlo unit test reqd
         {
             return 
                 DateTime.Now.DayOfWeek != DayOfWeek.Saturday && 
@@ -28,13 +28,13 @@ namespace Trivial.Ui.Common
                 generalOptionsDto.PopUpCountToday < generalOptionsDto.MaximumPopUpsWeekDay;
         }
 
-        private static bool WeekEndAndHaveNotExceededWeekEndCount(GeneralOptionsDto generalOptionsDto)//gregt unit test reqd
+        private static bool WeekEndAndHaveNotExceededWeekEndCount(GeneralOptionsDto generalOptionsDto)//gregtlo unit test reqd
         {
             return (DateTime.Now.DayOfWeek == DayOfWeek.Saturday || DateTime.Now.DayOfWeek == DayOfWeek.Sunday) &&
                     generalOptionsDto.PopUpCountToday < generalOptionsDto.MaximumPopUpsWeekEnd;
         }
 
-        private static bool LastPopUpMoreThanXMinutesAgo(GeneralOptionsDto generalOptionsDto)//gregt unit test reqd
+        private static bool LastPopUpMoreThanXMinutesAgo(GeneralOptionsDto generalOptionsDto)//gregtlo unit test reqd
         {
             return generalOptionsDto.LastPopUpDateTime < DateTime.Now.AddMinutes(-1 * generalOptionsDto.PopUpIntervalInMins);
         }

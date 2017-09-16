@@ -9,8 +9,6 @@ namespace Trivial.Api.Gateway
 {
     public class ClientGateway
     {
-        //gregtlo F1 help
-
         //https://icanhazdadjoke.com/api#fetch-a-random-dad-joke 
         //https://quotesondesign.com/api-v4-0/ 
         //https://restcountries.eu/ 
@@ -72,18 +70,18 @@ namespace Trivial.Api.Gateway
                 var request = new RestRequest(Method.GET) {Timeout = timeOutInMilliSeconds };
                 var response = client.Execute(request);
 
-                var errorHasOccured = response.ErrorException != null || !string.IsNullOrEmpty(response.ErrorMessage);//gregt unit test reqd
+                var errorHasOccured = response.ErrorException != null || !string.IsNullOrEmpty(response.ErrorMessage);//gregtlo unit test reqd
 
                 if (errorHasOccured)
                 {
-                    //gregt unit test reqd
+                    //gregtlo unit test reqd
                     var errorDetails =
                         "ResponseStatus=" + response.ResponseStatus + Environment.NewLine +
                         "HttpStatusCode = " + response.StatusCode + "(" + (int)response.StatusCode + ")" + Environment.NewLine +
                         "StatusDescription=" + response.StatusDescription + Environment.NewLine +
                         "ErrorMessage=" + response.ErrorMessage + Environment.NewLine;
 
-                    //gregt unit test reqd
+                    //gregtlo unit test reqd
                     if (response.ErrorException != null)
                     {
                         errorDetails =
