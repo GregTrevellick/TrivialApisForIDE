@@ -33,7 +33,7 @@ namespace Trivial.Ui.Common
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
             HasMaximizeButton = true;
             HasMinimizeButton = true;
-            AppTextBlock3.Text = "Change frequency of pop-up delivery in Tools > Options > " + optionsName;
+            AppTextBlock3.Text = "Change frequency of delivery in Tools > Options > " + optionsName;
         }
 
         private void AppHyperlink1_RequestNavigate(object sender, RequestNavigateEventArgs e)
