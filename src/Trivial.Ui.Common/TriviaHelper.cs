@@ -39,12 +39,12 @@ namespace Trivial.Ui.Common
             return generalOptionsDto.LastPopUpDateTime < DateTime.Now.AddMinutes(-1 * generalOptionsDto.PopUpIntervalInMins);
         }
 
-        public static HiddenOptionsDto ShowTrivia(AppName appName, string popUpTitle, DateTime lastPopUpDateTime, int popUpCountToday)
+        public static HiddenOptionsDto ShowTrivia(AppName appName, string popUpTitle, DateTime lastPopUpDateTime, int popUpCountToday, int timeOutInMilliSeconds)
         {
             HiddenOptionsDto hiddenOptionsDto = null;
 
             var clientGateway = new ClientGateway();
-            var gatewayResponse = clientGateway.GetGatewayResponse(appName);
+            var gatewayResponse = clientGateway.GetGatewayResponse(appName, timeOutInMilliSeconds);
             var popUpBody = Formatter.GetBody(gatewayResponse.Text, gatewayResponse.Attribution);
 
             if (!string.IsNullOrEmpty(popUpBody))

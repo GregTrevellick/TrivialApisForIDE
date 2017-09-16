@@ -50,7 +50,7 @@ namespace Trivial.Ui.TrumpQuotes
 
             if (shouldShowTrivia)
             {
-                var hiddenOptionsDto = TriviaHelper.ShowTrivia(AppName.TrumpQuotes, Vsix.Name, GeneralOptionsDto.LastPopUpDateTime, GeneralOptionsDto.PopUpCountToday);
+                var hiddenOptionsDto = TriviaHelper.ShowTrivia(AppName.TrumpQuotes, Vsix.Name, GeneralOptionsDto.LastPopUpDateTime, GeneralOptionsDto.PopUpCountToday, GeneralOptionsDto.TimeOutInMilliSeconds);
 
                 if (hiddenOptionsDto != null)
                 {
@@ -78,7 +78,8 @@ namespace Trivial.Ui.TrumpQuotes
                     MaximumPopUpsWeekDay = generalOptions.MaximumPopUpsWeekDayInt,
                     MaximumPopUpsWeekEnd = generalOptions.MaximumPopUpsWeekEndInt,
                     PopUpIntervalInMins = generalOptions.PopUpIntervalInMinsInt,
-                    PopUpCountToday = generalOptions.PopUpCountToday
+                    PopUpCountToday = generalOptions.PopUpCountToday,
+                    TimeOutInMilliSeconds = 1000,
                 };
             }
         }

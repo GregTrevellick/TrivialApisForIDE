@@ -2,21 +2,15 @@
 using RestSharp;
 using System;
 using System.Diagnostics;
-using System.Threading;
-using System.Threading.Tasks;
 using Trivial.Api.Gateway.AppModels;
 using Trivial.Entities;
 
 namespace Trivial.Api.Gateway
 {
-    //public static class ClientGateway
-    public class ClientGateway : ClientBase
+    public class ClientGateway
     {
-        //public ClientGateway() : base("Constants.BaseApiUrl") { }
-
         //gregtlo F1 help
         //gregtlo Reduce ide popup size
-        //gregthi API call timeout
 
         //https://icanhazdadjoke.com/api#fetch-a-random-dad-joke 
         //https://quotesondesign.com/api-v4-0/ 
@@ -33,7 +27,7 @@ namespace Trivial.Api.Gateway
         ////https://www.meetup.com/meetup_api/ 
         ////http://api.football-data.org/index
 
-        public GatewayResponse GetGatewayResponse(AppName appName)
+        public GatewayResponse GetGatewayResponse(AppName appName, int timeOutInMilliSeconds)
         {
             var url = GetUrl(appName);
 
@@ -41,10 +35,7 @@ namespace Trivial.Api.Gateway
 
             if (!string.IsNullOrEmpty(url))
             {
-                var responseDto = GetRestResponse(url);
-                //Task<string> task = GetRestResponseAsync(url);
-                //task.Wait();
-                //var restResponseContent = task.Result;
+                var responseDto = GetRestResponse(url, timeOutInMilliSeconds);
 
                 if (!string.IsNullOrEmpty(responseDto.ErrorDetails))
                 {
@@ -72,40 +63,15 @@ namespace Trivial.Api.Gateway
             gatewayResponse.Text = errorDetails;
         }
 
-        //private static async Task<ResponseDto> GetRestResponseAsync(string url)
-        //{
-        //    Thread.Sleep(5000);
-        //    return GetRestResponse(url);
-        //}
-
-
-        ////////////public DateTime? GetDate()
-        ////////////{
-        ////////////    var request = new RestRequest("/home/date");
-        ////////////    request.Timeout = 50;
-        ////////////    return Execute<DateTime?>(request).Data;
-        ////////////}
-
-        ////////////public async Task<DateTime?> GetDateAsync()
-        ////////////{
-        ////////////    var request = new RestRequest("/home/date");
-        ////////////    request.Timeout = 50;
-        ////////////    var result = await ExecuteTaskAsync<DateTime?>(request);
-        ////////////    return result.Data;
-        ////////////}
-
-        /////////////////////////////////////////////private static IRestResponse GetRestResponse(string url)
-        private ResponseDto GetRestResponse(string url)
+        private ResponseDto GetRestResponse(string url, int timeOutInMilliSeconds)
         {
             var responseDto = new ResponseDto();
 
             try
             {
                 var client = new RestClient(url);
-                var request = new RestRequest(Method.GET);
-                request.Timeout = 5000;
+                var request = new RestRequest(Method.GET) {Timeout = timeOutInMilliSeconds };
                 var response = client.Execute(request);
-                //////////////////////////////////////////////////////////////TODO gregt async up this call ? e.g. client.ExecuteAsync(request, response => { JsonConvert.DeserializeObject<TrumpRootObject>(response.Content); });
 
                 var errorHasOccured = response.ErrorException != null || !string.IsNullOrEmpty(response.ErrorMessage);//gregt unit test reqd
 
@@ -153,9 +119,9 @@ namespace Trivial.Api.Gateway
                     url = "http://numbersapi.com/random/trivia";
                     break;
                 case AppName.TrumpQuotes:
-                    //url = "https://api.tronalddump.io/random/quote";
+                    url = "https://api.tronalddump.io/random/quote";
                     //url = "https://apixxx.xxxtronalddump.io/random/quote";
-                    url = "http://localhost:52327/Api/Values";
+                    //url = "http://localhost:52327/Api/Values";
                     break;
             }
 
@@ -177,7 +143,7 @@ namespace Trivial.Api.Gateway
                 }
             }
 
-            gatewayResponse.Attribution = "   Donald J. Trump, " + rootObject.appeared_at.Date.ToShortDateString();
+            gatewayResponse.Attribution = "Donald J. Trump, " + rootObject.appeared_at.Date.ToShortDateString();
             gatewayResponse.LinkText = gatewayResponse.LinkUri;
             gatewayResponse.Text = "\"" + rootObject.value + "\"";
 
@@ -198,22 +164,3 @@ namespace Trivial.Api.Gateway
         }
     }
 }
-
-
-//////////////////////////public async Task<SiLogVrmQuery4Results> Query(string connectionName, VRMQueryParameters parameters)
-//////////////////////////{
-//////////////////////////    try
-//////////////////////////    {
-//////////////////////////        var start = Environment.TickCount;
-//////////////////////////        var task = nciRepo.GetVrmQuery4(connectionName, parameters.vrms, parameters.queryTypes, parameters.softActionTypes, parameters.location);
-//////////////////////////        var output = await task;
-//////////////////////////        var stop = Environment.TickCount;
-//////////////////////////        Log.Info(TimingMessage, TimeSpan.FromMilliseconds(stop - start), parameters.vrms.ToLogString(), null);
-//////////////////////////        return output;
-//////////////////////////    }
-//////////////////////////    catch (Exception ex)
-//////////////////////////    {
-//////////////////////////        Log.Error(FailedMessage, ex);
-//////////////////////////        throw;
-//////////////////////////    }
-//////////////////////////}
