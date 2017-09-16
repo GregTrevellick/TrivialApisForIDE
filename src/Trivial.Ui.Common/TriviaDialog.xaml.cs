@@ -34,6 +34,12 @@ namespace Trivial.Ui.Common
         {
             SizeToContent = SizeToContent.WidthAndHeight;
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
+
+            //gregtlo any of these worthwhile ?
+            //this.HasMaximizeButton = true;
+            //this.HasMinimizeButton = true;
+            //this.HasHelpButton = true;
+            //this.IsCloseButtonEnabled = true;
         }
 
         private void AppHyperlink1_RequestNavigate(object sender, RequestNavigateEventArgs e)
