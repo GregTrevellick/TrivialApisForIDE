@@ -2,8 +2,7 @@
 {
     public class ResponseDto
     {
-        public string ResponseContent { get; set; }
-
         public string ErrorDetails { get; set; }
+        public string ResponseContent { get; set; }
     }
 }
