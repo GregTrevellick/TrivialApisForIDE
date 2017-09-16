@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using RestSharp;
 using System;
+using System.Diagnostics;
 using System.Threading;
 using System.Threading.Tasks;
 using Trivial.Api.Gateway.AppModels;
@@ -36,56 +37,52 @@ namespace Trivial.Api.Gateway
         {
             var url = GetUrl(appName);
 
-            var gatewayResponse = new GatewayResponse();// {Text = string.Empty};
+            var gatewayResponse = new GatewayResponse();
 
             if (!string.IsNullOrEmpty(url))
             {
-                var restResponseContent = GetRestResponse(url);
+                var responseDto = GetRestResponse(url);
                 //Task<string> task = GetRestResponseAsync(url);
                 //task.Wait();
                 //var restResponseContent = task.Result;
 
-                switch (appName)
+                if (!string.IsNullOrEmpty(responseDto.Testing))
                 {
-                    case AppName.NumericTrivia:
-                        gatewayResponse = SetGatewayResponseFromRestResponse(restResponseContent);
-                        break;
-                    case AppName.TrumpQuotes:
-                        gatewayResponse = SetGatewayResponseFromRestResponseTrump(restResponseContent);
-                        break;
+                    SetGatewayResponseFromTesting(gatewayResponse, responseDto.Testing);
+                }
+                else
+                {
+                    switch (appName)
+                    {
+                        case AppName.NumericTrivia:
+                            gatewayResponse = SetGatewayResponseFromRestResponse(responseDto.ResponseContent);
+                            break;
+                        case AppName.TrumpQuotes:
+                            gatewayResponse = SetGatewayResponseFromRestResponseTrump(responseDto.ResponseContent);
+                            break;
+                    }
                 }
             }
 
             return gatewayResponse;
         }
 
-        private static async Task<string> GetRestResponseAsync(string url)
+        private static void SetGatewayResponseFromTesting(GatewayResponse gatewayResponse, string testing)
+        {
+            gatewayResponse.Text = testing;
+        }
+
+        private static async Task<ResponseDto> GetRestResponseAsync(string url)
         {
             Thread.Sleep(5000);
             return GetRestResponse(url);
         }
 
-        //public async Task<SiLogVrmQuery4Results> Query(string connectionName, VRMQueryParameters parameters)
-        //{
-        //    try
-        //    {
-        //        var start = Environment.TickCount;
-        //        var task = nciRepo.GetVrmQuery4(connectionName, parameters.vrms, parameters.queryTypes, parameters.softActionTypes, parameters.location);
-        //        var output = await task;
-        //        var stop = Environment.TickCount;
-        //        Log.Info(TimingMessage, TimeSpan.FromMilliseconds(stop - start), parameters.vrms.ToLogString(), null);
-        //        return output;
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        Log.Error(FailedMessage, ex);
-        //        throw;
-        //    }
-        //}
-
         /////////////////////////////////////////////private static IRestResponse GetRestResponse(string url)
-        private static string GetRestResponse(string url)
+        private static ResponseDto GetRestResponse(string url)
         {
+            var responseDto = new ResponseDto();
+
             try
             {
                 var client = new RestClient(url);
@@ -93,20 +90,27 @@ namespace Trivial.Api.Gateway
                 var response = client.Execute(request);
                 //////////////////////////////////////////////////////////////TODO gregt async up this call ? e.g. client.ExecuteAsync(request, response => { JsonConvert.DeserializeObject<TrumpRootObject>(response.Content); });
 
+                var testing = response.ErrorException.Message + "___" +
+                    response.ErrorMessage + "___" +
+                    response.ResponseStatus + "___" +
+                    response.StatusCode + "___" +
+                    response.StatusDescription + "___" +
+                    response.ErrorException;
+
                 if (response.ErrorException != null)
                 {
-                    var message = $"Error retrieving response from {url} - see inner exception.";
-                    throw new ApplicationException(message, response.ErrorException);
+                    responseDto.Testing = testing;
                 }
 
-                return response.Content;
+                responseDto.ResponseContent = response.Content + "   " + testing;
             }
             catch(Exception ex)
             {
-                Console.WriteLine(ex);
-                var message = $"Error calling web service at {url} - see inner exception.";
-                throw new ApplicationException(message, ex);
+                Debug.WriteLine(ex);
+                responseDto.Testing = $"Error occured. Possible communication error with {url}";
             }
+
+            return responseDto;
         }
 
         private static string GetUrl(AppName appName)//gregt put into factory based class or project
@@ -120,6 +124,7 @@ namespace Trivial.Api.Gateway
                     break;
                 case AppName.TrumpQuotes:
                     url = "https://api.tronalddump.io/random/quote";
+                    //url = "https://apixxx.xxxtronalddump.io/random/quote";
                     break;
             }
 
@@ -162,3 +167,22 @@ namespace Trivial.Api.Gateway
         }
     }
 }
+
+
+//////////////////////////public async Task<SiLogVrmQuery4Results> Query(string connectionName, VRMQueryParameters parameters)
+//////////////////////////{
+//////////////////////////    try
+//////////////////////////    {
+//////////////////////////        var start = Environment.TickCount;
+//////////////////////////        var task = nciRepo.GetVrmQuery4(connectionName, parameters.vrms, parameters.queryTypes, parameters.softActionTypes, parameters.location);
+//////////////////////////        var output = await task;
+//////////////////////////        var stop = Environment.TickCount;
+//////////////////////////        Log.Info(TimingMessage, TimeSpan.FromMilliseconds(stop - start), parameters.vrms.ToLogString(), null);
+//////////////////////////        return output;
+//////////////////////////    }
+//////////////////////////    catch (Exception ex)
+//////////////////////////    {
+//////////////////////////        Log.Error(FailedMessage, ex);
+//////////////////////////        throw;
+//////////////////////////    }
+//////////////////////////}

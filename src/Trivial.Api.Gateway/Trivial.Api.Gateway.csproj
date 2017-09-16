@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppModels\ResponseDto.cs" />
     <Compile Include="AppModels\TrumpRootObject.cs" />
     <Compile Include="GatewayResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
