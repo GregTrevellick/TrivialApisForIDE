@@ -41,9 +41,10 @@ namespace Trivial.Ui.Common
 
         public static HiddenOptionsDto ShowTrivia(AppName appName, string popUpTitle, DateTime lastPopUpDateTime, int popUpCountToday)
         {
-            HiddenOptionsDto hiddenOptionsDto = null; 
+            HiddenOptionsDto hiddenOptionsDto = null;
 
-            var gatewayResponse = ClientGateway.GetGatewayResponse(appName);
+            var clientGateway = new ClientGateway();
+            var gatewayResponse = clientGateway.GetGatewayResponse(appName);
             var popUpBody = Formatter.GetBody(gatewayResponse.Text, gatewayResponse.Attribution);
 
             if (!string.IsNullOrEmpty(popUpBody))

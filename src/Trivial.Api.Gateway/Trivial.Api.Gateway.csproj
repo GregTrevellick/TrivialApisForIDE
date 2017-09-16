@@ -48,6 +48,8 @@
   <ItemGroup>
     <Compile Include="AppModels\ResponseDto.cs" />
     <Compile Include="AppModels\TrumpRootObject.cs" />
+    <Compile Include="ClientBase.cs" />
+    <Compile Include="zDateClient.cs" />
     <Compile Include="GatewayResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ClientGateway.cs" />

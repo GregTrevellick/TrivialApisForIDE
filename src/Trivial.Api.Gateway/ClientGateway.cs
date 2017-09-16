@@ -9,8 +9,11 @@ using Trivial.Entities;
 
 namespace Trivial.Api.Gateway
 {
-    public static class ClientGateway
+    //public static class ClientGateway
+    public class ClientGateway : ClientBase
     {
+        //public ClientGateway() : base("Constants.BaseApiUrl") { }
+
         //gregtlo F1 help
         //gregtlo Reduce ide popup size
         //gregthi API call timeout
@@ -30,7 +33,7 @@ namespace Trivial.Api.Gateway
         ////https://www.meetup.com/meetup_api/ 
         ////http://api.football-data.org/index
 
-        public static GatewayResponse GetGatewayResponse(AppName appName)
+        public GatewayResponse GetGatewayResponse(AppName appName)
         {
             var url = GetUrl(appName);
 
@@ -69,14 +72,30 @@ namespace Trivial.Api.Gateway
             gatewayResponse.Text = errorDetails;
         }
 
-        private static async Task<ResponseDto> GetRestResponseAsync(string url)
-        {
-            Thread.Sleep(5000);
-            return GetRestResponse(url);
-        }
+        //private static async Task<ResponseDto> GetRestResponseAsync(string url)
+        //{
+        //    Thread.Sleep(5000);
+        //    return GetRestResponse(url);
+        //}
+
+
+        ////////////public DateTime? GetDate()
+        ////////////{
+        ////////////    var request = new RestRequest("/home/date");
+        ////////////    request.Timeout = 50;
+        ////////////    return Execute<DateTime?>(request).Data;
+        ////////////}
+
+        ////////////public async Task<DateTime?> GetDateAsync()
+        ////////////{
+        ////////////    var request = new RestRequest("/home/date");
+        ////////////    request.Timeout = 50;
+        ////////////    var result = await ExecuteTaskAsync<DateTime?>(request);
+        ////////////    return result.Data;
+        ////////////}
 
         /////////////////////////////////////////////private static IRestResponse GetRestResponse(string url)
-        private static ResponseDto GetRestResponse(string url)
+        private ResponseDto GetRestResponse(string url)
         {
             var responseDto = new ResponseDto();
 
@@ -84,6 +103,7 @@ namespace Trivial.Api.Gateway
             {
                 var client = new RestClient(url);
                 var request = new RestRequest(Method.GET);
+                request.Timeout = 5000;
                 var response = client.Execute(request);
                 //////////////////////////////////////////////////////////////TODO gregt async up this call ? e.g. client.ExecuteAsync(request, response => { JsonConvert.DeserializeObject<TrumpRootObject>(response.Content); });
 
@@ -133,8 +153,9 @@ namespace Trivial.Api.Gateway
                     url = "http://numbersapi.com/random/trivia";
                     break;
                 case AppName.TrumpQuotes:
-                    url = "https://api.tronalddump.io/random/quote";
+                    //url = "https://api.tronalddump.io/random/quote";
                     //url = "https://apixxx.xxxtronalddump.io/random/quote";
+                    url = "http://localhost:52327/Api/Values";
                     break;
             }
 
