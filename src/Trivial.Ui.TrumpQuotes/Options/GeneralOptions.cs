@@ -3,7 +3,6 @@
 //gregtlo font size
 
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Windows.Forms;
 using Microsoft.VisualStudio.Shell;
