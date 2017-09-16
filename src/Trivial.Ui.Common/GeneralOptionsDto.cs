@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Trivial.Ui.Common
+﻿namespace Trivial.Ui.Common
 {
     public class GeneralOptionsDto : HiddenOptionsDto
     {

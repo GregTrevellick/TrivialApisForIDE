@@ -27,17 +27,7 @@ namespace Trivial.Ui.TrumpQuotes.Options
         [Description(CommonConstants.MaximumPopUpsWeekDayDetailedDescription)]
         public string MaximumPopUpsWeekDay 
         {
-            get
-            {
-                if (string.IsNullOrEmpty(maximumPopUpsWeekDay))
-                {
-                    return CommonConstants.DefaultMaximumPopUpsWeekDay;
-                }
-                else
-                {
-                    return maximumPopUpsWeekDay;
-                }
-            }
+            get => string.IsNullOrEmpty(maximumPopUpsWeekDay) ? CommonConstants.DefaultMaximumPopUpsWeekDay : maximumPopUpsWeekDay;
             set
             {
                 var isInteger = int.TryParse(value, out int x);
@@ -57,17 +47,7 @@ namespace Trivial.Ui.TrumpQuotes.Options
         [Description(CommonConstants.MaximumPopUpsWeekEndDetailedDescription)]
         public string MaximumPopUpsWeekEnd 
         {
-            get
-            {
-                if (string.IsNullOrEmpty(maximumPopUpsWeekEnd))
-                {
-                    return CommonConstants.DefaultMaximumPopUpsWeekEnd;
-                }
-                else
-                {
-                    return maximumPopUpsWeekEnd;
-                }
-            }
+            get => string.IsNullOrEmpty(maximumPopUpsWeekEnd) ? CommonConstants.DefaultMaximumPopUpsWeekEnd : maximumPopUpsWeekEnd;
             set
             {
                 var isInteger = int.TryParse(value, out int x);
@@ -87,17 +67,7 @@ namespace Trivial.Ui.TrumpQuotes.Options
         [Description(CommonConstants.PopUpIntervalInMinsOptionDetailedDescription)]
         public string PopUpIntervalInMins
         {
-            get
-            {
-                if (string.IsNullOrEmpty(popUpIntervalInMins))
-                {
-                    return CommonConstants.DefaultPopUpIntervalInMins;
-                }
-                else
-                {
-                    return popUpIntervalInMins;
-                }
-            }
+            get => string.IsNullOrEmpty(popUpIntervalInMins) ? CommonConstants.DefaultPopUpIntervalInMins : popUpIntervalInMins;
             set
             {
                 var isInteger = int.TryParse(value, out int x);
