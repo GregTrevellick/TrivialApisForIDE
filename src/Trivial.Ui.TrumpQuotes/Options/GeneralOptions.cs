@@ -1,9 +1,7 @@
-﻿//gregt future - options 
-//03 specify web service timeout
-//50 add app icon to pop up 
-//97 choice of open ide or open sln
-//98 choice of model dialog or simple dialog
-//99 font size
+﻿//gregtlo add app icon to pop up 
+//gregtlo choice of open ide or open sln
+//gregtlo choice of model dialog or simple dialog
+//gregtlo font size
 
 using System;
 using System.Collections.Generic;
