@@ -20,13 +20,11 @@ namespace Trivial.Ui.Common
         {
             SizeToContent = SizeToContent.WidthAndHeight;
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
-
             HasMaximizeButton = true;
             HasMinimizeButton = true;
+        
             //gregtlo any of these worthwhile ?
-
             //this.HasHelpButton = true;
-            //this.IsCloseButtonEnabled = true;
         }
 
         private void AppHyperlink1_RequestNavigate(object sender, RequestNavigateEventArgs e)
