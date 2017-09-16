@@ -15,7 +15,6 @@ namespace Trivial.Api.Gateway
         //F1 help
         //Reduce ide size
         //API call timeout
-        //Try w/o API call - fixes dll issue? Or API call locks dll ?
         //Alpha timeout values in options
 
         //https://icanhazdadjoke.com/api#fetch-a-random-dad-joke 

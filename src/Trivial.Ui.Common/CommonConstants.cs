@@ -6,9 +6,9 @@ namespace Trivial.Ui.Common
     {
         public const string CategorySubLevel = "General";
         public const string DefaultFileQuantityWarningLimit = "10";
-        public static string FileQuantityWarningLimitInvalid = "Invalid integer value specified for:" + Environment.NewLine + Environment.NewLine + FileQuantityWarningLimitOptionLabel;
-        public const string FileQuantityWarningLimitOptionDetailedDescription = "The number of artefacts that can be opened at one time before a warning is displayed. You will be able to open artefacts whose count exceeds this number, but you will be informed that the number of artefacts is very high. This allows you to avoid accidentely opening hundreds or thousands of files artefacts may affect performance of your machine.";
-        public const string FileQuantityWarningLimitOptionLabel = "Simultaneous artefacts opening count warning limit";
+        public static string IntegerInvalid = "Invalid integer value specified for:" + Environment.NewLine + Environment.NewLine;
+        public const string PopUpIntervalInMinsOptionDetailedDescription = "Suppress popup if previous popup was less than X minutes ago descr.";
+        public const string PopUpIntervalInMinsOptionLabel = "Suppress popup if previous popup was less than X minutes ago";
         //public const string ToolsOptionsNotice = "(You can change suppress this notice in Tools | Options)";
         //public static string UnexpectedError =
         //    "An unexpected error has occured. Please restart Visual Studio and re-try." + Environment.NewLine + Environment.NewLine +

@@ -77,7 +77,7 @@ namespace Trivial.Ui.TrumpQuotes
                     LastPopUpDateTime = generalOptions.LastPopUpDateTime,
                     MaximumPopUpsWeekDay = generalOptions.MaximumPopUpsWeekDay,
                     MaximumPopUpsWeekEnd = generalOptions.MaximumPopUpsWeekEnd,
-                    PopUpIntervalInMins = generalOptions.PopUpIntervalInMins,
+                    PopUpIntervalInMins = generalOptions.PopUpIntervalInMinsInt,
                     PopUpCountToday = generalOptions.PopUpCountToday
                 };
             }

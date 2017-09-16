@@ -18,11 +18,9 @@ namespace Trivial.Ui.TrumpQuotes.Options
     {
         internal DateTime LastPopUpDateTime { get; set; } = DateTime.Now;
         internal int PopUpCountToday { get; set; }
-
-        [Category(CommonConstants.CategorySubLevel)]
-        [DisplayName("Suppress popup if previous popup was less than X minutes ago")]
-        [Description("Suppress popup if previous popup was less than X minutes ago descr.")]
-        public int PopUpIntervalInMins { get; set; } = 0;
+        private string maximumPopUpsWeekDay;
+        private string maximumPopUpsWeekEnd;
+        private string popUpIntervalInMins;
 
         [Category(CommonConstants.CategorySubLevel)]
         [DisplayName("Maximum pop ups Mon-Fri day")]
@@ -33,6 +31,55 @@ namespace Trivial.Ui.TrumpQuotes.Options
         [DisplayName("Maximum pop ups Sat-Sun day")]
         [Description("Maximum pop ups Sat-Sun descr.")]
         public int MaximumPopUpsWeekEnd { get; set; } = int.MaxValue;
+
+        [Category(CommonConstants.CategorySubLevel)]
+        [DisplayName(CommonConstants.PopUpIntervalInMinsOptionLabel)]
+        [Description(CommonConstants.PopUpIntervalInMinsOptionDetailedDescription)]
+        public string PopUpIntervalInMins
+        {
+            get
+            {
+                if (string.IsNullOrEmpty(popUpIntervalInMins))
+                {
+                    return CommonConstants.DefaultFileQuantityWarningLimit;
+                }
+                else
+                {
+                    return popUpIntervalInMins;
+                }
+            }
+            set
+            {
+                var isInteger = int.TryParse(value, out int x);
+                if (isInteger)
+                {
+                    popUpIntervalInMins = value;
+                }
+                else
+                {
+                    DisplayInvalidIntegerError(CommonConstants.PopUpIntervalInMinsOptionLabel);
+                }
+            }
+        }
+
+        private static void DisplayInvalidIntegerError(string labelName)
+        {
+            var constantsForAppCommon = new ConstantsForAppCommon();
+            MessageBox.Show(
+                constantsForAppCommon.GetInvalidInteger(labelName),
+                constantsForAppCommon.Caption,
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Error);
+        }
+
+        internal int PopUpIntervalInMinsInt
+        {
+            get
+            {
+                var isInteger = int.TryParse(PopUpIntervalInMins, out int x);
+                return isInteger ? x : 0;
+            }
+        }
 
         protected override void OnApply(PageApplyEventArgs e)
         {
