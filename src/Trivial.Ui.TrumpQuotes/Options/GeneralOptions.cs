@@ -22,15 +22,64 @@ namespace Trivial.Ui.TrumpQuotes.Options
         private string maximumPopUpsWeekEnd;
         private string popUpIntervalInMins;
 
-        [Category(CommonConstants.CategorySubLevel)]
-        [DisplayName("Maximum pop ups Mon-Fri day")]
-        [Description("Maximum pop ups Mon-Fri descr.")]
-        public int MaximumPopUpsWeekDay { get; set; } = 3;
+        [DisplayName(CommonConstants.MaximumPopUpsWeekDayOptionLabel)]
+        [Description(CommonConstants.MaximumPopUpsWeekDayDetailedDescription)]
+        public string MaximumPopUpsWeekDay 
+        {
+            get
+            {
+                if (string.IsNullOrEmpty(maximumPopUpsWeekDay))
+                {
+                    return CommonConstants.DefaultMaximumPopUpsWeekDay;
+                }
+                else
+                {
+                    return maximumPopUpsWeekDay;
+                }
+            }
+            set
+            {
+                var isInteger = int.TryParse(value, out int x);
+                if (isInteger)
+                {
+                    maximumPopUpsWeekDay = value;
+                }
+                else
+                {
+                    DisplayInvalidIntegerError(CommonConstants.MaximumPopUpsWeekDayOptionLabel);
+                }
+            }
+        }
 
         [Category(CommonConstants.CategorySubLevel)]
-        [DisplayName("Maximum pop ups Sat-Sun day")]
-        [Description("Maximum pop ups Sat-Sun descr.")]
-        public int MaximumPopUpsWeekEnd { get; set; } = int.MaxValue;
+        [DisplayName(CommonConstants.MaximumPopUpsWeekEndOptionLabel)]
+        [Description(CommonConstants.MaximumPopUpsWeekEndDetailedDescription)]
+        public string MaximumPopUpsWeekEnd //{ get; set; } = int.MaxValue;
+        {
+            get
+            {
+                if (string.IsNullOrEmpty(maximumPopUpsWeekEnd))
+                {
+                    return CommonConstants.DefaultMaximumPopUpsWeekEnd;
+                }
+                else
+                {
+                    return maximumPopUpsWeekEnd;
+                }
+            }
+            set
+            {
+                var isInteger = int.TryParse(value, out int x);
+                if (isInteger)
+                {
+                    maximumPopUpsWeekEnd = value;
+                }
+                else
+                {
+                    DisplayInvalidIntegerError(CommonConstants.MaximumPopUpsWeekEndOptionLabel);
+                }
+            }
+        }
 
         [Category(CommonConstants.CategorySubLevel)]
         [DisplayName(CommonConstants.PopUpIntervalInMinsOptionLabel)]
@@ -41,7 +90,7 @@ namespace Trivial.Ui.TrumpQuotes.Options
             {
                 if (string.IsNullOrEmpty(popUpIntervalInMins))
                 {
-                    return CommonConstants.DefaultFileQuantityWarningLimit;
+                    return CommonConstants.DefaultPopUpIntervalInMins;
                 }
                 else
                 {
@@ -77,6 +126,24 @@ namespace Trivial.Ui.TrumpQuotes.Options
             get
             {
                 var isInteger = int.TryParse(PopUpIntervalInMins, out int x);
+                return isInteger ? x : 0;
+            }
+        }
+
+        internal int MaximumPopUpsWeekDayInt
+        {
+            get
+            {
+                var isInteger = int.TryParse(MaximumPopUpsWeekDay, out int x);
+                return isInteger ? x : 0;
+            }
+        }
+
+        internal int MaximumPopUpsWeekEndInt
+        {
+            get
+            {
+                var isInteger = int.TryParse(MaximumPopUpsWeekEnd, out int x);
                 return isInteger ? x : 0;
             }
         }
