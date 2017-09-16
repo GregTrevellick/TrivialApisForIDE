@@ -21,9 +21,10 @@ namespace Trivial.Ui.Common
             SizeToContent = SizeToContent.WidthAndHeight;
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
 
+            HasMaximizeButton = true;
+            HasMinimizeButton = true;
             //gregtlo any of these worthwhile ?
-            //this.HasMaximizeButton = true;
-            //this.HasMinimizeButton = true;
+
             //this.HasHelpButton = true;
             //this.IsCloseButtonEnabled = true;
         }
