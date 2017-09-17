@@ -140,7 +140,8 @@ namespace Trivial.Api.Gateway
                 }
             }
 
-            gatewayResponse.Attribution = "Donald J. Trump, " + rootObject.appeared_at.Date.ToShortDateString();
+            gatewayResponse.Date = rootObject.appeared_at.Date.ToShortDateString();
+            gatewayResponse.Author = "Donald J. Trump";
             gatewayResponse.LinkText = gatewayResponse.LinkUri;
             gatewayResponse.Text = "\"" + rootObject.value + "\"";
 

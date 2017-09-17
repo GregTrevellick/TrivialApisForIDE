@@ -46,9 +46,9 @@ namespace Trivial.Ui.Common
             var clientGateway = new ClientGateway();
             var gatewayResponse = clientGateway.GetGatewayResponse(appName, timeOutInMilliSeconds);
 
+            var author = gatewayResponse.Author;
+            var date = gatewayResponse.Date;
             var message = gatewayResponse.Text;
-            var date = gatewayResponse.Attribution;
-            var author = gatewayResponse.Attribution;
 
             if (!string.IsNullOrEmpty(message))
             {   
