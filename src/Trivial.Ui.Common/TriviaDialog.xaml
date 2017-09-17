@@ -19,7 +19,7 @@
         </Grid.ColumnDefinitions>
         
         <!--main quotation-->
-        <TextBlock Grid.Row="0" Grid.Column="0" TextWrapping="Wrap" Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Left" Name="AppTextBlock1" />
+        <TextBlock Grid.Row="0" Grid.Column="0" TextWrapping="Wrap" Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Left" Name="AppTextBlock1" FontWeight="Bold" />
         
         <!--quotation source-->
         <TextBlock Grid.Row="1" Grid.Column="0" TextWrapping="Wrap" Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Left" Name="AppTextBlockSource" />
