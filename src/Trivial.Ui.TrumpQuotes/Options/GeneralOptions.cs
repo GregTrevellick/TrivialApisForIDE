@@ -15,7 +15,7 @@ namespace Trivial.Ui.TrumpQuotes.Options
         private string maximumPopUpsWeekDay;
         private string maximumPopUpsWeekEnd;
         private string popUpIntervalInMins;
-        private string timeOutInMilliSeconds;
+        private string timeOutInMilliSeconds;//gregt is this option being used properly ?
 
         [Category(CommonConstants.CategorySubLevel)]
         [DisplayName(CommonConstants.MaximumPopUpsWeekDayOptionLabel)]
