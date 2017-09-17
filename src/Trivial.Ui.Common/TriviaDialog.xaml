@@ -19,7 +19,8 @@
         </Grid.ColumnDefinitions>
         
         <!--message-->
-        <TextBlock Grid.Row="0" Grid.Column="0" TextWrapping="Wrap" Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Left" Name="AppTextBlockMessage" FontWeight="Bold" />
+        <Image Grid.Row="0" Grid.Column="0" Stretch="None" Name="AppImage"/>
+        <TextBlock Grid.Row="0" Grid.Column="1" TextWrapping="Wrap" Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Left" Name="AppTextBlockMessage" FontWeight="Bold" />
         
         <!--author-->
         <TextBlock Grid.Row="1" Grid.Column="0" TextWrapping="Wrap" Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Left" Name="AppTextBlockAuthor" />

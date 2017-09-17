@@ -1,5 +1,7 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Diagnostics;
 using System.Windows;
+using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using Microsoft.VisualStudio.PlatformUI;
 
@@ -19,6 +21,8 @@ namespace Trivial.Ui.Common
         {
             InitializeComponent();
             InitializeTriviaDialog(optionsName);
+
+            AppImage.Source = new BitmapImage(new Uri("C:\\Users\\gtrev\\Source\\Repos\\TrivialApisForIDE\\src\\Trivial.Ui.Common\\VsixExtensionIcon_16x16.png"));
         }
 
         private void InitializeTriviaDialog(string optionsName)
