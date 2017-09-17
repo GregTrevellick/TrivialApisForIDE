@@ -97,9 +97,7 @@ namespace Trivial.Ui.Common
                 triviaDialog.AppHyperlink1.Inlines.Add(linkUri);
             }
 
-           // triviaDialog.ShowModal(); gregtlo offer user option to show as a modal
             triviaDialog.Show();
-
         }
     }
 }

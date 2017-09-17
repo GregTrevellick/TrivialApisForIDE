@@ -10,12 +10,6 @@ namespace Trivial.Ui.Common
     /// </summary>
     public partial class TriviaDialog : DialogWindow
     {
-        //// Use this constructor to provide a Help button and F1 support.
-        //public TriviaDialog(string helpTopic) : base(helpTopic)
-        //{
-        //    Init();
-        //}
-
         public TriviaDialog(string optionsName)
         {
             Init(optionsName);

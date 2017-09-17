@@ -1,4 +1,4 @@
-﻿//gregtlo add app icon to pop up 
+﻿//gregthi add app icon to pop up 
 //gregtlo choice of open ide or open sln
 
 using System;
