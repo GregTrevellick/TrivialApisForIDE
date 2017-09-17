@@ -16,6 +16,7 @@ namespace Trivial.Ui.TrumpQuotes.Options
         private string maximumPopUpsWeekDay;
         private string maximumPopUpsWeekEnd;
         private string popUpIntervalInMins;
+        private string timeOutInMilliSeconds;
 
         [Category(CommonConstants.CategorySubLevel)]
         [DisplayName(CommonConstants.MaximumPopUpsWeekDayOptionLabel)]
@@ -77,6 +78,26 @@ namespace Trivial.Ui.TrumpQuotes.Options
             }
         }
 
+        [Category(CommonConstants.CategorySubLevel)]
+        [DisplayName(CommonConstants.TimeOutInMilliSecondsOptionLabel)]
+        [Description(CommonConstants.TimeOutInMilliSecondsOptionDetailedDescription)]
+        public string TimeOutInMilliSeconds
+        {
+            get => string.IsNullOrEmpty(timeOutInMilliSeconds) ? CommonConstants.DefaultPopUpIntervalInMins : timeOutInMilliSeconds;
+            set
+            {
+                var isInteger = int.TryParse(value, out int x);
+                if (isInteger)
+                {
+                    timeOutInMilliSeconds = value;
+                }
+                else
+                {
+                    DisplayInvalidIntegerError(CommonConstants.TimeOutInMilliSecondsOptionLabel);
+                }
+            }
+        }
+
         private static void DisplayInvalidIntegerError(string labelName)
         {
             var constantsForAppCommon = new ConstantsForAppCommon();
@@ -114,6 +135,15 @@ namespace Trivial.Ui.TrumpQuotes.Options
             }
         }
 
+        internal int TimeOutInMilliSecondsInt
+        {
+            get
+            {
+                var isInteger = int.TryParse(TimeOutInMilliSeconds, out int x);
+                return isInteger ? x : 0;
+            }
+        }
+        
         protected override void OnApply(PageApplyEventArgs e)
         {
             VSPackage.Options.SaveSettingsToStorage();

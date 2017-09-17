@@ -16,6 +16,8 @@ namespace Trivial.Ui.Common
         public const string MaximumPopUpsWeekEndOptionLabel = "Maximum pop ups Sat-Sun day";
         public const string PopUpIntervalInMinsOptionDetailedDescription = "Suppress popup if previous popup was less than X minutes ago descr.";
         public const string PopUpIntervalInMinsOptionLabel = "Suppress popup if previous popup was less than X minutes ago";
+        public const string TimeOutInMilliSecondsOptionDetailedDescription = "Max time to wait for web service descr.";
+        public const string TimeOutInMilliSecondsOptionLabel = "Max time to wait for web service";
 
         //public const string ToolsOptionsNotice = "(You can change suppress this notice in Tools | Options)";
         //public static string UnexpectedError =
