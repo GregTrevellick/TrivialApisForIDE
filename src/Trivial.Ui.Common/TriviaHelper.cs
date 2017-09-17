@@ -45,11 +45,14 @@ namespace Trivial.Ui.Common
 
             var clientGateway = new ClientGateway();
             var gatewayResponse = clientGateway.GetGatewayResponse(appName, timeOutInMilliSeconds);
-            var popUpBody = Formatter.GetBody(gatewayResponse.Text, gatewayResponse.Attribution);
 
-            if (!string.IsNullOrEmpty(popUpBody))
+            var message = gatewayResponse.Text;
+            var date = gatewayResponse.Attribution;
+            var author = gatewayResponse.Attribution;
+
+            if (!string.IsNullOrEmpty(message))
             {   
-                DisplayPopUpMessage(popUpTitle, popUpBody, gatewayResponse.LinkUri, optionsName);
+                DisplayPopUpMessage(popUpTitle, message, gatewayResponse.LinkUri, optionsName, date, author);
                 hiddenOptionsDto = GetHiddenOptionsDto(lastPopUpDateTime, popUpCountToday);
             }
 
@@ -77,13 +80,13 @@ namespace Trivial.Ui.Common
             return hiddenOptionsDto;
         }
 
-        private static void DisplayPopUpMessage(string popUpTitle, string popUpBody, string linkUri, string optionsName)
+        private static void DisplayPopUpMessage(string popUpTitle, string message, string linkUri, string optionsName, string date, string author)
         {
             var triviaDialog = new TriviaDialog(optionsName)
             {
-                AppTextBlock1 = { Text = popUpBody },
-                AppTextBlockDate = { Text = "le date" },
-                AppTextBlockSource = { Text = "le src" },
+                AppTextBlockAuthor = { Text = author },
+                AppTextBlockDate = { Text = date },
+                AppTextBlockMessage = { Text = message },
                 Title = popUpTitle,
             };
 

@@ -106,7 +106,6 @@
   <ItemGroup>
     <Compile Include="ConstantsForAppCommon.cs" />
     <Compile Include="CommonConstants.cs" />
-    <Compile Include="Formatter.cs" />
     <Compile Include="HiddenOptionsDto.cs" />
     <Compile Include="GeneralOptionsDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
