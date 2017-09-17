@@ -81,8 +81,10 @@ namespace Trivial.Ui.Common
         {
             var triviaDialog = new TriviaDialog(optionsName)
             {
+                AppTextBlock1 = { Text = popUpBody },
+                AppTextBlockDate = { Text = "le date" },
+                AppTextBlockSource = { Text = "le src" },
                 Title = popUpTitle,
-                AppTextBlock1 = { Text = popUpBody }
             };
 
             if (!string.IsNullOrEmpty(linkUri))
