@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Windows.Media.Imaging;
 using Trivial.Api.Gateway;
 using Trivial.Entities;
 
@@ -86,12 +87,12 @@ namespace Trivial.Ui.Common
 
             var triviaDialog = new TriviaDialog
             {
-                //AppTextBlockAuthor = { Text = author },
-                //AppTextBlockDate = { Text = date },
                 AppTextBlockAttribution = { Text = author + spacer + date + spacer },
                 AppTextBlockMessage = { Text = message },
                 Title = popUpTitle,
             };
+
+            triviaDialog.AppImage.Source = new BitmapImage(new Uri("C:\\Users\\gtrev\\Source\\Repos\\TrivialApisForIDE\\src\\Trivial.Ui.Common\\zVsixExtensionIcon_16x16.png"));
 
             if (!string.IsNullOrEmpty(linkUri))
             {
