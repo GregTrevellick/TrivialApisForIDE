@@ -5,19 +5,19 @@ namespace Trivial.Ui.Common
     public static class CommonConstants
     {
         public const string CategorySubLevel = "General";
-        public const string DefaultFileQuantityWarningLimit = "10";
+        /////////////////////////////////////////////////////////////////////////////////public const string DefaultFileQuantityWarningLimit = "10";
         public const string DefaultMaximumPopUpsWeekDay = "3";
         public const string DefaultMaximumPopUpsWeekEnd = "99";
         public const string DefaultPopUpIntervalInMins = "0";
         public static string IntegerInvalid = "Invalid integer value specified for ";
-        public const string MaximumPopUpsWeekDayDetailedDescription = "Maximum pop ups Mon-Fri descr.";
-        public const string MaximumPopUpsWeekDayOptionLabel = "Maximum pop ups Mon-Fri day";
-        public const string MaximumPopUpsWeekEndDetailedDescription = "Maximum pop ups Sat-Sun descr.";
-        public const string MaximumPopUpsWeekEndOptionLabel = "Maximum pop ups Sat-Sun day";
-        public const string PopUpIntervalInMinsOptionDetailedDescription = "Suppress popup if previous popup was less than X minutes ago descr.";
-        public const string PopUpIntervalInMinsOptionLabel = "Suppress popup if previous popup was less than X minutes ago";
-        public const string TimeOutInMilliSecondsOptionDetailedDescription = "Max time to wait for web service descr.";
-        public const string TimeOutInMilliSecondsOptionLabel = "Max time to wait for web service";
+        public const string MaximumPopUpsWeekDayDetailedDescription = "The maximum number of pop-up messages you will see on any one week day. Use this setting to reduce the volume of pop-up messages during the working week.";
+        public const string MaximumPopUpsWeekDayOptionLabel = "Maximum week day pop-up messages";
+        public const string MaximumPopUpsWeekEndDetailedDescription = "The maximum number of pop-up messages you will see on either a Saturday or a Sunday. Use this setting to increase the volume of pop-up messages in your free time.";
+        public const string MaximumPopUpsWeekEndOptionLabel = "Maximum weekend pop-ups messages";
+        public const string PopUpIntervalInMinsOptionDetailedDescription = "The minimum number of minutes after a pop-up message is displayed before you will see another pop-up message. Use this setting to reduce the frequency of pop-up messages.";
+        public const string PopUpIntervalInMinsOptionLabel = "Minimum number of minutes between pop-up messages";
+        public const string TimeOutInMilliSecondsOptionDetailedDescription = "The maximum time in milliseconds for this extension to retrieve the message data from the external source. This value is used as the timeout parameter when calling the external web service.";
+        public const string TimeOutInMilliSecondsOptionLabel = "Maximum time (milliseconds) for message retrieval";
 
         //public const string ToolsOptionsNotice = "(You can change suppress this notice in Tools | Options)";
         //public static string UnexpectedError =

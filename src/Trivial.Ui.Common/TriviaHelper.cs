@@ -94,7 +94,7 @@ namespace Trivial.Ui.Common
 
             //gregthi set this per app
             //var uri = new Uri(@"C:\\Users\\gtrev\\Source\\Repos\\TrivialApisForIDE\\src\\Trivial.Ui.Common\\zVsixExtensionIcon_16x16.png");
-            var uri = new Uri(@"..\\Trivial.Ui.Common\\zzVsixExtensionIcon_16x16.png", UriKind.Relative);
+            var uri = new Uri(@".\Trivial.Ui.Common\zzVsixExtensionIcon_16x16.png", UriKind.Relative);
             triviaDialog.AppImage.Source = new BitmapImage(uri);
 
             if (!string.IsNullOrEmpty(linkUri))
