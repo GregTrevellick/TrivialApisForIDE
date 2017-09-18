@@ -46,7 +46,7 @@ namespace Trivial.Api.Gateway
                             gatewayResponse = SetGatewayResponseFromRestResponse(responseDto.ResponseContent);
                             break;
                         case AppName.TrumpQuotes:
-                            gatewayResponse = SetGatewayResponseFromRestResponseTrump(responseDto.ResponseContent);
+                            gatewayResponse = ClientGatewayTrump.SetGatewayResponseFromRestResponseTrump(responseDto.ResponseContent);
                             break;
                     }
                 }
@@ -125,39 +125,9 @@ namespace Trivial.Api.Gateway
             return url;
         }
 
-        private static GatewayResponse GetGatewayResponse(TrumpRootObject rootObject)//gregt put into factory based class or project
-        {
-            var gatewayResponse = new GatewayResponse();
-
-            if (rootObject._embedded != null)
-            {
-                var source = "";
-
-                foreach (var elem in rootObject._embedded.source)
-                {
-                    source += elem.url + " ";
-                    gatewayResponse.LinkUri += source;
-                }
-            }
-
-            gatewayResponse.Date = rootObject.appeared_at.Date.ToShortDateString();
-            gatewayResponse.Author = "Donald J. Trump";
-            gatewayResponse.LinkText = gatewayResponse.LinkUri;
-            gatewayResponse.Text = "\"" + rootObject.value + "\"";
-
-            return gatewayResponse;
-        }
-
         private static GatewayResponse SetGatewayResponseFromRestResponse(string responseContent)
         {
             var gatewayResponse = new GatewayResponse { Text = responseContent };
-            return gatewayResponse;
-        }
-
-        private static GatewayResponse SetGatewayResponseFromRestResponseTrump(string responseContent)
-        {
-            var trumpRootObject = JsonConvert.DeserializeObject<TrumpRootObject>(responseContent);
-            var gatewayResponse = GetGatewayResponse(trumpRootObject);
             return gatewayResponse;
         }
     }
