@@ -21,14 +21,8 @@ namespace Trivial.Ui.TrumpQuotes
         private DTE dte;
         public static GeneralOptions Options { get; private set; }
 
-        //public VSPackage()
-        //{
-        //}
-
         protected override void Initialize()
         {
-            Options = (GeneralOptions)GetDialogPage(typeof(GeneralOptions));
-
             base.Initialize();
 
             IServiceContainer serviceContainer = this as IServiceContainer;
@@ -53,8 +47,9 @@ namespace Trivial.Ui.TrumpQuotes
             }
         }
 
-        private static void UpdateHiddenOptions(HiddenOptionsDto hiddenOptionsDto)
+        private void UpdateHiddenOptions(HiddenOptionsDto hiddenOptionsDto)
         {
+            Options = (GeneralOptions)GetDialogPage(typeof(GeneralOptions));
             Options.LastPopUpDateTime = hiddenOptionsDto.LastPopUpDateTime;
             Options.PopUpCountToday = hiddenOptionsDto.PopUpCountToday;
             Options.SaveSettingsToStorage();
