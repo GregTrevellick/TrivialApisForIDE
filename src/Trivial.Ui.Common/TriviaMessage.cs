@@ -63,15 +63,20 @@ namespace Trivial.Ui.Common
 
 
             //gregthi set this per app
-            var assemblyName = "Trivial.Ui.Common";
+            var assemblyName = "Trivial.Ui.Common";//gregt get assembly name
             var imageDirectory = "Resources";
-            var imageSubDirectory = "TrumpQuotes";
-            var imageName = "VsixExtensionIcon_16x16.png";//gregt make the image's build action = "Resource"
-            var packUri = "pack://application:,,,/" 
+            var imageSubDirectory = AppName.TrumpQuotes.ToString();//"TrumpQuotes";
+            var imageName = "zVsixExtensionIcon_16x16.png";//gregt make the image's build action = "Resource"
+            //var packUri = "pack://application:,,,/" 
+            //    + assemblyName + ";component"
+            //    + Path.DirectorySeparatorChar + imageDirectory
+            //    + Path.DirectorySeparatorChar + imageSubDirectory
+            //    + Path.DirectorySeparatorChar + imageName;
+            var packUri = "pack://application:,,,/"
                 + assemblyName + ";component"
-                + Path.DirectorySeparatorChar + imageDirectory
-                + Path.DirectorySeparatorChar + imageSubDirectory
-                + Path.DirectorySeparatorChar + imageName;
+                + "/" + imageDirectory
+                + "/" + imageSubDirectory
+                + "/" + imageName;
             var uri = new Uri(packUri);
 
 
