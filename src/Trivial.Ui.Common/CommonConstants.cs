@@ -5,7 +5,6 @@ namespace Trivial.Ui.Common
     public static class CommonConstants
     {
         public const string CategorySubLevel = "General";
-        /////////////////////////////////////////////////////////////////////////////////public const string DefaultFileQuantityWarningLimit = "10";
         public const string DefaultMaximumPopUpsWeekDay = "3";
         public const string DefaultMaximumPopUpsWeekEnd = "99";
         public const string DefaultPopUpIntervalInMins = "0";
