@@ -60,17 +60,7 @@ namespace Trivial.Ui.Common
                 Title = popUpTitle,
             };
 
-            var assemblyName = "Trivial.Ui.Common";//gregt get assembly name
-            var imageDirectory = "Resources";
-            var imageSubDirectory = appName.ToString();
-            var imageName = "VsixExtensionIcon_16x16.png";//gregt make the image's build action = "Resource"
-            var packUri = "pack://application:,,,/"
-                + assemblyName + ";component"
-                + "/" + imageDirectory
-                + "/" + imageSubDirectory
-                + "/" + imageName;
-            var uri = new Uri(packUri);
-
+            var uri = GetUri(appName);
             triviaDialog.AppImage.Source = new BitmapImage(uri);
 
             if (!string.IsNullOrEmpty(linkUri))
@@ -81,6 +71,19 @@ namespace Trivial.Ui.Common
             }
 
             triviaDialog.Show();
+        }
+
+        private static Uri GetUri(AppName appName)
+        {
+            var assemblyName = "Trivial.Ui.Common"; //gregt get assembly name
+            var imageSubDirectory = appName.ToString();
+            var packUri = "pack://application:,,,/"
+                          + assemblyName 
+                          + ";component/Resources/"
+                          + imageSubDirectory
+                          + "/VsixExtensionIcon_16x16.png";
+
+            return new Uri(packUri);
         }
     }
 }
