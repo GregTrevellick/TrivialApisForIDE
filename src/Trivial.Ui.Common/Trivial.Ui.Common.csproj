@@ -104,7 +104,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConstantsForAppCommon.cs" />
+    <Compile Include="zzzConstantsForAppCommon.cs" />
     <Compile Include="CommonConstants.cs" />
     <Compile Include="HiddenOptionsDto.cs" />
     <Compile Include="GeneralOptionsDto.cs" />

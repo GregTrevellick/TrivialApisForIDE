@@ -97,10 +97,9 @@ namespace Trivial.Ui.TrumpQuotes.Options
 
         private static void DisplayInvalidIntegerError(string labelName)
         {
-            var constantsForAppCommon = new ConstantsForAppCommon();
             MessageBox.Show(
-                constantsForAppCommon.GetInvalidInteger(labelName),
-                constantsForAppCommon.GetCaption(Vsix.Name, Vsix.Version),
+                CommonConstants.GetInvalidInteger(labelName),
+                CommonConstants.GetCaption(Vsix.Name, Vsix.Version),
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Error);
         }

@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Trivial.Ui.Common
+﻿namespace Trivial.Ui.Common
 {
     public static class CommonConstants
     {
@@ -17,6 +15,16 @@ namespace Trivial.Ui.Common
         public const string PopUpIntervalInMinsOptionLabel = "Minimum number of minutes between pop-up messages";
         public const string TimeOutInMilliSecondsOptionDetailedDescription = "The maximum time in milliseconds for this extension to retrieve the message data from the external source. This value is used as the timeout parameter when calling the external web service.";
         public const string TimeOutInMilliSecondsOptionLabel = "Maximum time (milliseconds) for message retrieval";
+
+        public static string GetCaption(string vsixName, string vsixVersion)
+        {
+            return vsixName + " " + vsixVersion;
+        }
+
+        public static string GetInvalidInteger(string labelName)
+        {
+            return IntegerInvalid + "'" + labelName + "'";
+        }
     }
 }
 
