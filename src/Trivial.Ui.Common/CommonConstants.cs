@@ -17,11 +17,12 @@ namespace Trivial.Ui.Common
         public const string PopUpIntervalInMinsOptionLabel = "Minimum number of minutes between pop-up messages";
         public const string TimeOutInMilliSecondsOptionDetailedDescription = "The maximum time in milliseconds for this extension to retrieve the message data from the external source. This value is used as the timeout parameter when calling the external web service.";
         public const string TimeOutInMilliSecondsOptionLabel = "Maximum time (milliseconds) for message retrieval";
-
-        //public const string ToolsOptionsNotice = "(You can change suppress this notice in Tools | Options)";
-        //public static string UnexpectedError =
-        //    "An unexpected error has occured. Please restart Visual Studio and re-try." + Environment.NewLine + Environment.NewLine +
-        //    "If the error persists please log a bug for this extension via the Visual Studio Marketplace at https://marketplace.visualstudio.com" + Environment.NewLine + Environment.NewLine +
-        //    "Press OK to return to Visual Studio.";
     }
 }
+
+
+//////public const string ToolsOptionsNotice = "(You can change suppress this notice in Tools | Options)";
+//////public static string UnexpectedError =
+//////    "An unexpected error has occured. Please restart Visual Studio and re-try." + Environment.NewLine + Environment.NewLine +
+//////    "If the error persists please log a bug for this extension via the Visual Studio Marketplace at https://marketplace.visualstudio.com" + Environment.NewLine + Environment.NewLine +
+//////    "Press OK to return to Visual Studio.";
