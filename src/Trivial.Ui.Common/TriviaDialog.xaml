@@ -11,16 +11,14 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto" />
             <ColumnDefinition Width="Auto" />
             <ColumnDefinition Width="Auto" />
-            <ColumnDefinition Width="Auto" />
         </Grid.ColumnDefinitions>
-        
-        <!--message-->
+
+        <!--ROW 1-->
         <Image Grid.Row="0" Grid.Column="0" Stretch="None"
                Margin="10,10,10,10"
                VerticalAlignment="Center" HorizontalAlignment="Left"
@@ -30,41 +28,28 @@
                    Margin="10,10,10,10"
                    VerticalAlignment="Center" HorizontalAlignment="Left"
                    Name="AppTextBlockMessage" FontWeight="Bold" />
-        
-        <!--author-->
-        <TextBlock Grid.Row="1" Grid.Column="1" TextWrapping="Wrap" Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Left" Name="AppTextBlockAuthor" />
-        <!--date-->
-        <TextBlock Grid.Row="1" Grid.Column="2" TextWrapping="Wrap" Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Left" Name="AppTextBlockDate" />
-        <!--url-->
-        <TextBlock Grid.Row="1" Grid.Column="3" TextWrapping="Wrap" Name="AppTextBlock2" Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Left" >
+
+        <!--ROW 2-->
+        <!--<TextBlock Grid.Row="1" Grid.Column="1" TextWrapping="Wrap" Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Left" Name="AppTextBlockAuthor" />-->
+        <!--<TextBlock Grid.Row="1" Grid.Column="2" TextWrapping="Wrap" Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Left" Name="AppTextBlockDate" />-->
+        <TextBlock Grid.Row="1" Grid.Column="1" Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Left" Name="AppTextBlockAttribution" />
+        <TextBlock Grid.Row="1" Grid.Column="2" Name="AppTextBlock2" Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Left" >
            <Hyperlink Name="AppHyperlink1" RequestNavigate="AppHyperlink1_RequestNavigate" />
         </TextBlock>
-        
-        <!--close button-->
-        <Button Grid.Row="3" Grid.Column="1" Content="Close" Name="AppBtn1" Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Center" Padding="5,5,5,5" Click="AppBtn1_OnClick"/>
-        
-        <!--help text-->
+
+        <!--ROW 3-->
+        <Button Grid.Row="2" Grid.Column="1" Content="Close" Name="AppBtn1" Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Center" Padding="5,5,5,5" Click="AppBtn1_OnClick"/>
+
+        <!--ROW 4-->
+        <!--help text
         <TextBlock Grid.Row="3" Grid.ColumnSpan="2" Grid.Column="2" 
                    TextWrapping="Wrap"
                    Name="AppTextBlockHelp" Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Center">
             <TextBlock.RenderTransform>
                 <ScaleTransform ScaleX="0.8" ScaleY="0.8" />
             </TextBlock.RenderTransform>
-        </TextBlock>
+        </TextBlock>-->
+        
     </Grid>
-    <!--
-    <TextBlock.RenderTransform>
-        <ScaleTransform ScaleX="1.2" ScaleY="1.2" />
-    </TextBlock.RenderTransform>
-    -->
-    <!--
-    <TextBlock TextWrapping="Wrap" Name="AppTextBlock3" Margin="20,20,20,20" VerticalAlignment="Bottom" HorizontalAlignment="Left">
-        <Image Stretch="None">
-            <Image.Source>
-                <BitmapImage UriSource="Resources/VsixExtensionIcon_90x90.png"  />
-            </Image.Source>
-        </Image>
-    </TextBlock>
-    -->   
 </platformUi:DialogWindow>
        

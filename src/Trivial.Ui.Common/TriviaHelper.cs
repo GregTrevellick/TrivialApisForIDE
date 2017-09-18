@@ -39,7 +39,7 @@ namespace Trivial.Ui.Common
             return generalOptionsDto.LastPopUpDateTime < DateTime.Now.AddMinutes(-1 * generalOptionsDto.PopUpIntervalInMins);
         }
 
-        public static HiddenOptionsDto ShowTrivia(AppName appName, string popUpTitle, DateTime lastPopUpDateTime, int popUpCountToday, int timeOutInMilliSeconds, string optionsName)
+        public static HiddenOptionsDto ShowTrivia(AppName appName, string popUpTitle, DateTime lastPopUpDateTime, int popUpCountToday, int timeOutInMilliSeconds)
         {
             HiddenOptionsDto hiddenOptionsDto = null;
 
@@ -52,7 +52,7 @@ namespace Trivial.Ui.Common
 
             if (!string.IsNullOrEmpty(message))
             {   
-                DisplayPopUpMessage(popUpTitle, message, gatewayResponse.LinkUri, optionsName, date, author);
+                DisplayPopUpMessage(popUpTitle, message, gatewayResponse.LinkUri, date, author);
                 hiddenOptionsDto = GetHiddenOptionsDto(lastPopUpDateTime, popUpCountToday);
             }
 
@@ -80,13 +80,13 @@ namespace Trivial.Ui.Common
             return hiddenOptionsDto;
         }
 
-        private static void DisplayPopUpMessage(string popUpTitle, string message, string linkUri, string optionsName, string date, string author)
+        private static void DisplayPopUpMessage(string popUpTitle, string message, string linkUri, string date, string author)
         {
-            var triviaDialog = new TriviaDialog(optionsName)
+            var triviaDialog = new TriviaDialog
             {
-               // AppTextBlockAuthor = { Text = author },
-                AppTextBlockAuthor = { Text = "" },
-                AppTextBlockDate = { Text = date },
+                //AppTextBlockAuthor = { Text = author },
+                //AppTextBlockDate = { Text = date },
+                AppTextBlockAttribution = { Text = author + " " + date },
                 AppTextBlockMessage = { Text = message },
                 Title = popUpTitle,
             };

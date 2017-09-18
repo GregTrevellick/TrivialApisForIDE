@@ -1,36 +1,28 @@
-﻿using System;
+﻿using Microsoft.VisualStudio.PlatformUI;
+using System;
 using System.Diagnostics;
 using System.Windows;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using Microsoft.VisualStudio.PlatformUI;
 
 namespace Trivial.Ui.Common
 {
-    /// <summary>
-    /// Interaction logic for TriviaDialog.xaml
-    /// </summary>
     public partial class TriviaDialog : DialogWindow
     {
-        public TriviaDialog(string optionsName)
-        {
-            Init(optionsName);
-        }
-
-        private void Init(string optionsName)
+        public TriviaDialog()
         {
             InitializeComponent();
-            InitializeTriviaDialog(optionsName);
+            InitializeTriviaDialog();
         }
 
-        private void InitializeTriviaDialog(string optionsName)
+        private void InitializeTriviaDialog()
         {
             SizeToContent = SizeToContent.WidthAndHeight;
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
             HasMaximizeButton = true;
             HasMinimizeButton = true;
-            AppTextBlockHelp.Text = "Change frequency of delivery in Tools > Options > " + optionsName;
-            AppImage.Source = new BitmapImage(new Uri("C:\\Users\\gtrev\\Source\\Repos\\TrivialApisForIDE\\src\\Trivial.Ui.Common\\VsixExtensionIcon_16x16.png"));
+            //AppTextBlockHelp.Text = "Change frequency of delivery in Tools > Options > " + optionsName;
+            AppImage.Source = new BitmapImage(new Uri("C:\\Users\\gtrev\\Source\\Repos\\TrivialApisForIDE\\src\\Trivial.Ui.Common\\zVsixExtensionIcon_16x16.png"));
         }
 
         private void AppHyperlink1_RequestNavigate(object sender, RequestNavigateEventArgs e)

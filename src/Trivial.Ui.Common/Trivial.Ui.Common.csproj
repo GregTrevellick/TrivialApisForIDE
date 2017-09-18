@@ -135,7 +135,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="VsixExtensionIcon_16x16.png">
+    <Content Include="zVsixExtensionIcon_16x16.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
