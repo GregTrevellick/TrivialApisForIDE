@@ -45,7 +45,7 @@ namespace Trivial.Ui.TrumpQuotes
             if (shouldShowTrivia)
             {
                 var popUpTitle = CommonConstants.GetCaption(Vsix.Name, Vsix.Version);
-                var hiddenOptionsDto = TriviaHelper.ShowTrivia(AppName.TrumpQuotes, popUpTitle, GeneralOptionsDto.LastPopUpDateTime, GeneralOptionsDto.PopUpCountToday, GeneralOptionsDto.TimeOutInMilliSeconds);
+                var hiddenOptionsDto = TriviaMessage.ShowTrivia(AppName.TrumpQuotes, popUpTitle, GeneralOptionsDto.LastPopUpDateTime, GeneralOptionsDto.PopUpCountToday, GeneralOptionsDto.TimeOutInMilliSeconds);
 
                 if (hiddenOptionsDto != null)
                 {
