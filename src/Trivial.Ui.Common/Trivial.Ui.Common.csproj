@@ -135,11 +135,15 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\TrumpQuotes\zVsixExtensionIcon_16x16.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="..\Trivial.Ui.TrumpQuotes\Resources\VsixExtensionIcon_16x16.png">
       <Link>Resources\TrumpQuotes\VsixExtensionIcon_16x16.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="..\..\..\z\TrivialApisForIDE_BAD\src\Trivial.Ui.NumericTrivia\Resources\VsixExtensionIcon_16x16.png">
+      <Link>Resources\NumericTrivia\VsixExtensionIcon_16x16.png</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
