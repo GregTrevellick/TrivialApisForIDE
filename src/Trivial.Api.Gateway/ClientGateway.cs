@@ -1,5 +1,4 @@
-﻿using Newtonsoft.Json;
-using RestSharp;
+﻿using RestSharp;
 using System;
 using System.Diagnostics;
 using Trivial.Api.Gateway.AppModels;
@@ -9,24 +8,9 @@ namespace Trivial.Api.Gateway
 {
     public class ClientGateway
     {
-        //https://icanhazdadjoke.com/api#fetch-a-random-dad-joke 
-        //https://quotesondesign.com/api-v4-0/ 
-        //https://restcountries.eu/ 
-        //http://quotes.rest/#!/quote/get_quote_random
-
-        ////https://www.coindesk.com/api/ 
-        ////http://fixer.io/ 
-        ////http://jservice.io/ 
-        ////https://opentdb.com/api_config.php 
-        ////https://qriusity.com/ 
-        ////https://api.pandascore.co/rest#make-basic-requests 
-        ////https://data.police.uk/docs/ 
-        ////https://www.meetup.com/meetup_api/ 
-        ////http://api.football-data.org/index
-
         public GatewayResponse GetGatewayResponse(AppName appName, int timeOutInMilliSeconds)
         {
-            var url = GetUrl(appName);
+            var url = AppUrlHelper.GetUrl(appName);
 
             var gatewayResponse = new GatewayResponse();
 
@@ -106,24 +90,24 @@ namespace Trivial.Api.Gateway
             return responseDto;
         }
 
-        private static string GetUrl(AppName appName)//gregt put into factory based class or project
-        {
-            string url = null;
+        //private static string GetUrl(AppName appName)//gregt put into factory based class or project
+        //{
+        //    string url = null;
 
-            switch (appName)
-            {
-                case AppName.NumericTrivia:
-                    url = "http://numbersapi.com/random/trivia";
-                    break;
-                case AppName.TrumpQuotes:
-                    url = "https://api.tronalddump.io/random/quote";
-                    //url = "https://apixxx.xxxtronalddump.io/random/quote";
-                    //url = "http://localhost:52327/Api/Values";
-                    break;
-            }
+        //    switch (appName)
+        //    {
+        //        case AppName.NumericTrivia:
+        //            url = "http://numbersapi.com/random/trivia";
+        //            break;
+        //        case AppName.TrumpQuotes:
+        //            url = "https://api.tronalddump.io/random/quote";
+        //            //url = "https://apixxx.xxxtronalddump.io/random/quote";
+        //            //url = "http://localhost:52327/Api/Values";
+        //            break;
+        //    }
 
-            return url;
-        }
+        //    return url;
+        //}
 
         private static GatewayResponse SetGatewayResponseFromRestResponse(string responseContent)
         {
