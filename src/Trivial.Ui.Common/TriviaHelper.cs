@@ -82,11 +82,13 @@ namespace Trivial.Ui.Common
 
         private static void DisplayPopUpMessage(string popUpTitle, string message, string linkUri, string date, string author)
         {
+            const string spacer = " ";
+
             var triviaDialog = new TriviaDialog
             {
                 //AppTextBlockAuthor = { Text = author },
                 //AppTextBlockDate = { Text = date },
-                AppTextBlockAttribution = { Text = author + " " + date },
+                AppTextBlockAttribution = { Text = author + spacer + date + spacer },
                 AppTextBlockMessage = { Text = message },
                 Title = popUpTitle,
             };
