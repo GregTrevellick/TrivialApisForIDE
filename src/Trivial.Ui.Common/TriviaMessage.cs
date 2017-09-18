@@ -21,7 +21,7 @@ namespace Trivial.Ui.Common
 
             if (!string.IsNullOrEmpty(message))
             {   
-                DisplayPopUpMessage(popUpTitle, message, gatewayResponse.LinkUri, date, author);
+                DisplayPopUpMessage(popUpTitle, message, gatewayResponse.LinkUri, date, author, appName);
                 hiddenOptionsDto = GetHiddenOptionsDto(lastPopUpDateTime, popUpCountToday);
             }
 
@@ -49,7 +49,7 @@ namespace Trivial.Ui.Common
             return hiddenOptionsDto;
         }
 
-        private static void DisplayPopUpMessage(string popUpTitle, string message, string linkUri, string date, string author)
+        private static void DisplayPopUpMessage(string popUpTitle, string message, string linkUri, string date, string author, AppName appName)
         {
             const string spacer = " ";
 
@@ -60,26 +60,16 @@ namespace Trivial.Ui.Common
                 Title = popUpTitle,
             };
 
-
-
-            //gregthi set this per app
             var assemblyName = "Trivial.Ui.Common";//gregt get assembly name
             var imageDirectory = "Resources";
-            var imageSubDirectory = AppName.NumericTrivia.ToString();
+            var imageSubDirectory = appName.ToString();
             var imageName = "VsixExtensionIcon_16x16.png";//gregt make the image's build action = "Resource"
-            //var packUri = "pack://application:,,,/" 
-            //    + assemblyName + ";component"
-            //    + Path.DirectorySeparatorChar + imageDirectory
-            //    + Path.DirectorySeparatorChar + imageSubDirectory
-            //    + Path.DirectorySeparatorChar + imageName;
             var packUri = "pack://application:,,,/"
                 + assemblyName + ";component"
                 + "/" + imageDirectory
                 + "/" + imageSubDirectory
                 + "/" + imageName;
             var uri = new Uri(packUri);
-
-
 
             triviaDialog.AppImage.Source = new BitmapImage(uri);
 
@@ -94,31 +84,3 @@ namespace Trivial.Ui.Common
         }
     }
 }
-
-
-//using System;
-//using System.Windows;
-//using System.Windows.Media.Imaging;
-//namespace WpfApp1
-//{
-//    public partial class MainWindow : Window
-//    {
-//        public MainWindow()
-//        {
-//            InitializeComponent();
-//            var mode = "2";
-//            Uri uri = new Uri(@"c:\Users\GregoryT\documents\visual studio 2017\Projects\WpfApp1\ClassLibrary1\NewFolder1\z1VsixExtensionIcon_16x16.png");
-//            //Add a project reference to "ClassLibrary1"
-//            //Make the image's build action = "Resource"
-//            if (mode == "1")
-//            {
-//                uri = new Uri("pack://application:,,,/ClassLibrary1;component/NewFolder1/z1VsixExtensionIcon_16x16.png");
-//            }
-//            else
-//            {
-//                uri = new Uri("pack://application:,,,/ClassLibrary2;component/NewFolder1/z2VsixCommandIcon_16x16.png");
-//            }
-//            this.AppImage.Source = new BitmapImage(uri);
-//        }
-//    }
-//}
