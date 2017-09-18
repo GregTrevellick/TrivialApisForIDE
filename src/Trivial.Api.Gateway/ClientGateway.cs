@@ -90,25 +90,6 @@ namespace Trivial.Api.Gateway
             return responseDto;
         }
 
-        //private static string GetUrl(AppName appName)//gregt put into factory based class or project
-        //{
-        //    string url = null;
-
-        //    switch (appName)
-        //    {
-        //        case AppName.NumericTrivia:
-        //            url = "http://numbersapi.com/random/trivia";
-        //            break;
-        //        case AppName.TrumpQuotes:
-        //            url = "https://api.tronalddump.io/random/quote";
-        //            //url = "https://apixxx.xxxtronalddump.io/random/quote";
-        //            //url = "http://localhost:52327/Api/Values";
-        //            break;
-        //    }
-
-        //    return url;
-        //}
-
         private static GatewayResponse SetGatewayResponseFromRestResponse(string responseContent)
         {
             var gatewayResponse = new GatewayResponse { Text = responseContent };
