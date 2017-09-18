@@ -39,11 +39,6 @@ namespace Trivial.Api.Gateway
             return gatewayResponse;
         }
 
-        private static void SetGatewayResponseFromErrorDetails(GatewayResponse gatewayResponse, string errorDetails)
-        {
-            gatewayResponse.Text = errorDetails;
-        }
-
         private ResponseDto GetRestResponse(string url, int timeOutInMilliSeconds)
         {
             var responseDto = new ResponseDto();
@@ -88,6 +83,11 @@ namespace Trivial.Api.Gateway
             }
 
             return responseDto;
+        }
+
+        private static void SetGatewayResponseFromErrorDetails(GatewayResponse gatewayResponse, string errorDetails)
+        {
+            gatewayResponse.Text = errorDetails;
         }
 
         private static GatewayResponse SetGatewayResponseFromRestResponse(string responseContent)
