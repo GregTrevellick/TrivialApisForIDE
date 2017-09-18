@@ -24,7 +24,7 @@
                VerticalAlignment="Center" HorizontalAlignment="Left"
                Name="AppImage"/>
         <TextBlock Grid.Row="0" Grid.Column="1" 
-                   Grid.ColumnSpan="3"
+                   Grid.ColumnSpan="2"
                    Margin="10,10,10,10"
                    VerticalAlignment="Center" HorizontalAlignment="Left"
                    Name="AppTextBlockMessage" FontWeight="Bold" />
@@ -32,13 +32,13 @@
         <!--ROW 2-->
         <!--<TextBlock Grid.Row="1" Grid.Column="1" TextWrapping="Wrap" Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Left" Name="AppTextBlockAuthor" />-->
         <!--<TextBlock Grid.Row="1" Grid.Column="2" TextWrapping="Wrap" Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Left" Name="AppTextBlockDate" />-->
-        <TextBlock Grid.Row="1" Grid.Column="1" Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Left" Name="AppTextBlockAttribution" />
+        <TextBlock Grid.Row="1" Grid.Column="1" Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Right" Name="AppTextBlockAttribution" />
         <TextBlock Grid.Row="1" Grid.Column="2" Name="AppTextBlock2" Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Left" >
            <Hyperlink Name="AppHyperlink1" RequestNavigate="AppHyperlink1_RequestNavigate" />
         </TextBlock>
 
         <!--ROW 3-->
-        <Button Grid.Row="2" Grid.Column="1" Content="Close" Name="AppBtn1" Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Center" Padding="5,5,5,5" Click="AppBtn1_OnClick"/>
+        <Button Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" Content="Close" Name="AppBtn1" Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Center" Padding="5,5,5,5" Click="AppBtn1_OnClick"/>
 
         <!--ROW 4-->
         <!--help text
