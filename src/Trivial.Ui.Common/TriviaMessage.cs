@@ -75,16 +75,18 @@ namespace Trivial.Ui.Common
 
         private static Uri GetUri(AppName appName)
         {
-            //////////////////var assemblyName = "Trivial.Ui.Common"; //gregt get assembly name
+            //gregt get assembly name
+            //var assemblyName = "Trivial.Ui.Common"; 
             var assemblyName = Assembly.GetExecutingAssembly().GetName();
 
             var imageSubDirectory = appName.ToString();
-            
-            //////////////////var packUri = "pack://application:,,,/"
-            //////////////////              + assemblyName 
-            //////////////////              + ";component/Resources/"
-            //////////////////              + imageSubDirectory
-            //////////////////              + "/VsixExtensionIcon_16x16.png";
+
+            //gregt strring interpolation
+            //var packUri = "pack://application:,,,/"
+            //              + assemblyName
+            //              + ";component/Resources/"
+            //              + imageSubDirectory
+            //              + "/VsixExtensionIcon_16x16.png";
             var packUri = $"pack://application:,,,/{assemblyName};component/Resources/{imageSubDirectory}/VsixExtensionIcon_16x16.png";
 
             return new Uri(packUri);

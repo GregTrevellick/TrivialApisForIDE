@@ -21,10 +21,6 @@ namespace Trivial.Ui.NumericTrivia
         private DTE dte;
         public static GeneralOptions Options { get; private set; }
 
-        ////////////public VSPackage()
-        ////////////{
-        ////////////}
-
         protected override void Initialize()
         {
             base.Initialize();

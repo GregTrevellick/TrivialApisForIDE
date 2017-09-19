@@ -80,7 +80,6 @@ namespace Trivial.Ui.NumericTrivia.Options
             get => string.IsNullOrEmpty(timeOutInMilliSeconds) ? CommonConstants.DefaultPopUpIntervalInMins : timeOutInMilliSeconds;
             set
             {
-                /////////////////////////////////////////////if (OptionsHelper.IsInteger(value))
                 if (value.IsInteger())
                 {
                     timeOutInMilliSeconds = value;
@@ -100,43 +99,7 @@ namespace Trivial.Ui.NumericTrivia.Options
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Error);
         }
-
-        //////////internal int PopUpIntervalInMinsInt
-        //////////{
-        //////////    get
-        //////////    {
-        //////////        var isInteger = int.TryParse(PopUpIntervalInMins, out int x);
-        //////////        return isInteger ? x : 0;
-        //////////    }
-        //////////}
-
-        //////////internal int MaximumPopUpsWeekDayInt
-        //////////{
-        //////////    get
-        //////////    {
-        //////////        var isInteger = int.TryParse(MaximumPopUpsWeekDay, out int x);
-        //////////        return isInteger ? x : 0;
-        //////////    }
-        //////////}
-
-        //////////internal int MaximumPopUpsWeekEndInt
-        //////////{
-        //////////    get
-        //////////    {
-        //////////        var isInteger = int.TryParse(MaximumPopUpsWeekEnd, out int x);
-        //////////        return isInteger ? x : 0;
-        //////////    }
-        //////////}
-
-        //////////internal int TimeOutInMilliSecondsInt
-        //////////{
-        //////////    get
-        //////////    {
-        //////////        var isInteger = int.TryParse(TimeOutInMilliSeconds, out int x);
-        //////////        return isInteger ? x : 0;
-        //////////    }
-        //////////}
-        
+       
         protected override void OnApply(PageApplyEventArgs e)
         {
             VSPackage.Options.SaveSettingsToStorage();
