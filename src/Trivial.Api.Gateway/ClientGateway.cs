@@ -53,14 +53,14 @@ namespace Trivial.Api.Gateway
 
                 if (errorHasOccured)
                 {
-                    //gregtlo unit test reqd
+                    //gregtlo to be tested
                     var errorDetails =
                         "ResponseStatus=" + response.ResponseStatus + Environment.NewLine +
                         "HttpStatusCode = " + response.StatusCode + "(" + (int)response.StatusCode + ")" + Environment.NewLine +
                         "StatusDescription=" + response.StatusDescription + Environment.NewLine +
                         "ErrorMessage=" + response.ErrorMessage + Environment.NewLine;
 
-                    //gregtlo unit test reqd
+                    //gregtlo to be tested
                     if (response.ErrorException != null)
                     {
                         errorDetails =
