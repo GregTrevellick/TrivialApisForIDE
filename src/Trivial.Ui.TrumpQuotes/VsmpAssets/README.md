@@ -1,6 +1,6 @@
-[GitHubRepoURL]: https://github.com/GregTrevellick/SolutionOpenPopUp
-[GitHubRepoIssuesURL]: https://github.com/GregTrevellick/SolutionOpenPopUp/issues
-[GitHubRepoPullRequestsURL]: https://github.com/GregTrevellick/SolutionOpenPopUp/pulls
+[GitHubRepoURL]: https://github.com/GregTrevellick/TrivialApisForIDE
+[GitHubRepoIssuesURL]: https://github.com/GregTrevellick/TrivialApisForIDE/issues
+[GitHubRepoPullRequestsURL]: https://github.com/GregTrevellick/TrivialApisForIDE/pulls
 
 # Trump Quotes
 
