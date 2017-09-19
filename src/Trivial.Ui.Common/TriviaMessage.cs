@@ -1,5 +1,4 @@
 ﻿using System;
-using System.IO;
 using System.Windows.Media.Imaging;
 using Trivial.Api.Gateway;
 using Trivial.Entities;
@@ -60,7 +59,22 @@ namespace Trivial.Ui.Common
                 Title = popUpTitle,
             };
 
-            var uri = GetUri(appName);
+
+
+            //gregthi set this per app
+            var assemblyName = "Trivial.Ui.Common";
+            var imageDirectory = "Resources";
+            var imageSubDirectory = "TrumpQuotes";
+            var imageName = "VsixExtensionIcon_16x16.png";//gregt make the image's build action = "Resource"
+            var packUri = "pack://application:,,,/" 
+                + assemblyName + ";component"
+                + Path.DirectorySeparatorChar + imageDirectory
+                + Path.DirectorySeparatorChar + imageSubDirectory
+                + Path.DirectorySeparatorChar + imageName;
+            var uri = new Uri(packUri);
+
+
+
             triviaDialog.AppImage.Source = new BitmapImage(uri);
 
             if (!string.IsNullOrEmpty(linkUri))
@@ -87,3 +101,31 @@ namespace Trivial.Ui.Common
         }
     }
 }
+
+
+//using System;
+//using System.Windows;
+//using System.Windows.Media.Imaging;
+//namespace WpfApp1
+//{
+//    public partial class MainWindow : Window
+//    {
+//        public MainWindow()
+//        {
+//            InitializeComponent();
+//            var mode = "2";
+//            Uri uri = new Uri(@"c:\Users\GregoryT\documents\visual studio 2017\Projects\WpfApp1\ClassLibrary1\NewFolder1\z1VsixExtensionIcon_16x16.png");
+//            //Add a project reference to "ClassLibrary1"
+//            //Make the image's build action = "Resource"
+//            if (mode == "1")
+//            {
+//                uri = new Uri("pack://application:,,,/ClassLibrary1;component/NewFolder1/z1VsixExtensionIcon_16x16.png");
+//            }
+//            else
+//            {
+//                uri = new Uri("pack://application:,,,/ClassLibrary2;component/NewFolder1/z2VsixCommandIcon_16x16.png");
+//            }
+//            this.AppImage.Source = new BitmapImage(uri);
+//        }
+//    }
+//}
