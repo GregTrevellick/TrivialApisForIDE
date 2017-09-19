@@ -13,7 +13,7 @@ namespace Trivial.Ui.NumericTrivia.Options
         private string maximumPopUpsWeekDay;
         private string maximumPopUpsWeekEnd;
         private string popUpIntervalInMins;
-        private string timeOutInMilliSeconds;//gregthi is this option being used properly ?
+        private string timeOutInMilliSeconds;//gregthi what if set to zero ?
 
         [Category(CommonConstants.CategorySubLevel)]
         [DisplayName(CommonConstants.MaximumPopUpsWeekDayOptionLabel)]
