@@ -50,7 +50,6 @@ namespace Trivial.Api.Gateway
                 var response = client.Execute(request);
 
                 var hasErrorOccured = HasErrorOccured(response);
-
                 if (hasErrorOccured)
                 {
                     responseDto.ErrorDetails = GetErrorDetails(response);
