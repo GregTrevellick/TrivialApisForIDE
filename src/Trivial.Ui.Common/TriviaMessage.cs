@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Windows.Media.Imaging;
 using Trivial.Api.Gateway;
 using Trivial.Entities;
@@ -20,7 +21,7 @@ namespace Trivial.Ui.Common
 
             if (!string.IsNullOrEmpty(message))
             {   
-                DisplayPopUpMessage(popUpTitle, message, gatewayResponse.LinkUri, date, author);
+                DisplayPopUpMessage(popUpTitle, message, gatewayResponse.LinkUri, date, author, appName);
                 hiddenOptionsDto = GetHiddenOptionsDto(lastPopUpDateTime, popUpCountToday);
             }
 
@@ -48,7 +49,7 @@ namespace Trivial.Ui.Common
             return hiddenOptionsDto;
         }
 
-        private static void DisplayPopUpMessage(string popUpTitle, string message, string linkUri, string date, string author)
+        private static void DisplayPopUpMessage(string popUpTitle, string message, string linkUri, string date, string author, AppName appName)
         {
             const string spacer = " ";
 
@@ -59,9 +60,7 @@ namespace Trivial.Ui.Common
                 Title = popUpTitle,
             };
 
-            //gregthi set this per app
-            //var uri = new Uri(@"C:\\Users\\gtrev\\Source\\Repos\\TrivialApisForIDE\\src\\Trivial.Ui.Common\\zVsixExtensionIcon_16x16.png");
-            var uri = new Uri(@".\Trivial.Ui.Common\zzVsixExtensionIcon_16x16.png", UriKind.Relative);
+            var uri = GetUri(appName);
             triviaDialog.AppImage.Source = new BitmapImage(uri);
 
             if (!string.IsNullOrEmpty(linkUri))
@@ -72,6 +71,19 @@ namespace Trivial.Ui.Common
             }
 
             triviaDialog.Show();
+        }
+
+        private static Uri GetUri(AppName appName)
+        {
+            var assemblyName = "Trivial.Ui.Common"; //gregt get assembly name
+            var imageSubDirectory = appName.ToString();
+            var packUri = "pack://application:,,,/"
+                          + assemblyName 
+                          + ";component/Resources/"
+                          + imageSubDirectory
+                          + "/VsixExtensionIcon_16x16.png";
+
+            return new Uri(packUri);
         }
     }
 }
