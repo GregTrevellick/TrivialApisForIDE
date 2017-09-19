@@ -105,7 +105,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="StringExtensions.cs" />
-    <Compile Include="OptionsHelper.cs" />
+    <Compile Include="zzzzzOptionsHelper.cs" />
     <Compile Include="TriviaMessage.cs" />
     <Compile Include="CommonConstants.cs" />
     <Compile Include="HiddenOptionsDto.cs" />
