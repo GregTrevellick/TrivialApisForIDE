@@ -21,6 +21,10 @@ namespace Trivial.Ui.TrumpQuotes
         private DTE dte;
         public static GeneralOptions Options { get; private set; }
 
+        public VSPackage()
+        {
+        }
+
         protected override void Initialize()
         {
             base.Initialize();

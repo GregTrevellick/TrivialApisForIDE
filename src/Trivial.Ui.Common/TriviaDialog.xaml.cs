@@ -1,8 +1,6 @@
 ﻿using Microsoft.VisualStudio.PlatformUI;
-using System;
 using System.Diagnostics;
 using System.Windows;
-using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 
 namespace Trivial.Ui.Common
@@ -21,7 +19,6 @@ namespace Trivial.Ui.Common
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
             HasMaximizeButton = true;
             HasMinimizeButton = true;
-            //AppImage.Source = new BitmapImage(new Uri("C:\\Users\\gtrev\\Source\\Repos\\TrivialApisForIDE\\src\\Trivial.Ui.Common\\zVsixExtensionIcon_16x16.png"));
         }
 
         private void AppHyperlink1_RequestNavigate(object sender, RequestNavigateEventArgs e)

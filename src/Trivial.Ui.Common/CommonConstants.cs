@@ -6,7 +6,7 @@
         public const string DefaultMaximumPopUpsWeekDay = "3";
         public const string DefaultMaximumPopUpsWeekEnd = "99";
         public const string DefaultPopUpIntervalInMins = "0";
-        public static string IntegerInvalid = "Invalid integer value specified for ";
+        ///////////////////////////////public static string IntegerInvalid = "Invalid integer value specified for ";
         public const string MaximumPopUpsWeekDayDetailedDescription = "The maximum number of pop-up messages you will see on any one week day. Use this setting to reduce the volume of pop-up messages during the working week.";
         public const string MaximumPopUpsWeekDayOptionLabel = "Maximum week day pop-up messages";
         public const string MaximumPopUpsWeekEndDetailedDescription = "The maximum number of pop-up messages you will see on either a Saturday or a Sunday. Use this setting to increase the volume of pop-up messages in your free time.";
@@ -18,12 +18,13 @@
 
         public static string GetCaption(string vsixName, string vsixVersion)
         {
-            return vsixName + " " + vsixVersion;
+            return $"{vsixName} {vsixVersion}";
         }
 
         public static string GetInvalidInteger(string labelName)
         {
-            return IntegerInvalid + "'" + labelName + "'";
+            ///////////////////////////////return IntegerInvalid + "'" + labelName + "'";
+            return $"Invalid integer value specified for '{labelName}'";
         }
     }
 }
