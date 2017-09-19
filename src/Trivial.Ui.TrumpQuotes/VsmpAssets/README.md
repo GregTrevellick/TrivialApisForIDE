@@ -1,12 +1,13 @@
 [GitHubRepoURL]: https://github.com/GregTrevellick/TrivialApisForIDE
 [GitHubRepoIssuesURL]: https://github.com/GregTrevellick/TrivialApisForIDE/issues
 [GitHubRepoPullRequestsURL]: https://github.com/GregTrevellick/TrivialApisForIDE/pulls
+[VSMarketplaceUrl]: https://marketplace.visualstudio.com/items?itemName=GregTrevellick.DrainTheSwamp#review-details
 
 # Trump Quotes
 
 Enlighten your day with an insightful random quote from Donald Trump when opening a solution file.
 
-- This is truly tremendous. A wonderful thing. It deserves a review below.
+- This is truly tremendous. A wonderful thing. So much so that it deserves a [review][VSMarketplaceUrl].
 
 - Trust me folks, I think this [guy's](https://www.tronalddump.io) gonna be alright.
 
