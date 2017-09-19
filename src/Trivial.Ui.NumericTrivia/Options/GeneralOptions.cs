@@ -23,8 +23,7 @@ namespace Trivial.Ui.NumericTrivia.Options
             get => string.IsNullOrEmpty(maximumPopUpsWeekDay) ? CommonConstants.DefaultMaximumPopUpsWeekDay : maximumPopUpsWeekDay;
             set
             {
-                var isInteger = int.TryParse(value, out int x);
-                if (isInteger)
+                if (OptionsHelper.IsInteger(value))
                 {
                     maximumPopUpsWeekDay = value;
                 }
@@ -43,8 +42,7 @@ namespace Trivial.Ui.NumericTrivia.Options
             get => string.IsNullOrEmpty(maximumPopUpsWeekEnd) ? CommonConstants.DefaultMaximumPopUpsWeekEnd : maximumPopUpsWeekEnd;
             set
             {
-                var isInteger = int.TryParse(value, out int x);
-                if (isInteger)
+                if (OptionsHelper.IsInteger(value))
                 {
                     maximumPopUpsWeekEnd = value;
                 }
@@ -63,8 +61,7 @@ namespace Trivial.Ui.NumericTrivia.Options
             get => string.IsNullOrEmpty(popUpIntervalInMins) ? CommonConstants.DefaultPopUpIntervalInMins : popUpIntervalInMins;
             set
             {
-                var isInteger = int.TryParse(value, out int x);
-                if (isInteger)
+                if (OptionsHelper.IsInteger(value))
                 {
                     popUpIntervalInMins = value;
                 }
@@ -83,8 +80,7 @@ namespace Trivial.Ui.NumericTrivia.Options
             get => string.IsNullOrEmpty(timeOutInMilliSeconds) ? CommonConstants.DefaultPopUpIntervalInMins : timeOutInMilliSeconds;
             set
             {
-                var isInteger = int.TryParse(value, out int x);
-                if (isInteger)
+                if (OptionsHelper.IsInteger(value))
                 {
                     timeOutInMilliSeconds = value;
                 }
