@@ -30,7 +30,7 @@ namespace Trivial.Api.Gateway
                     break;
                 case AppName.TrumpQuotes:
                     url = "https://api.tronalddump.io/random/quote";
-                    //url = "https://apixxx.xxxtronalddump.io/random/quote";
+                    /////////////////url = "https://apixxx.xxxtronalddump.io/random/quote";
                     ///////////////////////////url = "http://localhost:52327/Api/Values";
                     break;
             }
