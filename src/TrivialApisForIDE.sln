@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26730.8
+VisualStudioVersion = 15.0.26730.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trivial.Entities", "Trivial.Entities\Trivial.Entities.csproj", "{227D068D-A064-40B4-A372-7CE8FE0F7C26}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trivial.Ui.Common", "Trivial.Ui.Common\Trivial.Ui.Common.csproj", "{BCA9D5EC-655B-4CCA-8891-8EC7A7B7BAA3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trivial.Ui.TrumpQuotes", "Trivial.Ui.TrumpQuotes\Trivial.Ui.TrumpQuotes.csproj", "{F76724F0-1193-4EDE-A542-E7BB738ABD42}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trivial.Ui.NumericTrivia", "Trivial.Ui.NumericTrivia\Trivial.Ui.NumericTrivia.csproj", "{B79C4059-DE4E-47C9-BE48-B1AFD436C6B9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{F76724F0-1193-4EDE-A542-E7BB738ABD42}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F76724F0-1193-4EDE-A542-E7BB738ABD42}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F76724F0-1193-4EDE-A542-E7BB738ABD42}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B79C4059-DE4E-47C9-BE48-B1AFD436C6B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B79C4059-DE4E-47C9-BE48-B1AFD436C6B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B79C4059-DE4E-47C9-BE48-B1AFD436C6B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B79C4059-DE4E-47C9-BE48-B1AFD436C6B9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -140,9 +140,8 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <Resource Include="..\..\..\z\TrivialApisForIDE_BAD\src\Trivial.Ui.NumericTrivia\Resources\VsixExtensionIcon_16x16.png">
+    <Resource Include="..\Trivial.Ui.NumericTrivia\Resources\VsixExtensionIcon_16x16.png">
       <Link>Resources\NumericTrivia\VsixExtensionIcon_16x16.png</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
