@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trivial.Ui.TrumpQuotes", "T
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trivial.Ui.NumericTrivia", "Trivial.Ui.NumericTrivia\Trivial.Ui.NumericTrivia.csproj", "{B79C4059-DE4E-47C9-BE48-B1AFD436C6B9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trivial.Ui.Common.Tests", "Trivial.Ui.Common.Tests\Trivial.Ui.Common.Tests.csproj", "{73B7FC42-5CBF-4BEC-A0D4-3D878C5DDC9A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{B79C4059-DE4E-47C9-BE48-B1AFD436C6B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B79C4059-DE4E-47C9-BE48-B1AFD436C6B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B79C4059-DE4E-47C9-BE48-B1AFD436C6B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73B7FC42-5CBF-4BEC-A0D4-3D878C5DDC9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73B7FC42-5CBF-4BEC-A0D4-3D878C5DDC9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73B7FC42-5CBF-4BEC-A0D4-3D878C5DDC9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73B7FC42-5CBF-4BEC-A0D4-3D878C5DDC9A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

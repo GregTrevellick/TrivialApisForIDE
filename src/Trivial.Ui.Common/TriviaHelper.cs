@@ -18,7 +18,7 @@ namespace Trivial.Ui.Common
             return false;
         }
 
-        private static bool MidweekAndHaveNotExceededMidweekCount(GeneralOptionsDto generalOptionsDto)//gregtlo unit test reqd
+        internal static bool MidweekAndHaveNotExceededMidweekCount(GeneralOptionsDto generalOptionsDto)//gregtlo unit test reqd
         {
             return 
                 DateTime.Now.DayOfWeek != DayOfWeek.Saturday && 
