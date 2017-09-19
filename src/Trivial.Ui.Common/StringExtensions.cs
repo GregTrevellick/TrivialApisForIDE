@@ -2,7 +2,7 @@
 {
     public static class StringExtensions
     {
-        public static int ToInteger(this string str)
+        public static int ToInteger(this string str) //gregtlo unit test reqd
         {
             var isInteger = int.TryParse(str, out int x);
             return isInteger ? x : 0;
