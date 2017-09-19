@@ -2,9 +2,16 @@
 {
     public static class StringExtensions
     {
-        public static bool IsInteger(this string str)
+        public static bool IsNonNegativeInteger(this string str)
         {
             var isInteger = int.TryParse(str, out int x);
+            if (isInteger)
+            {
+                if (x < 0)
+                {
+                    isInteger = false;
+                }
+            }
             return isInteger;
         }
 

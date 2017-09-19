@@ -6,6 +6,9 @@ using Trivial.Entities;
 
 namespace Trivial.Ui.Common
 {
+    //gregt test the weekday / weekend pop up limits
+    //gregt test the "dont show within 5 mins" limit
+
     public static class TriviaMessage
     {
         public static HiddenOptionsDto ShowTrivia(AppName appName, string popUpTitle, DateTime lastPopUpDateTime, int popUpCountToday, int timeOutInMilliSeconds)

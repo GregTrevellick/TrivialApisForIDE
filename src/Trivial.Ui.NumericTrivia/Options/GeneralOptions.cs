@@ -23,7 +23,7 @@ namespace Trivial.Ui.NumericTrivia.Options
             get => string.IsNullOrEmpty(maximumPopUpsWeekDay) ? CommonConstants.DefaultMaximumPopUpsWeekDay : maximumPopUpsWeekDay;
             set
             {
-                if (value.IsInteger())
+                if (value.IsNonNegativeInteger())
                 {
                     maximumPopUpsWeekDay = value;
                 }
@@ -42,7 +42,7 @@ namespace Trivial.Ui.NumericTrivia.Options
             get => string.IsNullOrEmpty(maximumPopUpsWeekEnd) ? CommonConstants.DefaultMaximumPopUpsWeekEnd : maximumPopUpsWeekEnd;
             set
             {
-                if (value.IsInteger())
+                if (value.IsNonNegativeInteger())
                 {
                     maximumPopUpsWeekEnd = value;
                 }
@@ -61,7 +61,7 @@ namespace Trivial.Ui.NumericTrivia.Options
             get => string.IsNullOrEmpty(popUpIntervalInMins) ? CommonConstants.DefaultPopUpIntervalInMins : popUpIntervalInMins;
             set
             {
-                if (value.IsInteger())
+                if (value.IsNonNegativeInteger())
                 {
                     popUpIntervalInMins = value;
                 }
@@ -80,7 +80,7 @@ namespace Trivial.Ui.NumericTrivia.Options
             get => string.IsNullOrEmpty(timeOutInMilliSeconds) ? CommonConstants.DefaultPopUpIntervalInMins : timeOutInMilliSeconds;
             set
             {
-                if (value.IsInteger())
+                if (value.IsNonNegativeInteger())
                 {
                     timeOutInMilliSeconds = value;
                 }
