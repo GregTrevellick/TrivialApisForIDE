@@ -68,6 +68,16 @@ namespace Trivial.Api.Gateway
             return responseDto;
         }
 
+        internal static bool HasErrorOccured(IRestResponse response)
+        {
+            var errorHasOccured =
+                response == null ||
+                response.ErrorException != null ||
+                !string.IsNullOrEmpty(response.ErrorMessage);
+
+            return errorHasOccured;
+        }
+
         private static string GetErrorDetails(IRestResponse response)
         {
             string errorDetails;
@@ -84,23 +94,14 @@ namespace Trivial.Api.Gateway
                     response.StatusDescription + " " +
                     response.ErrorMessage + " ";
 
-                if (response.ErrorException != null)
+                if (response.ErrorException != null &&
+                    response.ErrorException.Message != response.ErrorMessage)
                 {
                     errorDetails = errorDetails + " " + response.ErrorException.Message;
                 }
             }
 
             return errorDetails;
-        }
-
-        internal static bool HasErrorOccured(IRestResponse response)
-        {
-            var errorHasOccured = 
-                response == null ||
-                response.ErrorException != null || 
-                !string.IsNullOrEmpty(response.ErrorMessage); 
-
-            return errorHasOccured;
         }
 
         private static void SetGatewayResponseFromErrorDetails(GatewayResponse gatewayResponse, string errorDetails)
