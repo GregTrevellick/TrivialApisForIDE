@@ -33,7 +33,7 @@ namespace Trivial.Ui.Common
                    dateTime.DayOfWeek == DayOfWeek.Sunday;
         }
 
-        internal static bool WeekEndAndHaveNotExceededWeekEndCount(GeneralOptionsDto generalOptionsDto, bool isWeekend)//gregtlo unit test reqd
+        internal static bool WeekEndAndHaveNotExceededWeekEndCount(GeneralOptionsDto generalOptionsDto, bool isWeekend)
         {
             return 
                 isWeekend && 

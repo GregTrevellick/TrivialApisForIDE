@@ -28,5 +28,29 @@ namespace Trivial.Ui.Common.Tests
             //Assert
             Assert.AreEqual(expected, actual);
         }
+
+        [Test]
+        [TestCase(0, 1, true, true)]
+        [TestCase(1, 0, true, false)]
+        [TestCase(1, 1, true, false)]
+        [TestCase(0, 1, false, false)]
+        [TestCase(1, 0, false, false)]
+        [TestCase(1, 1, false, false)]
+        [Category("U")]
+        public void WeekEndAndHaveNotExceededWeekEndCountTest(int popUpCountToday, int maximumPopUpsWeekEnd, bool isWeekend, bool expected)
+        {
+            //Arrange
+            var generalOptionsDto = new GeneralOptionsDto
+            {
+                MaximumPopUpsWeekEnd = maximumPopUpsWeekEnd,
+                PopUpCountToday = popUpCountToday,
+            };
+
+            //Act
+            var actual = TriviaHelper.WeekEndAndHaveNotExceededWeekEndCount(generalOptionsDto, isWeekend);
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
