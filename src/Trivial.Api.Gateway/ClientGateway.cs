@@ -39,7 +39,7 @@ namespace Trivial.Api.Gateway
             return gatewayResponse;
         }
 
-        private ResponseDto GetRestResponse(string url, int timeOutInMilliSeconds)
+        private static ResponseDto GetRestResponse(string url, int timeOutInMilliSeconds)
         {
             var responseDto = new ResponseDto();
 
@@ -53,23 +53,7 @@ namespace Trivial.Api.Gateway
 
                 if (hasErrorOccured)
                 {
-                    //gregtlo to be tested
-                    var errorDetails =
-                        "ResponseStatus=" + response.ResponseStatus + Environment.NewLine +
-                        "HttpStatusCode = " + response.StatusCode + "(" + (int)response.StatusCode + ")" + Environment.NewLine +
-                        "StatusDescription=" + response.StatusDescription + Environment.NewLine +
-                        "ErrorMessage=" + response.ErrorMessage + Environment.NewLine;
-
-                    //gregtlo to be tested
-                    if (response.ErrorException != null)
-                    {
-                        errorDetails =
-                            errorDetails + Environment.NewLine +
-                            "ErrorExceptionMessage=" + response.ErrorException.Message + Environment.NewLine +
-                            "ErrorExceptionTargetSite=" + response.ErrorException.TargetSite;
-                    }
-
-                    responseDto.ErrorDetails = errorDetails;
+                    responseDto.ErrorDetails = GetErrorDetails(response);
                 }
                 else
                 {
@@ -83,6 +67,31 @@ namespace Trivial.Api.Gateway
             }
 
             return responseDto;
+        }
+
+        private static string GetErrorDetails(IRestResponse response)
+        {
+            string errorDetails;
+
+            if (response == null)
+            {
+                errorDetails = "An indeterminate error has occured";
+            }
+            else
+            {
+                errorDetails =
+                    response.ResponseStatus + " " +
+                    "(" + response.StatusCode + ") " +
+                    response.StatusDescription + " " +
+                    response.ErrorMessage + " ";
+
+                if (response.ErrorException != null)
+                {
+                    errorDetails = errorDetails + " " + response.ErrorException.Message;
+                }
+            }
+
+            return errorDetails;
         }
 
         internal static bool HasErrorOccured(IRestResponse response)
