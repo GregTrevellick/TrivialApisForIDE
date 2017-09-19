@@ -1,4 +1,6 @@
-﻿namespace Trivial.Ui.Common
+﻿using System.Windows;
+
+namespace Trivial.Ui.Common
 {
     public static class OptionsHelper
     {

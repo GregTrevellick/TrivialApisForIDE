@@ -104,6 +104,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="StringExtensions.cs" />
     <Compile Include="OptionsHelper.cs" />
     <Compile Include="TriviaMessage.cs" />
     <Compile Include="CommonConstants.cs" />

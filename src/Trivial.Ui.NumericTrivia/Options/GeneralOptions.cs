@@ -100,41 +100,41 @@ namespace Trivial.Ui.NumericTrivia.Options
                 MessageBoxIcon.Error);
         }
 
-        internal int PopUpIntervalInMinsInt
-        {
-            get
-            {
-                var isInteger = int.TryParse(PopUpIntervalInMins, out int x);
-                return isInteger ? x : 0;
-            }
-        }
+        //////////internal int PopUpIntervalInMinsInt
+        //////////{
+        //////////    get
+        //////////    {
+        //////////        var isInteger = int.TryParse(PopUpIntervalInMins, out int x);
+        //////////        return isInteger ? x : 0;
+        //////////    }
+        //////////}
 
-        internal int MaximumPopUpsWeekDayInt
-        {
-            get
-            {
-                var isInteger = int.TryParse(MaximumPopUpsWeekDay, out int x);
-                return isInteger ? x : 0;
-            }
-        }
+        //////////internal int MaximumPopUpsWeekDayInt
+        //////////{
+        //////////    get
+        //////////    {
+        //////////        var isInteger = int.TryParse(MaximumPopUpsWeekDay, out int x);
+        //////////        return isInteger ? x : 0;
+        //////////    }
+        //////////}
 
-        internal int MaximumPopUpsWeekEndInt
-        {
-            get
-            {
-                var isInteger = int.TryParse(MaximumPopUpsWeekEnd, out int x);
-                return isInteger ? x : 0;
-            }
-        }
+        //////////internal int MaximumPopUpsWeekEndInt
+        //////////{
+        //////////    get
+        //////////    {
+        //////////        var isInteger = int.TryParse(MaximumPopUpsWeekEnd, out int x);
+        //////////        return isInteger ? x : 0;
+        //////////    }
+        //////////}
 
-        internal int TimeOutInMilliSecondsInt
-        {
-            get
-            {
-                var isInteger = int.TryParse(TimeOutInMilliSeconds, out int x);
-                return isInteger ? x : 0;
-            }
-        }
+        //////////internal int TimeOutInMilliSecondsInt
+        //////////{
+        //////////    get
+        //////////    {
+        //////////        var isInteger = int.TryParse(TimeOutInMilliSeconds, out int x);
+        //////////        return isInteger ? x : 0;
+        //////////    }
+        //////////}
         
         protected override void OnApply(PageApplyEventArgs e)
         {

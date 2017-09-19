@@ -68,11 +68,11 @@ namespace Trivial.Ui.TrumpQuotes
                 return new GeneralOptionsDto
                 {
                     LastPopUpDateTime = generalOptions.LastPopUpDateTime,
-                    MaximumPopUpsWeekDay = generalOptions.MaximumPopUpsWeekDayInt,
-                    MaximumPopUpsWeekEnd = generalOptions.MaximumPopUpsWeekEndInt,
-                    PopUpIntervalInMins = generalOptions.PopUpIntervalInMinsInt,
+                    MaximumPopUpsWeekDay = generalOptions.MaximumPopUpsWeekDay.ToInteger(),
+                    MaximumPopUpsWeekEnd = generalOptions.MaximumPopUpsWeekEnd.ToInteger(),
+                    PopUpIntervalInMins = generalOptions.PopUpIntervalInMins.ToInteger(),
                     PopUpCountToday = generalOptions.PopUpCountToday,
-                    TimeOutInMilliSeconds = generalOptions.TimeOutInMilliSecondsInt,
+                    TimeOutInMilliSeconds = generalOptions.TimeOutInMilliSeconds.ToInteger(),
                 };
             }
         }
