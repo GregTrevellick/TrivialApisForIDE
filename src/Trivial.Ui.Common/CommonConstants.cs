@@ -27,7 +27,7 @@
     }
 }
 
-
+//gregt to be deleted
 //////public static string UnexpectedError =
 //////    "An unexpected error has occured. Please restart Visual Studio and re-try." + Environment.NewLine + Environment.NewLine +
 //////    "If the error persists please log a bug for this extension via the Visual Studio Marketplace at https://marketplace.visualstudio.com" + Environment.NewLine + Environment.NewLine +
