@@ -11,13 +11,19 @@ namespace Trivial.Ui.Common
             if (WeekEndAndHaveNotExceededWeekEndCount(generalOptionsDto, isWeekend) || 
                 MidweekAndHaveNotExceededMidweekCount(generalOptionsDto, isWeekend))
             {
-                if (LastPopUpMoreThanXMinutesAgo(generalOptionsDto, DateTime.Now))
+                if (LastPopUpMoreThanXMinutesAgo(generalOptionsDto.LastPopUpDateTime, generalOptionsDto.PopUpIntervalInMins, DateTime.Now))
                 {
                     return true;
                 }
             }
 
             return false;
+        }
+
+        private static bool IsWeekend(DateTime dateTimeNow)
+        {
+            return dateTimeNow.DayOfWeek == DayOfWeek.Saturday ||
+                   dateTimeNow.DayOfWeek == DayOfWeek.Sunday;
         }
 
         internal static bool MidweekAndHaveNotExceededMidweekCount(GeneralOptionsDto generalOptionsDto, bool isWeekend)
@@ -27,12 +33,6 @@ namespace Trivial.Ui.Common
                 generalOptionsDto.PopUpCountToday < generalOptionsDto.MaximumPopUpsWeekDay;
         }
 
-        private static bool IsWeekend(DateTime dateTime)
-        {
-            return dateTime.DayOfWeek == DayOfWeek.Saturday || 
-                   dateTime.DayOfWeek == DayOfWeek.Sunday;
-        }
-
         internal static bool WeekEndAndHaveNotExceededWeekEndCount(GeneralOptionsDto generalOptionsDto, bool isWeekend)
         {
             return 
@@ -40,9 +40,9 @@ namespace Trivial.Ui.Common
                 generalOptionsDto.PopUpCountToday < generalOptionsDto.MaximumPopUpsWeekEnd;
         }
 
-        internal static bool LastPopUpMoreThanXMinutesAgo(GeneralOptionsDto generalOptionsDto, DateTime dateTime)//gregtlo unit test reqd
+        internal static bool LastPopUpMoreThanXMinutesAgo(DateTime lastPopUpDateTime, int popUpIntervalInMins, DateTime dateTimeNow)
         {
-            return generalOptionsDto.LastPopUpDateTime < dateTime.AddMinutes(-1 * generalOptionsDto.PopUpIntervalInMins);
+            return lastPopUpDateTime < dateTimeNow.AddMinutes(-1 * popUpIntervalInMins);
         }
     }
 }
