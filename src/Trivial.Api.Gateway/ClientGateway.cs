@@ -49,9 +49,9 @@ namespace Trivial.Api.Gateway
                 var request = new RestRequest(Method.GET) {Timeout = timeOutInMilliSeconds };
                 var response = client.Execute(request);
 
-                var errorHasOccured = response.ErrorException != null || !string.IsNullOrEmpty(response.ErrorMessage);//gregtlo unit test reqd
+                var hasErrorOccured = HasErrorOccured(response);
 
-                if (errorHasOccured)
+                if (hasErrorOccured)
                 {
                     //gregtlo to be tested
                     var errorDetails =
@@ -83,6 +83,16 @@ namespace Trivial.Api.Gateway
             }
 
             return responseDto;
+        }
+
+        internal static bool HasErrorOccured(IRestResponse response)
+        {
+            var errorHasOccured = 
+                response == null ||
+                response.ErrorException != null || 
+                !string.IsNullOrEmpty(response.ErrorMessage); 
+
+            return errorHasOccured;
         }
 
         private static void SetGatewayResponseFromErrorDetails(GatewayResponse gatewayResponse, string errorDetails)
