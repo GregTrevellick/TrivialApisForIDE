@@ -6,7 +6,6 @@
         public const string DefaultMaximumPopUpsWeekDay = "3";
         public const string DefaultMaximumPopUpsWeekEnd = "99";
         public const string DefaultPopUpIntervalInMins = "0";
-        ///////////////////////////////public static string IntegerInvalid = "Invalid integer value specified for ";
         public const string MaximumPopUpsWeekDayDetailedDescription = "The maximum number of pop-up messages you will see on any one week day. Use this setting to reduce the volume of pop-up messages during the working week.";
         public const string MaximumPopUpsWeekDayOptionLabel = "Maximum week day pop-up messages";
         public const string MaximumPopUpsWeekEndDetailedDescription = "The maximum number of pop-up messages you will see on either a Saturday or a Sunday. Use this setting to increase the volume of pop-up messages in your free time.";
@@ -23,14 +22,12 @@
 
         public static string GetInvalidInteger(string labelName)
         {
-            ///////////////////////////////return IntegerInvalid + "'" + labelName + "'";
             return $"Invalid integer value specified for '{labelName}'";
         }
     }
 }
 
 
-//////public const string ToolsOptionsNotice = "(You can change suppress this notice in Tools | Options)";
 //////public static string UnexpectedError =
 //////    "An unexpected error has occured. Please restart Visual Studio and re-try." + Environment.NewLine + Environment.NewLine +
 //////    "If the error persists please log a bug for this extension via the Visual Studio Marketplace at https://marketplace.visualstudio.com" + Environment.NewLine + Environment.NewLine +
