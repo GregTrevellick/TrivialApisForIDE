@@ -9,6 +9,7 @@ namespace Trivial.Ui.Common
     //gregt test the weekday / weekend pop up limits
     //gregt test the "dont show within 5 mins" limit
     //gregt what if timeOutInMilliSeconds is set to zero ?
+    //gregt (a) set timeout to 3001ms (b) close & re-open IDE (c) go into options: warning appears immediately !
 
     public static class TriviaMessage
     {
