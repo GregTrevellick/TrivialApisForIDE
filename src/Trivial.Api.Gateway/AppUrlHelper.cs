@@ -11,9 +11,11 @@ namespace Trivial.Api.Gateway
             switch (appName)
             {
                 case AppName.NumericTrivia:
+                    //Consistent average response time 330ms
                     url = "http://numbersapi.com/random/trivia";
                     break;
                 case AppName.TrumpQuotes:
+                    //Average response time 280ms but sometimes peaking around 370ms
                     url = "https://api.tronalddump.io/random/quote";
                     break;
             }
