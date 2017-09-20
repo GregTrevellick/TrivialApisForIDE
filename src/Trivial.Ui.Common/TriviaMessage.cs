@@ -41,8 +41,7 @@ namespace Trivial.Ui.Common
 
             var baseDateTime = DateTime.Now;
 
-            //if last pop up was yesterday, then we have gone past midnight, so this is first pop up for today
-            if (lastPopUpDateTime.Date < baseDateTime.Date)
+            if (IsANewDay(lastPopUpDateTime, baseDateTime))
             {
                 hiddenOptionsDto.PopUpCountToday = 1;
             }
@@ -54,6 +53,12 @@ namespace Trivial.Ui.Common
             hiddenOptionsDto.LastPopUpDateTime = baseDateTime;
 
             return hiddenOptionsDto;
+        }
+
+        private static bool IsANewDay(DateTime lastPopUpDateTime, DateTime baseDateTime)
+        {
+            //If last pop up was yesterday, then we have gone past midnight, so this is first pop up for today
+            return lastPopUpDateTime.Date < baseDateTime.Date;
         }
 
         private static void DisplayPopUpMessage(string popUpTitle, string message, string linkUri, string date, string author, AppName appName)
