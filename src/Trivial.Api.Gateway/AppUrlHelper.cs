@@ -27,6 +27,7 @@ namespace Trivial.Api.Gateway
 //https://quotesondesign.com/api-v4-0/ 
 //https://restcountries.eu/ 
 //http://quotes.rest/#!/quote/get_quote_random
+///http://techxposer.com/CurrencyRate/INR
 ////https://www.coindesk.com/api/ 
 ////http://fixer.io/ 
 ////http://jservice.io/ 
