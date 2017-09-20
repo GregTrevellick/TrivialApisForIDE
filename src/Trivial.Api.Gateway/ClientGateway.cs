@@ -61,11 +61,17 @@ namespace Trivial.Api.Gateway
             }
             catch(Exception ex)
             {
-                Debug.WriteLine(ex);
-                responseDto.ErrorDetails = $"Error occured. Possible communication error with {url}";
+                HandleUnexpectedError(url, ex, responseDto);
             }
 
             return responseDto;
+        }
+
+        private static void HandleUnexpectedError(string url, Exception ex, ResponseDto responseDto)
+        {
+            Debug.WriteLine(ex.Message);
+            var exceptionTypeName = ex.GetType().Name;
+            responseDto.ErrorDetails = $"An unexpected error of type {exceptionTypeName} has occured (possibly a communication error with {url}).";
         }
 
         internal static bool HasErrorOccured(IRestResponse response)

@@ -23,7 +23,6 @@ namespace Trivial.Api.Gateway
     }
 }
 
-//gregt more apis
 //https://icanhazdadjoke.com/api#fetch-a-random-dad-joke 
 //https://quotesondesign.com/api-v4-0/ 
 //https://restcountries.eu/ 
