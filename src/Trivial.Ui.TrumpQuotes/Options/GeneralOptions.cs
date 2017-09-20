@@ -10,6 +10,7 @@ namespace Trivial.Ui.TrumpQuotes.Options
         internal DateTime LastPopUpDateTime { get; set; } = DateTime.Now;
         internal int PopUpCountToday { get; set; }
         private string caption = CommonConstants.GetCaption(Vsix.Name, Vsix.Version);
+        private bool firstTimeOpeningOptions = true;
         private string maximumPopUpsWeekDay;
         private string maximumPopUpsWeekEnd;
         private string popUpIntervalInMins;
@@ -95,10 +96,18 @@ namespace Trivial.Ui.TrumpQuotes.Options
                         }
                         else
                         {
-                            proceedToSaveOptions = MessageBoxes.ConfirmProceedToSaveTimeOutInMilliSeconds(caption);
-                            if (proceedToSaveOptions)
+                            if (firstTimeOpeningOptions)
                             {
+                                firstTimeOpeningOptions = false;
                                 timeOutInMilliSeconds = value;
+                            }
+                            else
+                            {
+                                proceedToSaveOptions = MessageBoxes.ConfirmProceedToSaveTimeOutInMilliSeconds(caption);
+                                if (proceedToSaveOptions)
+                                {
+                                    timeOutInMilliSeconds = value;
+                                }
                             }
                         }
                     }
