@@ -13,6 +13,7 @@ namespace Trivial.Ui.TrumpQuotes.Options
         private string maximumPopUpsWeekDay;
         private string maximumPopUpsWeekEnd;
         private string popUpIntervalInMins;
+        private bool proceedToSaveOptions;
         private string timeOutInMilliSeconds;
 
         [Category(CommonConstants.CategorySubLevel)]
@@ -104,8 +105,6 @@ namespace Trivial.Ui.TrumpQuotes.Options
                 }
             }
         }
-
-        private bool proceedToSaveOptions;
 
         private static void DisplayInvalidIntegerError(string labelName)
         {
