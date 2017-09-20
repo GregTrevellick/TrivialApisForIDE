@@ -1,4 +1,6 @@
-﻿namespace Trivial.Ui.Common
+﻿using System;
+
+namespace Trivial.Ui.Common
 {
     public static class CommonConstants
     {
@@ -14,7 +16,7 @@
         public const string PopUpIntervalInMinsOptionLabel = "Minimum number of minutes between pop-up messages";
         public const int RecommendedMinimumTimeoutMilliSeconds = 200;
         public const int RecommendedMaximumTimeoutMilliSeconds = 5000;
-        public const string TimeOutInMilliSecondsIsOutsideRecommendedTimeoutLimits = "Are you sure ? TimeOutInMilliSecondsIsOutsideRecommendedTimeoutLimits";
+        public static string TimeOutInMilliSecondsIsOutsideRecommendedTimeoutLimits = $"Are you sure ?{Environment.NewLine}The value for '{TimeOutInMilliSecondsOptionLabel}' is outside the recommended limits, which means the data retrieval may often timeout before completion or may often wait for a long time to complete.";
         public const string TimeOutInMilliSecondsOptionDetailedDescription = "The maximum time in milliseconds for this extension to retrieve the message data from the external source. This value is used as the timeout parameter when calling the external web service.";
         public const string TimeOutInMilliSecondsOptionLabel = "Maximum time (milliseconds) for message retrieval";
 

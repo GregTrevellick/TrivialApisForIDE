@@ -1,7 +1,6 @@
-﻿using System;
+﻿using Microsoft.VisualStudio.Shell;
+using System;
 using System.ComponentModel;
-using System.Windows.Forms;
-using Microsoft.VisualStudio.Shell;
 using Trivial.Ui.Common;
 
 namespace Trivial.Ui.TrumpQuotes.Options
@@ -10,6 +9,7 @@ namespace Trivial.Ui.TrumpQuotes.Options
     {
         internal DateTime LastPopUpDateTime { get; set; } = DateTime.Now;
         internal int PopUpCountToday { get; set; }
+        private string caption = CommonConstants.GetCaption(Vsix.Name, Vsix.Version);
         private string maximumPopUpsWeekDay;
         private string maximumPopUpsWeekEnd;
         private string popUpIntervalInMins;
@@ -30,7 +30,7 @@ namespace Trivial.Ui.TrumpQuotes.Options
                 }
                 else
                 {
-                    DisplayInvalidIntegerError(CommonConstants.MaximumPopUpsWeekDayOptionLabel);
+                    MessageBoxes.DisplayInvalidIntegerError(CommonConstants.MaximumPopUpsWeekDayOptionLabel, caption);
                 }
             }
         }
@@ -49,7 +49,7 @@ namespace Trivial.Ui.TrumpQuotes.Options
                 }
                 else
                 {
-                    DisplayInvalidIntegerError(CommonConstants.MaximumPopUpsWeekEndOptionLabel);
+                    MessageBoxes.DisplayInvalidIntegerError(CommonConstants.MaximumPopUpsWeekEndOptionLabel, caption);
                 }
             }
         }
@@ -68,7 +68,7 @@ namespace Trivial.Ui.TrumpQuotes.Options
                 }
                 else
                 {
-                    DisplayInvalidIntegerError(CommonConstants.PopUpIntervalInMinsOptionLabel);
+                    MessageBoxes.DisplayInvalidIntegerError(CommonConstants.PopUpIntervalInMinsOptionLabel, caption);
                 }
             }
         }
@@ -89,9 +89,13 @@ namespace Trivial.Ui.TrumpQuotes.Options
                     }
                     else
                     {
-                        if (!proceedToSaveOptions)
+                        if (proceedToSaveOptions)
                         {
-                            proceedToSaveOptions = ConfirmProceedToSaveTimeOutInMilliSeconds();
+                            timeOutInMilliSeconds = value;
+                        }
+                        else
+                        {
+                            proceedToSaveOptions = MessageBoxes.ConfirmProceedToSaveTimeOutInMilliSeconds(caption);
                             if (proceedToSaveOptions)
                             {
                                 timeOutInMilliSeconds = value;
@@ -101,36 +105,9 @@ namespace Trivial.Ui.TrumpQuotes.Options
                 }
                 else
                 {
-                    DisplayInvalidIntegerError(CommonConstants.TimeOutInMilliSecondsOptionLabel);
+                    MessageBoxes.DisplayInvalidIntegerError(CommonConstants.TimeOutInMilliSecondsOptionLabel, caption);
                 }
             }
-        }
-
-        private static void DisplayInvalidIntegerError(string labelName)
-        {
-            MessageBox.Show(
-                CommonConstants.GetInvalidInteger(labelName),
-                CommonConstants.GetCaption(Vsix.Name, Vsix.Version),
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Error);
-        }
-
-        private static bool ConfirmProceedToSaveTimeOutInMilliSeconds()
-        {
-            var proceedToSave = false;
-
-            var box = MessageBox.Show(
-                CommonConstants.TimeOutInMilliSecondsIsOutsideRecommendedTimeoutLimits,
-                CommonConstants.GetCaption(Vsix.Name, Vsix.Version),
-                MessageBoxButtons.OKCancel,
-                MessageBoxIcon.Warning);
-
-            if (box == DialogResult.OK)
-            {
-                proceedToSave = true;
-            }
-
-            return proceedToSave;
         }
     }
 }
