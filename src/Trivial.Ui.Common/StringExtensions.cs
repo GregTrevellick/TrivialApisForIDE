@@ -15,6 +15,24 @@
             return isInteger;
         }
 
+        public static bool IsWithinRecommendedTimeoutLimits(this string str)
+        {
+            var isInteger = int.TryParse(str, out int x);
+
+            bool isWithinRecommendedTimeoutLimits = false;
+
+            if (isInteger)
+            {
+                if (x >= CommonConstants.RecommendedMinimumTimeoutMilliSeconds && 
+                    x <= CommonConstants.RecommendedMaximumTimeoutMilliSeconds)
+                {
+                    isWithinRecommendedTimeoutLimits = true;
+                }
+            }
+
+            return isWithinRecommendedTimeoutLimits;
+        }
+
         public static int GetAsInteger(this string str)
         {
             var isInteger = int.TryParse(str, out int x);

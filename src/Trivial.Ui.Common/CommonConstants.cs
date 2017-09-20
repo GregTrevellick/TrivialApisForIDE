@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Trivial.Ui.Common
+﻿namespace Trivial.Ui.Common
 {
     public static class CommonConstants
     {
@@ -14,6 +12,9 @@ namespace Trivial.Ui.Common
         public const string MaximumPopUpsWeekEndOptionLabel = "Maximum weekend pop-ups messages";
         public const string PopUpIntervalInMinsOptionDetailedDescription = "The minimum number of minutes after a pop-up message is displayed before you will see another pop-up message. Use this setting to reduce the frequency of pop-up messages.";
         public const string PopUpIntervalInMinsOptionLabel = "Minimum number of minutes between pop-up messages";
+        public const int RecommendedMinimumTimeoutMilliSeconds = 200;
+        public const int RecommendedMaximumTimeoutMilliSeconds = 5000;
+        public const string TimeOutInMilliSecondsIsOutsideRecommendedTimeoutLimits = "Are you sure ? TimeOutInMilliSecondsIsOutsideRecommendedTimeoutLimits";
         public const string TimeOutInMilliSecondsOptionDetailedDescription = "The maximum time in milliseconds for this extension to retrieve the message data from the external source. This value is used as the timeout parameter when calling the external web service.";
         public const string TimeOutInMilliSecondsOptionLabel = "Maximum time (milliseconds) for message retrieval";
 

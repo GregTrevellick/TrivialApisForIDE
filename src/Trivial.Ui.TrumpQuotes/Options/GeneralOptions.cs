@@ -82,7 +82,21 @@ namespace Trivial.Ui.TrumpQuotes.Options
             {
                 if (value.IsNonNegativeInteger())
                 {
-                    timeOutInMilliSeconds = value;
+                    if (value.IsWithinRecommendedTimeoutLimits())
+                    {
+                        timeOutInMilliSeconds = value;
+                    }
+                    else
+                    {
+                        if (!proceedToSaveOptions)
+                        {
+                            proceedToSaveOptions = ConfirmProceedToSaveTimeOutInMilliSeconds();
+                            if (proceedToSaveOptions)
+                            {
+                                timeOutInMilliSeconds = value;
+                            }
+                        }
+                    }
                 }
                 else
                 {
@@ -91,6 +105,8 @@ namespace Trivial.Ui.TrumpQuotes.Options
             }
         }
 
+        private bool proceedToSaveOptions;
+
         private static void DisplayInvalidIntegerError(string labelName)
         {
             MessageBox.Show(
@@ -98,6 +114,24 @@ namespace Trivial.Ui.TrumpQuotes.Options
                 CommonConstants.GetCaption(Vsix.Name, Vsix.Version),
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Error);
+        }
+
+        private static bool ConfirmProceedToSaveTimeOutInMilliSeconds()
+        {
+            var proceedToSave = false;
+
+            var box = MessageBox.Show(
+                CommonConstants.TimeOutInMilliSecondsIsOutsideRecommendedTimeoutLimits,
+                CommonConstants.GetCaption(Vsix.Name, Vsix.Version),
+                MessageBoxButtons.OKCancel,
+                MessageBoxIcon.Warning);
+
+            if (box == DialogResult.OK)
+            {
+                proceedToSave = true;
+            }
+
+            return proceedToSave;
         }
     }
 }
