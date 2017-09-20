@@ -8,6 +8,8 @@ namespace Trivial.Ui.Common
 {
     //gregt test the weekday / weekend pop up limits
     //gregt test the "dont show within 5 mins" limit
+    //gregt what if timeOutInMilliSeconds is set to zero ?
+    //gregt warning if timeOutInMilliSeconds <= 200ms or >= 5000ms
 
     public static class TriviaMessage
     {
