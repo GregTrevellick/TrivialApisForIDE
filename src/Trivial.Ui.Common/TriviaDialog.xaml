@@ -38,16 +38,7 @@
         <Button Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" Content="Help" Name="AppBtnHelp" Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Right" Padding="5,5,5,5" Click="AppBtnHelp_OnClick"/>
 
         <!--ROW 4-->
-        <TextBlock Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" Text="go to tools" Visibility="Hidden" Margin="10,10,0,10" VerticalAlignment="Center" HorizontalAlignment="Right" Name="TextBlockHelp" />
-
-        <!--help text
-        <TextBlock Grid.Row="3" Grid.ColumnSpan="2" Grid.Column="2" 
-                   TextWrapping="Wrap"
-                   Name="AppTextBlockHelp" Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Center">
-            <TextBlock.RenderTransform>
-                <ScaleTransform ScaleX="0.8" ScaleY="0.8" />
-            </TextBlock.RenderTransform>
-        </TextBlock>-->
+        <TextBlock Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" Visibility="Hidden" Margin="10,10,0,10" VerticalAlignment="Center" HorizontalAlignment="Right" Padding="5,5,5,5" Name="TextBlockHelp" />
         
     </Grid>
 </platformUi:DialogWindow>

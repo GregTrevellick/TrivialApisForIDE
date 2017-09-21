@@ -1,5 +1,4 @@
-﻿add a manual help button to advise of frequency, timeout etc
-hide blank row for numeric trivia
+﻿hide blank row for numeric trivia
 test pop up messages count resets itself to zero at midnight
 -------------------------------------------------------------------
 LATER dedupe the readme.md options section using gulp 

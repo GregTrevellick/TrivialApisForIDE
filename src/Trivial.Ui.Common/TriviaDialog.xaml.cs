@@ -39,7 +39,7 @@ namespace Trivial.Ui.Common
 
         private void AppBtnHelp_OnClick(object sender, RoutedEventArgs e)
         {
-            //todo
+            TextBlockHelp.Text = "To alter frequency and volume of delivery go to Tools | Options | Drain The Swamp";
             TextBlockHelp.Visibility = Visibility.Visible;
         }        
     }
