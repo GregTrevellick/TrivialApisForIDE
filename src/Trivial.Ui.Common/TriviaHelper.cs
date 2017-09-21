@@ -6,10 +6,7 @@ namespace Trivial.Ui.Common
     {
         public static bool ShouldShowTrivia(GeneralOptionsDto generalOptionsDto)
         {
-            var isWeekend = IsWeekend(DateTime.Now);
-
-            if (WeekEndAndHaveNotExceededWeekEndCount(generalOptionsDto, isWeekend) || 
-                MidweekAndHaveNotExceededMidweekCount(generalOptionsDto, isWeekend))
+            if (!PopUpLimitForTodayExceeded(generalOptionsDto))
             {
                 if (LastPopUpMoreThanXMinutesAgo(generalOptionsDto.LastPopUpDateTime, generalOptionsDto.PopUpIntervalInMins, DateTime.Now))
                 {
@@ -20,6 +17,17 @@ namespace Trivial.Ui.Common
             return false;
         }
 
+        private static bool PopUpLimitForTodayExceeded(GeneralOptionsDto generalOptionsDto)
+        {
+            var isWeekend = IsWeekend(DateTime.Now);
+
+            var result = 
+                WeekEndAndHaveNotExceededWeekEndCount(generalOptionsDto, isWeekend) || 
+                MidweekAndHaveNotExceededMidweekCount(generalOptionsDto, isWeekend);
+
+            return result;
+        }
+
         private static bool IsWeekend(DateTime dateTimeNow)
         {
             return dateTimeNow.DayOfWeek == DayOfWeek.Saturday ||
@@ -28,16 +36,20 @@ namespace Trivial.Ui.Common
 
         internal static bool MidweekAndHaveNotExceededMidweekCount(GeneralOptionsDto generalOptionsDto, bool isWeekend)
         {
-            return 
+            var result = 
                 !isWeekend &&
                 generalOptionsDto.PopUpCountToday < generalOptionsDto.MaximumPopUpsWeekDay;
+
+            return result;
         }
 
         internal static bool WeekEndAndHaveNotExceededWeekEndCount(GeneralOptionsDto generalOptionsDto, bool isWeekend)
         {
-            return 
+            var result = 
                 isWeekend && 
                 generalOptionsDto.PopUpCountToday < generalOptionsDto.MaximumPopUpsWeekEnd;
+
+            return result;
         }
 
         internal static bool LastPopUpMoreThanXMinutesAgo(DateTime lastPopUpDateTime, int popUpIntervalInMins, DateTime dateTimeNow)

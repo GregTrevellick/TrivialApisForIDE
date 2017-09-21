@@ -12,6 +12,7 @@ namespace Trivial.Ui.Common
     //gregt add a manual help button to advise of frequency, timeout etc
     //gregt tiny image in numeric popup (just my home desktop experimental instance ?)
     //gregt shared screen shot of options for vsmp markdown ?
+    //gregt add an icon for alt-tab purposes
 
     public static class TriviaMessage
     {
