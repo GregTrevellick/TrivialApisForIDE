@@ -38,7 +38,7 @@
         </TextBlock>
 
         <!--ROW 3-->
-        <Button Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" Content="Close" Name="AppBtn1" Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Center" Padding="5,5,5,5" Click="AppBtn1_OnClick"/>
+        <Button Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" Content="Close" Name="AppBtnClose" Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Center" Padding="5,5,5,5" Click="AppBtnClose_OnClick"/>
 
         <!--ROW 4-->
         <!--help text

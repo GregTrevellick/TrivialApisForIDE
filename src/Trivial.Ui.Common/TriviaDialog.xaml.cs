@@ -32,7 +32,7 @@ namespace Trivial.Ui.Common
             e.Handled = true;
         }
 
-        private void AppBtn1_OnClick(object sender, RoutedEventArgs e)
+        private void AppBtnClose_OnClick(object sender, RoutedEventArgs e)
         {
             Close();
         }
