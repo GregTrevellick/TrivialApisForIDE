@@ -10,7 +10,7 @@ namespace Trivial.Ui.Common
 {
     public static class TriviaMessage
     {
-        public static HiddenOptionsDto ShowTrivia(AppName appName, string popUpTitle, DateTime lastPopUpDateTime, int popUpCountToday, int timeOutInMilliSeconds)
+        public static HiddenOptionsDto ShowTrivia(AppName appName, string popUpTitle, DateTime lastPopUpDateTime, int popUpCountToday, int timeOutInMilliSeconds, string optionsName)
         {
             HiddenOptionsDto hiddenOptionsDto = null;
 
@@ -23,7 +23,7 @@ namespace Trivial.Ui.Common
 
             if (!string.IsNullOrEmpty(message))
             {   
-                DisplayPopUpMessage(popUpTitle, message, gatewayResponse.LinkUri, date, author, appName);
+                DisplayPopUpMessage(popUpTitle, message, gatewayResponse.LinkUri, date, author, appName, optionsName);
                 hiddenOptionsDto = GetHiddenOptionsDto(lastPopUpDateTime, popUpCountToday);
             }
 
@@ -56,11 +56,11 @@ namespace Trivial.Ui.Common
             return lastPopUpDateTime.Date < baseDateTime.Date;
         }
 
-        private static void DisplayPopUpMessage(string popUpTitle, string message, string linkUri, string date, string author, AppName appName)
+        private static void DisplayPopUpMessage(string popUpTitle, string message, string linkUri, string date, string author, AppName appName, string optionsName)
         {
             const string spacer = " ";
 
-            var triviaDialog = new TriviaDialog(appName)
+            var triviaDialog = new TriviaDialog(appName, optionsName)
             {
                 AppTextBlockAttribution = { Text = author + spacer + date + spacer },
                 AppTextBlockMessage = { Text = message },

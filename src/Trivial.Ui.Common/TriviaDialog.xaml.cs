@@ -10,10 +10,12 @@ namespace Trivial.Ui.Common
     public partial class TriviaDialog : DialogWindow
     {
         private AppName appName;
+        private string optionsName;
 
-        public TriviaDialog(AppName appName)
+        public TriviaDialog(AppName appName, string optionsName)
         {
             this.appName = appName;
+            this.optionsName = optionsName;
             InitializeComponent();
             InitializeTriviaDialog();
         }
@@ -42,7 +44,7 @@ namespace Trivial.Ui.Common
 
         private void AppBtnHelp_OnClick(object sender, RoutedEventArgs e)
         {
-            TextBlockHelp.Text = $"To alter frequency and volume of delivery go to Tools | Options | {appName}";
+            TextBlockHelp.Text = $"To alter frequency and volume of delivery go to Tools | Options | {optionsName}";
             TextBlockHelp.Visibility = Visibility.Visible;
         }        
     }
