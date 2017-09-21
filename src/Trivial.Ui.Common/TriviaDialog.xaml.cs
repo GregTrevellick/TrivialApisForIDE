@@ -9,13 +9,16 @@ namespace Trivial.Ui.Common
 {
     public partial class TriviaDialog : DialogWindow
     {
+        private AppName appName;
+
         public TriviaDialog(AppName appName)
         {
+            this.appName = appName;
             InitializeComponent();
-            InitializeTriviaDialog(appName);
+            InitializeTriviaDialog();
         }
 
-        private void InitializeTriviaDialog(AppName appName)
+        private void InitializeTriviaDialog()
         {
             HasMaximizeButton = true;
             HasMinimizeButton = true;
@@ -39,7 +42,7 @@ namespace Trivial.Ui.Common
 
         private void AppBtnHelp_OnClick(object sender, RoutedEventArgs e)
         {
-            TextBlockHelp.Text = "To alter frequency and volume of delivery go to Tools | Options | Drain The Swamp";//gregt use the correct app name
+            TextBlockHelp.Text = $"To alter frequency and volume of delivery go to Tools | Options | {appName}";
             TextBlockHelp.Visibility = Visibility.Visible;
         }        
     }
