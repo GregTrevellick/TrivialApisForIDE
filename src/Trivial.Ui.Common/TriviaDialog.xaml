@@ -34,7 +34,7 @@
         <Button Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" Content="Help" Name="AppBtnHelp" Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Right" Padding="5,5,5,5" Click="AppBtnHelp_OnClick"/>
 
         <!--ROW 4-->
-        <TextBlock Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" Visibility="Hidden" Margin="10,10,0,10" VerticalAlignment="Center" HorizontalAlignment="Right" Padding="5,5,5,5" Name="TextBlockHelp" />
+        <TextBlock Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" Visibility="Collapsed" Margin="10,10,0,10" VerticalAlignment="Center" HorizontalAlignment="Right" Padding="5,5,5,5" Name="TextBlockHelp" />
         
     </Grid>
 </platformUi:DialogWindow>
