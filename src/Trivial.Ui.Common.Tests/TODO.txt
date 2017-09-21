@@ -7,3 +7,7 @@ gregt what if timeOutInMilliSeconds is set to zero ?
 
 AFTER LIVE gregt tiny image in numeric popup (just my home desktop experimental instance ?)
 AFTER LIVE dedupe readme's (e.g. Frequency of pop-up message delivery configurable)
+
+rename sln to .launcher
+
+Capture.PNG
