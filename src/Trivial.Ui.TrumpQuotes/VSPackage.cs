@@ -20,6 +20,7 @@ namespace Trivial.Ui.TrumpQuotes
     {
         private DTE dte;
         public static GeneralOptions Options { get; private set; }
+        private SolutionEvents solutionEvents;
 
         protected override void Initialize()
         {
@@ -27,7 +28,7 @@ namespace Trivial.Ui.TrumpQuotes
 
             IServiceContainer serviceContainer = this as IServiceContainer;
             dte = serviceContainer.GetService(typeof(SDTE)) as DTE;
-            var solutionEvents = dte.Events.SolutionEvents;
+            solutionEvents = dte.Events.SolutionEvents;
             solutionEvents.Opened += OnSolutionOpened;
         }
 
