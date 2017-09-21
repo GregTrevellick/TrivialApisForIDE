@@ -6,9 +6,11 @@ namespace Trivial.Ui.Common
     {
         public static bool ShouldShowTrivia(GeneralOptionsDto generalOptionsDto)
         {
-            if (!PopUpLimitForTodayExceeded(generalOptionsDto))
+            var dateTimeNow = DateTime.Now;
+
+            if (!HaveExceededTodaysPopUpCount(generalOptionsDto, dateTimeNow))
             {
-                if (LastPopUpMoreThanXMinutesAgo(generalOptionsDto.LastPopUpDateTime, generalOptionsDto.PopUpIntervalInMins, DateTime.Now))
+                if (LastPopUpMoreThanXMinutesAgo(generalOptionsDto.LastPopUpDateTime, generalOptionsDto.PopUpIntervalInMins, dateTimeNow))
                 {
                     return true;
                 }
@@ -17,15 +19,21 @@ namespace Trivial.Ui.Common
             return false;
         }
 
-        private static bool PopUpLimitForTodayExceeded(GeneralOptionsDto generalOptionsDto)
+        private static bool HaveExceededTodaysPopUpCount(GeneralOptionsDto generalOptionsDto, DateTime dateTimeNow)
         {
-            var isWeekend = IsWeekend(DateTime.Now);
+            var isWeekend = IsWeekend(dateTimeNow);
+            bool haveExceededTodaysPopUpCount;
 
-            var result = 
-                WeekEndAndHaveNotExceededWeekEndCount(generalOptionsDto, isWeekend) || 
-                MidweekAndHaveNotExceededMidweekCount(generalOptionsDto, isWeekend);
+            if (isWeekend)
+            {
+                haveExceededTodaysPopUpCount = HaveExceededTodaysPopUpCount(generalOptionsDto.PopUpCountToday, generalOptionsDto.MaximumPopUpsWeekEnd);
+            }
+            else
+            {
+                haveExceededTodaysPopUpCount = HaveExceededTodaysPopUpCount(generalOptionsDto.PopUpCountToday, generalOptionsDto.MaximumPopUpsWeekDay);
+            }
 
-            return result;
+            return haveExceededTodaysPopUpCount;
         }
 
         private static bool IsWeekend(DateTime dateTimeNow)
@@ -34,27 +42,16 @@ namespace Trivial.Ui.Common
                    dateTimeNow.DayOfWeek == DayOfWeek.Sunday;
         }
 
-        internal static bool MidweekAndHaveNotExceededMidweekCount(GeneralOptionsDto generalOptionsDto, bool isWeekend)
+        internal static bool HaveExceededTodaysPopUpCount(int popUpCountToday, int maximumPopUps)
         {
-            var result = 
-                !isWeekend &&
-                generalOptionsDto.PopUpCountToday < generalOptionsDto.MaximumPopUpsWeekDay;
-
-            return result;
-        }
-
-        internal static bool WeekEndAndHaveNotExceededWeekEndCount(GeneralOptionsDto generalOptionsDto, bool isWeekend)
-        {
-            var result = 
-                isWeekend && 
-                generalOptionsDto.PopUpCountToday < generalOptionsDto.MaximumPopUpsWeekEnd;
-
-            return result;
+            return popUpCountToday >= maximumPopUps;
         }
 
         internal static bool LastPopUpMoreThanXMinutesAgo(DateTime lastPopUpDateTime, int popUpIntervalInMins, DateTime dateTimeNow)
         {
-            return lastPopUpDateTime < dateTimeNow.AddMinutes(-1 * popUpIntervalInMins);
+            var acceptableLastPopUpDateTime = dateTimeNow.AddMinutes(-1 * popUpIntervalInMins);
+            var result = lastPopUpDateTime <= acceptableLastPopUpDateTime;
+            return result;
         }
     }
 }

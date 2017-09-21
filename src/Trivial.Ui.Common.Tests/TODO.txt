@@ -1,14 +1,21 @@
-﻿gregt add a manual help button to advise of frequency, timeout etc
-gregt add an icon for alt-tab purposes
+﻿add a manual help button to advise of frequency, timeout etc
 
-gregt test the weekday / weekend pop up limits
-gregt test the "dont show within 5 mins" limit
-gregt what if timeOutInMilliSeconds is set to zero ?
+add an icon for alt-tab purposes
 
-AFTER LIVE gregt tiny image in numeric popup (just my home desktop experimental instance ?)
-AFTER LIVE dedupe readme's (e.g. Frequency of pop-up message delivery configurable)
+test the weekday / weekend pop up limits YES THIS WORKS !!!
+
+test the "dont show within 5 mins" limit WORKS IF CORRECT DATETIME param passed in 
+
+what if timeOutInMilliSeconds is set to zero ?
 
 rename sln to .launcher
+
 Capture.PNG
+
 vsix compress
+
 delete key.snk
+
+AFTER LIVE tiny image in numeric popup (just my home desktop experimental instance ?)
+
+AFTER LIVE dedupe readme's (e.g. Frequency of pop-up message delivery configurable)
