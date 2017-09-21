@@ -2,7 +2,6 @@
 what if timeOutInMilliSeconds is set to zero ?
 test pop up messages count resets itself to zero at midnight
 -------------------------------------------------------------------
-LOW rename sln to .launcher
 LOW vsix compress
 LOW delete key.snk
 -------------------------------------------------------------------
