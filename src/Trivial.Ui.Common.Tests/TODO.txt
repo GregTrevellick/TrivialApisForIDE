@@ -1,8 +1,6 @@
-﻿add a manual help button to advise of frequency, timeout etc
+﻿test at home - FIXED - the tiny image for numeric trivia in popup (disable lightweight solution load)
+add a manual help button to advise of frequency, timeout etc
 test pop up messages count resets itself to zero at midnight
 -------------------------------------------------------------------
-LOW vsix compress
--------------------------------------------------------------------
-AFTER LIVE dedupe the readme.md options section using gulp 
-FIXED the tiny image for numeric trivia in popup
-TESTED SUCCESSFULLY frequency & daily limit
+LATER dedupe the readme.md options section using gulp 
+TESTED frequency & daily limit
