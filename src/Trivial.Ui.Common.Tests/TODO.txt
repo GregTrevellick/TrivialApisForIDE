@@ -1,4 +1,6 @@
 ﻿test pop up messages count resets itself to zero at midnight
-------------------------------------------------------------
-LATER dedupe the readme.md options section using gulp 
-TESTED frequency & daily limit
+update the options screenshot
+github repo title and website address 
+github readme links
+-----------------------------------------------------------
+dedupe the readme.md options section using gulp 
