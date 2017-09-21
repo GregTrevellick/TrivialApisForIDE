@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Reflection;
+using System.Windows;
 using System.Windows.Media.Imaging;
+using Microsoft.VisualStudio.Shell.Interop;
 using Trivial.Api.Gateway;
 using Trivial.Entities;
 
@@ -64,6 +66,12 @@ namespace Trivial.Ui.Common
                 AppTextBlockMessage = { Text = message },
                 Title = popUpTitle,
             };
+
+            if (!string.IsNullOrWhiteSpace(triviaDialog.AppTextBlockAttribution.Text))
+            {
+                triviaDialog.AppTextBlockAttribution.Visibility = Visibility.Visible;
+                triviaDialog.AppTextBlock2.Visibility = Visibility.Visible;
+            }
 
             var iconUri = GetIconUri(appName);
             triviaDialog.AppImage.Source = new BitmapImage(iconUri);

@@ -39,7 +39,7 @@ namespace Trivial.Ui.Common
 
         private void AppBtnHelp_OnClick(object sender, RoutedEventArgs e)
         {
-            TextBlockHelp.Text = "To alter frequency and volume of delivery go to Tools | Options | Drain The Swamp";
+            TextBlockHelp.Text = "To alter frequency and volume of delivery go to Tools | Options | Drain The Swamp";//gregt use the correct app name
             TextBlockHelp.Visibility = Visibility.Visible;
         }        
     }
