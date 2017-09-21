@@ -1,22 +1,11 @@
-﻿
-test the weekday / weekend pop up limits YES THIS WORKS !!!
-test the "dont show within 5 mins" limit WORKS IF CORRECT DATETIME param passed in 
-
-
-add a manual help button to advise of frequency, timeout etc
-
-add an icon for alt-tab purposes
-
+﻿add a manual help button to advise of frequency, timeout etc
 what if timeOutInMilliSeconds is set to zero ?
-
-rename sln to .launcher
-
-Capture.PNG
-
-vsix compress
-
-delete key.snk
-
-AFTER LIVE tiny image in numeric popup (just my home desktop experimental instance ?)
-
-AFTER LIVE dedupe readme's (e.g. Frequency of pop-up message delivery configurable)
+finalise options label wordings
+-------------------------------------------------------------------
+LOW rename sln to .launcher
+LOW vsix compress
+LOW delete key.snk
+-------------------------------------------------------------------
+AFTER LIVE dedupe the readme.md options section using gulp 
+FIXED the tiny image for numeric trivia in popup
+TESTED SUCCESSFULLY frequency & daily limit

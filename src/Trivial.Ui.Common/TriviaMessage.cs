@@ -58,15 +58,15 @@ namespace Trivial.Ui.Common
         {
             const string spacer = " ";
 
-            var triviaDialog = new TriviaDialog
+            var triviaDialog = new TriviaDialog(appName)
             {
                 AppTextBlockAttribution = { Text = author + spacer + date + spacer },
                 AppTextBlockMessage = { Text = message },
                 Title = popUpTitle,
             };
 
-            var uri = GetUri(appName);
-            triviaDialog.AppImage.Source = new BitmapImage(uri);
+            var iconUri = GetIconUri(appName);
+            triviaDialog.AppImage.Source = new BitmapImage(iconUri);
 
             if (!string.IsNullOrEmpty(linkUri))
             {
@@ -78,7 +78,7 @@ namespace Trivial.Ui.Common
             triviaDialog.Show();
         }
 
-        private static Uri GetUri(AppName appName)
+        public static Uri GetIconUri(AppName appName)
         {
             var assemblyName = Assembly.GetExecutingAssembly().GetName();
             var imageSubDirectory = appName.ToString();

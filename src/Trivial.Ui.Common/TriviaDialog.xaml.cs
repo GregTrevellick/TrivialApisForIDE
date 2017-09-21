@@ -1,24 +1,29 @@
 ﻿using Microsoft.VisualStudio.PlatformUI;
 using System.Diagnostics;
 using System.Windows;
+using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
+using Trivial.Entities;
 
 namespace Trivial.Ui.Common
 {
     public partial class TriviaDialog : DialogWindow
     {
-        public TriviaDialog()
+        public TriviaDialog(AppName appName)
         {
             InitializeComponent();
-            InitializeTriviaDialog();
+            InitializeTriviaDialog(appName);
         }
 
-        private void InitializeTriviaDialog()
+        private void InitializeTriviaDialog(AppName appName)
         {
-            SizeToContent = SizeToContent.WidthAndHeight;
-            WindowStartupLocation = WindowStartupLocation.CenterScreen;
             HasMaximizeButton = true;
             HasMinimizeButton = true;
+            SizeToContent = SizeToContent.WidthAndHeight;
+            WindowStartupLocation = WindowStartupLocation.CenterScreen;
+
+            var iconUri = TriviaMessage.GetIconUri(appName);
+            Icon = new BitmapImage(iconUri);
         }
 
         private void AppHyperlink1_RequestNavigate(object sender, RequestNavigateEventArgs e)
