@@ -6,14 +6,6 @@ using Trivial.Entities;
 
 namespace Trivial.Ui.Common
 {
-    //gregt test the weekday / weekend pop up limits
-    //gregt test the "dont show within 5 mins" limit
-    //gregt what if timeOutInMilliSeconds is set to zero ?
-    //gregt add a manual help button to advise of frequency, timeout etc
-    //gregt tiny image in numeric popup (just my home desktop experimental instance ?)
-    //gregt shared screen shot of options for vsmp markdown ?
-    //gregt add an icon for alt-tab purposes
-
     public static class TriviaMessage
     {
         public static HiddenOptionsDto ShowTrivia(AppName appName, string popUpTitle, DateTime lastPopUpDateTime, int popUpCountToday, int timeOutInMilliSeconds)

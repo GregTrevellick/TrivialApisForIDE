@@ -1,0 +1,11 @@
+﻿gregt add a manual help button to advise of frequency, timeout etc
+gregt add an icon for alt-tab purposes
+
+gregt test the weekday / weekend pop up limits
+gregt test the "dont show within 5 mins" limit
+gregt what if timeOutInMilliSeconds is set to zero ?
+
+image optimizer
+
+AFTER LIVE gregt tiny image in numeric popup (just my home desktop experimental instance ?)
+AFTER LIVE dedupe readme's (e.g. Frequency of pop-up message delivery configurable)
