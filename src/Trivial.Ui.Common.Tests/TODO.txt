@@ -1,9 +1,7 @@
 ﻿add a manual help button to advise of frequency, timeout etc
-what if timeOutInMilliSeconds is set to zero ?
 test pop up messages count resets itself to zero at midnight
 -------------------------------------------------------------------
 LOW vsix compress
-LOW delete key.snk
 -------------------------------------------------------------------
 AFTER LIVE dedupe the readme.md options section using gulp 
 FIXED the tiny image for numeric trivia in popup
