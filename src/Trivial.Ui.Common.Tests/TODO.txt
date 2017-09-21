@@ -9,5 +9,6 @@ AFTER LIVE gregt tiny image in numeric popup (just my home desktop experimental 
 AFTER LIVE dedupe readme's (e.g. Frequency of pop-up message delivery configurable)
 
 rename sln to .launcher
-
 Capture.PNG
+vsix compress
+delete key.snk
