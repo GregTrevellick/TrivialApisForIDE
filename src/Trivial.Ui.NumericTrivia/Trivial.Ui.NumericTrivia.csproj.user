@@ -3,7 +3,4 @@
   <PropertyGroup>
     <ProjectView>ShowAllFiles</ProjectView>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
-    <StartArguments>/RootSuffix Exp</StartArguments>
-  </PropertyGroup>
 </Project>
