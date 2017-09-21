@@ -1,10 +1,11 @@
-﻿add a manual help button to advise of frequency, timeout etc
+﻿
+test the weekday / weekend pop up limits YES THIS WORKS !!!
+test the "dont show within 5 mins" limit WORKS IF CORRECT DATETIME param passed in 
+
+
+add a manual help button to advise of frequency, timeout etc
 
 add an icon for alt-tab purposes
-
-test the weekday / weekend pop up limits YES THIS WORKS !!!
-
-test the "dont show within 5 mins" limit WORKS IF CORRECT DATETIME param passed in 
 
 what if timeOutInMilliSeconds is set to zero ?
 

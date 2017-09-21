@@ -7,7 +7,7 @@ namespace Trivial.Ui.TrumpQuotes.Options
 {
     public class GeneralOptions : DialogPage
     {
-        internal DateTime LastPopUpDateTime { get; set; } = DateTime.Now;
+        internal DateTime LastPopUpDateTime { get; set; } /////////////////////////////////////////////////////////////////////////////////= DateTime.Now;
         internal int PopUpCountToday { get; set; }
         private string caption = CommonConstants.GetCaption(Vsix.Name, Vsix.Version);
         private bool firstTimeOpeningOptions = true;
