@@ -1,4 +1,5 @@
-﻿test pop up messages count resets itself to zero at midnight
+﻿daily popup limit only works if IDE is left open
+test pop up messages count resets itself to zero at midnight
 update the options screenshot
 github repo title and website address 
 github readme links
