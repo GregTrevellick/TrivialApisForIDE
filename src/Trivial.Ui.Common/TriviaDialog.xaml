@@ -11,6 +11,7 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto" />
@@ -19,15 +20,10 @@
         </Grid.ColumnDefinitions>
 
         <!--ROW 1-->
-        <Image Grid.Row="0" Grid.Column="0" Stretch="None"
-               Margin="10,10,10,10"
-               VerticalAlignment="Center" HorizontalAlignment="Left"
-               Name="AppImage"/>
-        <TextBlock Grid.Row="0" Grid.Column="1" 
-                   Grid.ColumnSpan="2"
-                   Margin="10,10,10,10"
-                   VerticalAlignment="Center" HorizontalAlignment="Left"
-                   Name="AppTextBlockMessage" FontWeight="Bold" />
+        <Image Grid.Row="0" Grid.Column="0" Stretch="None" Margin="10,10,10,10"
+               VerticalAlignment="Center" HorizontalAlignment="Left" Name="AppImage"/>
+        <TextBlock Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Margin="10,10,10,10"
+                   VerticalAlignment="Center" HorizontalAlignment="Left" Name="AppTextBlockMessage" FontWeight="Bold" />
 
         <!--ROW 2-->
         <!--<TextBlock Grid.Row="1" Grid.Column="1" TextWrapping="Wrap" Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Left" Name="AppTextBlockAuthor" />-->
@@ -39,8 +35,11 @@
 
         <!--ROW 3-->
         <Button Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" Content="Close" Name="AppBtnClose" Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Center" Padding="5,5,5,5" Click="AppBtnClose_OnClick"/>
+        <Button Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" Content="Help" Name="AppBtnHelp" Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Right" Padding="5,5,5,5" Click="AppBtnHelp_OnClick"/>
 
         <!--ROW 4-->
+        <TextBlock Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" Text="go to tools" Visibility="Hidden" Margin="10,10,0,10" VerticalAlignment="Center" HorizontalAlignment="Right" Name="TextBlockHelp" />
+
         <!--help text
         <TextBlock Grid.Row="3" Grid.ColumnSpan="2" Grid.Column="2" 
                    TextWrapping="Wrap"

@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
-  <Metadata>
-    <Identity Id="f39b9a5e-80dc-4b2c-9cc1-c015d8ff9840" Version="1.0.53" Language="en-US" Publisher="Greg Trevellick" />
-    <DisplayName>Numeric Trivia</DisplayName>
-    <Description xml:space="preserve">A random pop-up numeric fact whenever you open a solution.</Description>
-    <MoreInfo>https://github.com/GregTrevellick/TrivialApisForIDE</MoreInfo>
-    <License>LICENSE.txt</License>
-    <ReleaseNotes>https://github.com/GregTrevellick/TrivialApisForIDE/blob/master/CHANGELOG.md</ReleaseNotes>
-    <Icon>Resources\VsixExtensionIcon_90x90.png</Icon>
-    <PreviewImage>Resources\VsixExtensionPreview_175x175.png</PreviewImage>
-    <Tags>numbers, trivia, trivial, meaningless, fun, numeral, math</Tags>
-  </Metadata>
-  <Installation>
-    <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[11.0,16.0)" />
-  </Installation>
-  <Dependencies>
-  </Dependencies>
-  <Prerequisites>
-    <Prerequisite Id="Microsoft.VisualStudio.Component.CoreEditor" Version="[15.0,16.0)" DisplayName="Visual Studio core editor" />
-  </Prerequisites>
-  <Assets>
-    <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%;PkgdefProjectOutputGroup|" />
-  </Assets>
+    <Metadata>
+        <Identity Id="f39b9a5e-80dc-4b2c-9cc1-c015d8ff9840" Version="1.0.56" Language="en-US" Publisher="Greg Trevellick" />
+        <DisplayName>Numeric Trivia</DisplayName>
+        <Description xml:space="preserve">A random pop-up numeric fact whenever you open a solution.</Description>
+        <MoreInfo>https://github.com/GregTrevellick/TrivialApisForIDE</MoreInfo>
+        <License>LICENSE.txt</License>
+        <ReleaseNotes>https://github.com/GregTrevellick/TrivialApisForIDE/blob/master/CHANGELOG.md</ReleaseNotes>
+        <Icon>Resources\VsixExtensionIcon_90x90.png</Icon>
+        <PreviewImage>Resources\VsixExtensionPreview_175x175.png</PreviewImage>
+        <Tags>numbers, trivia, trivial, meaningless, fun, numeral, math</Tags>
+    </Metadata>
+    <Installation>
+        <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[11.0,16.0)" />
+    </Installation>
+    <Dependencies>
+    </Dependencies>
+    <Prerequisites>
+        <Prerequisite Id="Microsoft.VisualStudio.Component.CoreEditor" Version="[15.0,16.0)" DisplayName="Visual Studio core editor" />
+    </Prerequisites>
+    <Assets>
+        <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%;PkgdefProjectOutputGroup|" />
+    </Assets>
 </PackageManifest>

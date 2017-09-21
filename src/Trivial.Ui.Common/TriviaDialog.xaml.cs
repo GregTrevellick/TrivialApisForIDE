@@ -36,5 +36,11 @@ namespace Trivial.Ui.Common
         {
             Close();
         }
+
+        private void AppBtnHelp_OnClick(object sender, RoutedEventArgs e)
+        {
+            //todo
+            TextBlockHelp.Visibility = Visibility.Visible;
+        }        
     }
 }
