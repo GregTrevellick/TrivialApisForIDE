@@ -3,5 +3,6 @@ test pop up messages count resets itself to zero at midnight
 update the options screenshot
 github repo title and website address 
 github readme links
+create a template project
 -----------------------------------------------------------
 dedupe the readme.md options section using gulp 
