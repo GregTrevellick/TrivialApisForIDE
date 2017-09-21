@@ -1,5 +1,4 @@
-﻿test at home - FIXED - the tiny image for numeric trivia in popup (disable lightweight solution load)
-add a manual help button to advise of frequency, timeout etc
+﻿add a manual help button to advise of frequency, timeout etc
 test pop up messages count resets itself to zero at midnight
 -------------------------------------------------------------------
 LATER dedupe the readme.md options section using gulp 
