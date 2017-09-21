@@ -1,6 +1,5 @@
 ﻿add a manual help button to advise of frequency, timeout etc
 what if timeOutInMilliSeconds is set to zero ?
-finalise options label wordings
 test pop up messages count resets itself to zero at midnight
 -------------------------------------------------------------------
 LOW rename sln to .launcher
