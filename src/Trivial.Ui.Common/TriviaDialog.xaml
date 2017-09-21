@@ -20,10 +20,8 @@
         </Grid.ColumnDefinitions>
 
         <!--ROW 1-->
-        <Image Grid.Row="0" Grid.Column="0" Stretch="None" Margin="10,10,10,10"
-               VerticalAlignment="Center" HorizontalAlignment="Left" Name="AppImage"/>
-        <TextBlock Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Margin="10,10,10,10"
-                   VerticalAlignment="Center" HorizontalAlignment="Left" Name="AppTextBlockMessage" FontWeight="Bold" />
+        <Image Grid.Row="0" Grid.Column="0" Stretch="None" Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Left" Name="AppImage"/>
+        <TextBlock Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Left" Name="AppTextBlockMessage" FontWeight="Bold" />
 
         <!--ROW 2-->
         <TextBlock Grid.Row="1" Grid.Column="1" Margin="10,10,0,10" VerticalAlignment="Center" HorizontalAlignment="Right" Name="AppTextBlockAttribution" />
