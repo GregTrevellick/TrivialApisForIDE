@@ -5,8 +5,10 @@ These are the incremental changes to each version that has been released on the 
 Individual releases are tagged as such in GitHub.
 
 ## 1.0.xx
-**2017-mm-dd**
+**2017-09-dd**
 - [x] Initial release
+  - [x] Drain The Swamp
+  - [x] Numeric Trivia
 
 <!--
  https://github.com/Microsoft/UnitTestBoilerplateGenerator/blob/master/src/CreateUnitTestBoilerplateDialog.xaml
