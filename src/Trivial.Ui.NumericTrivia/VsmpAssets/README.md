@@ -3,8 +3,6 @@
 [GitHubRepoPullRequestsURL]: https://github.com/GregTrevellick/TrivialApisForIDE/pulls
 [VSMarketplaceUrl]: https://marketplace.visualstudio.com/items?itemName=GregTrevellick.NumericTrivia#review-details
 
-# Numeric Trivia
-
 ![](ReadMeScreenShot.png)
 
 A light-hearted and meaningless extension that displays a random number-related fact / piece of trivia when opening a solution file.

@@ -3,8 +3,6 @@
 [GitHubRepoPullRequestsURL]: https://github.com/GregTrevellick/TrivialApisForIDE/pulls
 [VSMarketplaceUrl]: https://marketplace.visualstudio.com/items?itemName=GregTrevellick.DrainTheSwamp#review-details
 
-# Trump Quotes
-
 ![](ReadMeScreenShot.png)
 
 Enlighten your day with an insightful random quote from Donald Trump when opening a solution file.
