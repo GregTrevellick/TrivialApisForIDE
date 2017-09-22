@@ -7,6 +7,8 @@
 
 Enlighten your day with an insightful random quote from Donald Trump when opening a solution file.
 
+![](ReadMeScreenShot.png)
+
 - This is truly tremendous. A wonderful thing. So much so that it deserves a [review][VSMarketplaceUrl].
 
 - Trust me folks, I think this [guy's](https://www.tronalddump.io) gonna be alright.

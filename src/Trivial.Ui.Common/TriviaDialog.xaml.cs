@@ -44,8 +44,15 @@ namespace Trivial.Ui.Common
 
         private void AppBtnHelp_OnClick(object sender, RoutedEventArgs e)
         {
-            TextBlockHelp.Text = $"To alter frequency and volume of delivery go to Tools | Options | {optionsName}";
-            TextBlockHelp.Visibility = Visibility.Visible;
+            if (TextBlockHelp.Visibility == Visibility.Visible)
+            {
+                TextBlockHelp.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                TextBlockHelp.Text = $"To alter frequency and volume of delivery go to Tools | Options | {optionsName}";
+                TextBlockHelp.Visibility = Visibility.Visible;
+            }
         }        
     }
 }

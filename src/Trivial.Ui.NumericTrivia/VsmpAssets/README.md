@@ -7,6 +7,8 @@
 
 A light-hearted and meaningless extension that displays a random number-related fact / piece of trivia when opening a solution file.
 
+![](ReadMeScreenShot.png)
+
 - Impress your geek peers or bore your spouse/kids with your new found nerdy numerical knowledge.
 
 - If you like this ***free*** extension, please give it a [review][VSMarketplaceUrl].

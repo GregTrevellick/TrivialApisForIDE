@@ -101,6 +101,7 @@
     <Content Include="source.extension.ico">
       <DependentUpon>source.extension.vsixmanifest</DependentUpon>
     </Content>
+    <Content Include="VsmpAssets\ReadMeScreenShot.png" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="source.extension.resx">
