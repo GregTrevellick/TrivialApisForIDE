@@ -3,7 +3,6 @@
 [GitHubRepoPullRequestsURL]: https://github.com/GregTrevellick/TrivialApisForIDE/pulls
 [VSMarketplaceUrl]: https://marketplace.visualstudio.com/items?itemName=GregTrevellick.DrainTheSwamp#review-details
 
-![](ReadMeScreenShot.png)
 Enlighten your day with an insightful random quote from Donald Trump when opening a solution file.
 
 - This is truly tremendous. A wonderful thing. So much so that it deserves a [review][VSMarketplaceUrl].
@@ -11,6 +10,8 @@ Enlighten your day with an insightful random quote from Donald Trump when openin
 - Trust me folks, I think this [guy's](https://www.tronalddump.io) gonna be alright.
 
 - Inspired by [Phil Haack's Encourage](https://marketplace.visualstudio.com/items?itemName=Haacked.Encourage) extension. 
+
+    ![](ReadMeScreenShot.png)
 
 ### Options
 
@@ -20,4 +21,4 @@ Enlighten your day with an insightful random quote from Donald Trump when openin
 
 - Configurable timeout (in milliseconds) for third party data retrieval process 
 
-![](../../Trivial.Ui.Common/Resources/Generic_ReadMeScreenShot_OptionsGeneral.png)
+    ![](../../Trivial.Ui.Common/Resources/Generic_ReadMeScreenShot_OptionsGeneral.png)
