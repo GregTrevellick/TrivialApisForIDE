@@ -12,7 +12,19 @@ namespace Trivial.Api.Gateway
             {
                 case AppName.NumericTrivia:
                     //Consistent average response time 330ms
-                    url = "http://numbersapi.com/random/trivia";
+                    url =  //"http://numbersapi.com/random/trivia";
+
+
+                  // YES   "http://api.fixer.io/latest"
+                  // YES   "http://www.jservice.io/api/random"
+
+
+
+
+                        ;
+
+
+
                     break;
                 case AppName.TrumpQuotes:
                     //Average response time 280ms but sometimes peaking around 370ms
@@ -25,14 +37,15 @@ namespace Trivial.Api.Gateway
     }
 }
 
-//https://icanhazdadjoke.com/api#fetch-a-random-dad-joke 
-//https://quotesondesign.com/api-v4-0/ 
-//https://restcountries.eu/ 
-//http://quotes.rest/#!/quote/get_quote_random
-///http://techxposer.com/CurrencyRate/INR
+
+//"https://icanhazdadjoke.com/api#fetch-a-random-dad-joke"
+////"https://quotesondesign.com/api-v4-0/"
+//"https://restcountries.eu/"
+//PAID     "http://quotes.rest/#!/quote/get_quote_random"
+
+
+
 ////https://www.coindesk.com/api/ 
-////http://fixer.io/ 
-////http://jservice.io/ 
 ////https://opentdb.com/api_config.php 
 ////https://qriusity.com/ 
 ////https://api.pandascore.co/rest#make-basic-requests 
