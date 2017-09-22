@@ -16,7 +16,7 @@ namespace Trivial.Ui.Common.Tests
                 popUpIntervalInMins: 60,
                 dateTimeNow:  new DateTime(2017, 01, 01, 13, 0, 0)));
 
-            Assert.IsFalse(TriviaHelper.LastPopUpMoreThanXMinutesAgo(
+            Assert.IsTrue(TriviaHelper.LastPopUpMoreThanXMinutesAgo(
                 lastPopUpDateTime: new DateTime(2017, 01, 01, 12, 00, 00),
                 popUpIntervalInMins: 60,
                 dateTimeNow: new DateTime(2017, 01, 01, 13, 0, 0)));
@@ -26,7 +26,7 @@ namespace Trivial.Ui.Common.Tests
                 popUpIntervalInMins: 60,
                 dateTimeNow: new DateTime(2017, 01, 01, 13, 0, 0)));
 
-            Assert.IsFalse(TriviaHelper.LastPopUpMoreThanXMinutesAgo(
+            Assert.IsTrue(TriviaHelper.LastPopUpMoreThanXMinutesAgo(
                 lastPopUpDateTime: new DateTime(2017, 01, 01, 13, 00, 00),
                 popUpIntervalInMins: 0,
                 dateTimeNow: new DateTime(2017, 01, 01, 13, 0, 0)));
