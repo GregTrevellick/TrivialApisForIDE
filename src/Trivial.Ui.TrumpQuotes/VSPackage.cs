@@ -19,7 +19,7 @@ namespace Trivial.Ui.TrumpQuotes
     public sealed class VSPackage : Package
     {
         private DTE dte;
-        public static GeneralOptions Options { get; private set; }//gregt rename to generalOptions
+        /////////////public static GeneralOptions Options { get; private set; }//gregt rename to generalOptions
         private SolutionEvents solutionEvents;
 
         protected override void Initialize()
@@ -55,10 +55,10 @@ namespace Trivial.Ui.TrumpQuotes
             ////////////////////////////Options.PopUpCountToday = hiddenOptionsDto.PopUpCountToday;
             ////////////////////////////Options.SaveSettingsToStorage();
 
-            var privateOptions = (PrivateOptions)GetDialogPage(typeof(PrivateOptions));
-            privateOptions.LastPopUpDateTime = hiddenOptionsDto.LastPopUpDateTime;
-            privateOptions.PopUpCountToday = hiddenOptionsDto.PopUpCountToday;
-            privateOptions.SaveSettingsToStorage();
+            var hiddenOptions = (HiddenOptions)GetDialogPage(typeof(HiddenOptions));
+            hiddenOptions.LastPopUpDateTime = hiddenOptionsDto.LastPopUpDateTime;
+            hiddenOptions.PopUpCountToday = hiddenOptionsDto.PopUpCountToday;
+            hiddenOptions.SaveSettingsToStorage();
         }
 
         private GeneralOptionsDto GeneralOptionsDto
@@ -66,15 +66,15 @@ namespace Trivial.Ui.TrumpQuotes
             get
             {
                 var generalOptions = (GeneralOptions)GetDialogPage(typeof(GeneralOptions));
-                var privateOptions = (PrivateOptions)GetDialogPage(typeof(PrivateOptions));
+                var hiddenOptions = (HiddenOptions)GetDialogPage(typeof(HiddenOptions));
 
                 return new GeneralOptionsDto
                 {
-                    LastPopUpDateTime = privateOptions.LastPopUpDateTime,
+                    LastPopUpDateTime = hiddenOptions.LastPopUpDateTime,
                     MaximumPopUpsWeekDay = generalOptions.MaximumPopUpsWeekDay.GetAsInteger(),
                     MaximumPopUpsWeekEnd = generalOptions.MaximumPopUpsWeekEnd.GetAsInteger(),
                     PopUpIntervalInMins = generalOptions.PopUpIntervalInMins.GetAsInteger(),
-                    PopUpCountToday = privateOptions.PopUpCountToday,
+                    PopUpCountToday = hiddenOptions.PopUpCountToday,
                     TimeOutInMilliSeconds = generalOptions.TimeOutInMilliSeconds.GetAsInteger(),
                 };
             }

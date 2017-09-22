@@ -58,7 +58,7 @@
     <VsixCompressTargets Condition=" '$(VsixCompressTargets)'=='' ">$([System.IO.Path]::GetFullPath( $(MSBuildProjectDirectory)\..\packages\VsixCompress.1.0.1\tools\vsix-compress.targets ))</VsixCompressTargets>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Options\PrivateOptions.cs">
+    <Compile Include="Options\HiddenOptions.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Options\GeneralOptions.cs">
