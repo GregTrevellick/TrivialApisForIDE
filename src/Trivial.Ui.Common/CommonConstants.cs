@@ -7,6 +7,7 @@ namespace Trivial.Ui.Common
         public const int RecommendedMaximumTimeoutMilliSeconds = 3000;
         public const int RecommendedMinimumTimeoutMilliSeconds = 400;
         public const string CategorySubLevel = "General";
+        public const string AppInternal = "Private";
         public const string DefaultMaximumPopUpsWeekDay = "3";
         public const string DefaultMaximumPopUpsWeekEnd = "99";
         public const string DefaultPopUpIntervalInMins = "0";
