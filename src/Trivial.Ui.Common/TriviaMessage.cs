@@ -83,7 +83,7 @@ namespace Trivial.Ui.Common
                 triviaDialog.AppHyperlink1.Inlines.Add(linkUri);
             }
 
-            triviaDialog.Show();
+      //gregt reinstate      triviaDialog.Show();
         }
 
         public static Uri GetIconUri(AppName appName)

@@ -4,7 +4,6 @@
 [VSMarketplaceUrl]: https://marketplace.visualstudio.com/items?itemName=GregTrevellick.NumericTrivia#review-details
 
 ![](ReadMeScreenShot.png)
-
 A light-hearted and meaningless extension that displays a random number-related fact / piece of trivia when opening a solution file.
 
 - Impress your geek peers or bore your spouse/kids with your new found nerdy numerical knowledge.
@@ -15,7 +14,8 @@ A light-hearted and meaningless extension that displays a random number-related 
 
 - Inspired by [Phil Haack's Encourage](https://marketplace.visualstudio.com/items?itemName=Haacked.Encourage) extension. 
 
-## Options
+### Options
+
 - Frequency of pop-up message delivery configurable
 
 - Upper limit of pop-up messages per day configurable, with different values for midweek and weekends

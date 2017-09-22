@@ -4,7 +4,6 @@
 [VSMarketplaceUrl]: https://marketplace.visualstudio.com/items?itemName=GregTrevellick.DrainTheSwamp#review-details
 
 ![](ReadMeScreenShot.png)
-
 Enlighten your day with an insightful random quote from Donald Trump when opening a solution file.
 
 - This is truly tremendous. A wonderful thing. So much so that it deserves a [review][VSMarketplaceUrl].
@@ -13,7 +12,8 @@ Enlighten your day with an insightful random quote from Donald Trump when openin
 
 - Inspired by [Phil Haack's Encourage](https://marketplace.visualstudio.com/items?itemName=Haacked.Encourage) extension. 
 
-## Options
+### Options
+
 - Frequency of pop-up message delivery configurable
 
 - Upper limit of pop-up messages per day configurable, with different values for midweek and weekends
