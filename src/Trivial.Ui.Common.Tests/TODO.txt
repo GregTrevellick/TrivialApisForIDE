@@ -6,5 +6,6 @@ github repo title and website address
 github readme links
 
 create a template project
+
 -----------------------------------------------------------
 dedupe the readme.md options section using gulp 
