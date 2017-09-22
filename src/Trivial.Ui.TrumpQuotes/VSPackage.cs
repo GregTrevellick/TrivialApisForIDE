@@ -19,7 +19,7 @@ namespace Trivial.Ui.TrumpQuotes
     public sealed class VSPackage : Package
     {
         private DTE dte;
-        public static GeneralOptions Options { get; private set; }
+        public static GeneralOptions Options { get; private set; }//gregt rename to generalOptions
         private SolutionEvents solutionEvents;
 
         protected override void Initialize()
@@ -50,10 +50,15 @@ namespace Trivial.Ui.TrumpQuotes
 
         private void UpdateHiddenOptions(HiddenOptionsDto hiddenOptionsDto)
         {
-            Options = (GeneralOptions)GetDialogPage(typeof(GeneralOptions));//gregt is this requied ?????????
-            Options.LastPopUpDateTime = hiddenOptionsDto.LastPopUpDateTime;
-            Options.PopUpCountToday = hiddenOptionsDto.PopUpCountToday;
-            Options.SaveSettingsToStorage();
+            ////////////////////////////Options = (GeneralOptions)GetDialogPage(typeof(GeneralOptions));//gregt is this requied ?????????
+            ////////////////////////////Options.LastPopUpDateTime = hiddenOptionsDto.LastPopUpDateTime;
+            ////////////////////////////Options.PopUpCountToday = hiddenOptionsDto.PopUpCountToday;
+            ////////////////////////////Options.SaveSettingsToStorage();
+
+            var privateOptions = (PrivateOptions)GetDialogPage(typeof(PrivateOptions));
+            privateOptions.LastPopUpDateTime = hiddenOptionsDto.LastPopUpDateTime;
+            privateOptions.PopUpCountToday = hiddenOptionsDto.PopUpCountToday;
+            privateOptions.SaveSettingsToStorage();
         }
 
         private GeneralOptionsDto GeneralOptionsDto
@@ -61,14 +66,15 @@ namespace Trivial.Ui.TrumpQuotes
             get
             {
                 var generalOptions = (GeneralOptions)GetDialogPage(typeof(GeneralOptions));
+                var privateOptions = (PrivateOptions)GetDialogPage(typeof(PrivateOptions));
 
                 return new GeneralOptionsDto
                 {
-                    LastPopUpDateTime = generalOptions.LastPopUpDateTime,
+                    LastPopUpDateTime = privateOptions.LastPopUpDateTime,
                     MaximumPopUpsWeekDay = generalOptions.MaximumPopUpsWeekDay.GetAsInteger(),
                     MaximumPopUpsWeekEnd = generalOptions.MaximumPopUpsWeekEnd.GetAsInteger(),
                     PopUpIntervalInMins = generalOptions.PopUpIntervalInMins.GetAsInteger(),
-                    PopUpCountToday = generalOptions.PopUpCountToday,
+                    PopUpCountToday = privateOptions.PopUpCountToday,
                     TimeOutInMilliSeconds = generalOptions.TimeOutInMilliSeconds.GetAsInteger(),
                 };
             }

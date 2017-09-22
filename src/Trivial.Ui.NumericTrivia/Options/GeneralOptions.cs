@@ -15,14 +15,14 @@ namespace Trivial.Ui.NumericTrivia.Options
         private bool proceedToSaveOptions;
         private string timeOutInMilliSeconds;
 
-        [Category(CommonConstants.AppInternal)]
-        [DisplayName(CommonConstants.LastPopUpDateTimeLabel)]
-        [Description(CommonConstants.LastPopUpDateTimeDescription)]
+        /////////////////////////[Category(CommonConstants.AppInternal)]
+        /////////////////////////[DisplayName(CommonConstants.LastPopUpDateTimeLabel)]
+        /////////////////////////[Description(CommonConstants.LastPopUpDateTimeDescription)]
         public DateTime LastPopUpDateTime { get; set; }
 
-        [Category(CommonConstants.AppInternal)]
-        [DisplayName(CommonConstants.PopUpCountTodayLabel)]
-        [Description(CommonConstants.PopUpCountTodayDescription)]
+        /////////////////////////[Category(CommonConstants.AppInternal)]
+        /////////////////////////[DisplayName(CommonConstants.PopUpCountTodayLabel)]
+        /////////////////////////[Description(CommonConstants.PopUpCountTodayDescription)]
         public int PopUpCountToday { get; set; }
 
         [Category(CommonConstants.CategorySubLevel)]

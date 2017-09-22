@@ -19,7 +19,7 @@ namespace Trivial.Ui.NumericTrivia
     public sealed class VSPackage : Package
     {
         private DTE dte;
-        public static GeneralOptions Options { get; private set; }
+        public static GeneralOptions Options { get; private set; }//gregt rename to generalOptions
         private SolutionEvents solutionEvents;
 
         protected override void Initialize()

@@ -1,4 +1,5 @@
-﻿
+﻿test in vs2012
+test in vs2015
 -----------------------------------------------
 dedupe the readme.md options section using gulp
 create a template project
