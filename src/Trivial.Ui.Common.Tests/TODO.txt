@@ -2,8 +2,6 @@
 
 test pop up messages count resets itself to zero at midnight
 
-github repo title and website address 
-
 3 x ReadMes github readme links
 
 -----------------------------------------------------------

@@ -5,9 +5,9 @@
 
 # Numeric Trivia
 
-A light-hearted and meaningless extension that displays a random number-related fact / piece of trivia when opening a solution file.
-
 ![](ReadMeScreenShot.png)
+
+A light-hearted and meaningless extension that displays a random number-related fact / piece of trivia when opening a solution file.
 
 - Impress your geek peers or bore your spouse/kids with your new found nerdy numerical knowledge.
 
@@ -16,8 +16,6 @@ A light-hearted and meaningless extension that displays a random number-related 
 - Aided and abetted by the good folks at [Numbers API](http://www.numbersapi.com).
 
 - Inspired by [Phil Haack's Encourage](https://marketplace.visualstudio.com/items?itemName=Haacked.Encourage) extension. 
-
-- Contributions to this project are welcome by raising an [Issue][GitHubRepoIssuesURL] or submitting a [Pull Request][GitHubRepoPullRequestsURL].
 
 ## Options
 - Frequency of pop-up message delivery configurable
