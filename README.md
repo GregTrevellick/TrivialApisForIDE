@@ -1,9 +1,9 @@
 [AppVeyorProjectUrl]: https://ci.appveyor.com/project/GregTrevellick/solutionopenpopup
-[AppVeyorProjectBuildStatusBadgeSvg]: https://ci.appveyor.com/api/projects/status/ap87wkdaam6jkgui?svg=true
-[GitHubRepoURL]: https://github.com/GregTrevellick/SolutionOpenPopUp
-[GitHubRepoIssuesURL]: https://github.com/GregTrevellick/SolutionOpenPopUp/issues
-[GitHubRepoPullRequestsURL]: https://github.com/GregTrevellick/SolutionOpenPopUp/pulls
-[VersionNumberBadgeURL]: https://vsmarketplacebadge.apphb.com/version/GregTrevellick.SolutionOpenPopUp.svg
+[AppVeyorProjectBuildStatusBadgeSvg]: https://ci.appveyor.com/api/projects/status/iapcrndog6fvdd9l?svg=true
+[GitHubRepoURL]: https://github.com/GregTrevellick/TrivialApisForIDE
+[GitHubRepoIssuesURL]: https://github.com/GregTrevellick/TrivialApisForIDE/issues
+[GitHubRepoPullRequestsURL]: https://github.com/GregTrevellick/TrivialApisForIDE/pulls
+[VersionNumberBadgeURL]: https://vsmarketplacebadge.apphb.com/version/GregTrevellick.TrivialApisForIDE.svg
 [VisualStudioURL]: https://www.visualstudio.com/
 [VSMarketplaceUrl]: https://marketplace.visualstudio.com/items?itemName=GregTrevellick.SolutionOpenPopUp
 [VSMarketplaceReviewsUrl]: https://marketplace.visualstudio.com/items?itemName=GregTrevellick.SolutionOpenPopUp#review-details
