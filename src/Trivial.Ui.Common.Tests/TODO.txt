@@ -1,4 +1,4 @@
-﻿daily popup limit only works if IDE is left open
------------------------------------------------------------
+﻿
+-----------------------------------------------
 dedupe the readme.md options section using gulp
 create a template project

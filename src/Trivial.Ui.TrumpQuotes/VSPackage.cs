@@ -50,7 +50,7 @@ namespace Trivial.Ui.TrumpQuotes
 
         private void UpdateHiddenOptions(HiddenOptionsDto hiddenOptionsDto)
         {
-            Options = (GeneralOptions)GetDialogPage(typeof(GeneralOptions));
+            Options = (GeneralOptions)GetDialogPage(typeof(GeneralOptions));//gregt is this requied ?????????
             Options.LastPopUpDateTime = hiddenOptionsDto.LastPopUpDateTime;
             Options.PopUpCountToday = hiddenOptionsDto.PopUpCountToday;
             Options.SaveSettingsToStorage();

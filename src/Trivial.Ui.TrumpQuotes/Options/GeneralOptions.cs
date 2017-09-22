@@ -7,8 +7,6 @@ namespace Trivial.Ui.TrumpQuotes.Options
 {
     public class GeneralOptions : DialogPage
     {
-        internal DateTime LastPopUpDateTime { get; set; } 
-        internal int PopUpCountToday { get; set; }
         private string caption = CommonConstants.GetCaption(Vsix.Name, Vsix.Version);
         private bool firstTimeOpeningOptions = true;
         private string maximumPopUpsWeekDay;
@@ -16,6 +14,16 @@ namespace Trivial.Ui.TrumpQuotes.Options
         private string popUpIntervalInMins;
         private bool proceedToSaveOptions;
         private string timeOutInMilliSeconds;
+
+        [Category(CommonConstants.CategorySubLevel)]
+        [DisplayName(CommonConstants.LastPopUpDateTimeLabel)]
+        [Description(CommonConstants.LastPopUpDateTimeDescription)]
+        public DateTime LastPopUpDateTime { get; set; }
+
+        [Category(CommonConstants.CategorySubLevel)]
+        [DisplayName(CommonConstants.PopUpCountTodayLabel)]
+        [Description(CommonConstants.PopUpCountTodayDescription)]
+        public int PopUpCountToday { get; set; }
 
         [Category(CommonConstants.CategorySubLevel)]
         [DisplayName(CommonConstants.MaximumPopUpsWeekDayOptionLabel)]
