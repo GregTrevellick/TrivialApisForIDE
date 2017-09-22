@@ -1,9 +1,5 @@
 ﻿daily popup limit only works if IDE is left open
-
 test pop up messages count resets itself to zero at midnight
-
-3 x ReadMes github readme links
-
 -----------------------------------------------------------
 dedupe the readme.md options section using gulp
 create a template project
