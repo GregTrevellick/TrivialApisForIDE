@@ -8,7 +8,7 @@ namespace Trivial.Api.Gateway
 {
     public class ClientGateway
     {
-        public GatewayResponse GetGatewayResponse(AppName appName, int timeOutInMilliSeconds)
+        public GatewayResponse GetGatewayResponse(AppName appName, int timeOutInMilliSeconds, string timeOutInMilliSecondsOptionLabel, string optionName)
         {
             var url = AppUrlHelper.GetUrl(appName);
 
@@ -16,7 +16,7 @@ namespace Trivial.Api.Gateway
 
             if (!string.IsNullOrEmpty(url))
             {
-                var responseDto = GetRestResponse(url, timeOutInMilliSeconds);
+                var responseDto = GetRestResponse(url, timeOutInMilliSeconds, timeOutInMilliSecondsOptionLabel, optionName);
 
                 if (!string.IsNullOrEmpty(responseDto.ErrorDetails))
                 {
@@ -26,11 +26,14 @@ namespace Trivial.Api.Gateway
                 {
                     switch (appName)
                     {
+                        case AppName.Jeopardy:
+                            gatewayResponse = ClientGatewayJeopardy.SetGatewayResponseFromRestResponse(responseDto.ResponseContent);
+                            break;
                         case AppName.NumericTrivia:
                             gatewayResponse = SetGatewayResponseFromRestResponse(responseDto.ResponseContent);
                             break;
                         case AppName.TrumpQuotes:
-                            gatewayResponse = ClientGatewayTrump.SetGatewayResponseFromRestResponseTrump(responseDto.ResponseContent);
+                            gatewayResponse = ClientGatewayTrump.SetGatewayResponseFromRestResponse(responseDto.ResponseContent);
                             break;
                     }
                 }
@@ -39,7 +42,7 @@ namespace Trivial.Api.Gateway
             return gatewayResponse;
         }
 
-        private static ResponseDto GetRestResponse(string url, int timeOutInMilliSeconds)
+        private static ResponseDto GetRestResponse(string url, int timeOutInMilliSeconds, string timeOutInMilliSecondsOptionLabel, string optionName)
         {
             var responseDto = new ResponseDto();
 
@@ -52,7 +55,7 @@ namespace Trivial.Api.Gateway
                 var hasErrorOccured = HasErrorOccured(response);
                 if (hasErrorOccured)
                 {
-                    responseDto.ErrorDetails = GetErrorDetails(response);
+                    responseDto.ErrorDetails = GetErrorDetails(response, timeOutInMilliSecondsOptionLabel, optionName);
                 }
                 else
                 {
@@ -84,7 +87,7 @@ namespace Trivial.Api.Gateway
             return errorHasOccured;
         }
 
-        private static string GetErrorDetails(IRestResponse response)
+        private static string GetErrorDetails(IRestResponse response, string timeOutInMilliSecondsOptionLabel, string optionName)
         {
             string errorDetails;
 
@@ -104,6 +107,11 @@ namespace Trivial.Api.Gateway
                     response.ErrorException.Message != response.ErrorMessage)
                 {
                     errorDetails = errorDetails + " " + response.ErrorException.Message;
+                }
+
+                if (response.ResponseStatus == ResponseStatus.TimedOut)
+                {
+                    errorDetails += $"{Environment.NewLine}{Environment.NewLine}Try increasing the value for '{timeOutInMilliSecondsOptionLabel}' in Tools | Options | {optionName}";
                 }
             }
 

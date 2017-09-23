@@ -47,8 +47,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppModels\ResponseDto.cs" />
+    <Compile Include="AppModels\JeopardyRootObject.cs" />
     <Compile Include="AppModels\TrumpRootObject.cs" />
     <Compile Include="AppUrlHelper.cs" />
+    <Compile Include="ClientGatewayJeopardy.cs" />
     <Compile Include="ClientGatewayTrump.cs" />
     <Compile Include="GatewayResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

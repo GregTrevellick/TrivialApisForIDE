@@ -5,10 +5,10 @@ namespace Trivial.Api.Gateway
 {
     public class ClientGatewayTrump
     {
-        public static GatewayResponse SetGatewayResponseFromRestResponseTrump(string responseContent)
+        public static GatewayResponse SetGatewayResponseFromRestResponse(string responseContent)
         {
-            var trumpRootObject = JsonConvert.DeserializeObject<TrumpRootObject>(responseContent);
-            var gatewayResponse = GetGatewayResponse(trumpRootObject);
+            var rootObject = JsonConvert.DeserializeObject<TrumpRootObject>(responseContent);
+            var gatewayResponse = GetGatewayResponse(rootObject);
             return gatewayResponse;
         }
 

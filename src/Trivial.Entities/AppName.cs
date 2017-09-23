@@ -2,7 +2,8 @@
 {
     public enum AppName
     {
+        Jeopardy,
+        NumericTrivia,
         TrumpQuotes,
-        NumericTrivia
     }
 }

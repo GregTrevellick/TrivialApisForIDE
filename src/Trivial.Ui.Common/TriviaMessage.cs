@@ -15,7 +15,7 @@ namespace Trivial.Ui.Common
             HiddenOptionsDto hiddenOptionsDto = null;
 
             var clientGateway = new ClientGateway();
-            var gatewayResponse = clientGateway.GetGatewayResponse(appName, timeOutInMilliSeconds);
+            var gatewayResponse = clientGateway.GetGatewayResponse(appName, timeOutInMilliSeconds, CommonConstants.TimeOutInMilliSecondsOptionLabel, optionsName);
 
             var author = gatewayResponse.Author;
             var date = gatewayResponse.Date;
