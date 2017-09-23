@@ -29,6 +29,9 @@
            <Hyperlink Name="AppHyperlink1" RequestNavigate="AppHyperlink1_RequestNavigate" />
         </TextBlock>
 
+        <Button Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" Visibility="Collapsed" Content="Reveal Answer" Margin="10,10,10,10" Padding="5,5,5,5" VerticalAlignment="Center" HorizontalAlignment="Center" Click="AppBtnRevealAnswer_OnClick" Name="AppBtnRevealAnswer"/>
+        <TextBlock Grid.Row="1" Grid.Column="1" Visibility="Collapsed" Margin="10,10,0,10" VerticalAlignment="Center" HorizontalAlignment="Right" Name="AppTextBlockAnswer" />
+
         <!--ROW 3-->
         <Button Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" Content="Close" Margin="10,10,10,10" Padding="5,5,5,5" VerticalAlignment="Center" HorizontalAlignment="Center" Click="AppBtnClose_OnClick" Name="AppBtnClose"/>
         <Button Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" Content="Help" Margin="10,10,10,10" Padding="5,5,5,5" VerticalAlignment="Center" HorizontalAlignment="Right" Click="AppBtnHelp_OnClick" Name="AppBtnHelp"/>

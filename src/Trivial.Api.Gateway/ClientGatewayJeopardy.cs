@@ -20,7 +20,7 @@ namespace Trivial.Api.Gateway
             var gatewayResponse = new GatewayResponse
             {
                 Answer = rootObject.answer,
-                Question = rootObject.question,
+                Text = "Q. " + rootObject.question,
             };
             return gatewayResponse;
         }

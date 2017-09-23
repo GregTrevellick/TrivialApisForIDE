@@ -37,6 +37,12 @@ namespace Trivial.Ui.Common
             e.Handled = true;
         }
 
+        private void AppBtnRevealAnswer_OnClick(object sender, RoutedEventArgs e)
+        {
+            AppBtnRevealAnswer.Visibility = Visibility.Collapsed;
+            AppTextBlockAnswer.Visibility = Visibility.Visible;
+        }
+
         private void AppBtnClose_OnClick(object sender, RoutedEventArgs e)
         {
             Close();

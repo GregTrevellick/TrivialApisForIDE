@@ -23,7 +23,7 @@ namespace Trivial.Ui.Common
 
             if (!string.IsNullOrEmpty(message))
             {   
-                DisplayPopUpMessage(popUpTitle, message, gatewayResponse.LinkUri, date, author, appName, optionsName);
+                DisplayPopUpMessage(popUpTitle, message, gatewayResponse.LinkUri, date, author, appName, optionsName, gatewayResponse.Answer);
                 hiddenOptionsDto = GetHiddenOptionsDto(lastPopUpDateTime, popUpCountToday);
             }
 
@@ -56,12 +56,13 @@ namespace Trivial.Ui.Common
             return lastPopUpDateTime.Date < baseDateTime.Date;
         }
 
-        private static void DisplayPopUpMessage(string popUpTitle, string message, string linkUri, string date, string author, AppName appName, string optionsName)
+        private static void DisplayPopUpMessage(string popUpTitle, string message, string linkUri, string date, string author, AppName appName, string optionsName, string answer)
         {
             const string spacer = " ";
 
             var triviaDialog = new TriviaDialog(appName, optionsName)
             {
+                AppTextBlockAnswer = {Text = answer},
                 AppTextBlockAttribution = { Text = author + spacer + date + spacer },
                 AppTextBlockMessage = { Text = message },
                 Title = popUpTitle,
@@ -71,6 +72,11 @@ namespace Trivial.Ui.Common
             {
                 triviaDialog.AppTextBlockAttribution.Visibility = Visibility.Visible;
                 triviaDialog.AppTextBlock2.Visibility = Visibility.Visible;
+            }
+
+            if (!string.IsNullOrWhiteSpace(triviaDialog.AppTextBlockAnswer.Text))
+            {
+                triviaDialog.AppBtnRevealAnswer.Visibility = Visibility.Visible;
             }
 
             var iconUri = GetIconUri(appName);
