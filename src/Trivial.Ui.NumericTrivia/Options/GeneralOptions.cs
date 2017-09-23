@@ -76,7 +76,7 @@ namespace Trivial.Ui.NumericTrivia.Options
         [Description(CommonConstants.TimeOutInMilliSecondsOptionDetailedDescription)]
         public string TimeOutInMilliSeconds
         {
-            get => string.IsNullOrEmpty(timeOutInMilliSeconds) ? CommonConstants.DefaultPopUpIntervalInMins : timeOutInMilliSeconds;
+            get => string.IsNullOrEmpty(timeOutInMilliSeconds) ? CommonConstants.DefaultTimeOutInMilliSeconds : timeOutInMilliSeconds;
             set
             {
                 if (value.IsNonNegativeInteger())

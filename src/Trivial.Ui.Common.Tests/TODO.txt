@@ -1,14 +1,9 @@
-﻿test in vs2012
-test in vs2015
-
-upon install 
- (1) default timeout is zero (aka indefinate), should be 3000
- (2) max midweek popups is only 3, should be 9
-
-vsmp - screenshots missing, same in github
-
-create an initial release in github ! 
-
+﻿upon install default timeout is zero s/b 1000 (FIXED - NEEDS TESTING USING TRUMP)
 -----------------------------------------------
+vsmp - screenshots missing, same in github
+create an initial release in github
+-----------------------------------------------
+test in vs2012
+test in vs2015
 dedupe the readme.md options section using gulp
 create a template project
