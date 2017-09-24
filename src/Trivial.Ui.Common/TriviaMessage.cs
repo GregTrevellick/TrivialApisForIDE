@@ -62,7 +62,7 @@ namespace Trivial.Ui.Common
 
             var triviaDialog = new TriviaDialog(appName, optionsName)
             {
-                AppTextBlockAnswer = {Text = answer},
+                AppTextBlockAnswer = { Text = "A. " + answer },
                 AppTextBlockAttribution = { Text = author + spacer + date + spacer },
                 AppTextBlockMessage = { Text = message },
                 Title = popUpTitle,
