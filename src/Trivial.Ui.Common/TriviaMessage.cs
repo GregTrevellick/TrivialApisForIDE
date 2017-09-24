@@ -141,7 +141,7 @@ namespace Trivial.Ui.Common
             return lastPopUpDateTime.Date < baseDateTime.Date;
         }
 
-        public Uri GetIconUri(AppName appName)
+        internal Uri GetIconUri(AppName appName)
         {
             var assemblyName = Assembly.GetExecutingAssembly().GetName();
             var imageSubDirectory = appName.ToString();
