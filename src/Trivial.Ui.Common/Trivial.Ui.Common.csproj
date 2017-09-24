@@ -105,6 +105,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="TriviaDialogDto.cs" />
     <Compile Include="MessageBoxes.cs" />
     <Compile Include="StringExtensions.cs" />
     <Compile Include="TriviaMessage.cs" />

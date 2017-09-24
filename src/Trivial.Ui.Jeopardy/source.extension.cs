@@ -11,7 +11,7 @@ namespace Trivial.Ui.Jeopardy
         public const string Name = "Jeopardy";
         public const string Description = @"A random Jeopardy trivia question and answer whenever you open a solution.";
         public const string Language = "en-US";
-        public const string Version = "1.0.63";
+        public const string Version = "1.0.64";
         public const string Author = "Greg Trevellick";
         public const string Tags = "jservice, jeopardy, jservice.io, trivia questions, trivia";
     }

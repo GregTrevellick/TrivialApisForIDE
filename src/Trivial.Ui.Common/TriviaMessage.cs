@@ -12,15 +12,7 @@ namespace Trivial.Ui.Common
 {
     public class TriviaMessage
     {
-        private string answer = string.Empty;
-        private string quotationAuthor = string.Empty;
-        private string quotationDate = string.Empty;
-        private string hyperLinkUri = string.Empty;
-        private string question = string.Empty;
-        private string fact = string.Empty;
-        private string quotation = string.Empty;
         private const string spacer = " ";
-        private string attribution = string.Empty;
 
         public HiddenOptionsDto ShowTrivia(AppName appName, string popUpTitle, DateTime lastPopUpDateTime, int popUpCountToday, int timeOutInMilliSeconds, string optionsName)
         {
@@ -30,52 +22,56 @@ namespace Trivial.Ui.Common
             var gatewayResponse = clientGateway.GetGatewayResponse(appName, timeOutInMilliSeconds, CommonConstants.TimeOutInMilliSecondsOptionLabel, optionsName);
 
             var somethingToShow = false;
+            var triviaDialogDto = new TriviaDialogDto
+            {
+                optionsName = optionsName,
+                popUpTitle = popUpTitle
+            };
 
             switch (appName)
             {
                 case AppName.Jeopardy:
                     var gatewayResponseJeopardy = (GatewayResponseJeopardy) gatewayResponse;
-                    answer = "A. " + gatewayResponseJeopardy.Answer;
-                    question = "Q. " + gatewayResponseJeopardy.Question;
-                    somethingToShow = !string.IsNullOrEmpty(question);
+                    triviaDialogDto.answer = "A. " + gatewayResponseJeopardy.Answer;
+                    triviaDialogDto.question = "Q. " + gatewayResponseJeopardy.Question;
+                    somethingToShow = !string.IsNullOrEmpty(triviaDialogDto.question);
                     break;
                 case AppName.NumericTrivia:
                     var gatewayResponseNumeric = (GatewayResponseNumericTrivia)gatewayResponse;
-                    fact = gatewayResponseNumeric.NumericFact;
-                    somethingToShow = !string.IsNullOrEmpty(fact);
+                    triviaDialogDto.fact = gatewayResponseNumeric.NumericFact;
+                    somethingToShow = !string.IsNullOrEmpty(triviaDialogDto.fact);
                     break;
                 case AppName.TrumpQuotes:
                     var gatewayResponseTrump = (GatewayResponseTrumpQuotes)gatewayResponse;
-                    quotationAuthor = gatewayResponseTrump.QuotationAuthor;
-                    quotationDate = gatewayResponseTrump.QuotationDate;
-                    hyperLinkUri = gatewayResponseTrump.HyperLinkUri;
-                    quotation = gatewayResponseTrump.TrumpQuote;
-                    attribution = quotationAuthor + spacer + quotationDate + spacer;
-                    somethingToShow = !string.IsNullOrEmpty(quotation);
+                    triviaDialogDto.hyperLinkUri = gatewayResponseTrump.HyperLinkUri;
+                    triviaDialogDto.quotation = gatewayResponseTrump.TrumpQuote;
+                    triviaDialogDto.attribution = gatewayResponseTrump.QuotationAuthor + spacer + gatewayResponseTrump.QuotationDate + spacer;
+                    somethingToShow = !string.IsNullOrEmpty(triviaDialogDto.quotation);
                     break;
             }         
           
             if (somethingToShow)
-            {   
-                DisplayPopUpMessage(popUpTitle, hyperLinkUri, attribution, appName, optionsName, answer, question, quotation, fact);
+            {
+                DisplayPopUpMessage(triviaDialogDto);
                 hiddenOptionsDto = GetHiddenOptionsDto(lastPopUpDateTime, popUpCountToday);
             }
 
             return hiddenOptionsDto;
         }
 
-        private void DisplayPopUpMessage(string popUpTitle, string linkUri, string attribution, AppName appName, string optionsName, string answer, string question, string quotation, string fact)
+        private void DisplayPopUpMessage(TriviaDialogDto triviaDialogDto)
         {
-            var triviaDialog = new TriviaDialog(appName, optionsName)
+            var triviaDialog = new TriviaDialog(triviaDialogDto.appName, triviaDialogDto.optionsName)
             {
-                AppTextBlockAnswer = { Text = answer },
-                AppTextBlockAttribution = { Text = attribution },
-                AppTextBlockQuotation = { Text = quotation },
-                AppTextBlockQuestion = { Text = question },
-                AppTextBlockFact = { Text = fact },
-                Title = popUpTitle,
+                AppTextBlockAnswer = {Text = triviaDialogDto.answer},// == null ? string.Empty : triviaDialogDto.answer},
+                AppTextBlockAttribution = { Text =  triviaDialogDto.attribution },//== null ? string.Empty : triviaDialogDto.attribution },
+                AppTextBlockFact = { Text = triviaDialogDto.fact },//== null ? string.Empty : triviaDialogDto.fact },
+                AppTextBlockQuestion = { Text = triviaDialogDto.question},// == null ? string.Empty : triviaDialogDto.question },
+                AppTextBlockQuotation = { Text =  triviaDialogDto.quotation},// == null ? string.Empty : triviaDialogDto.quotation },
+                Title = triviaDialogDto.popUpTitle,
             };
 
+            //gregt extract
             if (!string.IsNullOrWhiteSpace(triviaDialog.AppTextBlockQuotation.Text))
             {
                 triviaDialog.AppTextBlockQuotation.Visibility = Visibility.Visible;
@@ -102,14 +98,15 @@ namespace Trivial.Ui.Common
                 triviaDialog.AppBtnRevealAnswer.Visibility = Visibility.Visible;
             }
 
-            var iconUri = GetIconUri(appName);
+            //gregt extract to icon method
+            var iconUri = GetIconUri(triviaDialogDto.appName);
             triviaDialog.AppImage.Source = new BitmapImage(iconUri);
 
-            if (!string.IsNullOrEmpty(linkUri))
+            if (!string.IsNullOrEmpty(triviaDialogDto.hyperLinkUri))
             {
-                triviaDialog.AppHyperlink1.NavigateUri = new Uri(linkUri);
+                triviaDialog.AppHyperlink1.NavigateUri = new Uri(triviaDialogDto.hyperLinkUri);
                 triviaDialog.AppHyperlink1.Inlines.Clear();
-                triviaDialog.AppHyperlink1.Inlines.Add(linkUri);
+                triviaDialog.AppHyperlink1.Inlines.Add(triviaDialogDto.hyperLinkUri);
             }
 
             triviaDialog.Show();
