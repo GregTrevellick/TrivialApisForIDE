@@ -94,7 +94,7 @@ namespace Trivial.Ui.Common
             if (!string.IsNullOrWhiteSpace(triviaDialog.AppTextBlockAttribution.Text))
             {
                 triviaDialog.AppTextBlockAttribution.Visibility = Visibility.Visible;
-                triviaDialog.AppTextBlock2.Visibility = Visibility.Visible;
+                triviaDialog.AppTextBlockHyperLink.Visibility = Visibility.Visible;
             }
 
             if (!string.IsNullOrWhiteSpace(triviaDialog.AppTextBlockAnswer.Text))
