@@ -71,7 +71,6 @@ namespace Trivial.Ui.Common
                 Title = triviaDialogDto.PopUpTitle,
             };
 
-            //gregt extract
             if (!string.IsNullOrWhiteSpace(triviaDialog.AppTextBlockQuotation.Text))
             {
                 triviaDialog.AppTextBlockQuotation.Visibility = Visibility.Visible;
@@ -98,7 +97,6 @@ namespace Trivial.Ui.Common
                 triviaDialog.AppBtnRevealAnswer.Visibility = Visibility.Visible;
             }
 
-            //gregt extract to icon method
             var iconUri = GetIconUri(triviaDialogDto.AppName);
             triviaDialog.AppImage.Source = new BitmapImage(iconUri);
 
