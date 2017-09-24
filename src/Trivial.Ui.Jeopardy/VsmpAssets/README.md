@@ -1,15 +1,15 @@
 [GitHubRepoURL]: https://github.com/GregTrevellick/TrivialApisForIDE
 [GitHubRepoIssuesURL]: https://github.com/GregTrevellick/TrivialApisForIDE/issues
 [GitHubRepoPullRequestsURL]: https://github.com/GregTrevellick/TrivialApisForIDE/pulls
-[VSMarketplaceUrl]: https://marketplace.visualstudio.com/items?itemName=GregTrevellick.NumericTrivia#review-details
+[VSMarketplaceUrl]: https://marketplace.visualstudio.com/items?itemName=GregTrevellick.Jeopardy#review-details
 
-A light-hearted and meaningless extension that asks a Jeopardy trivia question and will reveal the answer when opening a solution file.
+A trivial extension that poses a Jeopardy question when opening a solution file.
 
-- Impress your geek peers or bore your spouse/kids with your new found nerdy numerical knowledge.
+- Simple escapism from the day to day pressures of software development.
 
 - If you like this ***free*** extension, please give it a [review][VSMarketplaceUrl].
 
-- Questions gratefully supplied by [jService](http://www.jservice.io) who offer a free of charge set of services for public consumption on a small Heroku instance (until sufficient demand exists).
+- Questions and answers gratefully supplied by free of charge by [jService](http://www.jservice.io).
 
 - Inspired by [Phil Haack's Encourage](https://marketplace.visualstudio.com/items?itemName=Haacked.Encourage) extension. 
 
