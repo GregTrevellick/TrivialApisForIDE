@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Trivial.Api.Gateway.AppModels
+namespace Trivial.Api.Gateway.Jeopardy
 {
     public class JeopardyRootObject
     {

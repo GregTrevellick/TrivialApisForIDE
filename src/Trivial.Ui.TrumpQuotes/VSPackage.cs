@@ -33,12 +33,12 @@ namespace Trivial.Ui.TrumpQuotes
 
         private void OnSolutionOpened()
         {
-            var shouldShowTrivia = TriviaHelper.ShouldShowTrivia(GeneralOptionsDto);
+            var shouldShowTrivia = new TriviaHelper().ShouldShowTrivia(GeneralOptionsDto);
 
             if (shouldShowTrivia)
             {
                 var popUpTitle = CommonConstants.GetCaption(Vsix.Name, Vsix.Version);
-                var hiddenOptionsDto = TriviaMessage.ShowTrivia(AppName.TrumpQuotes, popUpTitle, GeneralOptionsDto.LastPopUpDateTime, GeneralOptionsDto.PopUpCountToday, GeneralOptionsDto.TimeOutInMilliSeconds, Vsix.Name);
+                var hiddenOptionsDto = new TriviaMessage().ShowTrivia(AppName.TrumpQuotes, popUpTitle, GeneralOptionsDto.LastPopUpDateTime, GeneralOptionsDto.PopUpCountToday, GeneralOptionsDto.TimeOutInMilliSeconds, Vsix.Name);
 
                 if (hiddenOptionsDto != null)
                 {

@@ -1,18 +1,20 @@
 ﻿using RestSharp;
 using System;
 using System.Diagnostics;
-using Trivial.Api.Gateway.AppModels;
+using Trivial.Api.Gateway.Jeopardy;
+using Trivial.Api.Gateway.NumericTrivia;
+using Trivial.Api.Gateway.TrumpQuotes;
 using Trivial.Entities;
 
 namespace Trivial.Api.Gateway
 {
     public class ClientGateway
     {
-        public GatewayResponse GetGatewayResponse(AppName appName, int timeOutInMilliSeconds, string timeOutInMilliSecondsOptionLabel, string optionName)
+        public GatewayResponseBase GetGatewayResponse(AppName appName, int timeOutInMilliSeconds, string timeOutInMilliSecondsOptionLabel, string optionName)
         {
             var url = AppUrlHelper.GetUrl(appName);
 
-            var gatewayResponse = new GatewayResponse();
+            var gatewayResponse = new GatewayResponseBase();
 
             if (!string.IsNullOrEmpty(url))
             {
@@ -30,10 +32,10 @@ namespace Trivial.Api.Gateway
                             gatewayResponse = ClientGatewayJeopardy.SetGatewayResponseFromRestResponse(responseDto.ResponseContent);
                             break;
                         case AppName.NumericTrivia:
-                            gatewayResponse = SetGatewayResponseFromRestResponse(responseDto.ResponseContent);
+                            gatewayResponse = ClientGatewayNumericTrivia.SetGatewayResponseFromRestResponse(responseDto.ResponseContent);
                             break;
                         case AppName.TrumpQuotes:
-                            gatewayResponse = ClientGatewayTrump.SetGatewayResponseFromRestResponse(responseDto.ResponseContent);
+                            gatewayResponse = ClientGatewayTrumpQuotes.SetGatewayResponseFromRestResponse(responseDto.ResponseContent);
                             break;
                     }
                 }
@@ -42,7 +44,7 @@ namespace Trivial.Api.Gateway
             return gatewayResponse;
         }
 
-        private static ResponseDto GetRestResponse(string url, int timeOutInMilliSeconds, string timeOutInMilliSecondsOptionLabel, string optionName)
+        private ResponseDto GetRestResponse(string url, int timeOutInMilliSeconds, string timeOutInMilliSecondsOptionLabel, string optionName)
         {
             var responseDto = new ResponseDto();
 
@@ -70,14 +72,14 @@ namespace Trivial.Api.Gateway
             return responseDto;
         }
 
-        private static void HandleUnexpectedError(string url, Exception ex, ResponseDto responseDto)
+        private void HandleUnexpectedError(string url, Exception ex, ResponseDto responseDto)
         {
             Debug.WriteLine(ex.Message);
             var exceptionTypeName = ex.GetType().Name;
             responseDto.ErrorDetails = $"An unexpected error of type {exceptionTypeName} has occured (possibly a communication error with {url}).";
         }
 
-        internal static bool HasErrorOccured(IRestResponse response)
+        internal bool HasErrorOccured(IRestResponse response)
         {
             var errorHasOccured =
                 response == null ||
@@ -87,7 +89,7 @@ namespace Trivial.Api.Gateway
             return errorHasOccured;
         }
 
-        private static string GetErrorDetails(IRestResponse response, string timeOutInMilliSecondsOptionLabel, string optionName)
+        private string GetErrorDetails(IRestResponse response, string timeOutInMilliSecondsOptionLabel, string optionName)
         {
             string errorDetails;
 
@@ -118,15 +120,9 @@ namespace Trivial.Api.Gateway
             return errorDetails;
         }
 
-        private static void SetGatewayResponseFromErrorDetails(GatewayResponse gatewayResponse, string errorDetails)
+        private void SetGatewayResponseFromErrorDetails(GatewayResponseBase gatewayResponse, string errorDetails)
         {
-            gatewayResponse.Text = errorDetails;
-        }
-
-        private static GatewayResponse SetGatewayResponseFromRestResponse(string responseContent)
-        {
-            var gatewayResponse = new GatewayResponse { Text = responseContent };
-            return gatewayResponse;
+            gatewayResponse.ErrorDetails = errorDetails;
         }
     }
 }

@@ -3,6 +3,7 @@ jeopardy screen shot required
 
 ? set different default options for different apps ?
 
+try catch around json deserialise
 
 test in vs2012
 test in vs2015

@@ -1,20 +1,19 @@
 ﻿using Newtonsoft.Json;
-using Trivial.Api.Gateway.AppModels;
 
-namespace Trivial.Api.Gateway
+namespace Trivial.Api.Gateway.TrumpQuotes
 {
-    public class ClientGatewayTrump
+    public class ClientGatewayTrumpQuotes
     {
-        public static GatewayResponse SetGatewayResponseFromRestResponse(string responseContent)
+        public static GatewayResponseTrumpQuotes SetGatewayResponseFromRestResponse(string responseContent)
         {
-            var rootObject = JsonConvert.DeserializeObject<TrumpRootObject>(responseContent);
+            var rootObject = JsonConvert.DeserializeObject<TrumpQuotesRootObject>(responseContent);
             var gatewayResponse = GetGatewayResponse(rootObject);
             return gatewayResponse;
         }
 
-        private static GatewayResponse GetGatewayResponse(TrumpRootObject rootObject)
+        private static GatewayResponseTrumpQuotes GetGatewayResponse(TrumpQuotesRootObject rootObject)
         {
-            var gatewayResponse = new GatewayResponse();
+            var gatewayResponse = new GatewayResponseTrumpQuotes();
 
             if (rootObject._embedded != null)
             {

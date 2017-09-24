@@ -46,13 +46,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AppModels\ResponseDto.cs" />
-    <Compile Include="AppModels\JeopardyRootObject.cs" />
-    <Compile Include="AppModels\TrumpRootObject.cs" />
+    <Compile Include="ResponseDto.cs" />
+    <Compile Include="Jeopardy\JeopardyRootObject.cs" />
+    <Compile Include="TrumpQuotes\TrumpQuotesRootObject.cs" />
     <Compile Include="AppUrlHelper.cs" />
-    <Compile Include="ClientGatewayJeopardy.cs" />
-    <Compile Include="ClientGatewayTrump.cs" />
-    <Compile Include="GatewayResponse.cs" />
+    <Compile Include="NumericTrivia\ClientGatewayNumericTrivia.cs" />
+    <Compile Include="Jeopardy\ClientGatewayJeopardy.cs" />
+    <Compile Include="TrumpQuotes\ClientGatewayTrumpQuotes.cs" />
+    <Compile Include="Jeopardy\GatewayResponseJeopardy.cs" />
+    <Compile Include="NumericTrivia\GatewayResponseNumericTrivia.cs" />
+    <Compile Include="GatewayResponseBase.cs" />
+    <Compile Include="TrumpQuotes\GatewayResponseTrumpQuotes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ClientGateway.cs" />
   </ItemGroup>

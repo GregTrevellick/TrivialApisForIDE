@@ -1,4 +1,4 @@
-﻿namespace Trivial.Api.Gateway.AppModels
+﻿namespace Trivial.Api.Gateway
 {
     public class ResponseDto
     {

@@ -2,9 +2,9 @@
 
 namespace Trivial.Ui.Common
 {
-    public static class TriviaHelper
+    public class TriviaHelper
     {
-        public static bool ShouldShowTrivia(GeneralOptionsDto generalOptionsDto)
+        public bool ShouldShowTrivia(GeneralOptionsDto generalOptionsDto)
         {
             var dateTimeNow = DateTime.Now;
 
@@ -19,7 +19,7 @@ namespace Trivial.Ui.Common
             return false;
         }
 
-        private static bool HaveExceededTodaysPopUpCount(GeneralOptionsDto generalOptionsDto, DateTime dateTimeNow)
+        private bool HaveExceededTodaysPopUpCount(GeneralOptionsDto generalOptionsDto, DateTime dateTimeNow)
         {
             var isWeekend = IsWeekend(dateTimeNow);
             bool haveExceededTodaysPopUpCount;
@@ -36,18 +36,18 @@ namespace Trivial.Ui.Common
             return haveExceededTodaysPopUpCount;
         }
 
-        private static bool IsWeekend(DateTime dateTimeNow)
+        private bool IsWeekend(DateTime dateTimeNow)
         {
             return dateTimeNow.DayOfWeek == DayOfWeek.Saturday ||
                    dateTimeNow.DayOfWeek == DayOfWeek.Sunday;
         }
 
-        internal static bool HaveExceededTodaysPopUpCount(int popUpCountToday, int maximumPopUps)
+        internal bool HaveExceededTodaysPopUpCount(int popUpCountToday, int maximumPopUps)
         {
             return popUpCountToday >= maximumPopUps;
         }
 
-        internal static bool LastPopUpMoreThanXMinutesAgo(DateTime lastPopUpDateTime, int popUpIntervalInMins, DateTime dateTimeNow)
+        internal bool LastPopUpMoreThanXMinutesAgo(DateTime lastPopUpDateTime, int popUpIntervalInMins, DateTime dateTimeNow)
         {
             var acceptableLastPopUpDateTime = dateTimeNow.AddMinutes(-1 * popUpIntervalInMins);
             var result = lastPopUpDateTime <= acceptableLastPopUpDateTime;

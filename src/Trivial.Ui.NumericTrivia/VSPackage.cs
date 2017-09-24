@@ -33,12 +33,12 @@ namespace Trivial.Ui.NumericTrivia
 
         private void OnSolutionOpened()
         {
-            var shouldShowTrivia = TriviaHelper.ShouldShowTrivia(GeneralOptionsDto);
+            var shouldShowTrivia = new TriviaHelper().ShouldShowTrivia(GeneralOptionsDto);
 
             if (shouldShowTrivia)
             {
                 var popUpTitle = CommonConstants.GetCaption(Vsix.Name, Vsix.Version);
-                var hiddenOptionsDto = TriviaMessage.ShowTrivia(AppName.NumericTrivia, popUpTitle, GeneralOptionsDto.LastPopUpDateTime, GeneralOptionsDto.PopUpCountToday, GeneralOptionsDto.TimeOutInMilliSeconds, Vsix.Name);
+                var hiddenOptionsDto = new TriviaMessage().ShowTrivia(AppName.NumericTrivia, popUpTitle, GeneralOptionsDto.LastPopUpDateTime, GeneralOptionsDto.PopUpCountToday, GeneralOptionsDto.TimeOutInMilliSeconds, Vsix.Name);
 
                 if (hiddenOptionsDto != null)
                 {

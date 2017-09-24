@@ -12,7 +12,7 @@ namespace Trivial.Api.Gateway.Tests
         public void GivenNullResponse_ThenResponseIsNotValid()
         {
             //Act
-            var actual = ClientGateway.HasErrorOccured(null);
+            var actual = new ClientGateway().HasErrorOccured(null);
 
             //Assert
             Assert.IsTrue(actual);
@@ -26,7 +26,7 @@ namespace Trivial.Api.Gateway.Tests
             IRestResponse response = new RestResponse();
 
             //Act
-            var actual = ClientGateway.HasErrorOccured(response);
+            var actual = new ClientGateway().HasErrorOccured(response);
 
             //Assert
             Assert.IsFalse(actual);
@@ -40,7 +40,7 @@ namespace Trivial.Api.Gateway.Tests
             IRestResponse response = new RestResponse{ErrorException = new ApplicationException()};
 
             //Act
-            var actual = ClientGateway.HasErrorOccured(response);
+            var actual = new ClientGateway().HasErrorOccured(response);
 
             //Assert
             Assert.IsTrue(actual);
@@ -54,7 +54,7 @@ namespace Trivial.Api.Gateway.Tests
             IRestResponse response = new RestResponse { ErrorMessage = "any" };
 
             //Act
-            var actual = ClientGateway.HasErrorOccured(response);
+            var actual = new ClientGateway().HasErrorOccured(response);
 
             //Assert
             Assert.IsTrue(actual);
@@ -68,7 +68,7 @@ namespace Trivial.Api.Gateway.Tests
             IRestResponse response = new RestResponse { Content = "any" };
 
             //Act
-            var actual = ClientGateway.HasErrorOccured(response);
+            var actual = new ClientGateway().HasErrorOccured(response);
 
             //Assert
             Assert.IsFalse(actual);

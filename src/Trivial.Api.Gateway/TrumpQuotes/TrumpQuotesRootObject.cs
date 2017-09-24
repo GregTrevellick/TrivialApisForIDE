@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace Trivial.Api.Gateway.AppModels
+namespace Trivial.Api.Gateway.TrumpQuotes
 {
-    public class TrumpRootObject
+    public class TrumpQuotesRootObject
     {
         public DateTime appeared_at { get; set; }
         public DateTime created_at { get; set; }

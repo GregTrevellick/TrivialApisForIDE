@@ -27,7 +27,7 @@ namespace Trivial.Ui.Common
             SizeToContent = SizeToContent.WidthAndHeight;
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
 
-            var iconUri = TriviaMessage.GetIconUri(appName);
+            var iconUri = new TriviaMessage().GetIconUri(appName);
             Icon = new BitmapImage(iconUri);
         }
 
