@@ -1,9 +1,14 @@
-﻿vsmp - screenshots missing, same in github
-helpful message when timeout
-PUBLISH
-create an initial release in github
+﻿screenshots missing in github & by association in VSMP
+jeopardy screen shot required
+
+? set different default options for different apps ?
+
+
 test in vs2012
 test in vs2015
+PUBLISH
+create an initial release in github
 --------------------------------------------------------
 dedupe the readme.md options section using gulp
 create a template project
+add clues to jeopardy ? 
