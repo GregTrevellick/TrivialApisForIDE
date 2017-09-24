@@ -24,29 +24,29 @@ namespace Trivial.Ui.Common
             var somethingToShow = false;
             var triviaDialogDto = new TriviaDialogDto
             {
-                optionsName = optionsName,
-                popUpTitle = popUpTitle
+                OptionsName = optionsName,
+                PopUpTitle = popUpTitle
             };
 
             switch (appName)
             {
                 case AppName.Jeopardy:
                     var gatewayResponseJeopardy = (GatewayResponseJeopardy) gatewayResponse;
-                    triviaDialogDto.answer = "A. " + gatewayResponseJeopardy.Answer;
-                    triviaDialogDto.question = "Q. " + gatewayResponseJeopardy.Question;
-                    somethingToShow = !string.IsNullOrEmpty(triviaDialogDto.question);
+                    triviaDialogDto.Answer = "A. " + gatewayResponseJeopardy.Answer;
+                    triviaDialogDto.Question = "Q. " + gatewayResponseJeopardy.Question;
+                    somethingToShow = !string.IsNullOrEmpty(triviaDialogDto.Question);
                     break;
                 case AppName.NumericTrivia:
                     var gatewayResponseNumeric = (GatewayResponseNumericTrivia)gatewayResponse;
-                    triviaDialogDto.fact = gatewayResponseNumeric.NumericFact;
-                    somethingToShow = !string.IsNullOrEmpty(triviaDialogDto.fact);
+                    triviaDialogDto.Fact = gatewayResponseNumeric.NumericFact;
+                    somethingToShow = !string.IsNullOrEmpty(triviaDialogDto.Fact);
                     break;
                 case AppName.TrumpQuotes:
                     var gatewayResponseTrump = (GatewayResponseTrumpQuotes)gatewayResponse;
-                    triviaDialogDto.hyperLinkUri = gatewayResponseTrump.HyperLinkUri;
-                    triviaDialogDto.quotation = gatewayResponseTrump.TrumpQuote;
-                    triviaDialogDto.attribution = gatewayResponseTrump.QuotationAuthor + spacer + gatewayResponseTrump.QuotationDate + spacer;
-                    somethingToShow = !string.IsNullOrEmpty(triviaDialogDto.quotation);
+                    triviaDialogDto.HyperLinkUri = gatewayResponseTrump.HyperLinkUri;
+                    triviaDialogDto.Quotation = gatewayResponseTrump.TrumpQuote;
+                    triviaDialogDto.Attribution = gatewayResponseTrump.QuotationAuthor + spacer + gatewayResponseTrump.QuotationDate + spacer;
+                    somethingToShow = !string.IsNullOrEmpty(triviaDialogDto.Quotation);
                     break;
             }         
           
@@ -61,14 +61,14 @@ namespace Trivial.Ui.Common
 
         private void DisplayPopUpMessage(TriviaDialogDto triviaDialogDto)
         {
-            var triviaDialog = new TriviaDialog(triviaDialogDto.appName, triviaDialogDto.optionsName)
+            var triviaDialog = new TriviaDialog(triviaDialogDto.AppName, triviaDialogDto.OptionsName)
             {
-                AppTextBlockAnswer = {Text = triviaDialogDto.answer},// == null ? string.Empty : triviaDialogDto.answer},
-                AppTextBlockAttribution = { Text =  triviaDialogDto.attribution },//== null ? string.Empty : triviaDialogDto.attribution },
-                AppTextBlockFact = { Text = triviaDialogDto.fact },//== null ? string.Empty : triviaDialogDto.fact },
-                AppTextBlockQuestion = { Text = triviaDialogDto.question},// == null ? string.Empty : triviaDialogDto.question },
-                AppTextBlockQuotation = { Text =  triviaDialogDto.quotation},// == null ? string.Empty : triviaDialogDto.quotation },
-                Title = triviaDialogDto.popUpTitle,
+                AppTextBlockAnswer = {Text = triviaDialogDto.Answer},
+                AppTextBlockAttribution = { Text =  triviaDialogDto.Attribution },
+                AppTextBlockFact = { Text = triviaDialogDto.Fact },
+                AppTextBlockQuestion = { Text = triviaDialogDto.Question},
+                AppTextBlockQuotation = { Text =  triviaDialogDto.Quotation},
+                Title = triviaDialogDto.PopUpTitle,
             };
 
             //gregt extract
@@ -99,14 +99,14 @@ namespace Trivial.Ui.Common
             }
 
             //gregt extract to icon method
-            var iconUri = GetIconUri(triviaDialogDto.appName);
+            var iconUri = GetIconUri(triviaDialogDto.AppName);
             triviaDialog.AppImage.Source = new BitmapImage(iconUri);
 
-            if (!string.IsNullOrEmpty(triviaDialogDto.hyperLinkUri))
+            if (!string.IsNullOrEmpty(triviaDialogDto.HyperLinkUri))
             {
-                triviaDialog.AppHyperlink1.NavigateUri = new Uri(triviaDialogDto.hyperLinkUri);
+                triviaDialog.AppHyperlink1.NavigateUri = new Uri(triviaDialogDto.HyperLinkUri);
                 triviaDialog.AppHyperlink1.Inlines.Clear();
-                triviaDialog.AppHyperlink1.Inlines.Add(triviaDialogDto.hyperLinkUri);
+                triviaDialog.AppHyperlink1.Inlines.Add(triviaDialogDto.HyperLinkUri);
             }
 
             triviaDialog.Show();

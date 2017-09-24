@@ -5,6 +5,8 @@ jeopardy screen shot required
 
 try catch around json deserialise
 
+html in jeopardy response
+
 test in vs2012
 test in vs2015
 PUBLISH

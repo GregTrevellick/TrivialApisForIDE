@@ -4,15 +4,14 @@ namespace Trivial.Ui.Common
 {
     public class TriviaDialogDto 
     {
-        //gregt make upper case
-        public string answer { get; set; }
-        public AppName appName { get; set; }
-        public string attribution { get; set; }
-        public string fact { get; set; }
-        public string hyperLinkUri { get; set; }
-        public string optionsName { get; set; }
-        public string popUpTitle { get; set; }
-        public string question { get; set; }
-        public string quotation { get; set; }
+        public string Answer { get; set; }
+        public AppName AppName { get; set; }
+        public string Attribution { get; set; }
+        public string Fact { get; set; }
+        public string HyperLinkUri { get; set; }
+        public string OptionsName { get; set; }
+        public string PopUpTitle { get; set; }
+        public string Question { get; set; }
+        public string Quotation { get; set; }
     }
 }
