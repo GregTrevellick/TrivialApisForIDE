@@ -13,9 +13,9 @@ namespace Trivial.Ui.Common
     public class TriviaMessage
     {
         private string answer = string.Empty;
-        private string author = string.Empty;
-        private string date = string.Empty;
-        private string linkUri = string.Empty;
+        private string quotationAuthor = string.Empty;
+        private string quotationDate = string.Empty;
+        private string hyperLinkUri = string.Empty;
         private string question = string.Empty;
         private string fact = string.Empty;
         private string quotation = string.Empty;
@@ -36,28 +36,28 @@ namespace Trivial.Ui.Common
                 case AppName.Jeopardy:
                     var gatewayResponseJeopardy = (GatewayResponseJeopardy) gatewayResponse;
                     answer = "A. " + gatewayResponseJeopardy.Answer;
-                    question = "Q. " + gatewayResponseJeopardy.Text;
+                    question = "Q. " + gatewayResponseJeopardy.Question;
                     somethingToShow = !string.IsNullOrEmpty(question);
                     break;
                 case AppName.NumericTrivia:
                     var gatewayResponseNumeric = (GatewayResponseNumericTrivia)gatewayResponse;
-                    fact = gatewayResponseNumeric.Text;
+                    fact = gatewayResponseNumeric.NumericFact;
                     somethingToShow = !string.IsNullOrEmpty(fact);
                     break;
                 case AppName.TrumpQuotes:
                     var gatewayResponseTrump = (GatewayResponseTrumpQuotes)gatewayResponse;
-                    author = gatewayResponseTrump.Author;
-                    date = gatewayResponseTrump.Date;
-                    linkUri = gatewayResponseTrump.LinkUri;
-                    quotation = gatewayResponseTrump.Text;
-                    attribution = author + spacer + date + spacer;
+                    quotationAuthor = gatewayResponseTrump.QuotationAuthor;
+                    quotationDate = gatewayResponseTrump.QuotationDate;
+                    hyperLinkUri = gatewayResponseTrump.HyperLinkUri;
+                    quotation = gatewayResponseTrump.TrumpQuote;
+                    attribution = quotationAuthor + spacer + quotationDate + spacer;
                     somethingToShow = !string.IsNullOrEmpty(quotation);
                     break;
             }         
           
             if (somethingToShow)
             {   
-                DisplayPopUpMessage(popUpTitle, linkUri, attribution, appName, optionsName, answer, question, quotation, fact);
+                DisplayPopUpMessage(popUpTitle, hyperLinkUri, attribution, appName, optionsName, answer, question, quotation, fact);
                 hiddenOptionsDto = GetHiddenOptionsDto(lastPopUpDateTime, popUpCountToday);
             }
 

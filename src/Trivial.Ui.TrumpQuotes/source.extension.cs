@@ -8,10 +8,10 @@ namespace Trivial.Ui.TrumpQuotes
     static class Vsix
     {
         public const string Id = "bffa1350-ab1e-49d9-a8a7-a3f76d92398c";
-        public const string Name = "Drain The Swamp";
+        public const string Name = ".Drain The Swamp";
         public const string Description = @"A random Donald Trump quote in a pop-up whenever you open a solution.";
         public const string Language = "en-US";
-        public const string Version = "1.0.62";
+        public const string Version = "1.0.63";
         public const string Author = "Greg Trevellick";
         public const string Tags = "tronalddump,  tronald, dump, donald trump, donald, trump, potus, drain, swamp, drain the swamp, usa";
     }

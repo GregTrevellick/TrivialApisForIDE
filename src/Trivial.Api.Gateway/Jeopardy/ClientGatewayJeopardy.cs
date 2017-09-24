@@ -18,7 +18,7 @@ namespace Trivial.Api.Gateway.Jeopardy
             var gatewayResponse = new GatewayResponseJeopardy
             {
                 Answer = rootObject.answer,
-                Text = rootObject.question,
+                Question = rootObject.question,
             };
             return gatewayResponse;
         }

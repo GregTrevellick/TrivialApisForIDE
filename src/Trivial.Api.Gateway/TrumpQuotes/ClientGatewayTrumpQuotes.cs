@@ -22,14 +22,14 @@ namespace Trivial.Api.Gateway.TrumpQuotes
                 foreach (var elem in rootObject._embedded.source)
                 {
                     source += elem.url + " ";
-                    gatewayResponse.LinkUri += source;
+                    gatewayResponse.HyperLinkUri += source;
                 }
             }
 
-            gatewayResponse.Date = rootObject.appeared_at.Date.ToShortDateString();
-            gatewayResponse.Author = "Donald J. Trump";
-            gatewayResponse.LinkText = gatewayResponse.LinkUri;
-            gatewayResponse.Text = "\"" + rootObject.value + "\"";
+            gatewayResponse.QuotationDate = rootObject.appeared_at.Date.ToShortDateString();
+            gatewayResponse.QuotationAuthor = "Donald J. Trump";
+            gatewayResponse.HyperLinkText = gatewayResponse.HyperLinkUri;
+            gatewayResponse.TrumpQuote = "\"" + rootObject.value + "\"";
 
             return gatewayResponse;
         }

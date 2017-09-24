@@ -4,6 +4,6 @@
     {
         public string Answer { get; set; }
         public string AnswerRevealLabel = "Reveal answer";
-        public string Text { get; set; }//gregt rename to Question
+        public string Question { get; set; }
     }
 }

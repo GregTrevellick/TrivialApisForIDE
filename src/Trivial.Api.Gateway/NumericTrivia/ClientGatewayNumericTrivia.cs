@@ -6,7 +6,7 @@
         {
             var gatewayResponse = new GatewayResponseNumericTrivia
             {
-                Text = responseContent,
+                NumericFact = responseContent,
             };
             return gatewayResponse;
         }
