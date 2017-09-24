@@ -11,6 +11,6 @@
         public string LinkUri { get; set; }
         /////////////public string Question { get; set; }
         /////////////public string QuestionLabel = "Q.";
-        public string Text { get; set; }//gregt rename ? used for trump twitter post + numeric fact
+        public string Text { get; set; }//gregt rename ? used for trump twitter post + numeric fact + jeopardy auqesion
     }
 }
