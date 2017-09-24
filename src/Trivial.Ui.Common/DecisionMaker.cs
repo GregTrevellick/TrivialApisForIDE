@@ -2,7 +2,7 @@
 
 namespace Trivial.Ui.Common
 {
-    public class TriviaHelper
+    public class DecisionMaker
     {
         public bool ShouldShowTrivia(GeneralOptionsDto generalOptionsDto)
         {

@@ -11,7 +11,7 @@ namespace Trivial.Ui.Common.Tests
         public void LastPopUpMoreThanXMinutesAgoTest()
         {
             //Arrange
-            var triviaHelper = new TriviaHelper();
+            var triviaHelper = new DecisionMaker();
             //Act
             Assert.IsFalse(triviaHelper.LastPopUpMoreThanXMinutesAgo(
                 lastPopUpDateTime: new DateTime(2017, 01, 01, 13, 0, 0), 

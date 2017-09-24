@@ -33,7 +33,7 @@ namespace Trivial.Ui.Jeopardy
 
         private void OnSolutionOpened()
         {
-            var shouldShowTrivia = new TriviaHelper().ShouldShowTrivia(GeneralOptionsDto);
+            var shouldShowTrivia = new DecisionMaker().ShouldShowTrivia(GeneralOptionsDto);
 
             if (shouldShowTrivia)
             {

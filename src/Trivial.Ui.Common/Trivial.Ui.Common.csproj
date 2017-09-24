@@ -115,7 +115,7 @@
     <Compile Include="TriviaDialog.xaml.cs">
       <DependentUpon>TriviaDialog.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TriviaHelper.cs" />
+    <Compile Include="DecisionMaker.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Trivial.Api.Gateway\Trivial.Api.Gateway.csproj">
