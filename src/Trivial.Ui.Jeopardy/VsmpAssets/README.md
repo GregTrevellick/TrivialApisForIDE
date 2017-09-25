@@ -13,7 +13,13 @@ A trivial extension that poses a Jeopardy question when opening a solution file.
 
 - Inspired by [Phil Haack's Encourage](https://marketplace.visualstudio.com/items?itemName=Haacked.Encourage) extension. 
 
-    ![](ReadMeScreenShot.png)
+- Example question
+ 
+  ![](ReadMeScreenShot.png)
+
+- Example answer
+
+   ![](ReadMeScreenShot_Answer.png)
 
 ### Options
 
