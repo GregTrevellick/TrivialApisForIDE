@@ -24,6 +24,7 @@ namespace Trivial.Ui.Common
             var somethingToShow = false;
             var triviaDialogDto = new TriviaDialogDto
             {
+                AppName = appName,
                 OptionsName = optionsName,
                 PopUpTitle = popUpTitle
             };
@@ -71,23 +72,23 @@ namespace Trivial.Ui.Common
         {
             var triviaDialog = new TriviaDialog(triviaDialogDto.AppName, triviaDialogDto.OptionsName)
             {
-                AppTextBlockAnswer = {Text = triviaDialogDto.Answer},
-                AppTextBlockAttribution = { Text =  triviaDialogDto.Attribution },
+                AppTextBlockAnswer = { Text = triviaDialogDto.Answer},
+                AppTextBlockAttribution = { Text = triviaDialogDto.Attribution },
                 AppTextBlockErrorDetails = { Text = triviaDialogDto.ErrorDetails },
                 AppTextBlockFact = { Text = triviaDialogDto.Fact },
                 AppTextBlockQuestion = { Text = triviaDialogDto.Question},
-                AppTextBlockQuotation = { Text =  triviaDialogDto.Quotation},
+                AppTextBlockQuotation = { Text = triviaDialogDto.Quotation},
                 Title = triviaDialogDto.PopUpTitle,
             };
 
-            if (!string.IsNullOrWhiteSpace(triviaDialog.AppTextBlockQuotation.Text))
-            {
-                triviaDialog.AppTextBlockQuotation.Visibility = Visibility.Visible;
-            }
+            var iconUri = GetIconUri(triviaDialogDto.AppName);
+            triviaDialog.AppImage.Source = new BitmapImage(iconUri);
 
-            if (!string.IsNullOrWhiteSpace(triviaDialog.AppTextBlockFact.Text))
+            if (!string.IsNullOrEmpty(triviaDialogDto.HyperLinkUri))
             {
-                triviaDialog.AppTextBlockFact.Visibility = Visibility.Visible;
+                triviaDialog.AppHyperlink1.NavigateUri = new Uri(triviaDialogDto.HyperLinkUri);
+                triviaDialog.AppHyperlink1.Inlines.Clear();
+                triviaDialog.AppHyperlink1.Inlines.Add(triviaDialogDto.HyperLinkUri);
             }
 
             if (!string.IsNullOrWhiteSpace(triviaDialog.AppTextBlockErrorDetails.Text))
@@ -95,9 +96,19 @@ namespace Trivial.Ui.Common
                 triviaDialog.AppTextBlockErrorDetails.Visibility = Visibility.Visible;
             }
 
+            if (!string.IsNullOrWhiteSpace(triviaDialog.AppTextBlockFact.Text))
+            {
+                triviaDialog.AppTextBlockFact.Visibility = Visibility.Visible;
+            }
+
             if (!string.IsNullOrWhiteSpace(triviaDialog.AppTextBlockQuestion.Text))
             {
                 triviaDialog.AppTextBlockQuestion.Visibility = Visibility.Visible;
+            }
+
+            if (!string.IsNullOrWhiteSpace(triviaDialog.AppTextBlockQuotation.Text))
+            {
+                triviaDialog.AppTextBlockQuotation.Visibility = Visibility.Visible;
             }
 
             if (!string.IsNullOrWhiteSpace(triviaDialog.AppTextBlockAttribution.Text))
@@ -109,16 +120,6 @@ namespace Trivial.Ui.Common
             if (!string.IsNullOrWhiteSpace(triviaDialog.AppTextBlockAnswer.Text))
             {
                 triviaDialog.AppBtnRevealAnswer.Visibility = Visibility.Visible;
-            }
-
-            var iconUri = GetIconUri(triviaDialogDto.AppName);
-            triviaDialog.AppImage.Source = new BitmapImage(iconUri);
-
-            if (!string.IsNullOrEmpty(triviaDialogDto.HyperLinkUri))
-            {
-                triviaDialog.AppHyperlink1.NavigateUri = new Uri(triviaDialogDto.HyperLinkUri);
-                triviaDialog.AppHyperlink1.Inlines.Clear();
-                triviaDialog.AppHyperlink1.Inlines.Add(triviaDialogDto.HyperLinkUri);
             }
 
             triviaDialog.Show();

@@ -1,5 +1,4 @@
-﻿gregt vsix version numbers in assembly.cs
-
+﻿
 test in vs2012
 test in vs2015
 
@@ -8,6 +7,7 @@ PUBLISH DRAIN & NUMERIC
 
 -------------------------------------------------------
 
+gregt vsix version numbers in assembly.cs
 jeopardy screen shot required
 gregt retest jeopardy with lower case first letters & italics
 PUBLISH JEOPARDY
