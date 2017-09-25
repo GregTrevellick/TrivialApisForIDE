@@ -9,7 +9,7 @@
         <ReleaseNotes>https://github.com/GregTrevellick/TrivialApisForIDE/blob/master/CHANGELOG.md</ReleaseNotes>
         <Icon>Resources\VsixExtensionIcon_90x90.png</Icon>
         <PreviewImage>Resources\VsixExtensionPreview_175x175.png</PreviewImage>
-        <Tags>jservice, jeopardy, jservice.io, trivia questions, trivia</Tags>
+        <Tags>jservice, jeopardy, jservice.io, trivia questions, trivia, quiz</Tags>
     </Metadata>
     <Installation>
         <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[11.0,16.0)" />

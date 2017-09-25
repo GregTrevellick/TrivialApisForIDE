@@ -13,6 +13,6 @@ namespace Trivial.Ui.Jeopardy
         public const string Language = "en-US";
         public const string Version = "1.0.64";
         public const string Author = "Greg Trevellick";
-        public const string Tags = "jservice, jeopardy, jservice.io, trivia questions, trivia";
+        public const string Tags = "jservice, jeopardy, jservice.io, trivia questions, trivia, quiz";
     }
 }

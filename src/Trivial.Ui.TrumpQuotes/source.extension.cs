@@ -13,6 +13,6 @@ namespace Trivial.Ui.TrumpQuotes
         public const string Language = "en-US";
         public const string Version = "1.0.66";
         public const string Author = "Greg Trevellick";
-        public const string Tags = "tronalddump,  tronald, dump, donald trump, donald, trump, potus, drain, swamp, drain the swamp, usa";
+        public const string Tags = "tronalddump,  tronald, dump, donald trump, donald, trump, potus, drain, swamp, drain the swamp, usa, trivia";
     }
 }

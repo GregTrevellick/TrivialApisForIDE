@@ -1,4 +1,22 @@
-﻿screenshots missing in github & by association in VSMP
+﻿pop quiz
+https://opentdb.com/api.php?amount=10&category=18
+
+
+tech quiz
+https://opentdb.com/api.php?amount=10&category=12
+
+https://opentdb.com/api_config.php
+
+
+
+
+
+https://qriusity.com/#qriusity-documentation
+
+gregt
+
+
+screenshots missing in github & by association in VSMP
 jeopardy screen shot required
 
 ? set different default options for different apps ?
