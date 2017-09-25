@@ -30,6 +30,7 @@ namespace Trivial.Api.Gateway.Jeopardy
         {
             str = str.Replace("<i>", string.Empty);
             str = str.Replace("</i>", string.Empty);
+            str = str.Replace(@"\'", "'");
             str = char.ToUpper(str[0]) + str.Substring(1);
         
             return str;
