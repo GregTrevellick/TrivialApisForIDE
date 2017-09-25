@@ -1,11 +1,10 @@
-﻿update vsix manifest version nbrs & re-upload
+﻿update vsix manifest version nbrs to 1.1.0 
+re-upload
 PUBLISH DRAIN & NUMERIC
 
 -------------------------------------------------------
 
-
 jeopardy screen shot required
-gregt jeopardy    \'     becomes   '
 PUBLISH JEOPARDY
 
 -------------------------------------------------------

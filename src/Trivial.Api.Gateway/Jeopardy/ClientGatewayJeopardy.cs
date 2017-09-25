@@ -16,11 +16,12 @@ namespace Trivial.Api.Gateway.Jeopardy
         private static GatewayResponseJeopardy GetGatewayResponse(Class1 rootObject)
         {
             var answer = CharacterHandler(rootObject.answer);
+            var question = CharacterHandler(rootObject.question);
 
             var gatewayResponse = new GatewayResponseJeopardy
             {
                 Answer = answer,
-                Question = rootObject.question,
+                Question = question,
             };
 
             return gatewayResponse;
