@@ -9,7 +9,6 @@ test in vs2015
 gregt vsix version numbers
 jeopardy screen shot required
 gregt retest jeopardy with lower case first letters
-gregt test deserialization error
 PUBLISH JEOPARDY
 
 -------------------------------------------------------

@@ -28,8 +28,6 @@ namespace Trivial.Api.Gateway
                 {
                     try
                     {
-                        //throw new NotImplementedException();//gregt to test at home
-
                         switch (appName)
                         {
                             case AppName.Jeopardy:
@@ -93,7 +91,7 @@ namespace Trivial.Api.Gateway
         {
             Debug.WriteLine(ex.Message);
             var exceptionTypeName = ex.GetType().Name;
-            responseDto.ErrorDetails = $"An unexpected error of type {exceptionTypeName} has occured (possibly a communication error with {url}).";
+            responseDto.ErrorDetails = $"An unexpected error of type {exceptionTypeName} has occured (possible communication error with {url}).";
         }
 
         internal bool HasErrorOccured(IRestResponse response)

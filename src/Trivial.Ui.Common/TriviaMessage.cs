@@ -28,28 +28,36 @@ namespace Trivial.Ui.Common
                 PopUpTitle = popUpTitle
             };
 
-            switch (appName)
+            if (!string.IsNullOrEmpty(gatewayResponse.ErrorDetails))
             {
-                case AppName.Jeopardy:
-                    var gatewayResponseJeopardy = (GatewayResponseJeopardy) gatewayResponse;
-                    triviaDialogDto.Answer = "A. " + gatewayResponseJeopardy.Answer;
-                    triviaDialogDto.Question = "Q. " + gatewayResponseJeopardy.Question;
-                    somethingToShow = !string.IsNullOrEmpty(triviaDialogDto.Question);
-                    break;
-                case AppName.NumericTrivia:
-                    var gatewayResponseNumeric = (GatewayResponseNumericTrivia)gatewayResponse;
-                    triviaDialogDto.Fact = gatewayResponseNumeric.NumericFact;
-                    somethingToShow = !string.IsNullOrEmpty(triviaDialogDto.Fact);
-                    break;
-                case AppName.TrumpQuotes:
-                    var gatewayResponseTrump = (GatewayResponseTrumpQuotes)gatewayResponse;
-                    triviaDialogDto.HyperLinkUri = gatewayResponseTrump.HyperLinkUri;
-                    triviaDialogDto.Quotation = gatewayResponseTrump.TrumpQuote;
-                    triviaDialogDto.Attribution = gatewayResponseTrump.QuotationAuthor + spacer + gatewayResponseTrump.QuotationDate + spacer;
-                    somethingToShow = !string.IsNullOrEmpty(triviaDialogDto.Quotation);
-                    break;
-            }         
-          
+                triviaDialogDto.ErrorDetails = gatewayResponse.ErrorDetails;
+                somethingToShow = !string.IsNullOrEmpty(triviaDialogDto.ErrorDetails);
+            }
+            else
+            {
+                switch (appName)
+                {
+                    case AppName.Jeopardy:
+                        var gatewayResponseJeopardy = (GatewayResponseJeopardy) gatewayResponse;
+                        triviaDialogDto.Answer = "A. " + gatewayResponseJeopardy.Answer;
+                        triviaDialogDto.Question = "Q. " + gatewayResponseJeopardy.Question;
+                        somethingToShow = !string.IsNullOrEmpty(triviaDialogDto.Question);
+                        break;
+                    case AppName.NumericTrivia:
+                        var gatewayResponseNumeric = (GatewayResponseNumericTrivia) gatewayResponse;
+                        triviaDialogDto.Fact = gatewayResponseNumeric.NumericFact;
+                        somethingToShow = !string.IsNullOrEmpty(triviaDialogDto.Fact);
+                        break;
+                    case AppName.TrumpQuotes:
+                        var gatewayResponseTrump = (GatewayResponseTrumpQuotes) gatewayResponse;
+                        triviaDialogDto.HyperLinkUri = gatewayResponseTrump.HyperLinkUri;
+                        triviaDialogDto.Quotation = gatewayResponseTrump.TrumpQuote;
+                        triviaDialogDto.Attribution = gatewayResponseTrump.QuotationAuthor + spacer + gatewayResponseTrump.QuotationDate + spacer;
+                        somethingToShow = !string.IsNullOrEmpty(triviaDialogDto.Quotation);
+                        break;
+                }
+            }
+
             if (somethingToShow)
             {
                 DisplayPopUpMessage(triviaDialogDto);
@@ -65,6 +73,7 @@ namespace Trivial.Ui.Common
             {
                 AppTextBlockAnswer = {Text = triviaDialogDto.Answer},
                 AppTextBlockAttribution = { Text =  triviaDialogDto.Attribution },
+                AppTextBlockErrorDetails = { Text = triviaDialogDto.ErrorDetails },
                 AppTextBlockFact = { Text = triviaDialogDto.Fact },
                 AppTextBlockQuestion = { Text = triviaDialogDto.Question},
                 AppTextBlockQuotation = { Text =  triviaDialogDto.Quotation},
@@ -79,6 +88,11 @@ namespace Trivial.Ui.Common
             if (!string.IsNullOrWhiteSpace(triviaDialog.AppTextBlockFact.Text))
             {
                 triviaDialog.AppTextBlockFact.Visibility = Visibility.Visible;
+            }
+
+            if (!string.IsNullOrWhiteSpace(triviaDialog.AppTextBlockErrorDetails.Text))
+            {
+                triviaDialog.AppTextBlockErrorDetails.Visibility = Visibility.Visible;
             }
 
             if (!string.IsNullOrWhiteSpace(triviaDialog.AppTextBlockQuestion.Text))
