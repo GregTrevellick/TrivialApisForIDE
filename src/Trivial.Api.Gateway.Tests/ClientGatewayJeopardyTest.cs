@@ -13,10 +13,10 @@ namespace Trivial.Api.Gateway.Tests
         public void CharacterHandlerTest_SpecialCharacters()
         {
             //Act
-            var actual = ClientGatewayJeopardy.CharacterHandler("abc <i>xyz</i> 1");
+            var actual = ClientGatewayJeopardy.CharacterHandler(@"abc <i>xyz</i> 1 don\'t");
 
             //Assert
-            Assert.AreEqual("Abc xyz 1", actual);
+            Assert.AreEqual("Abc xyz 1 don't", actual);
         }
 
         [Test]
@@ -24,10 +24,10 @@ namespace Trivial.Api.Gateway.Tests
         public void CharacterHandlerTest_NonSpecialCharacters()
         {
             //Act
-            var actual = ClientGatewayJeopardy.CharacterHandler("Abc xyz 1");
+            var actual = ClientGatewayJeopardy.CharacterHandler("Abc xyz 1 don't");
 
             //Assert
-            Assert.AreEqual("Abc xyz 1", actual);
+            Assert.AreEqual("Abc xyz 1 don't", actual);
         }
     }
 }
