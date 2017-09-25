@@ -7,7 +7,7 @@ namespace Trivial.Api.Gateway.Jeopardy
         public Class1[] Property1 { get; set; }
     }
 
-    public class Class1//gregt rename to include Jeopardy in name ?
+    public class Class1
     {
         public int id { get; set; }
         public string answer { get; set; }

@@ -1,35 +1,24 @@
-﻿pop quiz
-https://opentdb.com/api.php?amount=10&category=18
-
-
-tech quiz
-https://opentdb.com/api.php?amount=10&category=12
-
-https://opentdb.com/api_config.php
-
-
-
-
-
-https://qriusity.com/#qriusity-documentation
-
-gregt
-
-
-screenshots missing in github & by association in VSMP
-jeopardy screen shot required
-
-? set different default options for different apps ?
-
-try catch around json deserialise
-
-html in jeopardy response
+﻿update vsix version nbrs & re-upload
+PUBLISH DRAIN & NUMERIC
 
 test in vs2012
 test in vs2015
-PUBLISH
-create an initial release in github
---------------------------------------------------------
-dedupe the readme.md options section using gulp
-create a template project
+
+-------------------------------------------------------
+
+gregt vsix version numbers
+jeopardy screen shot required
+gregt retest jeopardy with lower case first letters
+gregt test deserialization error
+PUBLISH JEOPARDY
+
+-------------------------------------------------------
+
+set different default options for different apps ?
 add clues to jeopardy ? 
+pop quiz
+https://opentdb.com/api.php?amount=10&category=18
+tech quiz
+https://opentdb.com/api.php?amount=10&category=12
+https://opentdb.com/api_config.php
+https://qriusity.com/#qriusity-documentation

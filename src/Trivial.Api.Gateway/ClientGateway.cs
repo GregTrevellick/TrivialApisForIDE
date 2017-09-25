@@ -26,17 +26,27 @@ namespace Trivial.Api.Gateway
                 }
                 else
                 {
-                    switch (appName)
+                    try
                     {
-                        case AppName.Jeopardy:
-                            gatewayResponse = ClientGatewayJeopardy.SetGatewayResponseFromRestResponse(responseDto.ResponseContent);
-                            break;
-                        case AppName.NumericTrivia:
-                            gatewayResponse = ClientGatewayNumericTrivia.SetGatewayResponseFromRestResponse(responseDto.ResponseContent);
-                            break;
-                        case AppName.TrumpQuotes:
-                            gatewayResponse = ClientGatewayTrumpQuotes.SetGatewayResponseFromRestResponse(responseDto.ResponseContent);
-                            break;
+                        //throw new NotImplementedException();//gregt to test at home
+
+                        switch (appName)
+                        {
+                            case AppName.Jeopardy:
+                                gatewayResponse = ClientGatewayJeopardy.SetGatewayResponseFromRestResponse(responseDto.ResponseContent);
+                                break;
+                            case AppName.NumericTrivia:
+                                gatewayResponse = ClientGatewayNumericTrivia.SetGatewayResponseFromRestResponse(responseDto.ResponseContent);
+                                break;
+                            case AppName.TrumpQuotes:
+                                gatewayResponse = ClientGatewayTrumpQuotes.SetGatewayResponseFromRestResponse(responseDto.ResponseContent);
+                                break;
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        HandleUnexpectedError(ex, responseDto);
+                        SetGatewayResponseFromErrorDetails(gatewayResponse, responseDto.ErrorDetails);
                     }
                 }
             }
@@ -70,6 +80,13 @@ namespace Trivial.Api.Gateway
             }
 
             return responseDto;
+        }
+
+        private void HandleUnexpectedError(Exception ex, ResponseDto responseDto)
+        {
+            Debug.WriteLine(ex.Message);
+            var exceptionTypeName = ex.GetType().Name;
+            responseDto.ErrorDetails = $"An unexpected error of type {exceptionTypeName} has occured (possible JSON deserialization error).";
         }
 
         private void HandleUnexpectedError(string url, Exception ex, ResponseDto responseDto)

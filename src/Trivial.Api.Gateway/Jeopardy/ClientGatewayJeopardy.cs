@@ -15,12 +15,24 @@ namespace Trivial.Api.Gateway.Jeopardy
 
         private static GatewayResponseJeopardy GetGatewayResponse(Class1 rootObject)
         {
+            var answer = CharacterHandler(rootObject.answer);
+
             var gatewayResponse = new GatewayResponseJeopardy
             {
-                Answer = rootObject.answer,
+                Answer = answer,
                 Question = rootObject.question,
             };
+
             return gatewayResponse;
+        }
+
+        internal static string CharacterHandler(string str)
+        {
+            str = str.Replace("<i>", string.Empty);
+            str = str.Replace("</i>", string.Empty);
+            str = char.ToUpper(str[0]) + str.Substring(1);
+        
+            return str;
         }
     }
 }
