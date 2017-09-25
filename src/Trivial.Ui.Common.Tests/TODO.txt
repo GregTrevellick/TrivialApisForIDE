@@ -3,9 +3,9 @@ PUBLISH DRAIN & NUMERIC
 
 -------------------------------------------------------
 
-gregt vsix version numbers in assembly.cs
+
 jeopardy screen shot required
-gregt retest jeopardy with lower case first letters & italics
+gregt jeopardy    \'     becomes   '
 PUBLISH JEOPARDY
 
 -------------------------------------------------------
