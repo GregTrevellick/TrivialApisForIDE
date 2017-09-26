@@ -25,11 +25,17 @@ See the [change log](CHANGELOG.md) for release history.
 
 ## Credits
 
-[Todd Motto](https://github.com/toddmotto/public-apis)
+[jService](http://www.jservice.io)
+
+[Numbers API](http://www.numbersapi.com)
 
 [Phil Haack](https://marketplace.visualstudio.com/items?itemName=Haacked.Encourage)
 
 [Phil Haack again](http://haacked.com/archive/2014/07/30/visual-studios-extensions-settings/)
+
+[Todd Motto](https://github.com/toddmotto/public-apis)
+
+[Tronald Dump](https://www.tronalddump.io)
 
 [Utkarsh Shigihalli](https://github.com/onlyutkarsh/XamlDialogInVSExtensionDemo)
 

@@ -5,7 +5,7 @@ These are the incremental changes to each version that has been released on the 
 Individual releases are tagged as such in GitHub.
 
 ## 1.1.0
-**2017-09-25**
+**2017-09-26**
 - [x] Initial release
   - [x] Drain The Swamp
   - [x] Jeopardy
