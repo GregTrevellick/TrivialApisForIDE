@@ -1,7 +1,4 @@
-﻿TUES - spur, publish
-
--------------------------------------------------------
-
+﻿
 set different default options for different apps ?
 add clues to jeopardy ? 
 pop quiz
