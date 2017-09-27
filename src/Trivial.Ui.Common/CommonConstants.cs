@@ -21,6 +21,11 @@ namespace Trivial.Ui.Common
         public const string TimeOutInMilliSecondsOptionLabel = "Timeout limit (milliseconds)";
         public static string TimeOutInMilliSecondsIsOutsideRecommendedTimeoutLimits = $"Are you sure ?{Environment.NewLine}{Environment.NewLine}The value for '{TimeOutInMilliSecondsOptionLabel}' is outside the recommended limits, which means the data retrieval may timeout before completion or may wait for a long time to complete.";
 
+        public const int PackageLoadedLimit = 1;//1000
+        public const int RatingRequestGapInDays = 1;//90
+        public const int RatingRequestLimit = 99999;//3
+        public const string RatingRequestText = "This is free, please rate it as payment by clicking here";
+
         public static string GetCaption(string vsixName, string vsixVersion)
         {
             return $"{vsixName} {vsixVersion}";
