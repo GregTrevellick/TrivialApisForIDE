@@ -8,7 +8,7 @@ using Trivial.Entities;
 using Trivial.Ui.Common;
 //using Trivial.Ui.Common.Ratings;
 using Trivial.Ui.Jeopardy.Options;
-using VsixRatingChaser;
+//using VsixRatingChaser;
 
 namespace Trivial.Ui.Jeopardy
 {
