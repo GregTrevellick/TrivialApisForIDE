@@ -3,6 +3,7 @@ using System.Reflection;
 using System.Windows;
 using System.Windows.Media.Imaging;
 using Trivial.Api.Gateway;
+using Trivial.Api.Gateway.GeekQuiz;
 using Trivial.Api.Gateway.Jeopardy;
 using Trivial.Api.Gateway.NumericTrivia;
 using Trivial.Api.Gateway.TrumpQuotes;
@@ -38,6 +39,12 @@ namespace Trivial.Ui.Common
             {
                 switch (appName)
                 {
+                    case AppName.GeekQuiz:
+                        var gatewayResponseGeekQuiz = (GatewayResponseGeekQuiz)gatewayResponse;
+                        triviaDialogDto.Answer = "A. " + gatewayResponseGeekQuiz.Answer;
+                        triviaDialogDto.Question = "Q. " + gatewayResponseGeekQuiz.Question;
+                        somethingToShow = !string.IsNullOrEmpty(triviaDialogDto.Question);
+                        break;
                     case AppName.Jeopardy:
                         var gatewayResponseJeopardy = (GatewayResponseJeopardy) gatewayResponse;
                         triviaDialogDto.Answer = "A. " + gatewayResponseJeopardy.Answer;

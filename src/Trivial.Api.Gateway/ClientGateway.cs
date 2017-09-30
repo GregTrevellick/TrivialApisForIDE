@@ -1,6 +1,7 @@
 ﻿using RestSharp;
 using System;
 using System.Diagnostics;
+using Trivial.Api.Gateway.GeekQuiz;
 using Trivial.Api.Gateway.Jeopardy;
 using Trivial.Api.Gateway.NumericTrivia;
 using Trivial.Api.Gateway.TrumpQuotes;
@@ -30,6 +31,9 @@ namespace Trivial.Api.Gateway
                     {
                         switch (appName)
                         {
+                            case AppName.GeekQuiz:
+                                gatewayResponse = ClientGatewayGeekQuiz.SetGatewayResponseFromRestResponse(responseDto.ResponseContent);
+                                break;
                             case AppName.Jeopardy:
                                 gatewayResponse = ClientGatewayJeopardy.SetGatewayResponseFromRestResponse(responseDto.ResponseContent);
                                 break;

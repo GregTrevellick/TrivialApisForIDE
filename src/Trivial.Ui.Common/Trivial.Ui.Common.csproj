@@ -173,6 +173,10 @@
       <Link>Resources\Jeopardy\VsixExtensionIcon_16x16.png</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="..\Trivial.Ui.GeekQuiz\Resources\VsixExtensionIcon_16x16.png">
+      <Link>Resources\GeekQuiz\VsixExtensionIcon_16x16.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Content Include="Resources\Generic_ReadMeScreenShot_OptionsGeneral.png" />
   </ItemGroup>
   <ItemGroup />
