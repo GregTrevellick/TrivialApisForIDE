@@ -19,3 +19,8 @@ https://qriusity.com/#qriusity-documentation
  https://stackoverflow.com/questions/17233651/wpf-data-binding-label-content
  https://msdn.microsoft.com/en-us/library/ff770546.aspx?f=255&MSPPError=-2147217396
 -->
+
+
+geek quiz- stick/twist ==> get another question, get another question ==> "Go back to work !"
+geek quiz - pass ==> "Go back to work !"
+where  ==> "Go back to work !" is a random saying

@@ -5,5 +5,7 @@
         public string Answer { get; set; }
         public string AnswerRevealLabel = "Reveal answer";
         public string Question { get; set; }
+        public string DifficultyLevel { get; set; }
+        public string[] MultipleChoiceAnswers { get; set; }       
     }
 }

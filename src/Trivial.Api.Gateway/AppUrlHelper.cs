@@ -11,7 +11,7 @@ namespace Trivial.Api.Gateway
             switch (appName)
             {
                 case AppName.GeekQuiz://Consistent average response time 350ms peaking double that
-                    url = "https://opentdb.com/api.php?amount=3&category=18";
+                    url = "https://opentdb.com/api.php?amount=1&category=18";
                     break;
                 case AppName.Jeopardy://Consistent average response time 270ms
                     url = "http://www.jservice.io/api/random";

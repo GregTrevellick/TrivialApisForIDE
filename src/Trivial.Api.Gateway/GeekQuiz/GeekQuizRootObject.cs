@@ -4,30 +4,17 @@ namespace Trivial.Api.Gateway.GeekQuiz
 {
     public class GeekQuizRootObject
     {
-        public Class1[] Property1 { get; set; }
+        public int response_code { get; set; }
+        public Result[] results { get; set; }
     }
 
-    public class Class1
+    public class Result
     {
-        public int id { get; set; }
-        public string answer { get; set; }
+        public string category { get; set; }
+        public string type { get; set; }
+        public string difficulty { get; set; }
         public string question { get; set; }
-        public int value { get; set; }
-        public DateTime airdate { get; set; }
-        public DateTime created_at { get; set; }
-        public DateTime updated_at { get; set; }
-        public int category_id { get; set; }
-        public object game_id { get; set; }
-        public object invalid_count { get; set; }
-        public Category category { get; set; }
-    }
-
-    public class Category
-    {
-        public int id { get; set; }
-        public string title { get; set; }
-        public DateTime created_at { get; set; }
-        public DateTime updated_at { get; set; }
-        public int clues_count { get; set; }
+        public string correct_answer { get; set; }
+        public string[] incorrect_answers { get; set; }
     }
 }
