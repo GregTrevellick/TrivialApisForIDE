@@ -2,7 +2,7 @@
 //using System;
 //using VsixRatingChaser;
 
-//namespace Trivial.Ui.Abracadabra.Options
+//namespace Trivial.Ui.Options.GeekQuiz
 //{
 //    public class HiddenRatingChaserOptions : DialogPage, IHiddenRatingChaserOptions
 //    {
