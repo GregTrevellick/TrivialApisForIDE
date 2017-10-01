@@ -6,7 +6,7 @@
                          xmlns:shell="clr-namespace:Microsoft.VisualStudio.Shell;assembly=Microsoft.VisualStudio.Shell.14.0"
                          Background="{DynamicResource VsBrush.Window}"
                          Foreground="{DynamicResource VsBrush.WindowText}" >
-    <Grid ShowGridLines="false">
+    <Grid ShowGridLines="True">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
@@ -34,6 +34,7 @@
         </TextBlock>
         <Button Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Visibility="Collapsed" Content="Reveal Answer" Margin="10,10,10,10" Padding="5,5,5,5" VerticalAlignment="Center" HorizontalAlignment="Left" Click="AppBtnRevealAnswer_OnClick" Name="AppBtnRevealAnswer"/>
         <TextBlock Grid.Row="1" Grid.Column="1" Visibility="Collapsed" Margin="10,10,0,10" VerticalAlignment="Center" HorizontalAlignment="Left" Name="AppTextBlockAnswer" FontWeight="Bold"/>
+        <TextBlock Grid.Row="1" Grid.Column="1" Visibility="Collapsed" Margin="10,10,0,10" VerticalAlignment="Center" HorizontalAlignment="Left" Name="AppTextBlockMultipleChoiceCorrectAnswer" FontWeight="Bold"/>
 
         <Button Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" Content="Close" Margin="10,10,10,10" Padding="5,5,5,5" VerticalAlignment="Center" HorizontalAlignment="Center" Click="AppBtnClose_OnClick" Name="AppBtnClose"/>
         <Button Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" Content="Help" Margin="10,10,10,10" Padding="5,5,5,5" VerticalAlignment="Center" HorizontalAlignment="Right" Click="AppBtnHelp_OnClick" Name="AppBtnHelp"/>

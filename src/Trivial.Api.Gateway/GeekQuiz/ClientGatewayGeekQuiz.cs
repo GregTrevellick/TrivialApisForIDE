@@ -19,7 +19,7 @@ namespace Trivial.Api.Gateway.GeekQuiz
 
             var gatewayResponse = new GatewayResponseGeekQuiz
             {
-                Answer = firstOfOne.correct_answer,
+                MultipleChoiceCorrectAnswer = firstOfOne.correct_answer,
                 DifficultyLevel = firstOfOne.difficulty,
                 MultipleChoiceAnswers = firstOfOne.incorrect_answers,
                 Question = firstOfOne.question,

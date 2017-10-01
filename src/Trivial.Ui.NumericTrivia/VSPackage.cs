@@ -38,7 +38,10 @@ namespace Trivial.Ui.NumericTrivia
             if (shouldShowTrivia)
             {
                 var popUpTitle = CommonConstants.GetCaption(Vsix.Name, Vsix.Version);
-                var hiddenOptionsDto = new TriviaMessage().ShowTrivia(AppName.NumericTrivia, popUpTitle, GeneralOptionsDto.LastPopUpDateTime, GeneralOptionsDto.PopUpCountToday, GeneralOptionsDto.TimeOutInMilliSeconds, Vsix.Name);
+
+                var triviaMessage = new TriviaMessage();
+                var hiddenOptionsDto = triviaMessage.ShowTrivia(AppName.NumericTrivia, popUpTitle, GeneralOptionsDto.LastPopUpDateTime, 
+                    GeneralOptionsDto.PopUpCountToday, GeneralOptionsDto.TimeOutInMilliSeconds, Vsix.Name);
 
                 if (hiddenOptionsDto != null)
                 {

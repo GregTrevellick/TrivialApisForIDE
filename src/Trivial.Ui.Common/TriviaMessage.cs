@@ -43,7 +43,7 @@ namespace Trivial.Ui.Common
                 {
                     case AppName.GeekQuiz:
                         var gatewayResponseGeekQuiz = (GatewayResponseGeekQuiz)gatewayResponse;
-                        triviaDialogDto.Answer = gatewayResponseGeekQuiz.Answer;
+                //todo        triviaDialogDto.MultipleChoiceCorrectAnswer = gatewayResponseGeekQuiz.MultipleChoiceCorrectAnswer;
                         triviaDialogDto.DifficultyLevel = gatewayResponseGeekQuiz.DifficultyLevel;
                         triviaDialogDto.Question = gatewayResponseGeekQuiz.Question;
                         triviaDialogDto.QuestionType = gatewayResponseGeekQuiz.QuestionType;
@@ -84,6 +84,7 @@ namespace Trivial.Ui.Common
             var triviaDialog = new TriviaDialog(triviaDialogDto.AppName, triviaDialogDto.OptionsName)
             {
                 AppTextBlockAnswer = { Text = triviaDialogDto.Answer},
+           //todo     AppTextBlockMultipleChoiceCorrectAnswer = { Text = triviaDialogDto.MultipleChoiceCorrectAnswer },
                 AppTextBlockAttribution = { Text = triviaDialogDto.Attribution },
                 AppTextBlockDifficultyLevel = { Text = triviaDialogDto.DifficultyLevel },
                 AppTextBlockErrorDetails = { Text = triviaDialogDto.ErrorDetails },
@@ -111,6 +112,11 @@ namespace Trivial.Ui.Common
             if (!string.IsNullOrWhiteSpace(triviaDialog.AppTextBlockFact.Text))
             {
                 triviaDialog.AppTextBlockFact.Visibility = Visibility.Visible;
+            }
+
+            if (!string.IsNullOrWhiteSpace(triviaDialog.AppTextBlockDifficultyLevel.Text))
+            {
+                triviaDialog.AppTextBlockDifficultyLevel.Visibility = Visibility.Visible;
             }
 
             if (!string.IsNullOrWhiteSpace(triviaDialog.AppTextBlockQuestion.Text))
