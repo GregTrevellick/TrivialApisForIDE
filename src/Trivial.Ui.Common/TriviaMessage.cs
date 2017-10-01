@@ -42,8 +42,9 @@ namespace Trivial.Ui.Common
                 {
                     case AppName.GeekQuiz:
                         var gatewayResponseGeekQuiz = (GatewayResponseGeekQuiz)gatewayResponse;
-                        triviaDialogDto.MultipleChoiceCorrectAnswer = gatewayResponseGeekQuiz.MultipleChoiceCorrectAnswer;
                         triviaDialogDto.DifficultyLevel = gatewayResponseGeekQuiz.DifficultyLevel;
+                        triviaDialogDto.MultipleChoiceAnswers = gatewayResponseGeekQuiz.MultipleChoiceAnswers;
+                        triviaDialogDto.MultipleChoiceCorrectAnswer = gatewayResponseGeekQuiz.MultipleChoiceCorrectAnswer;
                         triviaDialogDto.Question = gatewayResponseGeekQuiz.Question;
                         triviaDialogDto.QuestionType = gatewayResponseGeekQuiz.QuestionType;
                         somethingToShow = !string.IsNullOrEmpty(triviaDialogDto.Question);
@@ -83,7 +84,7 @@ namespace Trivial.Ui.Common
             var triviaDialog = new TriviaDialog(triviaDialogDto.AppName, triviaDialogDto.OptionsName, triviaDialogDto.MultipleChoiceCorrectAnswer)
             {
                 AppTextBlockAnswer = { Text = triviaDialogDto.Answer},
-           //todo     AppTextBlockMultipleChoiceCorrectAnswer = { Text = triviaDialogDto.MultipleChoiceCorrectAnswer },
+                AppBtnRevealAnswer = { Content = triviaDialogDto.AnswerRevealLabel },
                 AppTextBlockAttribution = { Text = triviaDialogDto.Attribution },
                 AppTextBlockDifficultyLevel = { Text = triviaDialogDto.DifficultyLevel },
                 AppTextBlockErrorDetails = { Text = triviaDialogDto.ErrorDetails },
@@ -139,7 +140,6 @@ namespace Trivial.Ui.Common
                 triviaDialog.AppBtnRevealAnswer.Visibility = Visibility.Visible;
             }
 
-            //////////////////////////////////////////////////////////////////////var response = "the answer";
             switch (triviaDialogDto.QuestionType)
             {
                 case QuestionType.TrueFalse:

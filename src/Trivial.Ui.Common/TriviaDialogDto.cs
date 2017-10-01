@@ -8,6 +8,7 @@ namespace Trivial.Ui.Common
     {
         public AppName AppName { get; set; }       
         public string Answer { get; set; }
+        public string AnswerRevealLabel { get; set; }
         public string Attribution { get; set; }
         public string DifficultyLevel { get; set; }
         public string ErrorDetails { get; set; }

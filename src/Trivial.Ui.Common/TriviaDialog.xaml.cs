@@ -9,15 +9,26 @@ namespace Trivial.Ui.Common
 {
     public partial class TriviaDialog : DialogWindow
     {
-        private AppName appName;
-        private string optionsName;
-        private string correctAnswer;
+        private AppName _appName;
+        private string _correctAnswer;
+        private string _optionsName;
 
-        public TriviaDialog(AppName appName, string optionsName, string correctAnswer = null)
+        public TriviaDialog(AppName appName, string optionsName)
         {
-            this.appName = appName;
-            this.optionsName = optionsName;
-            this.correctAnswer = correctAnswer;
+            Init(appName, optionsName, null);
+        }
+
+        public TriviaDialog(AppName appName, string optionsName, string correctAnswer)
+        {
+            Init(appName, optionsName, correctAnswer);
+        }
+
+        private void Init(AppName appName, string optionsName, string correctAnswer)
+        {
+            _appName = appName;
+            _correctAnswer = correctAnswer;
+            _optionsName = optionsName;
+
             InitializeComponent();
             InitializeTriviaDialog();
         }
@@ -29,7 +40,7 @@ namespace Trivial.Ui.Common
             SizeToContent = SizeToContent.WidthAndHeight;
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
 
-            var iconUri = new TriviaMessage().GetIconUri(appName);
+            var iconUri = new TriviaMessage().GetIconUri(_appName);
             Icon = new BitmapImage(iconUri);
         }
 
@@ -60,10 +71,10 @@ namespace Trivial.Ui.Common
             ActOnAnswerGiven(false.ToString());
         }
 
+        //gregthi add radio buttons to ui & implement this
         //private void AppMultiChoiceSelection_OnClick(object sender, RoutedEventArgs e)
         //{
         //    //accept response
-        //    var multiChoiceResponse = "A";
         //    ActOnAnswerGiven(response);
         //}
 
@@ -73,17 +84,17 @@ namespace Trivial.Ui.Common
 
             if (isResponseCorrect)
             {
-                // show well done / top of class / piss of babbage
+                //gregthi show well done / top of class 
             }
             else
             {
-                // get lost / beaten by lovelace
+                //gregthi show wrong / go away
             }
         }
 
         private bool IsResponseCorrect(string response)
         {
-            bool rightAnswer = response == correctAnswer;
+            bool rightAnswer = response == _correctAnswer;
 
             return rightAnswer;
         }
@@ -96,7 +107,7 @@ namespace Trivial.Ui.Common
             }
             else
             {
-                TextBlockHelp.Text = $"To alter frequency and volume of delivery go to Tools | Options | {optionsName}";
+                TextBlockHelp.Text = $"To alter frequency and volume of delivery go to Tools | Options | {_optionsName}";
                 TextBlockHelp.Visibility = Visibility.Visible;
             }
         }        
