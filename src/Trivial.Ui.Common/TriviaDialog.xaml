@@ -25,7 +25,6 @@
         <TextBlock Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Visibility="Collapsed" Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Left" Name="AppTextBlockQuotation" FontWeight="Bold" />
         <TextBlock Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Visibility="Collapsed" Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Left" Name="AppTextBlockErrorDetails" />
         <TextBlock Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Visibility="Collapsed" Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Left" Name="AppTextBlockFact" FontWeight="Bold" />
-        <TextBlock Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Visibility="Collapsed" Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Left" Name="AppTextBlockDifficultyLevel" />
         <TextBlock Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Visibility="Collapsed" Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Left" Name="AppTextBlockQuestion" FontWeight="Bold" />
         
         <TextBlock Grid.Row="1" Grid.Column="1" Visibility="Collapsed" Margin="10,10,0,10" VerticalAlignment="Center" HorizontalAlignment="Right" Name="AppTextBlockAttribution" />
@@ -36,12 +35,13 @@
         <TextBlock Grid.Row="1" Grid.Column="1" Visibility="Collapsed" Margin="10,10,0,10" VerticalAlignment="Center" HorizontalAlignment="Left" Name="AppTextBlockAnswer" FontWeight="Bold"/>
         <TextBlock Grid.Row="1" Grid.Column="1" Visibility="Collapsed" Margin="10,10,0,10" VerticalAlignment="Center" HorizontalAlignment="Left" Name="AppTextBlockMultipleChoiceCorrectAnswer" FontWeight="Bold"/>
 
-        <Button Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" Content="Close" Margin="10,10,10,10" Padding="5,5,5,5" VerticalAlignment="Center" HorizontalAlignment="Center" Click="AppBtnClose_OnClick" Name="AppBtnClose"/>
-        <Button Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" Content="Help" Margin="10,10,10,10" Padding="5,5,5,5" VerticalAlignment="Center" HorizontalAlignment="Right" Click="AppBtnHelp_OnClick" Name="AppBtnHelp"/>
-        <TextBlock Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" Visibility="Collapsed" Margin="5,5,5,5" Padding="5,5,5,5" VerticalAlignment="Center" HorizontalAlignment="Right" Name="TextBlockHelp" />
+        <TextBlock Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Visibility="Collapsed" Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Left" Name="AppTextBlockDifficultyLevel" />
+        <Button Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Content="True" Margin="10,10,10,10" Padding="5,5,5,5" VerticalAlignment="Center" HorizontalAlignment="Center" Click="AppBtnTrue_OnClick" Name="AppBtnTrue"/>
+        <Button Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Content="False" Margin="10,10,10,10" Padding="5,5,5,5" VerticalAlignment="Center" HorizontalAlignment="Right" Click="AppBtnFalse_OnClick" Name="AppBtnFalse"/>
 
-        <Button Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3" Content="True" Margin="10,10,10,10" Padding="5,5,5,5" VerticalAlignment="Center" HorizontalAlignment="Center" Click="AppBtnTrue_OnClick" Name="AppBtnTrue"/>
-        <Button Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3" Content="False" Margin="10,10,10,10" Padding="5,5,5,5" VerticalAlignment="Center" HorizontalAlignment="Right" Click="AppBtnFalse_OnClick" Name="AppBtnFalse"/>
+        <Button Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" Content="Close" Margin="10,10,10,10" Padding="5,5,5,5" VerticalAlignment="Center" HorizontalAlignment="Center" Click="AppBtnClose_OnClick" Name="AppBtnClose"/>
+        <Button Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" Content="Help" Margin="10,10,10,10" Padding="5,5,5,5" VerticalAlignment="Center" HorizontalAlignment="Right" Click="AppBtnHelp_OnClick" Name="AppBtnHelp"/>
+        <TextBlock Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3" Visibility="Collapsed" Margin="5,5,5,5" Padding="5,5,5,5" VerticalAlignment="Center" HorizontalAlignment="Right" Name="TextBlockHelp" />
 
     </Grid>
 </platformUi:DialogWindow>

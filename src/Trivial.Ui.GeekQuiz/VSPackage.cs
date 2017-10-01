@@ -43,7 +43,9 @@ namespace Trivial.Ui.GeekQuiz
             if (shouldShowTrivia)
             {
                 var popUpTitle = CommonConstants.GetCaption(Vsix.Name, Vsix.Version);
-                var hiddenOptionsDto = new TriviaMessage().ShowTrivia(AppName.GeekQuiz, popUpTitle, GeneralOptionsDto.LastPopUpDateTime, GeneralOptionsDto.PopUpCountToday, GeneralOptionsDto.TimeOutInMilliSeconds, Vsix.Name);
+                var triviaMessage = new TriviaMessage();
+                var hiddenOptionsDto = triviaMessage.ShowTrivia(AppName.GeekQuiz, popUpTitle, 
+                    GeneralOptionsDto.LastPopUpDateTime, GeneralOptionsDto.PopUpCountToday, GeneralOptionsDto.TimeOutInMilliSeconds, Vsix.Name);
 
                 if (hiddenOptionsDto != null)
                 {
