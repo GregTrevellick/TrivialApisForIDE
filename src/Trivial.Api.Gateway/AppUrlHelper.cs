@@ -26,9 +26,6 @@ namespace Trivial.Api.Gateway
                 //    url = "http://api.fixer.io/latest";
                 //    http://api.fixer.io/latest?symbols=USD,GBP&base=GBP
                 //    break;
-                //case AppName.OpenTriviaDatabase:
-                //    url = "https://opentdb.com/api.php?amount=1&category=18&difficulty=easy&type=multiple"; //https://opentdb.com/api_config.php
-                //    break;
                 //case AppName.QruisityApp:
                 //    url = "https://qriusity.com/v1/questions?page=2&limit=1";
                 //    break;

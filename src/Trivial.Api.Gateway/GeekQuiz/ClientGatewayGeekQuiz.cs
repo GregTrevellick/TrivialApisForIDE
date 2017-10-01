@@ -7,7 +7,6 @@ namespace Trivial.Api.Gateway.GeekQuiz
     {
         public static GatewayResponseGeekQuiz SetGatewayResponseFromRestResponse(string responseContent)
         {
-            /////////////////////////////////var rootObject = JsonConvert.DeserializeObject<List<GeekQuizRootObject>>(responseContent);
             var rootObject = JsonConvert.DeserializeObject<GeekQuizRootObject>(responseContent);
             var gatewayResponse = GetGatewayResponse(rootObject);
             return gatewayResponse;
@@ -19,10 +18,11 @@ namespace Trivial.Api.Gateway.GeekQuiz
 
             var gatewayResponse = new GatewayResponseGeekQuiz
             {
-                MultipleChoiceCorrectAnswer = firstOfOne.correct_answer,
                 DifficultyLevel = firstOfOne.difficulty,
                 MultipleChoiceAnswers = firstOfOne.incorrect_answers,
+                MultipleChoiceCorrectAnswer = firstOfOne.correct_answer,
                 Question = firstOfOne.question,
+                QuestionType = firstOfOne.type == "boolean" ? QuestionType.TrueFalse : QuestionType.MultiChoice
             };
 
             return gatewayResponse;

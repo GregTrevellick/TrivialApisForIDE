@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Reflection;
 using System.Windows;
 using System.Windows.Media.Imaging;
@@ -43,7 +42,7 @@ namespace Trivial.Ui.Common
                 {
                     case AppName.GeekQuiz:
                         var gatewayResponseGeekQuiz = (GatewayResponseGeekQuiz)gatewayResponse;
-                //todo        triviaDialogDto.MultipleChoiceCorrectAnswer = gatewayResponseGeekQuiz.MultipleChoiceCorrectAnswer;
+                        triviaDialogDto.MultipleChoiceCorrectAnswer = gatewayResponseGeekQuiz.MultipleChoiceCorrectAnswer;
                         triviaDialogDto.DifficultyLevel = gatewayResponseGeekQuiz.DifficultyLevel;
                         triviaDialogDto.Question = gatewayResponseGeekQuiz.Question;
                         triviaDialogDto.QuestionType = gatewayResponseGeekQuiz.QuestionType;
@@ -81,7 +80,7 @@ namespace Trivial.Ui.Common
 
         private void DisplayPopUpMessage(TriviaDialogDto triviaDialogDto)
         {
-            var triviaDialog = new TriviaDialog(triviaDialogDto.AppName, triviaDialogDto.OptionsName)
+            var triviaDialog = new TriviaDialog(triviaDialogDto.AppName, triviaDialogDto.OptionsName, triviaDialogDto.MultipleChoiceCorrectAnswer)
             {
                 AppTextBlockAnswer = { Text = triviaDialogDto.Answer},
            //todo     AppTextBlockMultipleChoiceCorrectAnswer = { Text = triviaDialogDto.MultipleChoiceCorrectAnswer },
@@ -140,7 +139,7 @@ namespace Trivial.Ui.Common
                 triviaDialog.AppBtnRevealAnswer.Visibility = Visibility.Visible;
             }
 
-            var response = "the answer";
+            //////////////////////////////////////////////////////////////////////var response = "the answer";
             switch (triviaDialogDto.QuestionType)
             {
                 case QuestionType.TrueFalse:
@@ -155,29 +154,6 @@ namespace Trivial.Ui.Common
 
             triviaDialog.Show();
         }
-
-        //public void ActOnAnswerGiven(string response, string correctAnswer)
-        //{
-        //    bool isResponseCorrect = IsResponseCorrect(response, correctAnswer);
-
-        //    isResponseCorrect = IsResponseCorrect(response, correctAnswer);
-
-        //    if (isResponseCorrect)
-        //    {
-        //        // show well done / top of class / piss of babbage
-        //    }
-        //    else
-        //    {
-        //        // get lost / beaten by lovelace
-        //    }
-        //}
-
-        //private bool IsResponseCorrect(string response, string correctAnswer)
-        //{
-        //    bool rightAnswer = response == correctAnswer;
-
-        //    return rightAnswer;
-        //}
 
         private HiddenOptionsDto GetHiddenOptionsDto(DateTime lastPopUpDateTime, int popUpCountToday)
         {

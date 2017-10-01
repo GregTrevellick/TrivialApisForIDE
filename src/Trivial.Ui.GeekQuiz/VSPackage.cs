@@ -5,7 +5,6 @@ using System.ComponentModel.Design;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices;
 using Trivial.Entities;
-using Trivial.Ui.GeekQuiz;
 using Trivial.Ui.GeekQuiz.Options;
 using Trivial.Ui.Common;
 //using Trivial.Ui.Common.Ratings;

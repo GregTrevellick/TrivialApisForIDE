@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Trivial.Api.Gateway.GeekQuiz
+﻿namespace Trivial.Api.Gateway.GeekQuiz
 {
     public class GeekQuizRootObject
     {

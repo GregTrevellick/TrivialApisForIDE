@@ -69,9 +69,7 @@ namespace Trivial.Ui.Common
 
         public void ActOnAnswerGiven(string response)
         {
-            bool isResponseCorrect = IsResponseCorrect(response, correctAnswer);
-
-            isResponseCorrect = IsResponseCorrect(response, correctAnswer);
+            bool isResponseCorrect = IsResponseCorrect(response);
 
             if (isResponseCorrect)
             {
@@ -83,7 +81,7 @@ namespace Trivial.Ui.Common
             }
         }
 
-        private bool IsResponseCorrect(string response, string correctAnswer)
+        private bool IsResponseCorrect(string response)
         {
             bool rightAnswer = response == correctAnswer;
 
