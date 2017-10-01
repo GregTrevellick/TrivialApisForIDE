@@ -1,5 +1,4 @@
 ﻿using Newtonsoft.Json;
-using System.Collections.Generic;
 using System.Linq;
 
 namespace Trivial.Api.Gateway.GeekQuiz
@@ -8,32 +7,25 @@ namespace Trivial.Api.Gateway.GeekQuiz
     {
         public static GatewayResponseGeekQuiz SetGatewayResponseFromRestResponse(string responseContent)
         {
-            var rootObject = JsonConvert.DeserializeObject<List<GeekQuizRootObject>>(responseContent);
-            var gatewayResponse = GetGatewayResponse(rootObject.First());
+            /////////////////////////////////var rootObject = JsonConvert.DeserializeObject<List<GeekQuizRootObject>>(responseContent);
+            var rootObject = JsonConvert.DeserializeObject<GeekQuizRootObject>(responseContent);
+            var gatewayResponse = GetGatewayResponse(rootObject);
             return gatewayResponse;
         }
 
         private static GatewayResponseGeekQuiz GetGatewayResponse(GeekQuizRootObject rootObject)
         {
-            var firstOfOne = rootObject.results[0];
-
-            var answer = firstOfOne.correct_answer;
-            var multipleChoiceAnswers = firstOfOne.incorrect_answers;
-            var difficultyLevel = firstOfOne.difficulty;
-            var question = firstOfOne.question;
+            var firstOfOne = rootObject.results.First();
 
             var gatewayResponse = new GatewayResponseGeekQuiz
             {
-                Answer = answer,
-                DifficultyLevel = difficultyLevel,
-                MultipleChoiceAnswers= multipleChoiceAnswers,
-                Question = question,
+                Answer = firstOfOne.correct_answer,
+                DifficultyLevel = firstOfOne.difficulty,
+                MultipleChoiceAnswers = firstOfOne.incorrect_answers,
+                Question = firstOfOne.question,
             };
 
             return gatewayResponse;
-        }
-
-       
+        }       
     }
 }
-

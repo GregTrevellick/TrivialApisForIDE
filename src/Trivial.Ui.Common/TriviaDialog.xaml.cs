@@ -11,11 +11,13 @@ namespace Trivial.Ui.Common
     {
         private AppName appName;
         private string optionsName;
+        private string correctAnswer;
 
-        public TriviaDialog(AppName appName, string optionsName)
+        public TriviaDialog(AppName appName, string optionsName, string correctAnswer = null)
         {
             this.appName = appName;
             this.optionsName = optionsName;
+            this.correctAnswer = correctAnswer;
             InitializeComponent();
             InitializeTriviaDialog();
         }
@@ -46,6 +48,46 @@ namespace Trivial.Ui.Common
         private void AppBtnClose_OnClick(object sender, RoutedEventArgs e)
         {
             Close();
+        }
+
+        private void AppBtnTrue_OnClick(object sender, RoutedEventArgs e)
+        {
+            ActOnAnswerGiven(true.ToString());
+        }
+
+        private void AppBtnFalse_OnClick(object sender, RoutedEventArgs e)
+        {
+            ActOnAnswerGiven(false.ToString());
+        }
+
+        //private void AppMultiChoiceSelection_OnClick(object sender, RoutedEventArgs e)
+        //{
+        //    //accept response
+        //    var multiChoiceResponse = "A";
+        //    ActOnAnswerGiven(response);
+        //}
+
+        public void ActOnAnswerGiven(string response)
+        {
+            bool isResponseCorrect = IsResponseCorrect(response, correctAnswer);
+
+            isResponseCorrect = IsResponseCorrect(response, correctAnswer);
+
+            if (isResponseCorrect)
+            {
+                // show well done / top of class / piss of babbage
+            }
+            else
+            {
+                // get lost / beaten by lovelace
+            }
+        }
+
+        private bool IsResponseCorrect(string response, string correctAnswer)
+        {
+            bool rightAnswer = response == correctAnswer;
+
+            return rightAnswer;
         }
 
         private void AppBtnHelp_OnClick(object sender, RoutedEventArgs e)

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Reflection;
 using System.Windows;
 using System.Windows.Media.Imaging;
@@ -37,12 +38,15 @@ namespace Trivial.Ui.Common
             }
             else
             {
+                //gregt extract 
                 switch (appName)
                 {
                     case AppName.GeekQuiz:
                         var gatewayResponseGeekQuiz = (GatewayResponseGeekQuiz)gatewayResponse;
-                        triviaDialogDto.Answer = "A. " + gatewayResponseGeekQuiz.Answer;
-                        triviaDialogDto.Question = "Q. " + gatewayResponseGeekQuiz.Question;
+                        triviaDialogDto.Answer = gatewayResponseGeekQuiz.Answer;
+                        triviaDialogDto.DifficultyLevel = gatewayResponseGeekQuiz.DifficultyLevel;
+                        triviaDialogDto.Question = gatewayResponseGeekQuiz.Question;
+                        triviaDialogDto.QuestionType = gatewayResponseGeekQuiz.QuestionType;
                         somethingToShow = !string.IsNullOrEmpty(triviaDialogDto.Question);
                         break;
                     case AppName.Jeopardy:
@@ -81,6 +85,7 @@ namespace Trivial.Ui.Common
             {
                 AppTextBlockAnswer = { Text = triviaDialogDto.Answer},
                 AppTextBlockAttribution = { Text = triviaDialogDto.Attribution },
+                AppTextBlockDifficultyLevel = { Text = triviaDialogDto.DifficultyLevel },
                 AppTextBlockErrorDetails = { Text = triviaDialogDto.ErrorDetails },
                 AppTextBlockFact = { Text = triviaDialogDto.Fact },
                 AppTextBlockQuestion = { Text = triviaDialogDto.Question},
@@ -129,8 +134,44 @@ namespace Trivial.Ui.Common
                 triviaDialog.AppBtnRevealAnswer.Visibility = Visibility.Visible;
             }
 
+            var response = "the answer";
+            switch (triviaDialogDto.QuestionType)
+            {
+                case QuestionType.TrueFalse:
+                    //show true false button
+                    break;
+                case QuestionType.MultiChoice:
+                    //show choices as radio buttons
+                    break;
+                default:
+                    break;
+            }
+
             triviaDialog.Show();
         }
+
+        //public void ActOnAnswerGiven(string response, string correctAnswer)
+        //{
+        //    bool isResponseCorrect = IsResponseCorrect(response, correctAnswer);
+
+        //    isResponseCorrect = IsResponseCorrect(response, correctAnswer);
+
+        //    if (isResponseCorrect)
+        //    {
+        //        // show well done / top of class / piss of babbage
+        //    }
+        //    else
+        //    {
+        //        // get lost / beaten by lovelace
+        //    }
+        //}
+
+        //private bool IsResponseCorrect(string response, string correctAnswer)
+        //{
+        //    bool rightAnswer = response == correctAnswer;
+
+        //    return rightAnswer;
+        //}
 
         private HiddenOptionsDto GetHiddenOptionsDto(DateTime lastPopUpDateTime, int popUpCountToday)
         {
