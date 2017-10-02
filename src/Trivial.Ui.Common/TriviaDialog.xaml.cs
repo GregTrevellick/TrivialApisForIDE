@@ -44,7 +44,7 @@ namespace Trivial.Ui.Common
             var iconUri = new TriviaMessage().GetIconUri(_appName);
             Icon = new BitmapImage(iconUri);
 
-            AppBtnSubmitMultiChoiceAnwser.Foreground = new SolidColorBrush(Colors.Fuchsia);
+            //AppBtnSubmitMultiChoiceAnwser.Foreground = new SolidColorBrush(Colors.Fuchsia);
         }
 
         private void AppHyperlink1_RequestNavigate(object sender, RequestNavigateEventArgs e)

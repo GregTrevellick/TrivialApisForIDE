@@ -1,4 +1,6 @@
-﻿add option for user to select easy / medium / hard ?
+﻿stop close being clicked without answer being shown
+
+add option for user to select easy / medium / hard ?
 show user % right / wrong, with "dunce" thru "genius" descriptor
 allow user to reset the % back to zero
 allow user to request a second question, but not anymore than that

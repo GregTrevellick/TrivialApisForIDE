@@ -44,10 +44,9 @@ namespace Trivial.Ui.Common
                 {
                     case AppName.GeekQuiz:
                         var gatewayResponseGeekQuiz = (GatewayResponseGeekQuiz)gatewayResponse;
-                        triviaDialogDto.DifficultyLevel = gatewayResponseGeekQuiz.DifficultyLevel;
                         triviaDialogDto.MultipleChoiceAnswers = gatewayResponseGeekQuiz.MultipleChoiceAnswers;
                         triviaDialogDto.MultipleChoiceCorrectAnswer = gatewayResponseGeekQuiz.MultipleChoiceCorrectAnswer;
-                        triviaDialogDto.Question = gatewayResponseGeekQuiz.Question;
+                        triviaDialogDto.Question = gatewayResponseGeekQuiz.DifficultyLevel + ": " + gatewayResponseGeekQuiz.Question;
                         triviaDialogDto.QuestionType = gatewayResponseGeekQuiz.QuestionType;
                         somethingToShow = !string.IsNullOrEmpty(triviaDialogDto.Question);
                         break;
@@ -88,7 +87,6 @@ namespace Trivial.Ui.Common
                 AppTextBlockAnswer = { Text = triviaDialogDto.Answer},
                 AppBtnRevealAnswer = { Content = triviaDialogDto.AnswerRevealLabel },
                 AppTextBlockAttribution = { Text = triviaDialogDto.Attribution },
-                AppTextBlockDifficultyLevel = { Text = triviaDialogDto.DifficultyLevel },
                 AppTextBlockErrorDetails = { Text = triviaDialogDto.ErrorDetails },
                 AppTextBlockFact = { Text = triviaDialogDto.Fact },
                 AppTextBlockQuestion = { Text = triviaDialogDto.Question},
@@ -114,11 +112,6 @@ namespace Trivial.Ui.Common
             if (!string.IsNullOrWhiteSpace(triviaDialog.AppTextBlockFact.Text))
             {
                 triviaDialog.AppTextBlockFact.Visibility = Visibility.Visible;
-            }
-
-            if (!string.IsNullOrWhiteSpace(triviaDialog.AppTextBlockDifficultyLevel.Text))
-            {
-                triviaDialog.AppTextBlockDifficultyLevel.Visibility = Visibility.Visible;
             }
 
             if (!string.IsNullOrWhiteSpace(triviaDialog.AppTextBlockQuestion.Text))
@@ -171,7 +164,8 @@ namespace Trivial.Ui.Common
 
         private void SetRadioButtonVisibility(RadioButton radioButton)
         {
-            if (!string.IsNullOrWhiteSpace(radioButton.Content.ToString()))
+            if (radioButton.Content != null &&
+                !string.IsNullOrWhiteSpace(radioButton.Content.ToString()))
             {
                 radioButton.Visibility = Visibility.Visible;
             }
