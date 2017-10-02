@@ -130,13 +130,16 @@ namespace Trivial.Ui.Common
                 triviaDialog.AppTextBlockHyperLink.Visibility = Visibility.Visible;
             }
 
-            if (!string.IsNullOrWhiteSpace(triviaDialog.AppTextBlockAnswer.Text))
+            if ((triviaDialog.AppBtnRevealAnswer.Content != null) &&
+                (!string.IsNullOrWhiteSpace(triviaDialog.AppBtnRevealAnswer.Content.ToString())))
             {
                 triviaDialog.AppBtnRevealAnswer.Visibility = Visibility.Visible;
             }
 
             if (triviaDialogDto.QuestionType != QuestionType.None)
             {
+                triviaDialog.AppBtnSubmitMultiChoiceAnwser.Visibility= Visibility.Visible;
+
                 if (triviaDialogDto.QuestionType == QuestionType.TrueFalse)
                 {
                     var trueFollowedByFalseAnswers = triviaDialogDto.MultipleChoiceAnswers.OrderByDescending(x => x).Select(x => x).ToArray();
