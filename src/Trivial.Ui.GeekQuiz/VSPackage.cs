@@ -3,12 +3,14 @@ using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Shell.Interop;
 using System.ComponentModel.Design;
 using System.Diagnostics.CodeAnalysis;
+using System.Reflection;
 using System.Runtime.InteropServices;
 using Trivial.Entities;
 using Trivial.Ui.GeekQuiz.Options;
 using Trivial.Ui.Common;
-//using Trivial.Ui.Common.Ratings;
-//using VsixRatingChaser;
+using Trivial.Ui.Common.Ratings;
+using Trivial.Ui.Options.GeekQuiz;
+using VsixRatingChaser;
 
 namespace Trivial.Ui.GeekQuiz
 {
@@ -35,7 +37,7 @@ namespace Trivial.Ui.GeekQuiz
 
         private void OnSolutionOpened()
         {
-            //ChaseRatings();
+            ChaseRatings();
 
             var shouldShowTrivia = new DecisionMaker().ShouldShowTrivia(GeneralOptionsDto);
 
@@ -43,8 +45,7 @@ namespace Trivial.Ui.GeekQuiz
             {
                 var popUpTitle = CommonConstants.GetCaption(Vsix.Name, Vsix.Version);
                 var triviaMessage = new TriviaMessage();
-                var hiddenOptionsDto = triviaMessage.ShowTrivia(AppName.GeekQuiz, popUpTitle, 
-                    GeneralOptionsDto.LastPopUpDateTime, GeneralOptionsDto.PopUpCountToday, GeneralOptionsDto.TimeOutInMilliSeconds, Vsix.Name);
+                var hiddenOptionsDto = triviaMessage.ShowTrivia(AppName.GeekQuiz, popUpTitle, GeneralOptionsDto.LastPopUpDateTime, GeneralOptionsDto.PopUpCountToday, GeneralOptionsDto.TimeOutInMilliSeconds, Vsix.Name);
 
                 if (hiddenOptionsDto != null)
                 {
@@ -53,16 +54,49 @@ namespace Trivial.Ui.GeekQuiz
             }
         }
 
-        //private void ChaseRatings()
-        //{
-        //    var hiddenRatingChaserOptions = (IHiddenRatingChaserOptions) GetDialogPage(typeof(HiddenRatingChaserOptions));
-        //    var ratingInstructionsDto = new RatingInstructionsDto
-        //    {
-        //        PackageLoadedLimit = CommonConstants.PackageLoadedLimit,
-        //        RatingRequestLimit = CommonConstants.RatingRequestLimit,
-        //    };
-        //    RatingChaser.ChaseRatings(hiddenRatingChaserOptions, ratingInstructionsDto);
-        //}
+        private void ChaseRatings()
+        {
+            var hiddenChaserOptions = (IHiddenChaserOptions)GetDialogPage(typeof(HiddenChaserOptions));
+
+            var imageByteArray = GetImageByteArray();
+
+            var ratingInstructionsDto = new RatingInstructionsDto
+            {
+                AggressionLevel = AggressionLevel.High,
+                CostCategory = CostCategory.Free,
+                DialogType = DialogType.NonModal,
+                ImageByteArray = imageByteArray,
+                PackageLoadedLimit = CommonConstants.PackageLoadedLimit,
+                VsixAuthor = Vsix.Author,
+                VsixName = Vsix.Name,
+            };
+
+            RatingChaser.ChaseRatings(hiddenChaserOptions, ratingInstructionsDto);
+        }
+
+        private static byte[] GetImageByteArray()
+        {
+            byte[] imageByteArray;
+            ////////////////////var imageResourceNameArray = Assembly.GetExecutingAssembly().GetManifestResourceNames();
+            var imageResourceName = "Trivial.Ui.GeekQuiz.Resources.VsixExtensionIcon_90x90_Embedded.png";//imageResourceNameArray[2];
+            var assembly = Assembly.GetExecutingAssembly();
+            var stream = assembly.GetManifestResourceStream(imageResourceName);
+
+            if (stream == null)
+            {
+                imageByteArray = null;
+            }
+            else
+            {
+                using (stream)
+                {
+                    imageByteArray = new byte[stream.Length];
+                    stream.Read(imageByteArray, 0, imageByteArray.Length);
+                }
+            }
+
+            return imageByteArray;
+        }
 
         private void UpdateHiddenOptions(HiddenOptionsDto hiddenOptionsDto)
         {

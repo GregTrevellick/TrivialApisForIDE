@@ -43,6 +43,8 @@ namespace Trivial.Ui.Common
 
             var iconUri = new TriviaMessage().GetIconUri(_appName);
             Icon = new BitmapImage(iconUri);
+
+            AppBtnSubmitMultiChoiceAnwser.Foreground = new SolidColorBrush(Colors.Fuchsia);
         }
 
         private void AppHyperlink1_RequestNavigate(object sender, RequestNavigateEventArgs e)
@@ -90,7 +92,6 @@ namespace Trivial.Ui.Common
                         }
                         else
                         {
-                            //throw error ?
                             response = null;
                         }
                     }
@@ -102,7 +103,7 @@ namespace Trivial.Ui.Common
 
         public void ActOnAnswerGiven(string response)
         {
-            bool isResponseCorrect = IsResponseCorrect(response);
+            var isResponseCorrect = IsResponseCorrect(response);
 
             if (isResponseCorrect)
             {
@@ -111,8 +112,16 @@ namespace Trivial.Ui.Common
             }
             else
             {
-                TextBlockQuizReply.Text = $"Wrong - opps, must try harder ! The correct answer is {_correctAnswer}";
-                SetQuizReplyBackground(Colors.Red);
+                if (response == null)
+                {
+                    TextBlockQuizReply.Text = "Nice try, but you've can't cheat and avoid supplying an answer";
+                    SetQuizReplyBackground(Colors.Orange);
+                }
+                else
+                {
+                    TextBlockQuizReply.Text = $"Wrong - opps, must try harder ! The correct answer is {_correctAnswer}";
+                    SetQuizReplyBackground(Colors.Red);
+                }
             }
 
             TextBlockQuizReply.Visibility = Visibility.Visible;
@@ -125,7 +134,7 @@ namespace Trivial.Ui.Common
 
         private bool IsResponseCorrect(string response)
         {
-            bool rightAnswer = response == _correctAnswer;
+            var rightAnswer = response == _correctAnswer;
 
             return rightAnswer;
         }

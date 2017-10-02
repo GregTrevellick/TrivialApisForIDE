@@ -2,6 +2,7 @@
 show user % right / wrong, with "dunce" thru "genius" descriptor
 allow user to reset the % back to zero
 allow user to request a second question, but not anymore than that
+play correct / incorrect sound ?
 
 adjust help text formatting
 

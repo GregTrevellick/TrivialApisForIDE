@@ -35,8 +35,6 @@ namespace Trivial.Ui.Jeopardy
 
         private void OnSolutionOpened()
         {
-            //ChaseRatings();
-
             var shouldShowTrivia = new DecisionMaker().ShouldShowTrivia(GeneralOptionsDto);
 
             if (shouldShowTrivia)
@@ -50,22 +48,6 @@ namespace Trivial.Ui.Jeopardy
                 }
             }
         }
-
-        //private void ChaseRatings()
-        //{
-        //    var hiddenRatingChaserOptions = (IHiddenRatingChaserOptions) GetDialogPage(typeof(HiddenRatingChaserOptions));
-
-        //    var ratingInstructionsDto = new RatingInstructionsDto
-        //    {
-        //        PackageLoadedLimit = CommonConstants.PackageLoadedLimit,
-        //        RatingRequestGapInDays = CommonConstants.RatingRequestGapInDays,
-        //        RatingRequestLimit = CommonConstants.RatingRequestLimit,
-        //        RatingRequestText = CommonConstants.RatingRequestText,
-        //        RatingRequestUrl = "https://marketplace.visualstudio.com/items?itemName=GregTrevellick.Jeopardy#review-details",
-        //    };
-
-        //    RatingChaser.ChaseRatings(hiddenRatingChaserOptions, ratingInstructionsDto);
-        //}
 
         private void UpdateHiddenOptions(HiddenOptionsDto hiddenOptionsDto)
         {
