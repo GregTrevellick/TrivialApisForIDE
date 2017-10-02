@@ -29,6 +29,8 @@ See the [change log](CHANGELOG.md) for release history.
 
 [Numbers API](http://www.numbersapi.com)
 
+[Open Trivia Database](https://opentdb.com/)
+
 [Phil Haack](https://marketplace.visualstudio.com/items?itemName=Haacked.Encourage)
 
 [Phil Haack again](http://haacked.com/archive/2014/07/30/visual-studios-extensions-settings/)
