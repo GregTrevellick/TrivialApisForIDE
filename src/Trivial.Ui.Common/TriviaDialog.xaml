@@ -39,10 +39,10 @@
         <TextBlock Grid.Row="1" Grid.Column="1" Visibility="Collapsed" Margin="10,10,0,10" VerticalAlignment="Center" HorizontalAlignment="Left" Name="AppTextBlockAnswer" FontWeight="Bold"/>
 
         <TextBlock Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Visibility="Collapsed" Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Left" Name="AppTextBlockDifficultyLevel" />
-        <RadioButton Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Visibility="Collapsed" Margin="10,10,0,0" VerticalAlignment="Center" HorizontalAlignment="Left" Name="radioBtn1"/>
-        <RadioButton Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Visibility="Collapsed" Margin="10,10,0,0" VerticalAlignment="Center" HorizontalAlignment="Left" Name="radioBtn2"/>
-        <RadioButton Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" Visibility="Collapsed" Margin="10,10,0,0" VerticalAlignment="Center" HorizontalAlignment="Left" Name="radioBtn3"/>
-        <RadioButton Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" Visibility="Collapsed" Margin="10,10,0,0" VerticalAlignment="Center" HorizontalAlignment="Left" Name="radioBtn4"/>
+        <RadioButton Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Visibility="Collapsed" Margin="10,10,0,0" VerticalAlignment="Center" HorizontalAlignment="Left" Name="RadioBtn1"/>
+        <RadioButton Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Visibility="Collapsed" Margin="10,10,0,0" VerticalAlignment="Center" HorizontalAlignment="Left" Name="RadioBtn2"/>
+        <RadioButton Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" Visibility="Collapsed" Margin="10,10,0,0" VerticalAlignment="Center" HorizontalAlignment="Left" Name="RadioBtn3"/>
+        <RadioButton Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" Visibility="Collapsed" Margin="10,10,0,0" VerticalAlignment="Center" HorizontalAlignment="Left" Name="RadioBtn4"/>
         <Button Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2" Content="Submit" Margin="10,10,10,10" Padding="5,5,5,5" VerticalAlignment="Center" HorizontalAlignment="Left" Click="AppBtnSubmitMultiChoiceAnwser_OnClick" Name="AppBtnSubmitMultiChoiceAnwser"/>
         <!--<Button Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Content="True" Margin="10,10,10,10" Padding="5,5,5,5" VerticalAlignment="Center" HorizontalAlignment="Center" Click="AppBtnTrue_OnClick" Name="AppBtnTrue"/>-->
         <!--<Button Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Content="False" Margin="10,10,10,10" Padding="5,5,5,5" VerticalAlignment="Center" HorizontalAlignment="Right" Click="AppBtnFalse_OnClick" Name="AppBtnFalse"/>-->

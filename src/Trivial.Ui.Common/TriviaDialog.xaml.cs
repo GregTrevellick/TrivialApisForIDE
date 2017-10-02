@@ -1,7 +1,7 @@
 ﻿using Microsoft.VisualStudio.PlatformUI;
 using System.Diagnostics;
 using System.Windows;
-using System.Windows.Controls;
+/////////////////using System.Windows.Controls;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using Trivial.Entities;
@@ -44,40 +44,24 @@ namespace Trivial.Ui.Common
             var iconUri = new TriviaMessage().GetIconUri(_appName);
             Icon = new BitmapImage(iconUri);
 
-            radioBtn1.Content = "True";
-            radioBtn2.Content = "False";
-            radioBtn3.Content = "Red";
-            radioBtn4.Content = "";
+            //////////////////radioBtn1.Content = "True";
+            //////////////////radioBtn2.Content = "False";
+            //////////////////radioBtn3.Content = "Red";
+            //////////////////radioBtn4.Content = "";
 
-            //if (!string.IsNullOrWhiteSpace(radioBtn1.Content.ToString()))
-            //{
-            //    radioBtn1.Visibility = Visibility.Visible;
-            //}
-            //if (!string.IsNullOrWhiteSpace(radioBtn2.Content.ToString()))
-            //{
-            //    radioBtn2.Visibility = Visibility.Visible;
-            //}
-            //if (!string.IsNullOrWhiteSpace(radioBtn3.Content.ToString()))
-            //{
-            //    radioBtn3.Visibility = Visibility.Visible;
-            //}
-            //if (!string.IsNullOrWhiteSpace(radioBtn4.Content.ToString()))
-            //{
-            //    radioBtn4.Visibility = Visibility.Visible;
-            //}
-            SetRadioButtonVisibility(radioBtn1);
-            SetRadioButtonVisibility(radioBtn2);
-            SetRadioButtonVisibility(radioBtn3);
-            SetRadioButtonVisibility(radioBtn4);
+            //////////////////SetRadioButtonVisibility(radioBtn1);
+            //////////////////SetRadioButtonVisibility(radioBtn2);
+            //////////////////SetRadioButtonVisibility(radioBtn3);
+            //////////////////SetRadioButtonVisibility(radioBtn4);
         }
 
-        private void SetRadioButtonVisibility(RadioButton radioButton)
-        {
-            if (!string.IsNullOrWhiteSpace(radioButton.Content.ToString()))
-            {
-                radioButton.Visibility = Visibility.Visible;
-            }
-        }
+        ////////////////////private void SetRadioButtonVisibility(RadioButton radioButton)
+        ////////////////////{
+        ////////////////////    if (!string.IsNullOrWhiteSpace(radioButton.Content.ToString()))
+        ////////////////////    {
+        ////////////////////        radioButton.Visibility = Visibility.Visible;
+        ////////////////////    }
+        ////////////////////}
 
         private void AppHyperlink1_RequestNavigate(object sender, RequestNavigateEventArgs e)
         {
@@ -96,42 +80,41 @@ namespace Trivial.Ui.Common
             Close();
         }
 
-        //private void AppBtnTrue_OnClick(object sender, RoutedEventArgs e)
-        //{
-        //    ActOnAnswerGiven(true.ToString());
-        //}
+        //////////////////private void AppBtnTrue_OnClick(object sender, RoutedEventArgs e)
+        //////////////////{
+        //////////////////    ActOnAnswerGiven(true.ToString());
+        //////////////////}
 
-        //private void AppBtnFalse_OnClick(object sender, RoutedEventArgs e)
-        //{
-        //    ActOnAnswerGiven(false.ToString());
-        //}
+        //////////////////private void AppBtnFalse_OnClick(object sender, RoutedEventArgs e)
+        //////////////////{
+        //////////////////    ActOnAnswerGiven(false.ToString());
+        //////////////////}
 
-        //gregthi add radio buttons to ui & implement this
         private void AppBtnSubmitMultiChoiceAnwser_OnClick(object sender, RoutedEventArgs e)
         {
             string response;
 
-            if (radioBtn1.IsChecked == true)
+            if (RadioBtn1.IsChecked == true)
             {
-                response = radioBtn1.Content.ToString();
+                response = RadioBtn1.Content.ToString();
             }
             else
             {
-                if (radioBtn2.IsChecked == true)
+                if (RadioBtn2.IsChecked == true)
                 {
-                    response = radioBtn2.Content.ToString();
+                    response = RadioBtn2.Content.ToString();
                 }
                 else
                 {
-                    if (radioBtn3.IsChecked == true)
+                    if (RadioBtn3.IsChecked == true)
                     {
-                        response = radioBtn3.Content.ToString();
+                        response = RadioBtn3.Content.ToString();
                     }
                     else
                     {
-                        if (radioBtn4.IsChecked == true)
+                        if (RadioBtn4.IsChecked == true)
                         {
-                            response = radioBtn4.Content.ToString();
+                            response = RadioBtn4.Content.ToString();
                         }
                         else
                         {

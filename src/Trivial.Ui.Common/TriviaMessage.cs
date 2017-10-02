@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Linq;
 using System.Reflection;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Media.Imaging;
 using Trivial.Api.Gateway;
 using Trivial.Api.Gateway.GeekQuiz;
@@ -140,19 +142,39 @@ namespace Trivial.Ui.Common
                 triviaDialog.AppBtnRevealAnswer.Visibility = Visibility.Visible;
             }
 
-            switch (triviaDialogDto.QuestionType)
+            if (triviaDialogDto.QuestionType != QuestionType.None)
             {
-                case QuestionType.TrueFalse:
-                    //show true false button
-                    break;
-                case QuestionType.MultiChoice:
-                    //show choices as radio buttons
-                    break;
-                default:
-                    break;
+                if (triviaDialogDto.QuestionType == QuestionType.TrueFalse)
+                {
+                    var trueFollowedByFalseAnswers = triviaDialogDto.MultipleChoiceAnswers.OrderByDescending(x => x).Select(x => x).ToArray();
+                    triviaDialog.RadioBtn1.Content = trueFollowedByFalseAnswers[0];
+                    triviaDialog.RadioBtn2.Content = trueFollowedByFalseAnswers[1];
+                }
+                else
+                {
+                    var random = new Random();
+                    var randomlySortedAnswers = triviaDialogDto.MultipleChoiceAnswers.OrderBy(x => random.Next()).Select(x => x).ToArray();
+                    triviaDialog.RadioBtn1.Content = randomlySortedAnswers[0];
+                    triviaDialog.RadioBtn2.Content = randomlySortedAnswers[1];
+                    triviaDialog.RadioBtn3.Content = randomlySortedAnswers[2];
+                    triviaDialog.RadioBtn4.Content = randomlySortedAnswers[3];
+                }
             }
 
+            SetRadioButtonVisibility(triviaDialog.RadioBtn1);
+            SetRadioButtonVisibility(triviaDialog.RadioBtn2);
+            SetRadioButtonVisibility(triviaDialog.RadioBtn3);
+            SetRadioButtonVisibility(triviaDialog.RadioBtn4);          
+
             triviaDialog.Show();
+        }
+
+        private void SetRadioButtonVisibility(RadioButton radioButton)
+        {
+            if (!string.IsNullOrWhiteSpace(radioButton.Content.ToString()))
+            {
+                radioButton.Visibility = Visibility.Visible;
+            }
         }
 
         private HiddenOptionsDto GetHiddenOptionsDto(DateTime lastPopUpDateTime, int popUpCountToday)

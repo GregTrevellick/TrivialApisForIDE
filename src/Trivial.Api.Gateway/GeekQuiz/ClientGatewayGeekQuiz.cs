@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using System.Collections.Generic;
+using Newtonsoft.Json;
 using System.Linq;
 
 namespace Trivial.Api.Gateway.GeekQuiz
@@ -16,11 +17,15 @@ namespace Trivial.Api.Gateway.GeekQuiz
         {
             var firstOfOne = rootObject.results.First();
 
+            var multipleChoiceCorrectAnswer = firstOfOne.correct_answer;
+            var multipleChoiceCorrectAnswerAsCollection = new List<string> {multipleChoiceCorrectAnswer};
+            var multipleChoiceAnswers = multipleChoiceCorrectAnswerAsCollection.Union(firstOfOne.incorrect_answers);
+
             var gatewayResponse = new GatewayResponseGeekQuiz
             {
                 DifficultyLevel = firstOfOne.difficulty,
-                MultipleChoiceAnswers = firstOfOne.incorrect_answers,
-                MultipleChoiceCorrectAnswer = firstOfOne.correct_answer,
+                MultipleChoiceAnswers = multipleChoiceAnswers,
+                MultipleChoiceCorrectAnswer = multipleChoiceCorrectAnswer,
                 Question = firstOfOne.question,
                 QuestionType = firstOfOne.type == "boolean" ? QuestionType.TrueFalse : QuestionType.MultiChoice
             };
