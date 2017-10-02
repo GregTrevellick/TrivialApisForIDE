@@ -1,6 +1,7 @@
 ﻿using Microsoft.VisualStudio.PlatformUI;
 using System.Diagnostics;
 using System.Windows;
+using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using Trivial.Entities;
@@ -105,12 +106,16 @@ namespace Trivial.Ui.Common
 
             if (isResponseCorrect)
             {
-                //gregthi show well done / top of class 
+                TextBlockQuizReply.Text = "Correct - top of the class !";
+                TextBlockQuizReply.Background = new SolidColorBrush(Colors.Green);
             }
             else
             {
-                //gregthi show wrong / go away
+                TextBlockQuizReply.Text = "Wrong - must try harder !";
+                TextBlockQuizReply.Background = new SolidColorBrush(Colors.Red);
             }
+
+            TextBlockQuizReply.Visibility = Visibility.Visible;
         }
 
         private bool IsResponseCorrect(string response)

@@ -8,11 +8,11 @@ namespace Trivial.Ui.GeekQuiz
     static class Vsix
     {
         public const string Id = "86cd839e-0097-4509-9819-40f427f94ab2";
-        public const string Name = "GeekQuiz";
-        public const string Description = @"GeekQuiz";
+        public const string Name = "Geek Quiz";
+        public const string Description = @"A multi-choice computer science quiz whenever you open a solution.";
         public const string Language = "en-US";
-        public const string Version = "1.1.0";
+        public const string Version = "1.1.1";
         public const string Author = "Greg Trevellick";
-        public const string Tags = "GeekQuiz";
+        public const string Tags = "GeekQuiz, geek, quiz, fun, trivia";
     }
 }
