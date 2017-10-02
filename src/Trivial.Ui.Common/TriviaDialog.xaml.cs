@@ -106,12 +106,12 @@ namespace Trivial.Ui.Common
 
             if (isResponseCorrect)
             {
-                TextBlockQuizReply.Text = "Correct - top of the class !";
+                TextBlockQuizReply.Text = "Correct - well done, top of the class !";
                 TextBlockQuizReply.Background = new SolidColorBrush(Colors.Green);
             }
             else
             {
-                TextBlockQuizReply.Text = "Wrong - must try harder !";
+                TextBlockQuizReply.Text = $"Wrong - opps, must try harder ! The correct answer is {_correctAnswer}";
                 TextBlockQuizReply.Background = new SolidColorBrush(Colors.Red);
             }
 
