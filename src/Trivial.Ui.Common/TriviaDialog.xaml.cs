@@ -1,7 +1,6 @@
 ﻿using Microsoft.VisualStudio.PlatformUI;
 using System.Diagnostics;
 using System.Windows;
-/////////////////using System.Windows.Controls;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using Trivial.Entities;
@@ -43,25 +42,7 @@ namespace Trivial.Ui.Common
 
             var iconUri = new TriviaMessage().GetIconUri(_appName);
             Icon = new BitmapImage(iconUri);
-
-            //////////////////radioBtn1.Content = "True";
-            //////////////////radioBtn2.Content = "False";
-            //////////////////radioBtn3.Content = "Red";
-            //////////////////radioBtn4.Content = "";
-
-            //////////////////SetRadioButtonVisibility(radioBtn1);
-            //////////////////SetRadioButtonVisibility(radioBtn2);
-            //////////////////SetRadioButtonVisibility(radioBtn3);
-            //////////////////SetRadioButtonVisibility(radioBtn4);
         }
-
-        ////////////////////private void SetRadioButtonVisibility(RadioButton radioButton)
-        ////////////////////{
-        ////////////////////    if (!string.IsNullOrWhiteSpace(radioButton.Content.ToString()))
-        ////////////////////    {
-        ////////////////////        radioButton.Visibility = Visibility.Visible;
-        ////////////////////    }
-        ////////////////////}
 
         private void AppHyperlink1_RequestNavigate(object sender, RequestNavigateEventArgs e)
         {
@@ -79,16 +60,6 @@ namespace Trivial.Ui.Common
         {
             Close();
         }
-
-        //////////////////private void AppBtnTrue_OnClick(object sender, RoutedEventArgs e)
-        //////////////////{
-        //////////////////    ActOnAnswerGiven(true.ToString());
-        //////////////////}
-
-        //////////////////private void AppBtnFalse_OnClick(object sender, RoutedEventArgs e)
-        //////////////////{
-        //////////////////    ActOnAnswerGiven(false.ToString());
-        //////////////////}
 
         private void AppBtnSubmitMultiChoiceAnwser_OnClick(object sender, RoutedEventArgs e)
         {
