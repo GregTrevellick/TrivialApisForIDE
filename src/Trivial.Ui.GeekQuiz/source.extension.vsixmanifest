@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
 	<Metadata>
-		<Identity Id="86cd839e-0097-4509-9819-40f427f94ab2" Version="1.1.1" Language="en-US" Publisher="Greg Trevellick" />
+		<Identity Id="86cd839e-0097-4509-9819-40f427f94ab2" Version="1.1.2" Language="en-US" Publisher="Greg Trevellick" />
 		<DisplayName>Geek Quiz</DisplayName>
 		<Description xml:space="preserve">A multi-choice computer science quiz whenever you open a solution.</Description>
 		<MoreInfo>https://github.com/GregTrevellick/TrivialApisForIDE</MoreInfo>

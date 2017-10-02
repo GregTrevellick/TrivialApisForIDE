@@ -9,7 +9,7 @@ A trivial extension that poses a GeekQuiz question when opening a solution file.
 
 - If you like this ***free*** extension, please give it a [review][VSMarketplaceUrl].
 
-- Questions and answers gratefully supplied by free of charge by [jService](http://www.jservice.io).
+- Questions and answers gratefully supplied by free of charge by [Open Trivia Database](https://opentdb.com/).
 
 - Inspired by [Phil Haack's Encourage](https://marketplace.visualstudio.com/items?itemName=Haacked.Encourage) extension. 
 

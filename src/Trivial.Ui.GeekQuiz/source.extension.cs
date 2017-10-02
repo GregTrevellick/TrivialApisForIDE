@@ -11,7 +11,7 @@ namespace Trivial.Ui.GeekQuiz
         public const string Name = "Geek Quiz";
         public const string Description = @"A multi-choice computer science quiz whenever you open a solution.";
         public const string Language = "en-US";
-        public const string Version = "1.1.1";
+        public const string Version = "1.1.2";
         public const string Author = "Greg Trevellick";
         public const string Tags = "GeekQuiz, geek, quiz, fun, trivia";
     }
