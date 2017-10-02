@@ -3,17 +3,16 @@ show user % right / wrong, with "dunce" thru "genius" descriptor
 allow user to reset the % back to zero
 allow user to request a second question, but not anymore than that
 
+adjust help text formatting
 
 set different default options for different apps ?
 add clues to jeopardy ? 
 pop quiz
 https://opentdb.com/api.php?amount=10&category=18
-tech quiz
-https://opentdb.com/api.php?amount=10&category=12
+
 https://opentdb.com/api_config.php
+
 https://qriusity.com/#qriusity-documentation
-
-
 
 
 
