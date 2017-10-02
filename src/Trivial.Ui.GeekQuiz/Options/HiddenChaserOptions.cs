@@ -8,6 +8,6 @@ namespace Trivial.Ui.Options.GeekQuiz
     {
         public DateTime LastRatingRequest { get; set; }
         public int PackageLoadedCount { get; set; }
-        public int RatingRequestCount { get; set; }
+        public int RatingRequestCount { get; set; }      
     }
 }
