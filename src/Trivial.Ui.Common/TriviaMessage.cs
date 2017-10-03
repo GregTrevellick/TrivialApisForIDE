@@ -101,14 +101,14 @@ namespace Trivial.Ui.Common
 
 
 
-            //gregt tempry testing POC
-            triviaDialog.TextBlockPoc.FontSize = 18;
-            triviaDialog.TextBlockPoc.Inlines.Add("This is my text");
-            triviaDialog.TextBlockPoc.Inlines.Add(new LineBreak());
-            Run run = new Run("My big bold text");
-            run.FontSize = 24;
-            run.FontWeight = FontWeights.Bold;
-            triviaDialog.TextBlockPoc.Inlines.Add(run);
+            ////gregt tempry testing POC
+            //triviaDialog.TextBlockPoc.FontSize = 12;
+            //triviaDialog.TextBlockPoc.Inlines.Add("Text");
+            //triviaDialog.TextBlockPoc.Inlines.Add(new LineBreak());
+            //var run = new Run("More");
+            //run.FontSize = 14;
+            //run.FontWeight = FontWeights.Bold;
+            //triviaDialog.TextBlockPoc.Inlines.Add(run);
 
 
 
