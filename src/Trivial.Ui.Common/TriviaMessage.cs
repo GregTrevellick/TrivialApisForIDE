@@ -103,8 +103,10 @@ namespace Trivial.Ui.Common
 
             if (!string.IsNullOrWhiteSpace(triviaDialogDto.Question))
             {
-                var run = new Run(triviaDialogDto.Question);
-                run.FontWeight = FontWeights.Bold;
+                var run = new Run(triviaDialogDto.Question)
+                {
+                    FontWeight = FontWeights.Bold
+                };
                 triviaDialog.AppTextBlockQuestion.Inlines.Add(run);
             }
 
