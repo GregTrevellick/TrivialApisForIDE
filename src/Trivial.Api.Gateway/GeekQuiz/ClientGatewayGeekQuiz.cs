@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Newtonsoft.Json;
 using System.Linq;
+using RestSharp.Extensions;
 
 namespace Trivial.Api.Gateway.GeekQuiz
 {
@@ -21,9 +22,13 @@ namespace Trivial.Api.Gateway.GeekQuiz
             var multipleChoiceCorrectAnswerAsCollection = new List<string> {multipleChoiceCorrectAnswer};
             var multipleChoiceAnswers = multipleChoiceCorrectAnswerAsCollection.Union(firstOfOne.incorrect_answers);
 
+            //gregt CharacterHandler(rootObject.answer); like jeopardy
+
+            var difficultyLevel = UppercaseFirst(firstOfOne.difficulty);
+
             var gatewayResponse = new GatewayResponseGeekQuiz
             {
-                DifficultyLevel = firstOfOne.difficulty,
+                DifficultyLevel = difficultyLevel + ": ",
                 MultipleChoiceAnswers = multipleChoiceAnswers,
                 MultipleChoiceCorrectAnswer = multipleChoiceCorrectAnswer,
                 Question = firstOfOne.question,
@@ -31,6 +36,16 @@ namespace Trivial.Api.Gateway.GeekQuiz
             };
 
             return gatewayResponse;
-        }       
+        }
+
+        static string UppercaseFirst(string str)
+        {
+            if (string.IsNullOrEmpty(str))
+            {
+                return string.Empty;
+            }
+
+            return char.ToUpper(str[0]) + str.Substring(1);
+        }
     }
 }

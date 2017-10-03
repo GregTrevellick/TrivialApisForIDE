@@ -4,6 +4,7 @@ using System.Windows;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
+using Trivial.Api.Gateway;
 using Trivial.Entities;
 
 namespace Trivial.Ui.Common
@@ -12,6 +13,7 @@ namespace Trivial.Ui.Common
     {
         private AppName _appName;
         private string _correctAnswer;
+        private QuestionType _questionType;
         private string _optionsName;
 
         public TriviaDialog(AppName appName, string optionsName)
@@ -43,8 +45,6 @@ namespace Trivial.Ui.Common
 
             var iconUri = new TriviaMessage().GetIconUri(_appName);
             Icon = new BitmapImage(iconUri);
-
-            //AppBtnSubmitMultiChoiceAnwser.Foreground = new SolidColorBrush(Colors.Fuchsia);
         }
 
         private void AppHyperlink1_RequestNavigate(object sender, RequestNavigateEventArgs e)
@@ -61,7 +61,29 @@ namespace Trivial.Ui.Common
 
         private void AppBtnClose_OnClick(object sender, RoutedEventArgs e)
         {
-            Close();
+            if (_questionType == QuestionType.None)
+            {
+                Close();
+            }
+            else
+            {
+                //gregt
+                var closingWithoutSubmitingAnswer = true;
+
+                if (closingWithoutSubmitingAnswer)
+                {
+                    var closeWithoutSubmitingAnswer = MessageBoxes.ConfirmCloseWithoutSubmitingAnswer();
+
+                    if (closeWithoutSubmitingAnswer)
+                    {
+                        Close();
+                    }
+                }
+                else
+                {
+                    Close();
+                }
+            }
         }
 
         private void AppBtnSubmitMultiChoiceAnwser_OnClick(object sender, RoutedEventArgs e)
@@ -101,7 +123,7 @@ namespace Trivial.Ui.Common
             ActOnAnswerGiven(response);
         }
 
-        public void ActOnAnswerGiven(string response)
+        private void ActOnAnswerGiven(string response)
         {
             var isResponseCorrect = IsResponseCorrect(response);
 
