@@ -84,7 +84,7 @@ namespace Trivial.Ui.Common
 
         private void DisplayPopUpMessage(TriviaDialogDto triviaDialogDto)
         {
-            var triviaDialog = new TriviaDialog(triviaDialogDto.AppName, triviaDialogDto.OptionsName, triviaDialogDto.MultipleChoiceCorrectAnswer)
+            var triviaDialog = new TriviaDialog(triviaDialogDto.AppName, triviaDialogDto.OptionsName, triviaDialogDto.MultipleChoiceCorrectAnswer, triviaDialogDto.QuestionType)
             {
                 AppTextBlockAnswer = { Text = triviaDialogDto.Answer},
                 AppBtnRevealAnswer = { Content = triviaDialogDto.AnswerRevealLabel },

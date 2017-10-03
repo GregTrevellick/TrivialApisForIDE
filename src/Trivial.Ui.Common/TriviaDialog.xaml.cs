@@ -13,24 +13,26 @@ namespace Trivial.Ui.Common
     {
         private AppName _appName;
         private string _correctAnswer;
-        private QuestionType _questionType;
         private string _optionsName;
+        private QuestionType _questionType;
+
 
         public TriviaDialog(AppName appName, string optionsName)
         {
-            Init(appName, optionsName, null);
+            Init(appName, optionsName, null, QuestionType.None);
         }
 
-        public TriviaDialog(AppName appName, string optionsName, string correctAnswer)
+        public TriviaDialog(AppName appName, string optionsName, string correctAnswer, QuestionType questionType)
         {
-            Init(appName, optionsName, correctAnswer);
+            Init(appName, optionsName, correctAnswer, questionType);
         }
 
-        private void Init(AppName appName, string optionsName, string correctAnswer)
+        private void Init(AppName appName, string optionsName, string correctAnswer, QuestionType questionType)
         {
             _appName = appName;
             _correctAnswer = correctAnswer;
             _optionsName = optionsName;
+            _questionType = questionType;
 
             InitializeComponent();
             InitializeTriviaDialog();
@@ -61,13 +63,14 @@ namespace Trivial.Ui.Common
 
         private void AppBtnClose_OnClick(object sender, RoutedEventArgs e)
         {
+            //gregt test this
             if (_questionType == QuestionType.None)
             {
                 Close();
             }
             else
             {
-                //gregt
+                //gregt test this
                 var closingWithoutSubmitingAnswer = true;
 
                 if (closingWithoutSubmitingAnswer)
