@@ -45,9 +45,10 @@ namespace Trivial.Ui.Common
                 {
                     case AppName.GeekQuiz:
                         var gatewayResponseGeekQuiz = (GatewayResponseGeekQuiz)gatewayResponse;
+                        triviaDialogDto.Difficulty = gatewayResponseGeekQuiz.DifficultyLevel;
                         triviaDialogDto.MultipleChoiceAnswers = gatewayResponseGeekQuiz.MultipleChoiceAnswers;
                         triviaDialogDto.MultipleChoiceCorrectAnswer = gatewayResponseGeekQuiz.MultipleChoiceCorrectAnswer;
-                        triviaDialogDto.Question = gatewayResponseGeekQuiz.DifficultyLevel + ": " + gatewayResponseGeekQuiz.Question;
+                        triviaDialogDto.Question = gatewayResponseGeekQuiz.Question;
                         triviaDialogDto.QuestionType = gatewayResponseGeekQuiz.QuestionType;
                         somethingToShow = !string.IsNullOrEmpty(triviaDialogDto.Question);
                         break;
@@ -90,40 +91,22 @@ namespace Trivial.Ui.Common
                 AppTextBlockAttribution = { Text = triviaDialogDto.Attribution },
                 AppTextBlockErrorDetails = { Text = triviaDialogDto.ErrorDetails },
                 AppTextBlockFact = { Text = triviaDialogDto.Fact },
-                AppTextBlockQuestion = { Text = triviaDialogDto.Question},
                 AppTextBlockQuotation = { Text = triviaDialogDto.Quotation},
                 Title = triviaDialogDto.PopUpTitle,
             };
 
+            if (!string.IsNullOrWhiteSpace(triviaDialogDto.Difficulty))
+            {
+                var run = new Run(triviaDialogDto.Difficulty);
+                triviaDialog.AppTextBlockQuestion.Inlines.Add(run);
+            }
 
-
-
-
-
-
-            ////gregt tempry testing POC
-            //triviaDialog.TextBlockPoc.FontSize = 12;
-            //triviaDialog.TextBlockPoc.Inlines.Add("Text");
-            //triviaDialog.TextBlockPoc.Inlines.Add(new LineBreak());
-            //var run = new Run("More");
-            //run.FontSize = 14;
-            //run.FontWeight = FontWeights.Bold;
-            //triviaDialog.TextBlockPoc.Inlines.Add(run);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            if (!string.IsNullOrWhiteSpace(triviaDialogDto.Question))
+            {
+                var run = new Run(triviaDialogDto.Question);
+                run.FontWeight = FontWeights.Bold;
+                triviaDialog.AppTextBlockQuestion.Inlines.Add(run);
+            }
 
             var iconUri = GetIconUri(triviaDialogDto.AppName);
             triviaDialog.AppImage.Source = new BitmapImage(iconUri);
@@ -145,7 +128,7 @@ namespace Trivial.Ui.Common
                 triviaDialog.AppTextBlockFact.Visibility = Visibility.Visible;
             }
 
-            if (!string.IsNullOrWhiteSpace(triviaDialog.AppTextBlockQuestion.Text))
+            if (triviaDialog.AppTextBlockQuestion.Inlines.Any())
             {
                 triviaDialog.AppTextBlockQuestion.Visibility = Visibility.Visible;
             }

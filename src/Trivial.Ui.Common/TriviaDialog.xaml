@@ -17,7 +17,6 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto" />
@@ -30,7 +29,7 @@
         <TextBlock Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Visibility="Collapsed" Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Left" Name="AppTextBlockQuotation" FontWeight="Bold" />
         <TextBlock Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Visibility="Collapsed" Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Left" Name="AppTextBlockErrorDetails" />
         <TextBlock Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Visibility="Collapsed" Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Left" Name="AppTextBlockFact" FontWeight="Bold" />
-        <TextBlock Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Visibility="Collapsed" Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Left" Name="AppTextBlockQuestion" FontWeight="Bold" />
+        <TextBlock Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Visibility="Collapsed" Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Left" Name="AppTextBlockQuestion" />
 
         <TextBlock Grid.Row="1" Grid.Column="1" Visibility="Collapsed" Margin="10,10,0,10" VerticalAlignment="Center" HorizontalAlignment="Right" Name="AppTextBlockAttribution" />
         <TextBlock Grid.Row="1" Grid.Column="2" Visibility="Collapsed" Margin="0,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Left" Name="AppTextBlockHyperLink">
@@ -50,8 +49,6 @@
         <Button Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="3" Content="Close" Margin="10,10,10,10" Padding="5,5,5,5" VerticalAlignment="Center" HorizontalAlignment="Center" Click="AppBtnClose_OnClick" Name="AppBtnClose"/>
         <Button Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="3" Content="Help" Margin="10,10,10,10" Padding="5,5,5,5" VerticalAlignment="Center" HorizontalAlignment="Right" Click="AppBtnHelp_OnClick" Name="AppBtnHelp"/>
         <TextBlock Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="2" Visibility="Collapsed" Margin="5,5,5,5" Padding="5,5,5,5" VerticalAlignment="Center" HorizontalAlignment="Right" Name="TextBlockHelp" />
-
-        <TextBlock Grid.Row="9" Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Right" Name="TextBlockPoc" />
 
     </Grid>
 </platformUi:DialogWindow>

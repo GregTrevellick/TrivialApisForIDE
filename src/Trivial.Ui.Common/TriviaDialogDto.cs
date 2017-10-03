@@ -10,6 +10,7 @@ namespace Trivial.Ui.Common
         public string Answer { get; set; }
         public string AnswerRevealLabel { get; set; }
         public string Attribution { get; set; }
+        public string Difficulty { get; set; }
         public string ErrorDetails { get; set; }
         public string Fact { get; set; }
         public string HyperLinkUri { get; set; }

@@ -6,9 +6,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices;
 using Trivial.Entities;
 using Trivial.Ui.Common;
-//using Trivial.Ui.Common.Ratings;
 using Trivial.Ui.Jeopardy.Options;
-//using VsixRatingChaser;
 
 namespace Trivial.Ui.Jeopardy
 {
