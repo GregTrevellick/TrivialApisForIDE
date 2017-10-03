@@ -108,28 +108,28 @@ namespace Trivial.Ui.Common
             if (isResponseCorrect)
             {
                 TextBlockQuizReply.Text = "Correct - well done, top of the class !";
-                SetQuizReplyBackground(Colors.Green);
+                SetQuizReplyColour(Colors.Green);
             }
             else
             {
                 if (response == null)
                 {
                     TextBlockQuizReply.Text = "Nice try, but you've can't cheat and avoid supplying an answer";
-                    SetQuizReplyBackground(Colors.Orange);
+                    SetQuizReplyColour(Colors.Orange);
                 }
                 else
                 {
                     TextBlockQuizReply.Text = $"Wrong - opps, must try harder ! The correct answer is {_correctAnswer}";
-                    SetQuizReplyBackground(Colors.Red);
+                    SetQuizReplyColour(Colors.Red);
                 }
             }
 
             TextBlockQuizReply.Visibility = Visibility.Visible;
         }
 
-        private void SetQuizReplyBackground(Color color)
+        private void SetQuizReplyColour(Color color)
         {
-            TextBlockQuizReply.Background = new SolidColorBrush(color);
+            TextBlockQuizReply.Foreground = new SolidColorBrush(color);
         }
 
         private bool IsResponseCorrect(string response)
