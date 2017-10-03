@@ -46,7 +46,8 @@ namespace Trivial.Ui.GeekQuiz
             {
                 var popUpTitle = CommonConstants.GetCaption(Vsix.Name, Vsix.Version);
                 var triviaMessage = new TriviaMessage();
-                var hiddenOptionsDto = triviaMessage.ShowTrivia(AppName.GeekQuiz, popUpTitle, GeneralOptionsDto.LastPopUpDateTime, GeneralOptionsDto.PopUpCountToday, GeneralOptionsDto.TimeOutInMilliSeconds, Vsix.Name);
+
+                var hiddenOptionsDto = triviaMessage.ShowTrivia(AppName.GeekQuiz, popUpTitle, GeneralOptionsDto.LastPopUpDateTime, GeneralOptionsDto.PopUpCountToday, GeneralOptionsDto.TimeOutInMilliSeconds, Vsix.Name, GeneralOptionsDto.SuppressClosingWithoutSubmitingAnswerWarning);
 
                 if (hiddenOptionsDto != null)
                 {
@@ -120,6 +121,7 @@ namespace Trivial.Ui.GeekQuiz
                     MaximumPopUpsWeekEnd = generalOptions.MaximumPopUpsWeekEnd.GetAsInteger(),
                     PopUpIntervalInMins = generalOptions.PopUpIntervalInMins.GetAsInteger(),
                     PopUpCountToday = hiddenOptions.PopUpCountToday,
+                    SuppressClosingWithoutSubmitingAnswerWarning = generalOptions.SuppressClosingWithoutSubmitingAnswerWarning,
                     TimeOutInMilliSeconds = generalOptions.TimeOutInMilliSeconds.GetAsInteger(),
                 };
             }

@@ -20,6 +20,8 @@ namespace Trivial.Ui.Common
         public const string TimeOutInMilliSecondsOptionDetailedDescription = "The maximum time in milliseconds for this extension to spend retrieving the pop-up message data from the third party data source. This value is used as the timeout parameter when calling the external web service. A value of zero is ignored by the external web service call and will not cause an instant timeout.";
         public const string TimeOutInMilliSecondsOptionLabel = "Timeout limit (milliseconds)";
         public static string TimeOutInMilliSecondsIsOutsideRecommendedTimeoutLimits = $"Are you sure ?{Environment.NewLine}{Environment.NewLine}The value for '{TimeOutInMilliSecondsOptionLabel}' is outside the recommended limits, which means the data retrieval may timeout before completion or may wait for a long time to complete.";
+        public const string SuppressClosingWithoutSubmitingAnswerWarningOptionLabel = "Suppress early closure warning";
+        public const string SuppressClosingWithoutSubmitingAnswerWarningOptionDetailedDescription = "Suppress the warning that appears when closing the quiz window without having answered the question first. By showing the warning you can avoid being disappointed by closing the quiz question without ever knowing the answer.";
 
         public static string GetCaption(string vsixName, string vsixVersion)
         {

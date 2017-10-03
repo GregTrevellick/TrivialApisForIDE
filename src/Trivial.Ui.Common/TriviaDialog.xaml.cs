@@ -15,24 +15,27 @@ namespace Trivial.Ui.Common
         private string _correctAnswer;
         private string _optionsName;
         private QuestionType _questionType;
+        private bool _submitAnswerButtonClicked;
+        private bool? _suppressClosingWithoutSubmitingAnswerWarning;
 
-
-        public TriviaDialog(AppName appName, string optionsName)
+        public TriviaDialog(AppName appName, string optionsName, bool? suppressClosingWithoutSubmitingAnswerWarning)
         {
-            Init(appName, optionsName, null, QuestionType.None);
+            Init(appName, optionsName, suppressClosingWithoutSubmitingAnswerWarning, null, QuestionType.None);
         }
 
-        public TriviaDialog(AppName appName, string optionsName, string correctAnswer, QuestionType questionType)
+        public TriviaDialog(AppName appName, string optionsName, bool? suppressClosingWithoutSubmitingAnswerWarning, string correctAnswer, QuestionType questionType)
         {
-            Init(appName, optionsName, correctAnswer, questionType);
+            Init(appName, optionsName, suppressClosingWithoutSubmitingAnswerWarning, correctAnswer, questionType);
         }
 
-        private void Init(AppName appName, string optionsName, string correctAnswer, QuestionType questionType)
+        private void Init(AppName appName, string optionsName, bool? suppressClosingWithoutSubmitingAnswerWarning, string correctAnswer, QuestionType questionType)
         {
             _appName = appName;
             _correctAnswer = correctAnswer;
             _optionsName = optionsName;
             _questionType = questionType;
+            _submitAnswerButtonClicked = false;
+            _suppressClosingWithoutSubmitingAnswerWarning = suppressClosingWithoutSubmitingAnswerWarning;
 
             InitializeComponent();
             InitializeTriviaDialog();
@@ -63,34 +66,33 @@ namespace Trivial.Ui.Common
 
         private void AppBtnClose_OnClick(object sender, RoutedEventArgs e)
         {
-            //gregt test this
-            if (_questionType == QuestionType.None)
-            {
-                Close();
-            }
-            else
-            {
-                //gregt test this
-                var closingWithoutSubmitingAnswer = true;
+            var shouldClose = true;
 
-                if (closingWithoutSubmitingAnswer)
+            if (_questionType != QuestionType.None)
+            {
+                if (!_submitAnswerButtonClicked)
                 {
-                    var closeWithoutSubmitingAnswer = MessageBoxes.ConfirmCloseWithoutSubmitingAnswer(_optionsName);
-
-                    if (closeWithoutSubmitingAnswer)
+                    if (_suppressClosingWithoutSubmitingAnswerWarning.HasValue && !_suppressClosingWithoutSubmitingAnswerWarning.Value)
                     {
-                        Close();
+                        var closeWithoutSubmitingAnswer = MessageBoxes.ConfirmCloseWithoutSubmitingAnswer(_optionsName);
+                        if (!closeWithoutSubmitingAnswer)
+                        {
+                            shouldClose = false;
+                        }
                     }
                 }
-                else
-                {
-                    Close();
-                }
+            }
+
+            if (shouldClose)
+            {
+                Close();
             }
         }
 
         private void AppBtnSubmitMultiChoiceAnwser_OnClick(object sender, RoutedEventArgs e)
         {
+            _submitAnswerButtonClicked = true;
+
             string response;
 
             if (RadioBtn1.IsChecked == true)

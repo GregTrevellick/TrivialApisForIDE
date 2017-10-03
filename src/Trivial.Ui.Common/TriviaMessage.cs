@@ -20,6 +20,16 @@ namespace Trivial.Ui.Common
 
         public HiddenOptionsDto ShowTrivia(AppName appName, string popUpTitle, DateTime lastPopUpDateTime, int popUpCountToday, int timeOutInMilliSeconds, string optionsName)
         {
+            return ShowTriviaMessage(appName, popUpTitle, lastPopUpDateTime, popUpCountToday, timeOutInMilliSeconds, optionsName, null);
+        }
+
+        public HiddenOptionsDto ShowTrivia(AppName appName, string popUpTitle, DateTime lastPopUpDateTime, int popUpCountToday, int timeOutInMilliSeconds, string optionsName, bool suppressClosingWithoutSubmitingAnswerWarning)
+        {
+            return ShowTriviaMessage(appName, popUpTitle, lastPopUpDateTime, popUpCountToday, timeOutInMilliSeconds, optionsName, suppressClosingWithoutSubmitingAnswerWarning);
+        }
+
+        private HiddenOptionsDto ShowTriviaMessage(AppName appName, string popUpTitle, DateTime lastPopUpDateTime, int popUpCountToday, int timeOutInMilliSeconds, string optionsName, bool? suppressClosingWithoutSubmitingAnswerWarning)
+        {
             HiddenOptionsDto hiddenOptionsDto = null;
 
             var clientGateway = new ClientGateway();
@@ -75,16 +85,21 @@ namespace Trivial.Ui.Common
 
             if (somethingToShow)
             {
-                DisplayPopUpMessage(triviaDialogDto);
+                DisplayPopUpMessage(triviaDialogDto, suppressClosingWithoutSubmitingAnswerWarning);
                 hiddenOptionsDto = GetHiddenOptionsDto(lastPopUpDateTime, popUpCountToday);
             }
 
             return hiddenOptionsDto;
         }
 
-        private void DisplayPopUpMessage(TriviaDialogDto triviaDialogDto)
+        private void DisplayPopUpMessage(TriviaDialogDto triviaDialogDto, bool? suppressClosingWithoutSubmitingAnswerWarning)
         {
-            var triviaDialog = new TriviaDialog(triviaDialogDto.AppName, triviaDialogDto.OptionsName, triviaDialogDto.MultipleChoiceCorrectAnswer, triviaDialogDto.QuestionType)
+            var triviaDialog = new TriviaDialog(
+                triviaDialogDto.AppName, 
+                triviaDialogDto.OptionsName,
+                suppressClosingWithoutSubmitingAnswerWarning,
+                triviaDialogDto.MultipleChoiceCorrectAnswer, 
+                triviaDialogDto.QuestionType)
             {
                 AppTextBlockAnswer = { Text = triviaDialogDto.Answer},
                 AppBtnRevealAnswer = { Content = triviaDialogDto.AnswerRevealLabel },

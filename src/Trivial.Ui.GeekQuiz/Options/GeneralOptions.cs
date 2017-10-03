@@ -115,5 +115,10 @@ namespace Trivial.Ui.GeekQuiz.Options
                 }
             }
         }
+
+        [Category(CommonConstants.CategorySubLevel)]
+        [DisplayName(CommonConstants.SuppressClosingWithoutSubmitingAnswerWarningOptionLabel)]
+        [Description(CommonConstants.SuppressClosingWithoutSubmitingAnswerWarningOptionDetailedDescription)]
+        public bool SuppressClosingWithoutSubmitingAnswerWarning { get; set; } = false;
     }
 }
