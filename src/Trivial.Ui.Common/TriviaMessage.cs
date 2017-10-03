@@ -3,6 +3,7 @@ using System.Linq;
 using System.Reflection;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Documents;
 using System.Windows.Media.Imaging;
 using Trivial.Api.Gateway;
 using Trivial.Api.Gateway.GeekQuiz;
@@ -93,6 +94,36 @@ namespace Trivial.Ui.Common
                 AppTextBlockQuotation = { Text = triviaDialogDto.Quotation},
                 Title = triviaDialogDto.PopUpTitle,
             };
+
+
+
+
+
+
+
+            //gregt tempry testing POC
+            triviaDialog.TextBlockPoc.FontSize = 18;
+            triviaDialog.TextBlockPoc.Inlines.Add("This is my text");
+            triviaDialog.TextBlockPoc.Inlines.Add(new LineBreak());
+            Run run = new Run("My big bold text");
+            run.FontSize = 24;
+            run.FontWeight = FontWeights.Bold;
+            triviaDialog.TextBlockPoc.Inlines.Add(run);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
             var iconUri = GetIconUri(triviaDialogDto.AppName);
             triviaDialog.AppImage.Source = new BitmapImage(iconUri);

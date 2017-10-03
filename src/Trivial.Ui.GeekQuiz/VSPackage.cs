@@ -32,13 +32,13 @@ namespace Trivial.Ui.GeekQuiz
             IServiceContainer serviceContainer = this as IServiceContainer;
             dte = serviceContainer.GetService(typeof(SDTE)) as DTE;
             solutionEvents = dte.Events.SolutionEvents;
-            //solutionEvents.Opened += OnSolutionOpened;
-            solutionEvents.BeforeClosing += OnSolutionOpened;//gregt offer user true/false for when opening & when closing a sln
+            solutionEvents.Opened += OnSolutionOpened;
+            //solutionEvents.BeforeClosing += OnSolutionOpened;
         }
 
         private void OnSolutionOpened()
         {
-            ChaseRatings();
+            //ChaseRatings();
 
             var shouldShowTrivia = new DecisionMaker().ShouldShowTrivia(GeneralOptionsDto);
 
@@ -67,7 +67,6 @@ namespace Trivial.Ui.GeekQuiz
                 CostCategory = CostCategory.Free,
                 DialogType = DialogType.NonModal,
                 ImageByteArray = imageByteArray,
-                /////////////////////////////////////////////////////////PackageLoadedLimit = CommonConstants.PackageLoadedLimit,
                 VsixAuthor = Vsix.Author,
                 VsixName = Vsix.Name,
             };
