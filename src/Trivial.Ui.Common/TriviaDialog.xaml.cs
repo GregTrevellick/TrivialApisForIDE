@@ -75,7 +75,7 @@ namespace Trivial.Ui.Common
 
                 if (closingWithoutSubmitingAnswer)
                 {
-                    var closeWithoutSubmitingAnswer = MessageBoxes.ConfirmCloseWithoutSubmitingAnswer();
+                    var closeWithoutSubmitingAnswer = MessageBoxes.ConfirmCloseWithoutSubmitingAnswer(_optionsName);
 
                     if (closeWithoutSubmitingAnswer)
                     {

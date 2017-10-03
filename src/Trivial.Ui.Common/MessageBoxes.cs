@@ -1,15 +1,16 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Windows.Forms;
 
 namespace Trivial.Ui.Common
 {
     public class MessageBoxes
     {
-        public static bool ConfirmCloseWithoutSubmitingAnswer()
+        public static bool ConfirmCloseWithoutSubmitingAnswer(string optionsName)
         {
             var result = false;
 
             var box = MessageBox.Show(
-                "You are closingWithoutSubmitingAnswer - Are you sure ?",
+                $"You clicked the 'Close' button without having submitted your answer - are you sure ?{Environment.NewLine}{Environment.NewLine}You can disable this warning in Tools | Options | {optionsName}",
                 string.Empty,
                 MessageBoxButtons.OKCancel,
                 MessageBoxIcon.Warning);
