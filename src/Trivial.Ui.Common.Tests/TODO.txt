@@ -1,4 +1,10 @@
-﻿stop close being clicked without answer being shown
+﻿opentdb questions - dry ? cmmi ? solid ? grunt ? gulp ?
+
+offer user true/false for when opening & when closing a sln
+
+
+
+stop close being clicked without answer being shown
 
 add option for user to select easy / medium / hard ?
 show user % right / wrong, with "dunce" thru "genius" descriptor

@@ -32,7 +32,8 @@ namespace Trivial.Ui.GeekQuiz
             IServiceContainer serviceContainer = this as IServiceContainer;
             dte = serviceContainer.GetService(typeof(SDTE)) as DTE;
             solutionEvents = dte.Events.SolutionEvents;
-            solutionEvents.Opened += OnSolutionOpened;
+            //solutionEvents.Opened += OnSolutionOpened;
+            solutionEvents.BeforeClosing += OnSolutionOpened;//gregt offer user true/false for when opening & when closing a sln
         }
 
         private void OnSolutionOpened()
@@ -66,7 +67,7 @@ namespace Trivial.Ui.GeekQuiz
                 CostCategory = CostCategory.Free,
                 DialogType = DialogType.NonModal,
                 ImageByteArray = imageByteArray,
-                PackageLoadedLimit = CommonConstants.PackageLoadedLimit,
+                /////////////////////////////////////////////////////////PackageLoadedLimit = CommonConstants.PackageLoadedLimit,
                 VsixAuthor = Vsix.Author,
                 VsixName = Vsix.Name,
             };
