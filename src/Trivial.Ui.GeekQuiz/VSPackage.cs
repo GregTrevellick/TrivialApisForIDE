@@ -33,7 +33,7 @@ namespace Trivial.Ui.GeekQuiz
             dte = serviceContainer.GetService(typeof(SDTE)) as DTE;
             solutionEvents = dte.Events.SolutionEvents;
             solutionEvents.Opened += OnSolutionOpened;
-            //solutionEvents.BeforeClosing += OnSolutionOpened;
+            //gregt solutionEvents.BeforeClosing += OnSolutionOpened;
         }
 
         private void OnSolutionOpened()

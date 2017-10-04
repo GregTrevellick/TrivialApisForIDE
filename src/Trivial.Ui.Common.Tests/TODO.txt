@@ -3,8 +3,9 @@
 add red cross green tick
 
 offer user true/false for when opening & when closing a sln
-add option for user to select easy / medium / hard ?
-add option for user to disable warning 
+
+
+Future - add option for user to select easy / medium / hard ?
 
 
 
@@ -13,8 +14,6 @@ show user % right / wrong, with "dunce" thru "genius" descriptor
 allow user to reset the % back to zero
 allow user to request a second question, but not anymore than that
 play correct / incorrect sound ?
-
-adjust help text formatting
 
 set different default options for different apps ?
 add clues to jeopardy ? 
