@@ -11,7 +11,7 @@ namespace Trivial.Ui.Common
 
             var box = MessageBox.Show(
                 $"You clicked the 'Close' button without having submitted your answer - are you sure ?{Environment.NewLine}{Environment.NewLine}You can disable this warning in Tools | Options | {optionsName}",
-                string.Empty,
+                optionsName,
                 MessageBoxButtons.OKCancel,
                 MessageBoxIcon.Warning);
 

@@ -4,7 +4,7 @@
 }
 add red cross green tick
 offer user true/false for when opening & when closing a sln
-
+remove all padding / margins and only add back in what is necessary
 
 
 show user % right / wrong, with "dunce" thru "genius" descriptor

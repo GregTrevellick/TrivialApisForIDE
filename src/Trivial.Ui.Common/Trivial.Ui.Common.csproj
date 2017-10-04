@@ -172,7 +172,9 @@
     </Resource>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\IncorrectAnswer.png" />
+    <Resource Include="Resources\IncorrectAnswer.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="..\Trivial.Ui.Jeopardy\Resources\VsixExtensionIcon_16x16.png">
       <Link>Resources\Jeopardy\VsixExtensionIcon_16x16.png</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -181,7 +183,9 @@
       <Link>Resources\GeekQuiz\VsixExtensionIcon_16x16.png</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Content Include="Resources\CorrectAnswer.png" />
+    <Resource Include="Resources\CorrectAnswer.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Content Include="Resources\Generic_ReadMeScreenShot_OptionsGeneral.png" />
   </ItemGroup>
   <ItemGroup />

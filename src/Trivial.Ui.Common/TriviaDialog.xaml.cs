@@ -130,12 +130,16 @@ namespace Trivial.Ui.Common
 
         private void ActOnAnswerGiven(string response)
         {
+            QuizReplyEmoticonCorrect.Visibility = Visibility.Collapsed;
+            QuizReplyEmoticonIncorrect.Visibility = Visibility.Collapsed;
+
             var isResponseCorrect = IsResponseCorrect(response);
 
             if (isResponseCorrect)
             {
                 TextBlockQuizReply.Text = "Correct - well done, top of the class !";
                 SetQuizReplyColour(Colors.Green);
+                QuizReplyEmoticonCorrect.Visibility = Visibility.Visible;
             }
             else
             {
@@ -148,6 +152,7 @@ namespace Trivial.Ui.Common
                 {
                     TextBlockQuizReply.Text = $"Wrong - opps, must try harder ! The correct answer is {_correctAnswer}";
                     SetQuizReplyColour(Colors.Red);
+                    QuizReplyEmoticonIncorrect.Visibility = Visibility.Visible;
                 }
             }
 
