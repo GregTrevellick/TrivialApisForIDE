@@ -4,6 +4,12 @@ These are the incremental changes to each version that has been released on the 
 
 Individual releases are tagged as such in GitHub.
 
+## 1.x.x
+**2017-xx-xx**
+- [x] Geek Quiz
+- [x] Help text formatting
+- [x] Minor improvements 
+
 ## 1.1.0
 **2017-09-26**
 - [x] Initial release

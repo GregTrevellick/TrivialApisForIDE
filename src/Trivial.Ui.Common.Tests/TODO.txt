@@ -1,8 +1,8 @@
-﻿if (response?.Results?.Addresses?[0]?.Zip == "63368")
-{
-     //stuff C# 6 null conditional operator
-}
-add red cross green tick
+﻿TO BE TESTED add red cross green tick
+
+
+
+
 offer user true/false for when opening & when closing a sln
 remove all padding / margins and only add back in what is necessary
 
@@ -18,11 +18,6 @@ FUTURE play correct / incorrect sound ?
 FUTURE set different default options for different apps
 FUTURE add clues to jeopardy
 FUTURE pop quiz https://opentdb.com/api.php?amount=10&category=18
-
-https://github.com/Microsoft/UnitTestBoilerplateGenerator/blob/master/src/CreateUnitTestBoilerplateDialog.xaml
-http://www.c-sharpcorner.com/UploadFile/mahakgupta/simple-data-binding-in-wpf/
-https://github.com/onlyutkarsh/XamlDialogInVSExtensionDemo
-https://stackoverflow.com/questions/17233651/wpf-data-binding-label-content
-https://msdn.microsoft.com/en-us/library/ff770546.aspx?f=255&MSPPError=-2147217396
+FUTURE if (response?.Results?.Addresses?[0]?.Zip == "63368") { //stuff C# 6 null conditional operator FUTURE }
 
 opentdb submitable questions - cmmi ? solid ? grunt ? gulp ?

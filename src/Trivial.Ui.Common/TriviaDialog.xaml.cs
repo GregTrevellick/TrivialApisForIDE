@@ -150,7 +150,15 @@ namespace Trivial.Ui.Common
                 }
                 else
                 {
-                    TextBlockQuizReply.Text = $"Wrong - opps, must try harder ! The correct answer is {_correctAnswer}";
+                    if (_questionType == QuestionType.TrueFalse)
+                    {
+                        TextBlockQuizReply.Text = $"Wrong - opps, must try harder !";
+                    }
+                    else
+                    {
+                        TextBlockQuizReply.Text = $"Wrong - opps, must try harder ! The correct answer is {_correctAnswer}";
+                    }
+
                     SetQuizReplyColour(Colors.Red);
                     QuizReplyEmoticonIncorrect.Visibility = Visibility.Visible;
                 }
