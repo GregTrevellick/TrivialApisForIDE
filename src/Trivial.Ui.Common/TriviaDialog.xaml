@@ -17,6 +17,7 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto" />
@@ -25,7 +26,6 @@
         </Grid.ColumnDefinitions>
 
         <Image Grid.Row="0" Grid.Column="0" Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Left" Name="AppImage" Stretch="None"/>
-
         <TextBlock Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Visibility="Collapsed" Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Left" Name="AppTextBlockQuotation" FontWeight="Bold" />
         <TextBlock Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Visibility="Collapsed" Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Left" Name="AppTextBlockErrorDetails" />
         <TextBlock Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Visibility="Collapsed" Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Left" Name="AppTextBlockFact" FontWeight="Bold" />
@@ -47,10 +47,12 @@
         <Image Grid.Row="6" Grid.Column="0" Margin="10,10,10,10" Visibility="Collapsed" VerticalAlignment="Center" HorizontalAlignment="Center" Name="QuizReplyEmoticonIncorrect" Stretch="None" Source="Resources/IncorrectAnswer.png" />
         <TextBlock Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2" Visibility="Collapsed" Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Left" Name="TextBlockQuizReply" />
 
-        <Button Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="2" Visibility="Collapsed"  Content="Submit Answer" Margin="10,10,10,10" Padding="5,5,5,5" VerticalAlignment="Center" HorizontalAlignment="Left" Click="AppBtnSubmitMultiChoiceAnwser_OnClick" Name="AppBtnSubmitMultiChoiceAnwser"/>
-        <Button Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="3" Content="Close" Margin="10,10,10,10" Padding="5,5,5,5" VerticalAlignment="Center" HorizontalAlignment="Center" Click="AppBtnClose_OnClick" Name="AppBtnClose"/>
-        <Button Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="3" Content="Help" Margin="10,10,10,10" Padding="5,5,5,5" VerticalAlignment="Center" HorizontalAlignment="Right" Click="AppBtnHelp_OnClick" Name="AppBtnHelp"/>
-        <TextBlock Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="2" Visibility="Collapsed" Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Right" Name="TextBlockHelp" />
+        <TextBlock Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="2" Visibility="Collapsed" Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Center" Name="AppTextBlockUserStatus" />
+
+        <Button Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="2" Visibility="Collapsed"  Content="Submit Answer" Margin="10,10,10,10" Padding="5,5,5,5" VerticalAlignment="Center" HorizontalAlignment="Left" Click="AppBtnSubmitMultiChoiceAnwser_OnClick" Name="AppBtnSubmitMultiChoiceAnwser"/>
+        <Button Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="3" Content="Close" Margin="10,10,10,10" Padding="5,5,5,5" VerticalAlignment="Center" HorizontalAlignment="Center" Click="AppBtnClose_OnClick" Name="AppBtnClose"/>
+        <Button Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="3" Content="Help" Margin="10,10,10,10" Padding="5,5,5,5" VerticalAlignment="Center" HorizontalAlignment="Right" Click="AppBtnHelp_OnClick" Name="AppBtnHelp"/>
+        <TextBlock Grid.Row="9" Grid.Column="1" Grid.ColumnSpan="2" Visibility="Collapsed" Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Right" Name="TextBlockHelp" />
 
     </Grid>
 </platformUi:DialogWindow>

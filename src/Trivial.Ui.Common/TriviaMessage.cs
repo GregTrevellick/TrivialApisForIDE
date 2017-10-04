@@ -122,6 +122,15 @@ namespace Trivial.Ui.Common
 
             triviaDialog.PersistHiddenOptionsEventHandler += PersistHiddenOptions;
 
+            if (totalQuestionsAnsweredCorrectly.HasValue && totalQuestionsAsked.HasValue)
+            {
+                var percentageSuccess = (totalQuestionsAnsweredCorrectly / totalQuestionsAsked) * 100;
+                var userStatus = "Your status: " + percentageSuccess + "% success (" + totalQuestionsAnsweredCorrectly +
+                                 " questions out of " + totalQuestionsAnsweredCorrectly + " answered correctly)";
+                triviaDialog.AppTextBlockUserStatus.Text = userStatus;
+                triviaDialog.AppTextBlockUserStatus.Visibility = Visibility.Visible;
+            }
+
             if (!string.IsNullOrWhiteSpace(triviaDialogDto.Difficulty))
             {
                 var run = new Run(triviaDialogDto.Difficulty);
