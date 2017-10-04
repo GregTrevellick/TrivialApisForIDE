@@ -1,4 +1,9 @@
-﻿opentdb questions - dry ? cmmi ? solid ? grunt ? gulp ?
+﻿if (response?.Results?.Addresses?[0]?.Zip == "63368")
+{
+     //stuff C# 6 null conditional operator
+}
+
+opentdb questions - dry ? cmmi ? solid ? grunt ? gulp ?
 
 add red cross green tick
 offer user true/false for when opening & when closing a sln
