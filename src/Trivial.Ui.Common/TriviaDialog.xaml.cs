@@ -17,18 +17,20 @@ namespace Trivial.Ui.Common
         private QuestionType _questionType;
         private bool _submitAnswerButtonClicked;
         private bool? _suppressClosingWithoutSubmitingAnswerWarning;
+        private int? _totalQuestionsAnsweredCorrectly;
+        private int? _totalQuestionsAsked;
 
         public TriviaDialog(AppName appName, string optionsName, bool? suppressClosingWithoutSubmitingAnswerWarning)
         {
-            Init(appName, optionsName, suppressClosingWithoutSubmitingAnswerWarning, null, QuestionType.None);
+            Init(appName, optionsName, suppressClosingWithoutSubmitingAnswerWarning, null, QuestionType.None, null, null);
         }
 
-        public TriviaDialog(AppName appName, string optionsName, bool? suppressClosingWithoutSubmitingAnswerWarning, string correctAnswer, QuestionType questionType)
+        public TriviaDialog(AppName appName, string optionsName, bool? suppressClosingWithoutSubmitingAnswerWarning, string correctAnswer, QuestionType questionType, int? totalQuestionsAnsweredCorrectly, int? totalQuestionsAsked)
         {
-            Init(appName, optionsName, suppressClosingWithoutSubmitingAnswerWarning, correctAnswer, questionType);
+            Init(appName, optionsName, suppressClosingWithoutSubmitingAnswerWarning, correctAnswer, questionType, totalQuestionsAnsweredCorrectly, totalQuestionsAsked);
         }
 
-        private void Init(AppName appName, string optionsName, bool? suppressClosingWithoutSubmitingAnswerWarning, string correctAnswer, QuestionType questionType)
+        private void Init(AppName appName, string optionsName, bool? suppressClosingWithoutSubmitingAnswerWarning, string correctAnswer, QuestionType questionType, int? totalQuestionsAnsweredCorrectly, int? totalQuestionsAsked)
         {
             _appName = appName;
             _correctAnswer = correctAnswer;
@@ -36,6 +38,8 @@ namespace Trivial.Ui.Common
             _questionType = questionType;
             _submitAnswerButtonClicked = false;
             _suppressClosingWithoutSubmitingAnswerWarning = suppressClosingWithoutSubmitingAnswerWarning;
+            _totalQuestionsAnsweredCorrectly = totalQuestionsAnsweredCorrectly;
+            _totalQuestionsAsked = totalQuestionsAsked;
 
             InitializeComponent();
             InitializeTriviaDialog();
@@ -134,12 +138,22 @@ namespace Trivial.Ui.Common
             QuizReplyEmoticonIncorrect.Visibility = Visibility.Collapsed;
 
             var isResponseCorrect = IsResponseCorrect(response);
+            
+            if (_totalQuestionsAsked.HasValue)
+            {
+                _totalQuestionsAsked++;//gregt only do this once, not every time they hit submit
+            }
 
             if (isResponseCorrect)
             {
                 TextBlockQuizReply.Text = "Correct - well done, top of the class !";
                 SetQuizReplyColour(Colors.Green);
                 QuizReplyEmoticonCorrect.Visibility = Visibility.Visible;
+
+                if (_totalQuestionsAnsweredCorrectly.HasValue)
+                {
+                    _totalQuestionsAnsweredCorrectly++;//gregt only do this once, not every time they hit submit
+                }
             }
             else
             {
@@ -165,6 +179,8 @@ namespace Trivial.Ui.Common
             }
 
             TextBlockQuizReply.Visibility = Visibility.Visible;
+
+            //gregt persist hidden options here 
         }
 
         private void SetQuizReplyColour(Color color)

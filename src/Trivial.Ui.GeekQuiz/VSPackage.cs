@@ -55,7 +55,7 @@ namespace Trivial.Ui.GeekQuiz
                 var popUpTitle = CommonConstants.GetCaption(Vsix.Name, Vsix.Version);
                 var triviaMessage = new TriviaMessage();
 
-                var hiddenOptionsDto = triviaMessage.ShowTrivia(AppName.GeekQuiz, popUpTitle, GeneralOptionsDto.LastPopUpDateTime, GeneralOptionsDto.PopUpCountToday, GeneralOptionsDto.TimeOutInMilliSeconds, Vsix.Name, GeneralOptionsDto.SuppressClosingWithoutSubmitingAnswerWarning);
+                var hiddenOptionsDto = triviaMessage.ShowTrivia(AppName.GeekQuiz, popUpTitle, GeneralOptionsDto.LastPopUpDateTime, GeneralOptionsDto.PopUpCountToday, GeneralOptionsDto.TimeOutInMilliSeconds, Vsix.Name, GeneralOptionsDto.SuppressClosingWithoutSubmitingAnswerWarning, GeneralOptionsDto.TotalQuestionsAnsweredCorrectly, GeneralOptionsDto.TotalQuestionsAsked);
 
                 if (hiddenOptionsDto != null)
                 {
@@ -112,6 +112,8 @@ namespace Trivial.Ui.GeekQuiz
             var hiddenOptions = (HiddenOptions)GetDialogPage(typeof(HiddenOptions));
             hiddenOptions.LastPopUpDateTime = hiddenOptionsDto.LastPopUpDateTime;
             hiddenOptions.PopUpCountToday = hiddenOptionsDto.PopUpCountToday;
+            hiddenOptions.TotalQuestionsAnsweredCorrectly = hiddenOptionsDto.TotalQuestionsAnsweredCorrectly;
+            hiddenOptions.TotalQuestionsAsked = hiddenOptionsDto.TotalQuestionsAsked;
             hiddenOptions.SaveSettingsToStorage();
         }
 
@@ -133,6 +135,8 @@ namespace Trivial.Ui.GeekQuiz
                     ShowTriviaUponOpeningSolution = generalOptions.ShowTriviaUponOpeningSolution,
                     SuppressClosingWithoutSubmitingAnswerWarning = generalOptions.SuppressClosingWithoutSubmitingAnswerWarning,
                     TimeOutInMilliSeconds = generalOptions.TimeOutInMilliSeconds.GetAsInteger(),
+                    TotalQuestionsAnsweredCorrectly = hiddenOptions.TotalQuestionsAnsweredCorrectly,
+                    TotalQuestionsAsked = hiddenOptions.TotalQuestionsAsked,
                 };
             }
         }
