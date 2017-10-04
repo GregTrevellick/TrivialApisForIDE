@@ -19,7 +19,7 @@ A trivial extension that poses a GeekQuiz question when opening a solution file.
 
 - Example answer
 
-   ![](ReadMeScreenShot_Answer.png)
+  ![](ReadMeScreenShot_Answer.png)
 
 ### Options
 
@@ -29,4 +29,4 @@ A trivial extension that poses a GeekQuiz question when opening a solution file.
 
 - Configurable timeout (in milliseconds) for third party data retrieval process 
 
-    ![](../../Trivial.Ui.Common/Resources/Generic_ReadMeScreenShot_OptionsGeneral.png)
+  ![](../../Trivial.Ui.Common/Resources/Generic_ReadMeScreenShot_OptionsGeneral.png)
