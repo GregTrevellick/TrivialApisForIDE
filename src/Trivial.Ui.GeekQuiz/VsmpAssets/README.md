@@ -3,7 +3,7 @@
 [GitHubRepoPullRequestsURL]: https://github.com/GregTrevellick/TrivialApisForIDE/pulls
 [VSMarketplaceUrl]: https://marketplace.visualstudio.com/items?itemName=GregTrevellick.GeekQuiz#review-details
 
-A trivial extension that poses a GeekQuiz question when opening a solution file.
+A trivial extension that poses a geeky question when opening and/or closing a solution file.
 
 - Simple escapism from the day to day pressures of software development.
 

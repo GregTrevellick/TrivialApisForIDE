@@ -32,11 +32,19 @@ namespace Trivial.Ui.GeekQuiz
             IServiceContainer serviceContainer = this as IServiceContainer;
             dte = serviceContainer.GetService(typeof(SDTE)) as DTE;
             solutionEvents = dte.Events.SolutionEvents;
-            solutionEvents.Opened += OnSolutionOpened;
-            //gregt solutionEvents.BeforeClosing += OnSolutionOpened;
+
+            if (GeneralOptionsDto.ShowTriviaUponOpeningSolution)
+            {
+                solutionEvents.Opened += OnSolutionOpenedAndOrClosed;
+            }
+
+            if (GeneralOptionsDto.ShowTriviaUponClosingSolution)
+            {
+                solutionEvents.AfterClosing += OnSolutionOpenedAndOrClosed;
+            }
         }
 
-        private void OnSolutionOpened()
+        private void OnSolutionOpenedAndOrClosed()
         {
             //ChaseRatings();
 
@@ -121,6 +129,8 @@ namespace Trivial.Ui.GeekQuiz
                     MaximumPopUpsWeekEnd = generalOptions.MaximumPopUpsWeekEnd.GetAsInteger(),
                     PopUpIntervalInMins = generalOptions.PopUpIntervalInMins.GetAsInteger(),
                     PopUpCountToday = hiddenOptions.PopUpCountToday,
+                    ShowTriviaUponClosingSolution = generalOptions.ShowTriviaUponClosingSolution,
+                    ShowTriviaUponOpeningSolution = generalOptions.ShowTriviaUponOpeningSolution,
                     SuppressClosingWithoutSubmitingAnswerWarning = generalOptions.SuppressClosingWithoutSubmitingAnswerWarning,
                     TimeOutInMilliSeconds = generalOptions.TimeOutInMilliSeconds.GetAsInteger(),
                 };

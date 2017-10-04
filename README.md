@@ -13,7 +13,7 @@
 [![Build status][AppVeyorProjectBuildStatusBadgeSvg]][AppVeyorProjectUrl]
 [![][VersionNumberBadgeURL]][VSMarketplaceUrl]
 
-Inspired by [Phil Haack's Encourage](https://marketplace.visualstudio.com/items?itemName=Haacked.Encourage) extension, this is a series of light-hearted and meaningless [Visual Studio][VisualStudioURL] extensions that display trivial quotations or information when opening a  solution.
+Inspired by [Phil Haack's Encourage](https://marketplace.visualstudio.com/items?itemName=Haacked.Encourage) extension, this is a series of light-hearted and meaningless [Visual Studio][VisualStudioURL] extensions that display trivial quotations, questions or information when opening and/or closing a .Net solution file within the [Visual Studio][VisualStudioURL] IDE .
 
 The [Visual Studio][VisualStudioURL] extensions are officially available at the [Visual Studio Marketplace][VSMarketplaceUrl].
 

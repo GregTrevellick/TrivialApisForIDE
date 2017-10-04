@@ -8,6 +8,7 @@ Individual releases are tagged as such in GitHub.
 **2017-xx-xx**
 - [x] Geek Quiz
 - [x] Help text formatting
+- [x] Choice of showing pop-up when closing a solution, aswell as when opening a solution
 - [x] Minor improvements 
 
 ## 1.1.0
