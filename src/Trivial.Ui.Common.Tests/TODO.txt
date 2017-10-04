@@ -2,14 +2,16 @@
 {
      //stuff C# 6 null conditional operator
 }
-
-opentdb questions - dry ? cmmi ? solid ? grunt ? gulp ?
-
 add red cross green tick
 offer user true/false for when opening & when closing a sln
+
+
+
 show user % right / wrong, with "dunce" thru "genius" descriptor
 allow user to reset the % back to zero
 allow user to request a second question, but not anymore than that (show "go back to work" message)
+
+
 
 FUTURE add option for user to select easy / medium / hard
 FUTURE play correct / incorrect sound ?
@@ -22,3 +24,5 @@ http://www.c-sharpcorner.com/UploadFile/mahakgupta/simple-data-binding-in-wpf/
 https://github.com/onlyutkarsh/XamlDialogInVSExtensionDemo
 https://stackoverflow.com/questions/17233651/wpf-data-binding-label-content
 https://msdn.microsoft.com/en-us/library/ff770546.aspx?f=255&MSPPError=-2147217396
+
+opentdb submitable questions - cmmi ? solid ? grunt ? gulp ?
