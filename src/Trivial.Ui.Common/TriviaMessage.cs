@@ -85,12 +85,16 @@ namespace Trivial.Ui.Common
 
             if (somethingToShow)
             {
-                //gregt 
-                var abc = DisplayPopUpMessage(triviaDialogDto, suppressClosingWithoutSubmitingAnswerWarning, totalQuestionsAnsweredCorrectly, totalQuestionsAsked);
+                DisplayPopUpMessage(triviaDialogDto, suppressClosingWithoutSubmitingAnswerWarning, totalQuestionsAnsweredCorrectly, totalQuestionsAsked);
                 hiddenOptionsDto = GetHiddenOptionsDto(lastPopUpDateTime, popUpCountToday);
             }
 
             return hiddenOptionsDto;
+        }
+
+        void PersistHiddenOptions(int? totalQuestionsAsked, int? totalQuestionsAnsweredCorrectly)
+        {
+            //Do some stuff - persist hidden options
         }
 
         private void DisplayPopUpMessage(TriviaDialogDto triviaDialogDto, bool? suppressClosingWithoutSubmitingAnswerWarning, int? totalQuestionsAnsweredCorrectly, int? totalQuestionsAsked)
@@ -112,6 +116,8 @@ namespace Trivial.Ui.Common
                 AppTextBlockQuotation = { Text = triviaDialogDto.Quotation},
                 Title = triviaDialogDto.PopUpTitle,
             };
+
+            triviaDialog.PersistHiddenOptionsEventHandler += new TriviaDialog.MyEventHandler(PersistHiddenOptions);
 
             if (!string.IsNullOrWhiteSpace(triviaDialogDto.Difficulty))
             {

@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.PlatformUI;
+﻿using System;
+using Microsoft.VisualStudio.PlatformUI;
 using System.Diagnostics;
 using System.Windows;
 using System.Windows.Media;
@@ -132,6 +133,9 @@ namespace Trivial.Ui.Common
             ActOnAnswerGiven(response);
         }
 
+        public delegate void MyEventHandler(int? totalQuestionsAsked, int? totalQuestionsAnsweredCorrectly);
+        public event MyEventHandler PersistHiddenOptionsEventHandler;
+
         private void ActOnAnswerGiven(string response)
         {
             QuizReplyEmoticonCorrect.Visibility = Visibility.Collapsed;
@@ -180,7 +184,7 @@ namespace Trivial.Ui.Common
 
             TextBlockQuizReply.Visibility = Visibility.Visible;
 
-            //gregt persist hidden options here 
+            PersistHiddenOptionsEventHandler?.Invoke(_totalQuestionsAsked, _totalQuestionsAnsweredCorrectly);
         }
 
         private void SetQuizReplyColour(Color color)
