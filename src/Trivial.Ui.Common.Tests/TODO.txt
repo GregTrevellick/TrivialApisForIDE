@@ -1,15 +1,12 @@
-﻿TO BE TESTED add red cross green tick
-
-
-
-
-offer user true/false for when opening & when closing a sln
-remove all padding / margins and only add back in what is necessary
-
+﻿offer user true/false for when opening & when closing a sln
 
 show user % right / wrong, with "dunce" thru "genius" descriptor
 allow user to reset the % back to zero
 allow user to request a second question, but not anymore than that (show "go back to work" message)
+
+
+
+
 
 
 
