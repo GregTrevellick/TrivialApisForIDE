@@ -62,7 +62,7 @@ namespace Trivial.Ui.GeekQuiz
                     UpdateHiddenOptions(hiddenOptionsDto);
                 }
 
-                //abc
+                triviaMessage.PersistHiddenOptionsEventHandler2 += UpdateHiddenOptions;
             }
         }
 
@@ -109,13 +109,19 @@ namespace Trivial.Ui.GeekQuiz
             return imageByteArray;
         }
 
+        private void UpdateHiddenOptions(int? totalQuestionsAsked, int? totalQuestionsAnsweredCorrectly)
+        {
+            var hiddenOptions = (HiddenOptions)GetDialogPage(typeof(HiddenOptions));
+            hiddenOptions.TotalQuestionsAnsweredCorrectly = totalQuestionsAnsweredCorrectly.HasValue ? totalQuestionsAnsweredCorrectly.Value : 0;
+            hiddenOptions.TotalQuestionsAsked = totalQuestionsAsked.HasValue ? totalQuestionsAsked.Value : 0;
+            hiddenOptions.SaveSettingsToStorage();
+        }
+
         private void UpdateHiddenOptions(HiddenOptionsDto hiddenOptionsDto)
         {
             var hiddenOptions = (HiddenOptions)GetDialogPage(typeof(HiddenOptions));
             hiddenOptions.LastPopUpDateTime = hiddenOptionsDto.LastPopUpDateTime;
             hiddenOptions.PopUpCountToday = hiddenOptionsDto.PopUpCountToday;
-            hiddenOptions.TotalQuestionsAnsweredCorrectly = hiddenOptionsDto.TotalQuestionsAnsweredCorrectly;
-            hiddenOptions.TotalQuestionsAsked = hiddenOptionsDto.TotalQuestionsAsked;
             hiddenOptions.SaveSettingsToStorage();
         }
 

@@ -94,8 +94,11 @@ namespace Trivial.Ui.Common
 
         void PersistHiddenOptions(int? totalQuestionsAsked, int? totalQuestionsAnsweredCorrectly)
         {
-            //Do some stuff - persist hidden options
+            PersistHiddenOptionsEventHandler2?.Invoke(totalQuestionsAsked, totalQuestionsAnsweredCorrectly);
         }
+
+        public delegate void MyEventHandler2(int? totalQuestionsAsked, int? totalQuestionsAnsweredCorrectly);
+        public event MyEventHandler2 PersistHiddenOptionsEventHandler2;
 
         private void DisplayPopUpMessage(TriviaDialogDto triviaDialogDto, bool? suppressClosingWithoutSubmitingAnswerWarning, int? totalQuestionsAnsweredCorrectly, int? totalQuestionsAsked)
         {
