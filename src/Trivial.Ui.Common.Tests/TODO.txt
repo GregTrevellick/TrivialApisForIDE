@@ -1,18 +1,14 @@
-﻿add "and/or closing" to the options screen shot
-
-
-show user % right / wrong, with "dunce" thru "genius" descriptor
+﻿show user % right / wrong, with "dunce" thru "genius" descriptor
 allow user to reset the % back to zero
-allow user to request a second question, but not anymore than that (show "go back to work" message)
+add in rating review chaser
 
 
 
 
 
-
-
-FUTURE add option for user to select easy / medium / hard
-FUTURE play correct / incorrect sound ?
+FUTURE (geek quiz) if uptake is siginificant allow user to request a second question, but not anymore than that (show "go back to work" message)
+FUTURE (geek quiz) if uptake is siginificant add option for user to select easy / medium / hard
+FUTURE (geek quiz) if uptake is siginificant play correct / incorrect sound ?
 FUTURE set different default options for different apps
 FUTURE add clues to jeopardy
 FUTURE pop quiz https://opentdb.com/api.php?amount=10&category=18
