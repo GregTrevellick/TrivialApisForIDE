@@ -1,6 +1,4 @@
-﻿offer user true/false for when opening & when closing a sln
-...add ShowTriviaUponClosingSolution to drain/numeric/jeopardy
-...add "and/or closing" too all 5 readmes & to all 5 readme's options section & to the options screen shot
+﻿add "and/or closing" to the options screen shot
 
 
 show user % right / wrong, with "dunce" thru "genius" descriptor

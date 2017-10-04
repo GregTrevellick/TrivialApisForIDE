@@ -3,7 +3,7 @@
 [GitHubRepoPullRequestsURL]: https://github.com/GregTrevellick/TrivialApisForIDE/pulls
 [VSMarketplaceUrl]: https://marketplace.visualstudio.com/items?itemName=GregTrevellick.DrainTheSwamp#review-details
 
-Enlighten your day with an insightful random quote from Donald Trump when opening a solution file.
+Enlighten your day with an insightful random quote from Donald Trump when opening and/or closing a solution file.
 
 - This is truly tremendous. A wonderful thing. So much so that it deserves a [review][VSMarketplaceUrl].
 
@@ -20,5 +20,7 @@ Enlighten your day with an insightful random quote from Donald Trump when openin
 - Upper limit of pop-up messages per day configurable, with different values for midweek and weekends
 
 - Configurable timeout (in milliseconds) for third party data retrieval process 
+
+- Ability to request pop-up when opening and/or when closing a solution file
 
     ![](../../Trivial.Ui.Common/Resources/Generic_ReadMeScreenShot_OptionsGeneral.png)

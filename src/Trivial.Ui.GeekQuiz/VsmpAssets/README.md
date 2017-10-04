@@ -29,4 +29,6 @@ A trivial extension that poses a geeky question when opening and/or closing a so
 
 - Configurable timeout (in milliseconds) for third party data retrieval process 
 
+- Ability to request pop-up when opening and/or when closing a solution file
+
   ![](../../Trivial.Ui.Common/Resources/Generic_ReadMeScreenShot_OptionsGeneral.png)

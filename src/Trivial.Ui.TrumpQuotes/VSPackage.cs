@@ -69,6 +69,8 @@ namespace Trivial.Ui.TrumpQuotes
                     MaximumPopUpsWeekEnd = generalOptions.MaximumPopUpsWeekEnd.GetAsInteger(),
                     PopUpIntervalInMins = generalOptions.PopUpIntervalInMins.GetAsInteger(),
                     PopUpCountToday = hiddenOptions.PopUpCountToday,
+                    ShowTriviaUponClosingSolution = generalOptions.ShowTriviaUponClosingSolution,
+                    ShowTriviaUponOpeningSolution = generalOptions.ShowTriviaUponOpeningSolution,
                     TimeOutInMilliSeconds = generalOptions.TimeOutInMilliSeconds.GetAsInteger(),
                 };
             }

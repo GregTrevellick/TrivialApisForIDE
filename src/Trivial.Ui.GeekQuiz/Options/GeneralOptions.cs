@@ -117,11 +117,6 @@ namespace Trivial.Ui.GeekQuiz.Options
         }
 
         [Category(CommonConstants.CategorySubLevel)]
-        [DisplayName(CommonConstants.SuppressClosingWithoutSubmitingAnswerWarningOptionLabel)]
-        [Description(CommonConstants.SuppressClosingWithoutSubmitingAnswerWarningOptionDetailedDescription)]
-        public bool SuppressClosingWithoutSubmitingAnswerWarning { get; set; } = false;
-
-        [Category(CommonConstants.CategorySubLevel)]
         [DisplayName(CommonConstants.ShowTriviaUponClosingSolutionOptionLabel)]
         [Description(CommonConstants.ShowTriviaUponClosingSolutionOptionDetailedDescription)]
         public bool ShowTriviaUponClosingSolution { get; set; } = false;
@@ -130,5 +125,10 @@ namespace Trivial.Ui.GeekQuiz.Options
         [DisplayName(CommonConstants.ShowTriviaUponOpeningSolutionOptionLabel)]
         [Description(CommonConstants.ShowTriviaUponOpeningSolutionOptionDetailedDescription)]
         public bool ShowTriviaUponOpeningSolution { get; set; } = true;
+
+        [Category(CommonConstants.CategorySubLevel)]
+        [DisplayName(CommonConstants.SuppressClosingWithoutSubmitingAnswerWarningOptionLabel)]
+        [Description(CommonConstants.SuppressClosingWithoutSubmitingAnswerWarningOptionDetailedDescription)]
+        public bool SuppressClosingWithoutSubmitingAnswerWarning { get; set; } = false;
     }
 }

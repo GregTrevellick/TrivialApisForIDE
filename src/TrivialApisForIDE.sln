@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26730.12
+VisualStudioVersion = 15.0.26430.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trivial.Entities", "Trivial.Entities\Trivial.Entities.csproj", "{227D068D-A064-40B4-A372-7CE8FE0F7C26}"
 EndProject
@@ -25,8 +25,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trivial.Ui.Jeopardy", "Trivial.Ui.Jeopardy\Trivial.Ui.Jeopardy.csproj", "{3A8C5E31-2373-4A41-ABCC-7FADE07CB9BA}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trivial.Ui.Abracadabra", "Trivial.Ui.Abracadabra\Trivial.Ui.Abracadabra.csproj", "{13FC9B8C-F83B-4CCB-AD87-1B69994E9B9D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trivial.Ui.GeekQuiz", "Trivial.Ui.GeekQuiz\Trivial.Ui.GeekQuiz.csproj", "{779B1D01-9002-47A3-BC46-025FDE85AF5B}"
 EndProject
@@ -68,10 +66,6 @@ Global
 		{3A8C5E31-2373-4A41-ABCC-7FADE07CB9BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3A8C5E31-2373-4A41-ABCC-7FADE07CB9BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3A8C5E31-2373-4A41-ABCC-7FADE07CB9BA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{13FC9B8C-F83B-4CCB-AD87-1B69994E9B9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{13FC9B8C-F83B-4CCB-AD87-1B69994E9B9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{13FC9B8C-F83B-4CCB-AD87-1B69994E9B9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{13FC9B8C-F83B-4CCB-AD87-1B69994E9B9D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{779B1D01-9002-47A3-BC46-025FDE85AF5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{779B1D01-9002-47A3-BC46-025FDE85AF5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{779B1D01-9002-47A3-BC46-025FDE85AF5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
