@@ -184,6 +184,12 @@ namespace Trivial.Ui.Common
 
             TextBlockQuizReply.Visibility = Visibility.Visible;
 
+            //gregt extract and dedupe
+            var percentageSuccess = (_totalQuestionsAnsweredCorrectly / _totalQuestionsAsked) * 100;
+            var userStatus = "Your status: " + percentageSuccess + "% success (" + _totalQuestionsAnsweredCorrectly +
+                             " questions out of " + _totalQuestionsAnsweredCorrectly + " answered correctly)";
+            AppTextBlockUserStatus.Text = userStatus;
+
             PersistHiddenOptionsEventHandler?.Invoke(_totalQuestionsAsked, _totalQuestionsAnsweredCorrectly);
         }
 

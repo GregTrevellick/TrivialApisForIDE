@@ -122,15 +122,6 @@ namespace Trivial.Ui.Common
 
             triviaDialog.PersistHiddenOptionsEventHandler += PersistHiddenOptions;
 
-            if (totalQuestionsAnsweredCorrectly.HasValue && totalQuestionsAsked.HasValue)
-            {
-                var percentageSuccess = (totalQuestionsAnsweredCorrectly / totalQuestionsAsked) * 100;
-                var userStatus = "Your status: " + percentageSuccess + "% success (" + totalQuestionsAnsweredCorrectly +
-                                 " questions out of " + totalQuestionsAnsweredCorrectly + " answered correctly)";
-                triviaDialog.AppTextBlockUserStatus.Text = userStatus;
-                triviaDialog.AppTextBlockUserStatus.Visibility = Visibility.Visible;
-            }
-
             if (!string.IsNullOrWhiteSpace(triviaDialogDto.Difficulty))
             {
                 var run = new Run(triviaDialogDto.Difficulty);
@@ -212,7 +203,17 @@ namespace Trivial.Ui.Common
             SetRadioButtonVisibility(triviaDialog.RadioBtn1);
             SetRadioButtonVisibility(triviaDialog.RadioBtn2);
             SetRadioButtonVisibility(triviaDialog.RadioBtn3);
-            SetRadioButtonVisibility(triviaDialog.RadioBtn4);          
+            SetRadioButtonVisibility(triviaDialog.RadioBtn4);
+
+            //gregt extract and dedupe
+            if (totalQuestionsAnsweredCorrectly.HasValue && totalQuestionsAsked.HasValue)
+            {
+                var percentageSuccess = (totalQuestionsAnsweredCorrectly / totalQuestionsAsked) * 100;
+                var userStatus = "Your status: " + percentageSuccess + "% success (" + totalQuestionsAnsweredCorrectly +
+                                 " questions out of " + totalQuestionsAnsweredCorrectly + " answered correctly)";
+                triviaDialog.AppTextBlockUserStatus.Text = userStatus;
+                triviaDialog.AppTextBlockUserStatus.Visibility = Visibility.Visible;
+            }
 
             triviaDialog.Show();
         }
