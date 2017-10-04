@@ -117,7 +117,7 @@ namespace Trivial.Ui.Common
                 Title = triviaDialogDto.PopUpTitle,
             };
 
-            triviaDialog.PersistHiddenOptionsEventHandler += new TriviaDialog.MyEventHandler(PersistHiddenOptions);
+            triviaDialog.PersistHiddenOptionsEventHandler += PersistHiddenOptions;
 
             if (!string.IsNullOrWhiteSpace(triviaDialogDto.Difficulty))
             {
