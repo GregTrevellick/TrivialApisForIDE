@@ -45,7 +45,7 @@
 
         <Image Grid.Row="6" Grid.Column="0" Margin="10,10,10,10" Visibility="Collapsed" VerticalAlignment="Center" HorizontalAlignment="Center" Name="QuizReplyEmoticonCorrect" Stretch="None" Source="Resources/CorrectAnswer.png" />
         <Image Grid.Row="6" Grid.Column="0" Margin="10,10,10,10" Visibility="Collapsed" VerticalAlignment="Center" HorizontalAlignment="Center" Name="QuizReplyEmoticonIncorrect" Stretch="None" Source="Resources/IncorrectAnswer.png" />
-        <TextBlock Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2" Visibility="Collapsed" Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Center" Name="TextBlockQuizReply" />
+        <TextBlock Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2" Visibility="Collapsed" Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Left" Name="TextBlockQuizReply" />
 
         <Button Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="2" Visibility="Collapsed"  Content="Submit Answer" Margin="10,10,10,10" Padding="5,5,5,5" VerticalAlignment="Center" HorizontalAlignment="Left" Click="AppBtnSubmitMultiChoiceAnwser_OnClick" Name="AppBtnSubmitMultiChoiceAnwser"/>
         <Button Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="3" Content="Close" Margin="10,10,10,10" Padding="5,5,5,5" VerticalAlignment="Center" HorizontalAlignment="Center" Click="AppBtnClose_OnClick" Name="AppBtnClose"/>
