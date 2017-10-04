@@ -1,40 +1,19 @@
-﻿
+﻿opentdb questions - dry ? cmmi ? solid ? grunt ? gulp ?
 
 add red cross green tick
-
 offer user true/false for when opening & when closing a sln
-
-
-Future - add option for user to select easy / medium / hard ?
-
-
-
-
 show user % right / wrong, with "dunce" thru "genius" descriptor
 allow user to reset the % back to zero
-allow user to request a second question, but not anymore than that
-play correct / incorrect sound ?
+allow user to request a second question, but not anymore than that (show "go back to work" message)
 
-set different default options for different apps ?
-add clues to jeopardy ? 
-pop quiz
-https://opentdb.com/api.php?amount=10&category=18
+FUTURE add option for user to select easy / medium / hard
+FUTURE play correct / incorrect sound ?
+FUTURE set different default options for different apps
+FUTURE add clues to jeopardy
+FUTURE pop quiz https://opentdb.com/api.php?amount=10&category=18
 
-https://opentdb.com/api_config.php
-
-https://qriusity.com/#qriusity-documentation
-
-opentdb questions - dry ? cmmi ? solid ? grunt ? gulp ?
-
-<!--
- https://github.com/Microsoft/UnitTestBoilerplateGenerator/blob/master/src/CreateUnitTestBoilerplateDialog.xaml
- http://www.c-sharpcorner.com/UploadFile/mahakgupta/simple-data-binding-in-wpf/
- https://github.com/onlyutkarsh/XamlDialogInVSExtensionDemo
- https://stackoverflow.com/questions/17233651/wpf-data-binding-label-content
- https://msdn.microsoft.com/en-us/library/ff770546.aspx?f=255&MSPPError=-2147217396
--->
-
-
-geek quiz- stick/twist ==> get another question, get another question ==> "Go back to work !"
-geek quiz - pass ==> "Go back to work !"
-where  ==> "Go back to work !" is a random saying
+https://github.com/Microsoft/UnitTestBoilerplateGenerator/blob/master/src/CreateUnitTestBoilerplateDialog.xaml
+http://www.c-sharpcorner.com/UploadFile/mahakgupta/simple-data-binding-in-wpf/
+https://github.com/onlyutkarsh/XamlDialogInVSExtensionDemo
+https://stackoverflow.com/questions/17233651/wpf-data-binding-label-content
+https://msdn.microsoft.com/en-us/library/ff770546.aspx?f=255&MSPPError=-2147217396
