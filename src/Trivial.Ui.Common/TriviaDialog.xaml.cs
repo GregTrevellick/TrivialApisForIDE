@@ -20,6 +20,9 @@ namespace Trivial.Ui.Common
         private bool? _suppressClosingWithoutSubmitingAnswerWarning;
         private int? _totalQuestionsAnsweredCorrectly;
         private int? _totalQuestionsAsked;
+        private bool _userStatusTotalsIncremented;
+        public delegate void MyEventHandler(int? totalQuestionsAsked, int? totalQuestionsAnsweredCorrectly);
+        public event MyEventHandler PersistHiddenOptionsEventHandler;
 
         public TriviaDialog(AppName appName, string optionsName, bool? suppressClosingWithoutSubmitingAnswerWarning)
         {
@@ -41,6 +44,7 @@ namespace Trivial.Ui.Common
             _suppressClosingWithoutSubmitingAnswerWarning = suppressClosingWithoutSubmitingAnswerWarning;
             _totalQuestionsAnsweredCorrectly = totalQuestionsAnsweredCorrectly;
             _totalQuestionsAsked = totalQuestionsAsked;
+            _userStatusTotalsIncremented = false;
 
             InitializeComponent();
             InitializeTriviaDialog();
@@ -133,20 +137,12 @@ namespace Trivial.Ui.Common
             ActOnAnswerGiven(response);
         }
 
-        public delegate void MyEventHandler(int? totalQuestionsAsked, int? totalQuestionsAnsweredCorrectly);
-        public event MyEventHandler PersistHiddenOptionsEventHandler;
-
         private void ActOnAnswerGiven(string response)
         {
             QuizReplyEmoticonCorrect.Visibility = Visibility.Collapsed;
             QuizReplyEmoticonIncorrect.Visibility = Visibility.Collapsed;
 
             var isResponseCorrect = IsResponseCorrect(response);
-            
-            if (_totalQuestionsAsked.HasValue)
-            {
-                _totalQuestionsAsked++;//gregt only do this once, not every time they hit submit
-            }
 
             if (isResponseCorrect)
             {
@@ -154,7 +150,7 @@ namespace Trivial.Ui.Common
                 SetQuizReplyColour(Colors.Green);
                 QuizReplyEmoticonCorrect.Visibility = Visibility.Visible;
 
-                if (_totalQuestionsAnsweredCorrectly.HasValue)
+                if (!_userStatusTotalsIncremented && _totalQuestionsAnsweredCorrectly.HasValue)
                 {
                     _totalQuestionsAnsweredCorrectly++;//gregt only do this once, not every time they hit submit
                 }
@@ -184,13 +180,23 @@ namespace Trivial.Ui.Common
 
             TextBlockQuizReply.Visibility = Visibility.Visible;
 
-            //gregt extract and dedupe
-            var percentageSuccess = (_totalQuestionsAnsweredCorrectly / _totalQuestionsAsked) * 100;
-            var userStatus = "Your status: " + percentageSuccess + "% success (" + _totalQuestionsAnsweredCorrectly +
-                             " questions out of " + _totalQuestionsAnsweredCorrectly + " answered correctly)";
+            if (!_userStatusTotalsIncremented && _totalQuestionsAsked.HasValue)
+            {
+                _totalQuestionsAsked++;//gregt only do this once, not every time they hit submit
+                _userStatusTotalsIncremented = true;
+            }
+            var userStatus = GetUserStatus(_totalQuestionsAnsweredCorrectly, _totalQuestionsAsked);
             AppTextBlockUserStatus.Text = userStatus;
 
             PersistHiddenOptionsEventHandler?.Invoke(_totalQuestionsAsked, _totalQuestionsAnsweredCorrectly);
+        }
+
+        internal string GetUserStatus(int? totalQuestionsAnsweredCorrectly, int? totalQuestionsAsked)
+        {
+            var percentageSuccess = (totalQuestionsAnsweredCorrectly / totalQuestionsAsked) * 100;
+            var userStatus = "Your status: " + percentageSuccess + "% success (" + totalQuestionsAnsweredCorrectly +
+                             " questions out of " + totalQuestionsAnsweredCorrectly + " answered correctly)";
+            return userStatus;
         }
 
         private void SetQuizReplyColour(Color color)

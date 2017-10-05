@@ -17,6 +17,8 @@ namespace Trivial.Ui.Common
     public class TriviaMessage
     {
         private const string spacer = " ";
+        public delegate void MyEventHandler2(int? totalQuestionsAsked, int? totalQuestionsAnsweredCorrectly);
+        public event MyEventHandler2 PersistHiddenOptionsEventHandler2;//gregt rename to remove '2' suffix
 
         public HiddenOptionsDto ShowTrivia(AppName appName, string popUpTitle, DateTime lastPopUpDateTime, int popUpCountToday, int timeOutInMilliSeconds, string optionsName)
         {
@@ -96,9 +98,6 @@ namespace Trivial.Ui.Common
         {
             PersistHiddenOptionsEventHandler2?.Invoke(totalQuestionsAsked, totalQuestionsAnsweredCorrectly);
         }
-
-        public delegate void MyEventHandler2(int? totalQuestionsAsked, int? totalQuestionsAnsweredCorrectly);
-        public event MyEventHandler2 PersistHiddenOptionsEventHandler2;
 
         private void DisplayPopUpMessage(TriviaDialogDto triviaDialogDto, bool? suppressClosingWithoutSubmitingAnswerWarning, int? totalQuestionsAnsweredCorrectly, int? totalQuestionsAsked)
         {
@@ -205,23 +204,19 @@ namespace Trivial.Ui.Common
             SetRadioButtonVisibility(triviaDialog.RadioBtn3);
             SetRadioButtonVisibility(triviaDialog.RadioBtn4);
 
-            //gregt extract and dedupe
             if (totalQuestionsAnsweredCorrectly.HasValue && totalQuestionsAsked.HasValue)
             {
-                var percentageSuccess = (totalQuestionsAnsweredCorrectly / totalQuestionsAsked) * 100;
-                var userStatus = "Your status: " + percentageSuccess + "% success (" + totalQuestionsAnsweredCorrectly +
-                                 " questions out of " + totalQuestionsAnsweredCorrectly + " answered correctly)";
+                var userStatus = triviaDialog.GetUserStatus(totalQuestionsAnsweredCorrectly, totalQuestionsAsked);
                 triviaDialog.AppTextBlockUserStatus.Text = userStatus;
                 triviaDialog.AppTextBlockUserStatus.Visibility = Visibility.Visible;
             }
 
             triviaDialog.Show();
-        }
+        }     
 
         private void SetRadioButtonVisibility(RadioButton radioButton)
         {
-            if (radioButton.Content != null &&
-                !string.IsNullOrWhiteSpace(radioButton.Content.ToString()))
+            if (radioButton.Content != null && !string.IsNullOrWhiteSpace(radioButton.Content.ToString()))
             {
                 radioButton.Visibility = Visibility.Visible;
             }
