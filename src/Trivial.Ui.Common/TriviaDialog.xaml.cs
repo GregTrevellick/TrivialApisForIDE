@@ -152,7 +152,7 @@ namespace Trivial.Ui.Common
 
                 if (!_userStatusTotalsIncremented && _totalQuestionsAnsweredCorrectly.HasValue)
                 {
-                    _totalQuestionsAnsweredCorrectly++;//gregt only do this once, not every time they hit submit
+                    _totalQuestionsAnsweredCorrectly++;
                 }
             }
             else
@@ -182,7 +182,7 @@ namespace Trivial.Ui.Common
 
             if (!_userStatusTotalsIncremented && _totalQuestionsAsked.HasValue)
             {
-                _totalQuestionsAsked++;//gregt only do this once, not every time they hit submit
+                _totalQuestionsAsked++;
                 _userStatusTotalsIncremented = true;
             }
             var userStatus = GetUserStatus(_totalQuestionsAnsweredCorrectly, _totalQuestionsAsked);

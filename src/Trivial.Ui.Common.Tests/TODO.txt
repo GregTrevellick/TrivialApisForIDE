@@ -1,5 +1,7 @@
-﻿show user % right / wrong, with "dunce" thru "genius" descriptor
+﻿test that user status totals only incremented once, not every time they hit submit
+show user status % as "dunce" thru "genius"
 allow user to reset the % success back to zero
+
 add in rating review chaser
 close all popups when sln is closed
 jeopardy - "reveal answer" not showing
