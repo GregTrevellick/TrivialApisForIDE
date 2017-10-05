@@ -194,8 +194,11 @@ namespace Trivial.Ui.Common
         internal string GetUserStatus(int? totalQuestionsAnsweredCorrectly, int? totalQuestionsAsked)
         {
             var percentageSuccess = (totalQuestionsAnsweredCorrectly / totalQuestionsAsked) * 100;
-            var userStatus = "Your status: " + percentageSuccess + "% success (" + totalQuestionsAnsweredCorrectly +
-                             " questions out of " + totalQuestionsAnsweredCorrectly + " answered correctly)";
+            var userStatusDescr = percentageSuccess.UserStatus();
+            var userStatus = "Your status: " + userStatusDescr + " " + 
+                percentageSuccess + "% success (" 
+                + totalQuestionsAnsweredCorrectly + " questions out of " 
+                + totalQuestionsAnsweredCorrectly + " answered correctly)";
             return userStatus;
         }
 
