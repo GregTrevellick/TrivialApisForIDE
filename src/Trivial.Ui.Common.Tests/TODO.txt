@@ -8,6 +8,13 @@ https://marketplace.visualstudio.com/services/VStudio/Extension.svc (use fiddler
 
 
 
+Add category to jeopardy
+
+https://github.com/uberspot/OpenTriviaQA/blob/master/categories/science-technology
+
+
+
+
 The API appends a "Response Code" to each API Call to help tell developers what the API is doing.
 Code 0: Success Returned results successfully.
 Code 1: No Results Could not return results. The API doesn't have enough questions for your query. (Ex. Asking for 50 Questions in a Category that only has 20.)
@@ -31,3 +38,37 @@ FUTURE pop quiz https://opentdb.com/api.php?amount=10&category=18
 FUTURE if (response?.Results?.Addresses?[0]?.Zip == "63368") { //stuff C# 6 null conditional operator FUTURE }
 
 opentdb submitable questions - cmmi ? solid ? grunt ? gulp ?
+
+
+
+
+http://jservice.io/popular/14968
+http://jservice.io/popular/16168
+http://jservice.io/popular/17037
+http://jservice.io/popular/17078
+http://jservice.io/popular/10511
+http://jservice.io/popular/12223
+http://jservice.io/popular/17308
+http://jservice.io/popular/17737
+http://jservice.io/popular/11075
+http://jservice.io/popular/348
+http://jservice.io/popular/950
+http://jservice.io/popular/9357
+http://jservice.io/popular/11877
+http://jservice.io/popular/8029
+http://jservice.io/popular/8571
+http://jservice.io/popular/18254
+http://jservice.io/popular/16244
+http://jservice.io/popular/16775
+http://jservice.io/popular/17140
+http://jservice.io/popular/15702
+http://jservice.io/popular/4521
+http://jservice.io/popular/5528
+http://jservice.io/popular/9539
+http://jservice.io/popular/9242
+http://jservice.io/popular/9726
+http://jservice.io/popular/10873
+http://jservice.io/popular/11626
+http://jservice.io/popular/10929
+http://jservice.io/popular/13365
+http://jservice.io/popular/13737
