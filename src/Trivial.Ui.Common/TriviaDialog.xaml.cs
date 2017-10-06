@@ -166,7 +166,7 @@ namespace Trivial.Ui.Common
                 {
                     if (_questionType == QuestionType.TrueFalse)
                     {
-                        TextBlockQuizReply.Text = $"Wrong - opps, must try harder !";
+                        TextBlockQuizReply.Text = "Wrong - opps, must try harder !";
                     }
                     else
                     {
@@ -203,8 +203,8 @@ namespace Trivial.Ui.Common
             }
             else
             {
+                //gregt unit test required
                 double percentage = ((double)totalQuestionsAnsweredCorrectly.Value / totalQuestionsAsked.Value) * 100;
-                //  double number2 = (double)operand1 / operand2;
                 percentageSuccess = (int)Math.Round(percentage, MidpointRounding.AwayFromZero);
             }
 
