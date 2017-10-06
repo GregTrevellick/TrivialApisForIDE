@@ -124,7 +124,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IntExtensions.cs" />
+    <Compile Include="NullableIntegerExtensions.cs" />
     <Compile Include="Ratings\RatingInstructionsDto.cs" />
     <Compile Include="Ratings\RatingChaser.cs" />
     <Compile Include="TriviaDialogDto.cs" />
