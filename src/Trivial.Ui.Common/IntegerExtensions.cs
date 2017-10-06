@@ -1,25 +1,22 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace Trivial.Ui.Common
 {
-    public static class NullableIntegerExtensions
+    public static class IntegerExtensions
     {
-        public static string UserStatusDescription(this int? percentageCorrect)
+        public static string UserStatusDescription(this int percentageCorrect)
         {
-
-            return GetWurds(percentageCorrect, theWurd);
+            return wurds1.Single(x=>x.Key == percentageCorrect).Value;
         }
 
-        //private IDictionary<int, string> wurds1;
-        private IList<string> wurds2;
-
-        private IDictionary<int, string> Wurds1
+        private static IDictionary<int, string> wurds1
         {
             get
             {
                 return new Dictionary<int, string>
                 {
+                    {0, "rubbish"},
                     {1, "back to school"},
                     {2, "homer"},
                     {3, "fail"},

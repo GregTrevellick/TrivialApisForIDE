@@ -193,12 +193,29 @@ namespace Trivial.Ui.Common
 
         internal string GetUserStatus(int? totalQuestionsAnsweredCorrectly, int? totalQuestionsAsked)
         {
-            var percentageSuccess = (totalQuestionsAnsweredCorrectly / totalQuestionsAsked) * 100;
-            var userStatusDescription = percentageSuccess.UserStatus();
-            var userStatus = "Your status: " + userStatusDescription + " " + 
-                percentageSuccess + "% success (" 
-                + totalQuestionsAnsweredCorrectly + " questions out of " 
-                + totalQuestionsAnsweredCorrectly + " answered correctly)";
+            int percentageSuccess;
+
+            if (totalQuestionsAsked == 0 ||
+                !totalQuestionsAnsweredCorrectly.HasValue ||
+                !totalQuestionsAsked.HasValue)
+            {
+                percentageSuccess = 0;
+            }
+            else
+            {
+                double percentage = ((double)totalQuestionsAnsweredCorrectly.Value / totalQuestionsAsked.Value) * 100;
+                //  double number2 = (double)operand1 / operand2;
+                percentageSuccess = (int)Math.Round(percentage, MidpointRounding.AwayFromZero);
+            }
+
+            var userStatusDescription = percentageSuccess.UserStatusDescription();
+
+            var userStatus = "Your status: " + 
+                userStatusDescription + " " + 
+                percentageSuccess + "% success (" +
+                totalQuestionsAnsweredCorrectly + " questions out of " +
+                totalQuestionsAnsweredCorrectly + " answered correctly)";
+
             return userStatus;
         }
 
