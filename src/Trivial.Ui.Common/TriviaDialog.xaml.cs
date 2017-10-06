@@ -16,13 +16,15 @@ namespace Trivial.Ui.Common
         private string _correctAnswer;
         private string _optionsName;
         private QuestionType _questionType;
-        private bool _submitAnswerButtonClicked;
+        /////////////////////////private bool _submitAnswerButtonClicked;
         private bool? _suppressClosingWithoutSubmitingAnswerWarning;
         private int? _totalQuestionsAnsweredCorrectly;
         private int? _totalQuestionsAsked;
         private bool _userStatusTotalsIncremented;
         public delegate void MyEventHandler(int? totalQuestionsAsked, int? totalQuestionsAnsweredCorrectly);
         public event MyEventHandler PersistHiddenOptionsEventHandler;
+
+        public string Gregt = "gregt";
 
         public TriviaDialog(AppName appName, string optionsName, bool? suppressClosingWithoutSubmitingAnswerWarning)
         {
@@ -40,7 +42,7 @@ namespace Trivial.Ui.Common
             _correctAnswer = correctAnswer;
             _optionsName = optionsName;
             _questionType = questionType;
-            _submitAnswerButtonClicked = false;
+            ////////////////_submitAnswerButtonClicked = false;
             _suppressClosingWithoutSubmitingAnswerWarning = suppressClosingWithoutSubmitingAnswerWarning;
             _totalQuestionsAnsweredCorrectly = totalQuestionsAnsweredCorrectly;
             _totalQuestionsAsked = totalQuestionsAsked;
@@ -48,6 +50,9 @@ namespace Trivial.Ui.Common
 
             InitializeComponent();
             InitializeTriviaDialog();
+
+            this.DataContext = this;//new TriviaDialogDto();
+            Gregt = "gt2";
         }
 
         private void InitializeTriviaDialog()
@@ -79,8 +84,8 @@ namespace Trivial.Ui.Common
 
             if (_questionType != QuestionType.None)
             {
-                if (!_submitAnswerButtonClicked)
-                {
+                //////////////////////if (!_submitAnswerButtonClicked)
+                //////////////////////{
                     if (_suppressClosingWithoutSubmitingAnswerWarning.HasValue && !_suppressClosingWithoutSubmitingAnswerWarning.Value)
                     {
                         var closeWithoutSubmitingAnswer = MessageBoxes.ConfirmCloseWithoutSubmitingAnswer(_optionsName);
@@ -89,7 +94,7 @@ namespace Trivial.Ui.Common
                             shouldClose = false;
                         }
                     }
-                }
+                ///////////////////////}
             }
 
             if (shouldClose)
@@ -100,7 +105,7 @@ namespace Trivial.Ui.Common
 
         private void AppBtnSubmitMultiChoiceAnwser_OnClick(object sender, RoutedEventArgs e)
         {
-            _submitAnswerButtonClicked = true;
+            /////////////////////////////_submitAnswerButtonClicked = true;
 
             string response;
 
@@ -148,6 +153,7 @@ namespace Trivial.Ui.Common
             {
                 TextBlockQuizReply.Text = "Correct - well done, top of the class !";
                 SetQuizReplyColour(Colors.Green);
+                AppBtnSubmitMultiChoiceAnwser.IsEnabled = false;
                 QuizReplyEmoticonCorrect.Visibility = Visibility.Visible;
 
                 if (!_userStatusTotalsIncremented && _totalQuestionsAnsweredCorrectly.HasValue)
@@ -173,6 +179,7 @@ namespace Trivial.Ui.Common
                         TextBlockQuizReply.Text = $"Wrong - opps, must try harder ! The correct answer is {_correctAnswer}";
                     }
 
+                    AppBtnSubmitMultiChoiceAnwser.IsEnabled = false;
                     SetQuizReplyColour(Colors.Red);
                     QuizReplyEmoticonIncorrect.Visibility = Visibility.Visible;
                 }
@@ -214,7 +221,7 @@ namespace Trivial.Ui.Common
                 userStatusDescription + " " + 
                 percentageSuccess + "% success (" +
                 totalQuestionsAnsweredCorrectly + " questions out of " +
-                totalQuestionsAnsweredCorrectly + " answered correctly)";
+                totalQuestionsAsked + " answered correctly)";
 
             return userStatus;
         }
