@@ -211,11 +211,13 @@ namespace Trivial.Ui.Common
 
             var userStatusDescription = percentageSuccess.UserStatusDescription();
 
-            var userStatus = "Your status: " + 
-                userStatusDescription + " " + 
-                percentageSuccess + "% success (" +
+            var rate = percentageSuccess + "% success (" +
                 totalQuestionsAnsweredCorrectly + " questions out of " +
                 totalQuestionsAsked + " answered correctly)";
+
+            var sts = "Status: " + userStatusDescription;
+
+            var userStatus = rate + " " + sts;
 
             return userStatus;
         }
