@@ -23,8 +23,6 @@ namespace Trivial.Ui.Common
         public delegate void MyEventHandler(int? totalQuestionsAsked, int? totalQuestionsAnsweredCorrectly);
         public event MyEventHandler PersistHiddenOptionsEventHandler;
 
-        public string Gregt = "gregt";
-
         public TriviaDialog(AppName appName, string optionsName, bool? suppressClosingWithoutSubmitingAnswerWarning)
         {
             Init(appName, optionsName, suppressClosingWithoutSubmitingAnswerWarning, null, QuestionType.None, null, null);
@@ -49,8 +47,7 @@ namespace Trivial.Ui.Common
             InitializeComponent();
             InitializeTriviaDialog();
 
-            this.DataContext = this;//new TriviaDialogDto();
-            Gregt = "gt2";
+            DataContext = this;//new TriviaDialogDto();
         }
 
         private void InitializeTriviaDialog()
