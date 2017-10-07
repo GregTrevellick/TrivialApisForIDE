@@ -16,8 +16,7 @@ namespace Trivial.Ui.Common
         private string _correctAnswer;
         private string _optionsName;
         private QuestionType _questionType;
-        /////////////////////////private bool _submitAnswerButtonClicked;
-        private bool? _suppressClosingWithoutSubmitingAnswerWarning;
+        private bool _suppressClosingWithoutSubmitingAnswerWarning;
         private int? _totalQuestionsAnsweredCorrectly;
         private int? _totalQuestionsAsked;
         private bool _userStatusTotalsIncremented;
@@ -42,8 +41,7 @@ namespace Trivial.Ui.Common
             _correctAnswer = correctAnswer;
             _optionsName = optionsName;
             _questionType = questionType;
-            ////////////////_submitAnswerButtonClicked = false;
-            _suppressClosingWithoutSubmitingAnswerWarning = suppressClosingWithoutSubmitingAnswerWarning;
+            _suppressClosingWithoutSubmitingAnswerWarning = suppressClosingWithoutSubmitingAnswerWarning ?? false;
             _totalQuestionsAnsweredCorrectly = totalQuestionsAnsweredCorrectly;
             _totalQuestionsAsked = totalQuestionsAsked;
             _userStatusTotalsIncremented = false;
@@ -84,17 +82,18 @@ namespace Trivial.Ui.Common
 
             if (_questionType != QuestionType.None)
             {
-                //////////////////////if (!_submitAnswerButtonClicked)
-                //////////////////////{
-                    if (_suppressClosingWithoutSubmitingAnswerWarning.HasValue && !_suppressClosingWithoutSubmitingAnswerWarning.Value)
+                if (AppBtnSubmitMultiChoiceAnwser.IsEnabled)
+                {
+                    if (!_suppressClosingWithoutSubmitingAnswerWarning)
                     {
                         var closeWithoutSubmitingAnswer = MessageBoxes.ConfirmCloseWithoutSubmitingAnswer(_optionsName);
+
                         if (!closeWithoutSubmitingAnswer)
                         {
                             shouldClose = false;
                         }
                     }
-                ///////////////////////}
+                }
             }
 
             if (shouldClose)
@@ -105,8 +104,6 @@ namespace Trivial.Ui.Common
 
         private void AppBtnSubmitMultiChoiceAnwser_OnClick(object sender, RoutedEventArgs e)
         {
-            /////////////////////////////_submitAnswerButtonClicked = true;
-
             string response;
 
             if (RadioBtn1.IsChecked == true)
