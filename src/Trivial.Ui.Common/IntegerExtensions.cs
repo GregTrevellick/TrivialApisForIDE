@@ -39,16 +39,16 @@ namespace Trivial.Ui.Common
                     {20, "must try harder"},
                     {21, "blockhead "},
                     {22, "birdbrain "},
-                    {23, "thick"},
-                    {24, "thick"},
-                    {25, "thick"},
-                    {26, "thick"},
-                    {27, "thick"},
-                    {28, "thick"},
-                    {29, "thick"},
-                    {30, "thick"},
-                    {31, "thick"},
-                    {32, "thick"},
+                    {23, "Abnormal"},
+                    {24, "Awful"},
+                    {25, "Rainy"},
+                    {26, "Dull"},
+                    {27, "Dreadful"},
+                    {28, "Dismal"},
+                    {29, "Toilet"},
+                    {30, "thick30"},
+                    {31, "thick31"},
+                    {32, "thick32"},
                     {33, "beginner"},
                     {34, "apprentice"},
                     {35, "novice"},
@@ -67,27 +67,42 @@ namespace Trivial.Ui.Common
                     {48, "bright"},
                     {49, "Comic book guy"},
                     {50, "nerd"},
-                    {51, "average"},
-                    {52, "average"},
-                    {53, "average"},
-                    {54, "average"},
-                    {55, "average"},
-                    {56, "average"},
-                    {57, "average"},
-                    {58, "average"},
-                    {59, "average"},
-                    {60, "average"},
-                    {61, "average"},
-                    {62, "average"},
-                    {63, "average"},
-                    {64, "average"},
-                    {65, "average"},
-                    {66, "brainy"},
-                    {67, "brainy"},
-                    {68, "brainy"},
-                    {69, "brainy"},
-                    {70, "brainy"},
-                    {71, "brainy"},
+                    {51, "Basic"},
+                    {52, "Adequate"},
+                    {53, "Pedestrian"},
+                    {54, "Amateur"},
+                    {55, "Bog STD"},
+                    {56, "Silver"},
+                    {57, "Bronze"},
+                    {58, "Lightweight"},
+                    {59, "Middle class"},
+                    {60, "average60"},
+                    {61, "average61"},
+                    {62, "average62"},
+                    {63, "average63"},
+                    {64, "average64"},
+                    {65, "average65"},
+                    {66, "Gold medal"},
+                    {67, "Silver"},
+                    {68, "Bronze"},
+                    {69, "Olympic"},
+                    {70, "No 1"},
+                    {71, "Superb"},
+                    //Top notch
+                    //Unbelievable
+                    //World champ
+                    //Hole in one
+                    //Admirable
+                    //Regal
+                    //Deluxe
+                    //Rolls Royce
+                    //Champagne
+                    //Sunny
+                    //Hot
+                    //Diamond
+                    //Platinum
+                    //Heavyweight
+                    //Watson
                     {72, "quiz master"},
                     {73, "millionaire"},
                     {74, "sage"},
@@ -120,6 +135,5 @@ namespace Trivial.Ui.Common
                 };
             }
         }
-
     }
 }
