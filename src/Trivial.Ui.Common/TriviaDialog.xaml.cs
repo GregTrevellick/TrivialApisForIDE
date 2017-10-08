@@ -60,10 +60,6 @@ namespace Trivial.Ui.Common
             var iconUri = new TriviaMessage().GetIconUri(_appName);
             Icon = new BitmapImage(iconUri);
 
-            //if (_appName == AppName.Jeopardy)
-            //{
-            //    stackabc.Visibility=Visibility.Visible;
-            //}
             switch (_appName)
             {
                 case AppName.GeekQuiz:
