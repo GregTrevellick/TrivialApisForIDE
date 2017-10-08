@@ -59,6 +59,11 @@ namespace Trivial.Ui.Common
 
             var iconUri = new TriviaMessage().GetIconUri(_appName);
             Icon = new BitmapImage(iconUri);
+
+            //if (_appName == AppName.Jeopardy)
+            //{
+            //    stackabc.Visibility=Visibility.Visible;
+            //}
         }
 
         private void AppHyperlink1_RequestNavigate(object sender, RequestNavigateEventArgs e)
