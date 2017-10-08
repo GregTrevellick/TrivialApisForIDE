@@ -145,7 +145,7 @@ namespace Trivial.Ui.Common
 
             if (isResponseCorrect)
             {
-                TextBlockQuizReply.Text = "Correct - well done, top of the class !";
+                TextBlockQuizReply.Text = "Well,done - correct answer !";
                 SetQuizReplyColour(Colors.Green);
                 AppBtnSubmitMultiChoiceAnwser.IsEnabled = false;
                 QuizReplyEmoticonCorrect.Visibility = Visibility.Visible;
@@ -159,18 +159,16 @@ namespace Trivial.Ui.Common
             {
                 if (response == null)
                 {
-                    TextBlockQuizReply.Text = "Nice try, but you've can't cheat and avoid supplying an answer";
+                    TextBlockQuizReply.Text = "No cheating please - you must supply an answer.";
                     SetQuizReplyColour(Colors.Orange);
                 }
                 else
                 {
-                    if (_questionType == QuestionType.TrueFalse)
+                    TextBlockQuizReply.Text = "Oh dear - wrong answer.";
+
+                    if (_questionType == QuestionType.MultiChoice)
                     {
-                        TextBlockQuizReply.Text = "Wrong - opps, must try harder !";
-                    }
-                    else
-                    {
-                        TextBlockQuizReply.Text = $"Wrong - opps, must try harder ! The correct answer is {_correctAnswer}";
+                        TextBlockQuizReply.Text += $" The correct answer is {_correctAnswer}";
                     }
 
                     AppBtnSubmitMultiChoiceAnwser.IsEnabled = false;
@@ -211,13 +209,13 @@ namespace Trivial.Ui.Common
 
             var userStatusDescription = percentageSuccess.UserStatusDescription();
 
-            var rate = percentageSuccess + "% success (" +
-                totalQuestionsAnsweredCorrectly + " questions out of " +
-                totalQuestionsAsked + " answered correctly)";
+            var ranking = "Your rank: " + userStatusDescription;
 
-            var sts = "Status: " + userStatusDescription;
+            var successRate = percentageSuccess + "% success rate (" +
+                totalQuestionsAnsweredCorrectly + " out of " +
+                totalQuestionsAsked + ")";
 
-            var userStatus = rate + " " + sts;
+            var userStatus = ranking + " " + successRate;
 
             return userStatus;
         }

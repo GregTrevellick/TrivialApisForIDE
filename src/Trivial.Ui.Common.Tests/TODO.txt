@@ -1,15 +1,10 @@
-﻿https://marketplace.visualstudio.com/services/VStudio/Extension.svc (use fiddler when running the Extension and Updates dialog)
-
-Add category to jeopardy
-
-https://github.com/uberspot/OpenTriviaQA/blob/master/categories/science-technology
-
-
-
-
+﻿https://github.com/uberspot/OpenTriviaQA/blob/master/categories/science-technology
 add in rating review chaser
 jeopardy - "reveal answer" not showing
 
+
+
+RATING https://marketplace.visualstudio.com/services/VStudio/Extension.svc (use fiddler when running the Extension and Updates dialog)
 FUTURE close all popups when sln is closed
 FUTURE allow user to reset the % success back to zero
 FUTURE (geek quiz) if uptake is siginificant allow user to request a second question, but not anymore than that (show "go back to work" message)
