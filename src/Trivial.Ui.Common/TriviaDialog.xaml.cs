@@ -64,6 +64,22 @@ namespace Trivial.Ui.Common
             //{
             //    stackabc.Visibility=Visibility.Visible;
             //}
+            switch (_appName)
+            {
+                case AppName.GeekQuiz:
+                    StackPanelGeekQuiz.Visibility = Visibility.Visible;
+                    break;
+                case AppName.Jeopardy:
+                    StackPanelJeopardy.Visibility = Visibility.Visible;
+                    break;
+                case AppName.NumericTrivia:
+                    StackPanelNumericTrivia.Visibility = Visibility.Visible;
+                    break;
+                case AppName.TrumpQuotes:
+                    StackPanelTrumpQuotes.Visibility = Visibility.Visible;
+                    break;
+            }
+
         }
 
         private void AppHyperlink1_RequestNavigate(object sender, RequestNavigateEventArgs e)
@@ -248,6 +264,6 @@ namespace Trivial.Ui.Common
                 TextBlockHelp.Text = $"To alter frequency and volume of delivery go to Tools | Options | {_optionsName}";
                 TextBlockHelp.Visibility = Visibility.Visible;
             }
-        }        
+        }
     }
 }
