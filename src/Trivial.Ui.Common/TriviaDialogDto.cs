@@ -4,22 +4,30 @@ using Trivial.Entities;
 
 namespace Trivial.Ui.Common
 {
-    public class TriviaDialogDto 
+    public class TriviaDialogDto : TriviaDialogDtoBase
     {
-        public AppName AppName { get; set; }       
-        public string Answer { get; set; }
-        public string AnswerRevealLabel { get; set; }
-        public string Attribution { get; set; }
-        public string Difficulty { get; set; }
+        public string JeopardyAnswer { get; set; }
+        public string JeopardyAnswerRevealLabel { get; set; }
+        public string JeopardyQuestion { get; set; }
+
+        public string NumericTriviaFact { get; set; }
+
+        public string GeekQuizDifficulty { get; set; }
+        public IEnumerable<string> GeekQuizMultipleChoiceAnswers { get; set; }
+        public string GeekQuizMultipleChoiceCorrectAnswer { get; set; }
+        public QuestionType GeekQuizQuestionType { get; set; }
+        public string GeekQuizQuestion { get; set; }
+
+        public string TrumpQuotesAttribution { get; set; }
+        public string TrumpQuotesHyperLinkUri { get; set; }
+        public string TrumpQuotesQuotation { get; set; }
+    }
+
+    public class TriviaDialogDtoBase
+    {
+        public AppName AppName { get; set; }
         public string ErrorDetails { get; set; }
-        public string Fact { get; set; }
-        public string HyperLinkUri { get; set; }
-        public IEnumerable<string> MultipleChoiceAnswers { get; set; }
-        public string MultipleChoiceCorrectAnswer { get; set; }
         public string OptionsName { get; set; }
         public string PopUpTitle { get; set; }
-        public string Question { get; set; }
-        public QuestionType QuestionType { get; set; }
-        public string Quotation { get; set; }
     }
 }
