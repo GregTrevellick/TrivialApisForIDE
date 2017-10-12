@@ -11,7 +11,7 @@
                          Background="{DynamicResource VsBrush.Window}"
                          Foreground="{DynamicResource VsBrush.WindowText}"
                          d:DataContext="{d:DesignData TriviaDialog}" >
-    <Grid ShowGridLines="False">
+    <Grid ShowGridLines="True">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
@@ -34,53 +34,54 @@
 
         <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Vertical" Visibility="Collapsed" Name="StackPanelGeekQuiz">
             <StackPanel Orientation="Vertical">
-                <Image Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Left" Name="AppImageGeekQuiz" Stretch="None" Source="Resources/GeekQuiz/VsixExtensionIcon_16x16.png"/>
-                <RadioButton Margin="10,5,5,5" VerticalAlignment="Center" HorizontalAlignment="Left" Name="RadioBtn1"/>
-                <RadioButton Margin="10,5,5,5" VerticalAlignment="Center" HorizontalAlignment="Left" Name="RadioBtn2"/>
-                <RadioButton Margin="10,5,5,5" VerticalAlignment="Center" HorizontalAlignment="Left" Name="RadioBtn3"/>
-                <RadioButton Margin="10,5,5,5" VerticalAlignment="Center" HorizontalAlignment="Left" Name="RadioBtn4"/>
+                <Image Margin="10,10,10,10" Name="AppImageGeekQuiz" Stretch="None" Source="Resources/GeekQuiz/VsixExtensionIcon_16x16.png"/>
+                <TextBlock Margin="10,10,10,10" Name="AppTextBlockQuestionGeekQuiz" />
+                <RadioButton Margin="10,5,5,5" Name="RadioBtn1"/>
+                <RadioButton Margin="10,5,5,5" Name="RadioBtn2"/>
+                <RadioButton Margin="10,5,5,5" Name="RadioBtn3"/>
+                <RadioButton Margin="10,5,5,5" Name="RadioBtn4"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <Image Margin="10,10,10,10" Visibility="Collapsed" VerticalAlignment="Center" HorizontalAlignment="Center" Name="QuizReplyEmoticonCorrect" Stretch="None" Source="Resources/CorrectAnswer.png" />
-                <Image Margin="10,10,10,10" Visibility="Collapsed" VerticalAlignment="Center" HorizontalAlignment="Center" Name="QuizReplyEmoticonIncorrect" Stretch="None" Source="Resources/IncorrectAnswer.png" />
-                <TextBlock Visibility="Collapsed" Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Left" Name="TextBlockQuizReply" />
+                <Image Margin="10,10,10,10" Visibility="Collapsed" Name="QuizReplyEmoticonCorrect" Stretch="None" Source="Resources/CorrectAnswer.png" />
+                <Image Margin="10,10,10,10" Visibility="Collapsed" Name="QuizReplyEmoticonIncorrect" Stretch="None" Source="Resources/IncorrectAnswer.png" />
+                <TextBlock Visibility="Collapsed" Margin="10,10,10,10" Name="TextBlockQuizReply" />
             </StackPanel>
             <StackPanel>
-                <TextBlock Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Center" Name="AppTextBlockUserStatus" />
+                <TextBlock Margin="10,10,10,10" Name="AppTextBlockUserStatus" />
             </StackPanel>
             <StackPanel>
-                <Button Content="Submit Answer" Margin="10,10,10,10" Padding="5,5,5,5" VerticalAlignment="Center" HorizontalAlignment="Left" Click="AppBtnSubmitMultiChoiceAnwser_OnClick" Name="AppBtnSubmitMultiChoiceAnwser"/>
+                <Button Content="Submit Answer" Margin="10,10,10,10" Padding="5,5,5,5" Click="AppBtnSubmitMultiChoiceAnwser_OnClick" Name="AppBtnSubmitMultiChoiceAnwser"/>
             </StackPanel>
         </StackPanel>
 
         <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Vertical" Visibility="Collapsed" Name="StackPanelJeopardy">
             <StackPanel>
-                <Image Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Left" Name="AppImageJeopardy" Stretch="None" Source="Resources/Jeopardy/VsixExtensionIcon_16x16.png"/>
-                <TextBlock Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Left" Name="AppTextBlockQuestion" />
+                <Image Margin="10,10,10,10" Name="AppImageJeopardy" Stretch="None" Source="Resources/Jeopardy/VsixExtensionIcon_16x16.png"/>
+                <TextBlock Margin="10,10,10,10" Name="AppTextBlockQuestion" />
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <Button Margin="10,10,10,10" Padding="5,5,5,5" VerticalAlignment="Center" HorizontalAlignment="Left" Click="AppBtnRevealAnswer_OnClick" Name="AppBtnRevealAnswer"/>
+                <Button Margin="10,10,10,10" Padding="5,5,5,5" Click="AppBtnRevealAnswer_OnClick" Name="AppBtnRevealAnswer"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <TextBlock Margin="10,10,0,10" VerticalAlignment="Center" HorizontalAlignment="Left" Name="AppTextBlockAnswer" FontWeight="Bold"/>
+                <TextBlock Margin="10,10,0,10" Name="AppTextBlockAnswer" FontWeight="Bold"/>
             </StackPanel>
         </StackPanel>
 
         <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Vertical" Visibility="Collapsed" Name="StackPanelNumericTrivia">
             <StackPanel Orientation="Horizontal">
-                <Image Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Left" Name="AppImageNumericTrivia" Stretch="None" Source="Resources/NumericTrivia/VsixExtensionIcon_16x16.png"/>
-                <TextBlock Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Left" Name="AppTextBlockFact" FontWeight="Bold" />
+                <Image Margin="10,10,10,10" Name="AppImageNumericTrivia" Stretch="None" Source="Resources/NumericTrivia/VsixExtensionIcon_16x16.png"/>
+                <TextBlock Margin="10,10,10,10" Name="AppTextBlockFact" FontWeight="Bold" />
             </StackPanel>
         </StackPanel>
 
         <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Vertical" Visibility="Collapsed" Name="StackPanelTrumpQuotes">
-            <StackPanel Orientation="Horizontal">
-                <Image Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Left" Name="AppImageTrumpQuotes" Stretch="None" Source="Resources/TrumpQuotes/VsixExtensionIcon_16x16.png"/>
-                <TextBlock Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Left" Name="AppTextBlockQuotation" FontWeight="Bold" />
+            <StackPanel Orientation="Horizontal" >
+                <Image Margin="10,10,10,10" Name="AppImageTrumpQuotes" Stretch="None" Source="Resources/TrumpQuotes/VsixExtensionIcon_16x16.png"/>
+                <TextBlock Margin="10,10,10,10" Name="AppTextBlockQuotation" FontWeight="Bold" />
             </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <TextBlock Margin="10,10,0,10" VerticalAlignment="Center"  Name="AppTextBlockAttribution" />
-                <TextBlock Margin="0,10,10,10" VerticalAlignment="Center" Name="AppTextBlockHyperLink">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" >
+                <TextBlock Margin="10,10,0,10" Name="AppTextBlockAttribution" />
+                <TextBlock Margin="0,10,10,10" Name="AppTextBlockHyperLink">
                     <Hyperlink Name="AppHyperlink1" RequestNavigate="AppHyperlink1_RequestNavigate" />
                 </TextBlock>
             </StackPanel>

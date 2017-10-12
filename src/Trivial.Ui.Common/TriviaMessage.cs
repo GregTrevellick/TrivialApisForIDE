@@ -134,6 +134,7 @@ namespace Trivial.Ui.Common
                     FontWeight = FontWeights.Bold
                 };
                 triviaDialog.AppTextBlockQuestion.Inlines.Add(run);
+                triviaDialog.AppTextBlockQuestionGeekQuiz.Inlines.Add(run);
             }
 
             //var iconUri = GetIconUri(triviaDialogDto.AppName);
