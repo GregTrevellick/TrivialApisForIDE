@@ -62,17 +62,20 @@ namespace Trivial.Ui.Common
                         triviaDialogDto.MultipleChoiceCorrectAnswer = gatewayResponseGeekQuiz.MultipleChoiceCorrectAnswer;
                         triviaDialogDto.Question = gatewayResponseGeekQuiz.Question;
                         triviaDialogDto.QuestionType = gatewayResponseGeekQuiz.QuestionType;
+                        DisplayPopUpMessageGeekQuiz(triviaDialogDto, suppressClosingWithoutSubmitingAnswerWarning, totalQuestionsAnsweredCorrectly, totalQuestionsAsked);
                         somethingToShow = !string.IsNullOrEmpty(triviaDialogDto.Question);
                         break;
                     case AppName.Jeopardy:
                         var gatewayResponseJeopardy = (GatewayResponseJeopardy) gatewayResponse;
                         triviaDialogDto.Answer = "A. " + gatewayResponseJeopardy.Answer;
                         triviaDialogDto.Question = "Q. " + gatewayResponseJeopardy.Question;
+                        DisplayPopUpMessageJeopardy(triviaDialogDto);
                         somethingToShow = !string.IsNullOrEmpty(triviaDialogDto.Question);
                         break;
                     case AppName.NumericTrivia:
                         var gatewayResponseNumeric = (GatewayResponseNumericTrivia) gatewayResponse;
                         triviaDialogDto.Fact = gatewayResponseNumeric.NumericFact;
+                        DisplayPopUpMessageNumericTrivia(triviaDialogDto);
                         somethingToShow = !string.IsNullOrEmpty(triviaDialogDto.Fact);
                         break;
                     case AppName.TrumpQuotes:
@@ -80,6 +83,7 @@ namespace Trivial.Ui.Common
                         triviaDialogDto.HyperLinkUri = gatewayResponseTrump.HyperLinkUri;
                         triviaDialogDto.Quotation = gatewayResponseTrump.TrumpQuote;
                         triviaDialogDto.Attribution = gatewayResponseTrump.QuotationAuthor + spacer + gatewayResponseTrump.QuotationDate + spacer;
+                        DisplayPopUpMessageTrumpQuotes(triviaDialogDto);
                         somethingToShow = !string.IsNullOrEmpty(triviaDialogDto.Quotation);
                         break;
                 }
@@ -87,7 +91,7 @@ namespace Trivial.Ui.Common
 
             if (somethingToShow)
             {
-                DisplayPopUpMessage(triviaDialogDto, suppressClosingWithoutSubmitingAnswerWarning, totalQuestionsAnsweredCorrectly, totalQuestionsAsked);
+                //DisplayPopUpMessage(triviaDialogDto, suppressClosingWithoutSubmitingAnswerWarning, totalQuestionsAnsweredCorrectly, totalQuestionsAsked);
                 hiddenOptionsDto = GetHiddenOptionsDto(lastPopUpDateTime, popUpCountToday);
             }
 
@@ -99,7 +103,7 @@ namespace Trivial.Ui.Common
             PersistHiddenOptionsEventHandler2?.Invoke(totalQuestionsAsked, totalQuestionsAnsweredCorrectly);
         }
 
-        private void DisplayPopUpMessage(TriviaDialogDto triviaDialogDto, bool? suppressClosingWithoutSubmitingAnswerWarning, int? totalQuestionsAnsweredCorrectly, int? totalQuestionsAsked)
+        private void DisplayPopUpMessageGeekQuiz(TriviaDialogDto triviaDialogDto, bool? suppressClosingWithoutSubmitingAnswerWarning, int? totalQuestionsAnsweredCorrectly, int? totalQuestionsAsked)
         {
             var triviaDialog = new TriviaDialog(
                 triviaDialogDto.AppName, 
@@ -110,12 +114,7 @@ namespace Trivial.Ui.Common
                 totalQuestionsAnsweredCorrectly, 
                 totalQuestionsAsked)
             {
-                AppTextBlockAnswer = { Text = triviaDialogDto.Answer},
-                AppBtnRevealAnswer = { Content = triviaDialogDto.AnswerRevealLabel },
-                AppTextBlockAttribution = { Text = triviaDialogDto.Attribution },
                 AppTextBlockErrorDetails = { Text = triviaDialogDto.ErrorDetails },
-                AppTextBlockFact = { Text = triviaDialogDto.Fact },
-                AppTextBlockQuotation = { Text = triviaDialogDto.Quotation},
                 Title = triviaDialogDto.PopUpTitle,
             };
 
@@ -124,7 +123,7 @@ namespace Trivial.Ui.Common
             if (!string.IsNullOrWhiteSpace(triviaDialogDto.Difficulty))
             {
                 var run = new Run(triviaDialogDto.Difficulty);
-                triviaDialog.AppTextBlockQuestion.Inlines.Add(run);
+                triviaDialog.AppTextBlockQuestionJeopardy.Inlines.Add(run);
             }
 
             if (!string.IsNullOrWhiteSpace(triviaDialogDto.Question))
@@ -133,18 +132,7 @@ namespace Trivial.Ui.Common
                 {
                     FontWeight = FontWeights.Bold
                 };
-                triviaDialog.AppTextBlockQuestion.Inlines.Add(run);
                 triviaDialog.AppTextBlockQuestionGeekQuiz.Inlines.Add(run);
-            }
-
-            //var iconUri = GetIconUri(triviaDialogDto.AppName);
-            //triviaDialog.AppImage.Source = new BitmapImage(iconUri);
-
-            if (!string.IsNullOrEmpty(triviaDialogDto.HyperLinkUri))
-            {
-                triviaDialog.AppHyperlink1.NavigateUri = new Uri(triviaDialogDto.HyperLinkUri);
-                triviaDialog.AppHyperlink1.Inlines.Clear();
-                triviaDialog.AppHyperlink1.Inlines.Add(triviaDialogDto.HyperLinkUri);
             }
 
             if (!string.IsNullOrWhiteSpace(triviaDialog.AppTextBlockErrorDetails.Text))
@@ -152,36 +140,9 @@ namespace Trivial.Ui.Common
                 triviaDialog.AppTextBlockErrorDetails.Visibility = Visibility.Visible;
             }
 
-            //if (!string.IsNullOrWhiteSpace(triviaDialog.AppTextBlockFact.Text))
-            //{
-            //    triviaDialog.AppTextBlockFact.Visibility = Visibility.Visible;
-            //}
-
-            if (triviaDialog.AppTextBlockQuestion.Inlines.Any())
-            {
-                triviaDialog.AppTextBlockQuestion.Visibility = Visibility.Visible;
-            }
-
-            //if (!string.IsNullOrWhiteSpace(triviaDialog.AppTextBlockQuotation.Text))
-            //{
-            //    triviaDialog.AppTextBlockQuotation.Visibility = Visibility.Visible;
-            //}
-
-            if (!string.IsNullOrWhiteSpace(triviaDialog.AppTextBlockAttribution.Text))
-            {
-                triviaDialog.AppTextBlockAttribution.Visibility = Visibility.Visible;
-                triviaDialog.AppTextBlockHyperLink.Visibility = Visibility.Visible;
-            }
-
-            if ((triviaDialog.AppBtnRevealAnswer.Content != null) &&
-                (!string.IsNullOrWhiteSpace(triviaDialog.AppBtnRevealAnswer.Content.ToString())))
-            {
-                triviaDialog.AppBtnRevealAnswer.Visibility = Visibility.Visible;
-            }
-
             if (triviaDialogDto.QuestionType != QuestionType.None)
             {
-                triviaDialog.AppBtnSubmitMultiChoiceAnwser.Visibility= Visibility.Visible;
+                triviaDialog.AppBtnGeekQuizSubmitMultiChoiceAnwser.Visibility= Visibility.Visible;
 
                 if (triviaDialogDto.QuestionType == QuestionType.TrueFalse)
                 {
@@ -208,12 +169,116 @@ namespace Trivial.Ui.Common
             if (totalQuestionsAnsweredCorrectly.HasValue && totalQuestionsAsked.HasValue)
             {
                 var userStatus = triviaDialog.GetUserStatus(totalQuestionsAnsweredCorrectly, totalQuestionsAsked);
-                triviaDialog.AppTextBlockUserStatus.Text = userStatus;
-                triviaDialog.AppTextBlockUserStatus.Visibility = Visibility.Visible;
+                triviaDialog.AppTextBlockGeekQuizUserStatus.Text = userStatus;
+                triviaDialog.AppTextBlockGeekQuizUserStatus.Visibility = Visibility.Visible;
             }
 
             triviaDialog.Show();
-        }     
+        }
+
+        private void DisplayPopUpMessageJeopardy(TriviaDialogDto triviaDialogDto)
+        {
+            var triviaDialog = new TriviaDialog(
+                triviaDialogDto.AppName,
+                triviaDialogDto.OptionsName)
+            {
+                AppTextBlockAnswerJeopardy = { Text = triviaDialogDto.Answer },
+                AppBtnRevealAnswerJeopardy = { Content = triviaDialogDto.AnswerRevealLabel },
+                AppTextBlockErrorDetails = { Text = triviaDialogDto.ErrorDetails },
+                Title = triviaDialogDto.PopUpTitle,
+            };
+
+            if (!string.IsNullOrWhiteSpace(triviaDialogDto.Question))
+            {
+                var run = new Run(triviaDialogDto.Question)
+                {
+                    FontWeight = FontWeights.Bold
+                };
+                triviaDialog.AppTextBlockQuestionJeopardy.Inlines.Add(run);
+                triviaDialog.AppTextBlockQuestionGeekQuiz.Inlines.Add(run);
+            }
+
+            if (!string.IsNullOrWhiteSpace(triviaDialog.AppTextBlockErrorDetails.Text))
+            {
+                triviaDialog.AppTextBlockErrorDetails.Visibility = Visibility.Visible;
+            }
+
+            if (triviaDialog.AppTextBlockQuestionJeopardy.Inlines.Any())
+            {
+                triviaDialog.AppTextBlockQuestionJeopardy.Visibility = Visibility.Visible;
+            }
+
+            if ((triviaDialog.AppBtnRevealAnswerJeopardy.Content != null) &&
+                (!string.IsNullOrWhiteSpace(triviaDialog.AppBtnRevealAnswerJeopardy.Content.ToString())))
+            {
+                triviaDialog.AppBtnRevealAnswerJeopardy.Visibility = Visibility.Visible;
+            }
+
+        
+            triviaDialog.Show();
+        }
+
+        private void DisplayPopUpMessageNumericTrivia(TriviaDialogDto triviaDialogDto)
+        {
+            var triviaDialog = new TriviaDialog(
+                triviaDialogDto.AppName,
+                triviaDialogDto.OptionsName)
+            {
+                AppTextBlockErrorDetails = { Text = triviaDialogDto.ErrorDetails },
+                AppTextBlockFactNumericTrivia = { Text = triviaDialogDto.Fact },
+                Title = triviaDialogDto.PopUpTitle,
+            };
+
+            if (!string.IsNullOrWhiteSpace(triviaDialog.AppTextBlockErrorDetails.Text))
+            {
+                triviaDialog.AppTextBlockErrorDetails.Visibility = Visibility.Visible;
+            }
+
+            if (!string.IsNullOrWhiteSpace(triviaDialog.AppTextBlockFactNumericTrivia.Text))
+            {
+                triviaDialog.AppTextBlockFactNumericTrivia.Visibility = Visibility.Visible;
+            }
+
+            triviaDialog.Show();
+        }
+
+        private void DisplayPopUpMessageTrumpQuotes(TriviaDialogDto triviaDialogDto)
+        {
+            var triviaDialog = new TriviaDialog(
+                triviaDialogDto.AppName,
+                triviaDialogDto.OptionsName)
+            {
+                AppTextBlockAttributionTrumpQuotes = { Text = triviaDialogDto.Attribution },
+                AppTextBlockErrorDetails = { Text = triviaDialogDto.ErrorDetails },
+                AppTextBlockQuotationTrumpQuotes = { Text = triviaDialogDto.Quotation },
+                Title = triviaDialogDto.PopUpTitle,
+            };
+
+            if (!string.IsNullOrEmpty(triviaDialogDto.HyperLinkUri))
+            {
+                triviaDialog.AppHyperlink1TrumpQuotes.NavigateUri = new Uri(triviaDialogDto.HyperLinkUri);
+                triviaDialog.AppHyperlink1TrumpQuotes.Inlines.Clear();
+                triviaDialog.AppHyperlink1TrumpQuotes.Inlines.Add(triviaDialogDto.HyperLinkUri);
+            }
+
+            if (!string.IsNullOrWhiteSpace(triviaDialog.AppTextBlockErrorDetails.Text))
+            {
+                triviaDialog.AppTextBlockErrorDetails.Visibility = Visibility.Visible;
+            }
+
+            if (!string.IsNullOrWhiteSpace(triviaDialog.AppTextBlockQuotationTrumpQuotes.Text))
+            {
+                triviaDialog.AppTextBlockQuotationTrumpQuotes.Visibility = Visibility.Visible;
+            }
+
+            if (!string.IsNullOrWhiteSpace(triviaDialog.AppTextBlockAttributionTrumpQuotes.Text))
+            {
+                triviaDialog.AppTextBlockAttributionTrumpQuotes.Visibility = Visibility.Visible;
+                triviaDialog.AppTextBlockHyperLinkTrumpQuotes.Visibility = Visibility.Visible;
+            }
+
+            triviaDialog.Show();
+        }
 
         private void SetRadioButtonVisibility(RadioButton radioButton)
         {

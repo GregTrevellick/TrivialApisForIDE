@@ -23,9 +23,14 @@ namespace Trivial.Ui.Common
         public delegate void MyEventHandler(int? totalQuestionsAsked, int? totalQuestionsAnsweredCorrectly);
         public event MyEventHandler PersistHiddenOptionsEventHandler;
 
-        public TriviaDialog(AppName appName, string optionsName, bool? suppressClosingWithoutSubmitingAnswerWarning)
+        //public TriviaDialog(AppName appName, string optionsName, bool? suppressClosingWithoutSubmitingAnswerWarning)
+        //{
+        //    Init(appName, optionsName, suppressClosingWithoutSubmitingAnswerWarning, null, QuestionType.None, null, null);
+        //}
+
+        public TriviaDialog(AppName appName, string optionsName)
         {
-            Init(appName, optionsName, suppressClosingWithoutSubmitingAnswerWarning, null, QuestionType.None, null, null);
+            Init(appName, optionsName, null, null, QuestionType.None, null, null);
         }
 
         public TriviaDialog(AppName appName, string optionsName, bool? suppressClosingWithoutSubmitingAnswerWarning, string correctAnswer, QuestionType questionType, int? totalQuestionsAnsweredCorrectly, int? totalQuestionsAsked)
@@ -86,8 +91,8 @@ namespace Trivial.Ui.Common
 
         private void AppBtnRevealAnswer_OnClick(object sender, RoutedEventArgs e)
         {
-            AppBtnRevealAnswer.Visibility = Visibility.Collapsed;
-            AppTextBlockAnswer.Visibility = Visibility.Visible;
+            AppBtnRevealAnswerJeopardy.Visibility = Visibility.Collapsed;
+            AppTextBlockAnswerJeopardy.Visibility = Visibility.Visible;
         }
 
         private void AppBtnClose_OnClick(object sender, RoutedEventArgs e)
@@ -96,7 +101,7 @@ namespace Trivial.Ui.Common
 
             if (_questionType != QuestionType.None)
             {
-                if (AppBtnSubmitMultiChoiceAnwser.IsEnabled)
+                if (AppBtnGeekQuizSubmitMultiChoiceAnwser.IsEnabled)
                 {
                     if (!_suppressClosingWithoutSubmitingAnswerWarning)
                     {
@@ -155,17 +160,17 @@ namespace Trivial.Ui.Common
 
         private void ActOnAnswerGiven(string response)
         {
-            QuizReplyEmoticonCorrect.Visibility = Visibility.Collapsed;
-            QuizReplyEmoticonIncorrect.Visibility = Visibility.Collapsed;
+            GeekQuizReplyEmoticonCorrect.Visibility = Visibility.Collapsed;
+            GeekQuizReplyEmoticonIncorrect.Visibility = Visibility.Collapsed;
 
             var isResponseCorrect = IsResponseCorrect(response);
 
             if (isResponseCorrect)
             {
-                TextBlockQuizReply.Text = "Well,done - correct answer !";
+                TextBlockGeekQuizReply.Text = "Well,done - correct answer !";
                 SetQuizReplyColour(Colors.Green);
-                AppBtnSubmitMultiChoiceAnwser.IsEnabled = false;
-                QuizReplyEmoticonCorrect.Visibility = Visibility.Visible;
+                AppBtnGeekQuizSubmitMultiChoiceAnwser.IsEnabled = false;
+                GeekQuizReplyEmoticonCorrect.Visibility = Visibility.Visible;
 
                 if (!_userStatusTotalsIncremented && _totalQuestionsAnsweredCorrectly.HasValue)
                 {
@@ -176,25 +181,25 @@ namespace Trivial.Ui.Common
             {
                 if (response == null)
                 {
-                    TextBlockQuizReply.Text = "No cheating please - you must supply an answer.";
+                    TextBlockGeekQuizReply.Text = "No cheating please - you must supply an answer.";
                     SetQuizReplyColour(Colors.Orange);
                 }
                 else
                 {
-                    TextBlockQuizReply.Text = "Oh dear - wrong answer.";
+                    TextBlockGeekQuizReply.Text = "Oh dear - wrong answer.";
 
                     if (_questionType == QuestionType.MultiChoice)
                     {
-                        TextBlockQuizReply.Text += $" The correct answer is {_correctAnswer}";
+                        TextBlockGeekQuizReply.Text += $" The correct answer is {_correctAnswer}";
                     }
 
-                    AppBtnSubmitMultiChoiceAnwser.IsEnabled = false;
+                    AppBtnGeekQuizSubmitMultiChoiceAnwser.IsEnabled = false;
                     SetQuizReplyColour(Colors.Red);
-                    QuizReplyEmoticonIncorrect.Visibility = Visibility.Visible;
+                    GeekQuizReplyEmoticonIncorrect.Visibility = Visibility.Visible;
                 }
             }
 
-            TextBlockQuizReply.Visibility = Visibility.Visible;
+            TextBlockGeekQuizReply.Visibility = Visibility.Visible;
 
             if (!_userStatusTotalsIncremented && _totalQuestionsAsked.HasValue)
             {
@@ -202,7 +207,7 @@ namespace Trivial.Ui.Common
                 _userStatusTotalsIncremented = true;
             }
             var userStatus = GetUserStatus(_totalQuestionsAnsweredCorrectly, _totalQuestionsAsked);
-            AppTextBlockUserStatus.Text = userStatus;
+            AppTextBlockGeekQuizUserStatus.Text = userStatus;
 
             PersistHiddenOptionsEventHandler?.Invoke(_totalQuestionsAsked, _totalQuestionsAnsweredCorrectly);
         }
@@ -239,7 +244,7 @@ namespace Trivial.Ui.Common
 
         private void SetQuizReplyColour(Color color)
         {
-            TextBlockQuizReply.Foreground = new SolidColorBrush(color);
+            TextBlockGeekQuizReply.Foreground = new SolidColorBrush(color);
         }
 
         private bool IsResponseCorrect(string response)
