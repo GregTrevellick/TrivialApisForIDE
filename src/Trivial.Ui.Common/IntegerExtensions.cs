@@ -7,10 +7,10 @@ namespace Trivial.Ui.Common
     {
         public static string UserStatusDescription(this int percentageCorrect)
         {
-            return wurds1.Single(x=>x.Key == percentageCorrect).Value;
+            return Ratings.Single(x=>x.Key == percentageCorrect).Value;
         }
 
-        private static IDictionary<int, string> wurds1
+        private static IDictionary<int, string> Ratings
         {
             get
             {

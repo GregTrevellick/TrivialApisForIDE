@@ -136,8 +136,8 @@ namespace Trivial.Ui.Common
                 triviaDialog.AppTextBlockQuestion.Inlines.Add(run);
             }
 
-            var iconUri = GetIconUri(triviaDialogDto.AppName);
-            triviaDialog.AppImage.Source = new BitmapImage(iconUri);
+            //var iconUri = GetIconUri(triviaDialogDto.AppName);
+            //triviaDialog.AppImage.Source = new BitmapImage(iconUri);
 
             if (!string.IsNullOrEmpty(triviaDialogDto.HyperLinkUri))
             {
@@ -151,20 +151,20 @@ namespace Trivial.Ui.Common
                 triviaDialog.AppTextBlockErrorDetails.Visibility = Visibility.Visible;
             }
 
-            if (!string.IsNullOrWhiteSpace(triviaDialog.AppTextBlockFact.Text))
-            {
-                triviaDialog.AppTextBlockFact.Visibility = Visibility.Visible;
-            }
+            //if (!string.IsNullOrWhiteSpace(triviaDialog.AppTextBlockFact.Text))
+            //{
+            //    triviaDialog.AppTextBlockFact.Visibility = Visibility.Visible;
+            //}
 
             if (triviaDialog.AppTextBlockQuestion.Inlines.Any())
             {
                 triviaDialog.AppTextBlockQuestion.Visibility = Visibility.Visible;
             }
 
-            if (!string.IsNullOrWhiteSpace(triviaDialog.AppTextBlockQuotation.Text))
-            {
-                triviaDialog.AppTextBlockQuotation.Visibility = Visibility.Visible;
-            }
+            //if (!string.IsNullOrWhiteSpace(triviaDialog.AppTextBlockQuotation.Text))
+            //{
+            //    triviaDialog.AppTextBlockQuotation.Visibility = Visibility.Visible;
+            //}
 
             if (!string.IsNullOrWhiteSpace(triviaDialog.AppTextBlockAttribution.Text))
             {
