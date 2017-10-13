@@ -80,7 +80,6 @@ namespace Trivial.Ui.Common
                     StackPanelTrumpQuotes.Visibility = Visibility.Visible;
                     break;
             }
-
         }
 
         private void AppHyperlink1_RequestNavigate(object sender, RequestNavigateEventArgs e)
