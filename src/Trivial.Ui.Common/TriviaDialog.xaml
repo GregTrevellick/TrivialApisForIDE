@@ -89,34 +89,20 @@
 
 
 
+        <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Vertical" Name="StackPanelFooter">
+            <StackPanel Orientation="Horizontal">
+                <Button Content="Close" Margin="10,10,10,10" Padding="5,5,5,5" VerticalAlignment="Center" HorizontalAlignment="Center" Click="AppBtnClose_OnClick" Name="AppBtnClose"/>
+                <Button Content="Help" Margin="10,10,10,10" Padding="5,5,5,5" VerticalAlignment="Center" HorizontalAlignment="Right" Click="AppBtnHelp_OnClick" Name="AppBtnHelp"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Right" Name="TextBlockHelp" />
+            </StackPanel>
+        </StackPanel>
 
 
 
-        <!--<Image Grid.Row="1" Grid.Column="0" Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Left" Name="AppImage" Stretch="None"/>-->
         <TextBlock Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Visibility="Collapsed" Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Left" Name="AppTextBlockErrorDetails" />
-        <!--<TextBlock Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Visibility="Collapsed" Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Left" Name="AppTextBlockQuotation" FontWeight="Bold" />-->
-        <!--<TextBlock Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Visibility="Collapsed" Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Left" Name="AppTextBlockFact" FontWeight="Bold" />-->
-        <!--<TextBlock Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Visibility="Collapsed" Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Left" Name="AppTextBlockQuestion" />-->
-        <!--<TextBlock Grid.Row="2" Grid.Column="1" Visibility="Collapsed" Margin="10,10,0,10" VerticalAlignment="Center" HorizontalAlignment="Right" Name="AppTextBlockAttribution" />-->
-        <!--<TextBlock Grid.Row="2" Grid.Column="2" Visibility="Collapsed" Margin="0,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Left" Name="AppTextBlockHyperLink">
-           <Hyperlink Name="AppHyperlink1" RequestNavigate="AppHyperlink1_RequestNavigate" />
-        </TextBlock>-->
-        <!--<Button Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Visibility="Collapsed" Margin="10,10,10,10" Padding="5,5,5,5" VerticalAlignment="Center" HorizontalAlignment="Left" Click="AppBtnRevealAnswer_OnClick" Name="AppBtnRevealAnswer"/>-->
-        <!--<TextBlock Grid.Row="2" Grid.Column="1" Visibility="Collapsed" Margin="10,10,0,10" VerticalAlignment="Center" HorizontalAlignment="Left" Name="AppTextBlockAnswer" FontWeight="Bold"/>-->
-        <!--<RadioButton Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Visibility="Collapsed" Margin="10,5,5,5" VerticalAlignment="Center" HorizontalAlignment="Left" Name="RadioBtn1"/>
-        <RadioButton Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" Visibility="Collapsed" Margin="10,5,5,5" VerticalAlignment="Center" HorizontalAlignment="Left" Name="RadioBtn2"/>
-        <RadioButton Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" Visibility="Collapsed" Margin="10,5,5,5" VerticalAlignment="Center" HorizontalAlignment="Left" Name="RadioBtn3"/>
-        <RadioButton Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2" Visibility="Collapsed" Margin="10,5,5,5" VerticalAlignment="Center" HorizontalAlignment="Left" Name="RadioBtn4"/>-->
-        <!--<StackPanel Grid.Row="7" Grid.Column="1" Orientation="Horizontal">
-            <Image Margin="10,10,10,10" Visibility="Collapsed" VerticalAlignment="Center" HorizontalAlignment="Center" Name="QuizReplyEmoticonCorrect" Stretch="None" Source="Resources/CorrectAnswer.png" />
-            <Image Margin="10,10,10,10" Visibility="Collapsed" VerticalAlignment="Center" HorizontalAlignment="Center" Name="QuizReplyEmoticonIncorrect" Stretch="None" Source="Resources/IncorrectAnswer.png" />
-            <TextBlock Visibility="Collapsed" Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Left" Name="TextBlockQuizReply" />
-        </StackPanel>-->
-        <!--<TextBlock Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="2" Visibility="Collapsed" Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Center" Name="AppTextBlockUserStatus" />-->
-        <!--<Button Grid.Row="9" Grid.Column="1" Grid.ColumnSpan="2" Visibility="Collapsed"  Content="Submit Answer" Margin="10,10,10,10" Padding="5,5,5,5" VerticalAlignment="Center" HorizontalAlignment="Left" Click="AppBtnSubmitMultiChoiceAnwser_OnClick" Name="AppBtnSubmitMultiChoiceAnwser"/>-->
-        <Button Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="3" Content="Close" Margin="10,10,10,10" Padding="5,5,5,5" VerticalAlignment="Center" HorizontalAlignment="Center" Click="AppBtnClose_OnClick" Name="AppBtnClose"/>
-        <Button Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="3" Content="Help" Margin="10,10,10,10" Padding="5,5,5,5" VerticalAlignment="Center" HorizontalAlignment="Right" Click="AppBtnHelp_OnClick" Name="AppBtnHelp"/>
-        <TextBlock Grid.Row="10" Grid.Column="1" Grid.ColumnSpan="2" Visibility="Collapsed" Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Right" Name="TextBlockHelp" />
+ 
 
     </Grid>
 </platformUi:DialogWindow>
