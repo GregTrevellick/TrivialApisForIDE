@@ -60,7 +60,7 @@ namespace Trivial.Ui.Common
                     break;
             }
 
-            hiddenOptionsDto = GetHiddenOptionsDto(lastPopUpDateTime, popUpCountToday);
+            hiddenOptionsDto = GeekQuizGetHiddenOptionsDto(lastPopUpDateTime, popUpCountToday);
 
             return hiddenOptionsDto;
         }
@@ -113,7 +113,7 @@ namespace Trivial.Ui.Common
             return triviaDialogTrumpQuotesDto;
         }
 
-        void PersistHiddenOptions(int? totalQuestionsAsked, int? totalQuestionsAnsweredCorrectly)
+        void PersistHiddenOptionsGeekQuiz(int? totalQuestionsAsked, int? totalQuestionsAnsweredCorrectly)
         {
             PersistHiddenOptionsEventHandler2?.Invoke(totalQuestionsAsked, totalQuestionsAnsweredCorrectly);
         }
@@ -136,7 +136,7 @@ namespace Trivial.Ui.Common
                     _totalQuestionsAsked = totalQuestionsAsked
                 };
 
-            triviaDialog.PersistHiddenOptionsEventHandler += PersistHiddenOptions;
+            triviaDialog.PersistHiddenOptionsEventHandler += PersistHiddenOptionsGeekQuiz;
 
             if (!string.IsNullOrWhiteSpace(triviaDialogDto.GeekQuizDifficulty))
             {
@@ -179,10 +179,10 @@ namespace Trivial.Ui.Common
                 }
             }
 
-            SetRadioButtonVisibility(triviaDialog.RadioBtn1);
-            SetRadioButtonVisibility(triviaDialog.RadioBtn2);
-            SetRadioButtonVisibility(triviaDialog.RadioBtn3);
-            SetRadioButtonVisibility(triviaDialog.RadioBtn4);
+            GeekQuizSetRadioButtonVisibility(triviaDialog.RadioBtn1);
+            GeekQuizSetRadioButtonVisibility(triviaDialog.RadioBtn2);
+            GeekQuizSetRadioButtonVisibility(triviaDialog.RadioBtn3);
+            GeekQuizSetRadioButtonVisibility(triviaDialog.RadioBtn4);
 
             if (totalQuestionsAnsweredCorrectly.HasValue && totalQuestionsAsked.HasValue)
             {
@@ -296,7 +296,7 @@ namespace Trivial.Ui.Common
             triviaDialog.Show();
         }
 
-        private void SetRadioButtonVisibility(RadioButton radioButton)
+        private void GeekQuizSetRadioButtonVisibility(RadioButton radioButton)
         {
             if (radioButton.Content != null && !string.IsNullOrWhiteSpace(radioButton.Content.ToString()))
             {
@@ -304,7 +304,7 @@ namespace Trivial.Ui.Common
             }
         }
 
-        private HiddenOptionsDto GetHiddenOptionsDto(DateTime lastPopUpDateTime, int popUpCountToday)
+        private HiddenOptionsDto GeekQuizGetHiddenOptionsDto(DateTime lastPopUpDateTime, int popUpCountToday)
         {
             var hiddenOptionsDto = new HiddenOptionsDto();
 
