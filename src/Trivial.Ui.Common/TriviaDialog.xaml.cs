@@ -25,40 +25,14 @@ namespace Trivial.Ui.Common
 
         public TriviaDialog(AppName appName, string optionsName)
         {
-            //Init(appName, optionsName, null, null, QuestionType.None, null, null);
-        //}
-
-     //   public TriviaDialog(AppName appName, string optionsName, bool? suppressClosingWithoutSubmitingAnswerWarning, string correctAnswer, QuestionType questionType, int? totalQuestionsAnsweredCorrectly, int? totalQuestionsAsked)
-      //  {
-         //   Init(appName, optionsName, suppressClosingWithoutSubmitingAnswerWarning, correctAnswer, questionType, totalQuestionsAnsweredCorrectly, totalQuestionsAsked);
-      //  }
-
-        //private void Init(AppName appName, string optionsName, bool? suppressClosingWithoutSubmitingAnswerWarning, string correctAnswer, QuestionType questionType, int? totalQuestionsAnsweredCorrectly, int? totalQuestionsAsked)
-        //{
             _appName = appName;
-            //_correctAnswer = correctAnswer;
             _optionsName = optionsName;
-            //_questionType = questionType;
-            //_suppressClosingWithoutSubmitingAnswerWarning = suppressClosingWithoutSubmitingAnswerWarning ?? false;
-            //_totalQuestionsAnsweredCorrectly = totalQuestionsAnsweredCorrectly;
-            //_totalQuestionsAsked = totalQuestionsAsked;
             _userStatusTotalsIncremented = false;
 
             InitializeComponent();
             InitializeTriviaDialog();
 
-            DataContext = this;//new TriviaDialogDto();
-        }
-
-        private void InitializeTriviaDialog()
-        {
-            HasMaximizeButton = true;
-            HasMinimizeButton = true;
-            SizeToContent = SizeToContent.WidthAndHeight;
-            WindowStartupLocation = WindowStartupLocation.CenterScreen;
-
-            var iconUri = new TriviaMessage().GetIconUri(_appName);
-            Icon = new BitmapImage(iconUri);
+            DataContext = this;
 
             switch (_appName)
             {
@@ -77,16 +51,28 @@ namespace Trivial.Ui.Common
             }
         }
 
-        private void AppHyperlink1_RequestNavigate(object sender, RequestNavigateEventArgs e)
+        private void InitializeTriviaDialog()
         {
-            Process.Start(new ProcessStartInfo(e.Uri.AbsoluteUri));
-            e.Handled = true;
+            HasMaximizeButton = true;
+            HasMinimizeButton = true;
+            SizeToContent = SizeToContent.WidthAndHeight;
+            WindowStartupLocation = WindowStartupLocation.CenterScreen;
+
+            var iconUri = new TriviaMessage().GetIconUri(_appName);
+            Icon = new BitmapImage(iconUri);
         }
 
-        private void AppBtnRevealAnswer_OnClick(object sender, RoutedEventArgs e)
+        private void AppBtnHelp_OnClick(object sender, RoutedEventArgs e)
         {
-            AppBtnRevealAnswerJeopardy.Visibility = Visibility.Collapsed;
-            AppTextBlockAnswerJeopardy.Visibility = Visibility.Visible;
+            if (TextBlockHelp.Visibility == Visibility.Visible)
+            {
+                TextBlockHelp.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                TextBlockHelp.Text = $"To alter frequency and volume of delivery go to Tools | Options | {_optionsName}";
+                TextBlockHelp.Visibility = Visibility.Visible;
+            }
         }
 
         private void AppBtnClose_OnClick(object sender, RoutedEventArgs e)
@@ -115,7 +101,20 @@ namespace Trivial.Ui.Common
             }
         }
 
-        private void AppBtnSubmitMultiChoiceAnwser_OnClick(object sender, RoutedEventArgs e)
+        #region not shared
+        private void AppHyperlink1_RequestNavigate(object sender, RequestNavigateEventArgs e)//TrumpQuotes
+        {
+            Process.Start(new ProcessStartInfo(e.Uri.AbsoluteUri));
+            e.Handled = true;
+        }
+
+        private void AppBtnRevealAnswer_OnClick(object sender, RoutedEventArgs e)//Jeopardy
+        {
+            AppBtnRevealAnswerJeopardy.Visibility = Visibility.Collapsed;
+            AppTextBlockAnswerJeopardy.Visibility = Visibility.Visible;
+        }
+
+        private void AppBtnSubmitMultiChoiceAnwser_OnClick(object sender, RoutedEventArgs e)//GeekQuiz
         {
             string response;
 
@@ -149,20 +148,20 @@ namespace Trivial.Ui.Common
                 }
             }
 
-            ActOnAnswerGiven(response);
+            ActOnAnswerGivenGeekQuiz(response);
         }
 
-        private void ActOnAnswerGiven(string response)
+        private void ActOnAnswerGivenGeekQuiz(string response)
         {
             GeekQuizReplyEmoticonCorrect.Visibility = Visibility.Collapsed;
             GeekQuizReplyEmoticonIncorrect.Visibility = Visibility.Collapsed;
 
-            var isResponseCorrect = IsResponseCorrect(response);
+            var isResponseCorrect = IsResponseCorrectGeekQuiz(response);
 
             if (isResponseCorrect)
             {
                 TextBlockGeekQuizReply.Text = "Well,done - correct answer !";
-                SetQuizReplyColour(Colors.Green);
+                SetQuizReplyColourGeekQuiz(Colors.Green);
                 AppBtnGeekQuizSubmitMultiChoiceAnwser.IsEnabled = false;
                 GeekQuizReplyEmoticonCorrect.Visibility = Visibility.Visible;
 
@@ -176,7 +175,7 @@ namespace Trivial.Ui.Common
                 if (response == null)
                 {
                     TextBlockGeekQuizReply.Text = "No cheating please - you must supply an answer.";
-                    SetQuizReplyColour(Colors.Orange);
+                    SetQuizReplyColourGeekQuiz(Colors.Orange);
                 }
                 else
                 {
@@ -188,7 +187,7 @@ namespace Trivial.Ui.Common
                     }
 
                     AppBtnGeekQuizSubmitMultiChoiceAnwser.IsEnabled = false;
-                    SetQuizReplyColour(Colors.Red);
+                    SetQuizReplyColourGeekQuiz(Colors.Red);
                     GeekQuizReplyEmoticonIncorrect.Visibility = Visibility.Visible;
                 }
             }
@@ -200,13 +199,13 @@ namespace Trivial.Ui.Common
                 _totalQuestionsAsked++;
                 _userStatusTotalsIncremented = true;
             }
-            var userStatus = GetUserStatus(_totalQuestionsAnsweredCorrectly, _totalQuestionsAsked);
+            var userStatus = GetUserStatusGeekQuiz(_totalQuestionsAnsweredCorrectly, _totalQuestionsAsked);
             AppTextBlockGeekQuizUserStatus.Text = userStatus;
 
             PersistHiddenOptionsEventHandler?.Invoke(_totalQuestionsAsked, _totalQuestionsAnsweredCorrectly);
         }
 
-        internal string GetUserStatus(int? totalQuestionsAnsweredCorrectly, int? totalQuestionsAsked)
+        internal string GetUserStatusGeekQuiz(int? totalQuestionsAnsweredCorrectly, int? totalQuestionsAsked)
         {
             int percentageSuccess;
 
@@ -228,37 +227,25 @@ namespace Trivial.Ui.Common
             var ranking = "Your rank: " + userStatusDescription;
 
             var successRate = percentageSuccess + "% success rate (" +
-                totalQuestionsAnsweredCorrectly + " out of " +
-                totalQuestionsAsked + ")";
+                              totalQuestionsAnsweredCorrectly + " out of " +
+                              totalQuestionsAsked + ")";
 
             var userStatus = ranking + " " + successRate;
 
             return userStatus;
         }
 
-        private void SetQuizReplyColour(Color color)
+        private void SetQuizReplyColourGeekQuiz(Color color)
         {
             TextBlockGeekQuizReply.Foreground = new SolidColorBrush(color);
         }
 
-        private bool IsResponseCorrect(string response)
+        private bool IsResponseCorrectGeekQuiz(string response)
         {
             var rightAnswer = response == _correctAnswer;
 
             return rightAnswer;
         }
-
-        private void AppBtnHelp_OnClick(object sender, RoutedEventArgs e)
-        {
-            if (TextBlockHelp.Visibility == Visibility.Visible)
-            {
-                TextBlockHelp.Visibility = Visibility.Collapsed;
-            }
-            else
-            {
-                TextBlockHelp.Text = $"To alter frequency and volume of delivery go to Tools | Options | {_optionsName}";
-                TextBlockHelp.Visibility = Visibility.Visible;
-            }
-        }
+        #endregion
     }
 }
