@@ -53,39 +53,6 @@
             </StackPanel>
         </StackPanel>
 
-        <!--<StackPanel Grid.Row="0" Grid.Column="1" Orientation="Vertical" Visibility="Collapsed" Name="StackPanelJeopardy">
-            <StackPanel>
-                <Image Margin="10,10,10,10" Name="AppImageJeopardy" Stretch="None" Source="Resources/Jeopardy/VsixExtensionIcon_16x16.png"/>
-                <TextBlock Margin="10,10,10,10" Name="AppTextBlockQuestionJeopardy" />
-            </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <Button Margin="10,10,10,10" Padding="5,5,5,5" Click="AppBtnRevealAnswer_OnClick" Name="AppBtnRevealAnswerJeopardy"/>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <TextBlock Margin="10,10,0,10" Name="AppTextBlockAnswerJeopardy" FontWeight="Bold"/>
-            </StackPanel>
-        </StackPanel>
-
-        <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Vertical" Visibility="Collapsed" Name="StackPanelNumericTrivia">
-            <StackPanel Orientation="Horizontal">
-                <Image Margin="10,10,10,10" Name="AppImageNumericTrivia" Stretch="None" Source="Resources/NumericTrivia/VsixExtensionIcon_16x16.png"/>
-                <TextBlock Margin="10,10,10,10" Name="AppTextBlockFactNumericTrivia" FontWeight="Bold" />
-            </StackPanel>
-        </StackPanel>
-
-        <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Vertical" Visibility="Collapsed" Name="StackPanelTrumpQuotes">
-            <StackPanel Orientation="Horizontal" >
-                <Image Margin="10,10,10,10" Name="AppImageTrumpQuotes" Stretch="None" Source="Resources/TrumpQuotes/VsixExtensionIcon_16x16.png"/>
-                <TextBlock Margin="10,10,10,10" Name="AppTextBlockQuotationTrumpQuotes" FontWeight="Bold" />
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" >
-                <TextBlock Margin="10,10,0,10" Name="AppTextBlockAttributionTrumpQuotes" />
-                <TextBlock Margin="0,10,10,10" Name="AppTextBlockHyperLinkTrumpQuotes">
-                    <Hyperlink Name="AppHyperlink1TrumpQuotes" RequestNavigate="AppHyperlink1_RequestNavigate" />
-                </TextBlock>
-            </StackPanel>
-        </StackPanel>-->
-
         <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Vertical" Name="StackPanelFooter">
             <StackPanel Orientation="Horizontal">
                 <Button Content="Close" Margin="10,10,10,10" Padding="5,5,5,5" VerticalAlignment="Center" HorizontalAlignment="Center" Click="AppBtnClose_OnClick" Name="AppBtnClose"/>
