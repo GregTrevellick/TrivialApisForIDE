@@ -4,7 +4,6 @@ using System.Reflection;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Documents;
-using System.Windows.Media.Imaging;
 using Trivial.Api.Gateway;
 using Trivial.Api.Gateway.GeekQuiz;
 using Trivial.Api.Gateway.Jeopardy;
@@ -40,58 +39,23 @@ namespace Trivial.Ui.Common
             switch (appName)
             {
                 case AppName.GeekQuiz:
-                    var gatewayResponseGeekQuiz = (GatewayResponseGeekQuiz) gatewayResponse;
-                    var triviaDialogGeekQuizDto = new TriviaDialogGeekQuizDto(appName, optionsName, popUpTitle);
-                    triviaDialogGeekQuizDto.ErrorDetails = gatewayResponse.ErrorDetails;
-                    triviaDialogGeekQuizDto.AppName = appName;
-                    triviaDialogGeekQuizDto.OptionsName = optionsName;
-                    triviaDialogGeekQuizDto.PopUpTitle = popUpTitle;
-                    triviaDialogGeekQuizDto.GeekQuizDifficulty = gatewayResponseGeekQuiz.DifficultyLevel;
-                    triviaDialogGeekQuizDto.GeekQuizMultipleChoiceAnswers =
-                        gatewayResponseGeekQuiz.MultipleChoiceAnswers;
-                    triviaDialogGeekQuizDto.GeekQuizMultipleChoiceCorrectAnswer =
-                        gatewayResponseGeekQuiz.MultipleChoiceCorrectAnswer;
-                    triviaDialogGeekQuizDto.GeekQuizQuestion = gatewayResponseGeekQuiz.Question;
-                    triviaDialogGeekQuizDto.GeekQuizQuestionType = gatewayResponseGeekQuiz.QuestionType;
-                    DisplayPopUpMessageGeekQuiz(triviaDialogGeekQuizDto, suppressClosingWithoutSubmitingAnswerWarning,
-                        totalQuestionsAnsweredCorrectly, totalQuestionsAsked);
+                    var gatewayResponseGeekQuiz = (GatewayResponseGeekQuiz)gatewayResponse;
+                    var triviaDialogGeekQuizDto = GetTriviaDialogGeekQuizDto(appName, popUpTitle, optionsName, gatewayResponse, gatewayResponseGeekQuiz);
+                    DisplayPopUpMessageGeekQuiz(triviaDialogGeekQuizDto, suppressClosingWithoutSubmitingAnswerWarning, totalQuestionsAnsweredCorrectly, totalQuestionsAsked);
                     break;
-
                 case AppName.Jeopardy:
-                    var gatewayResponseJeopardy = (GatewayResponseJeopardy) gatewayResponse;
-                    var triviaDialogJeopardyDto = new TriviaDialogJeopardyDto(appName, optionsName, popUpTitle);
-                    triviaDialogJeopardyDto.ErrorDetails = gatewayResponse.ErrorDetails;
-                    triviaDialogJeopardyDto.AppName = appName;
-                    triviaDialogJeopardyDto.OptionsName = optionsName;
-                    triviaDialogJeopardyDto.PopUpTitle = popUpTitle;
-                    triviaDialogJeopardyDto.JeopardyAnswer = "A. " + gatewayResponseJeopardy.Answer;
-                    triviaDialogJeopardyDto.JeopardyQuestion = "Q. " + gatewayResponseJeopardy.Question;
+                    var gatewayResponseJeopardy = (GatewayResponseJeopardy)gatewayResponse;
+                    var triviaDialogJeopardyDto = GetTriviaDialogJeopardyDto(appName, popUpTitle, optionsName, gatewayResponse, gatewayResponseJeopardy);
                     DisplayPopUpMessageJeopardy(triviaDialogJeopardyDto);
                     break;
-
                 case AppName.NumericTrivia:
-                    var gatewayResponseNumeric = (GatewayResponseNumericTrivia) gatewayResponse;
-                    var triviaDialogNumericTriviaDto =
-                        new TriviaDialogNumericTriviaDto(appName, optionsName, popUpTitle);
-                    triviaDialogNumericTriviaDto.ErrorDetails = gatewayResponse.ErrorDetails;
-                    triviaDialogNumericTriviaDto.AppName = appName;
-                    triviaDialogNumericTriviaDto.OptionsName = optionsName;
-                    triviaDialogNumericTriviaDto.PopUpTitle = popUpTitle;
-                    triviaDialogNumericTriviaDto.NumericTriviaFact = gatewayResponseNumeric.NumericFact;
+                    var gatewayResponseNumeric = (GatewayResponseNumericTrivia)gatewayResponse;
+                    var triviaDialogNumericTriviaDto = GetTriviaDialogNumericTriviaDto(appName, popUpTitle, optionsName, gatewayResponse, gatewayResponseNumeric);
                     DisplayPopUpMessageNumericTrivia(triviaDialogNumericTriviaDto);
                     break;
-
                 case AppName.TrumpQuotes:
-                    var gatewayResponseTrump = (GatewayResponseTrumpQuotes) gatewayResponse;
-                    var triviaDialogTrumpQuotesDto = new TriviaDialogTrumpQuotesDto(appName, optionsName, popUpTitle);
-                    triviaDialogTrumpQuotesDto.ErrorDetails = gatewayResponse.ErrorDetails;
-                    triviaDialogTrumpQuotesDto.AppName = appName;
-                    triviaDialogTrumpQuotesDto.OptionsName = optionsName;
-                    triviaDialogTrumpQuotesDto.PopUpTitle = popUpTitle;
-                    triviaDialogTrumpQuotesDto.TrumpQuotesHyperLinkUri = gatewayResponseTrump.HyperLinkUri;
-                    triviaDialogTrumpQuotesDto.TrumpQuotesQuotation = gatewayResponseTrump.TrumpQuote;
-                    triviaDialogTrumpQuotesDto.TrumpQuotesAttribution =
-                        gatewayResponseTrump.QuotationAuthor + spacer + gatewayResponseTrump.QuotationDate + spacer;
+                    var gatewayResponseTrump = (GatewayResponseTrumpQuotes)gatewayResponse;
+                    var triviaDialogTrumpQuotesDto = GetTriviaDialogTrumpQuotesDto(appName, popUpTitle, optionsName, gatewayResponse, gatewayResponseTrump);
                     DisplayPopUpMessageTrumpQuotes(triviaDialogTrumpQuotesDto);
                     break;
             }
@@ -99,6 +63,53 @@ namespace Trivial.Ui.Common
             hiddenOptionsDto = GetHiddenOptionsDto(lastPopUpDateTime, popUpCountToday);
 
             return hiddenOptionsDto;
+        }
+
+        private static TriviaDialogTrumpQuotesDto GetTriviaDialogTrumpQuotesDto(AppName appName, string popUpTitle, string optionsName, GatewayResponseBase gatewayResponse, GatewayResponseTrumpQuotes gatewayResponseTrump)
+        {
+            var triviaDialogTrumpQuotesDto = new TriviaDialogTrumpQuotesDto(appName, optionsName, popUpTitle)
+                {
+                    ErrorDetails = gatewayResponse.ErrorDetails,
+                    TrumpQuotesAttribution = gatewayResponseTrump.QuotationAuthor + spacer + gatewayResponseTrump.QuotationDate + spacer,
+                    TrumpQuotesHyperLinkUri = gatewayResponseTrump.HyperLinkUri,
+                    TrumpQuotesQuotation = gatewayResponseTrump.TrumpQuote,
+                };
+            return triviaDialogTrumpQuotesDto;
+        }
+
+        private static TriviaDialogGeekQuizDto GetTriviaDialogGeekQuizDto(AppName appName, string popUpTitle, string optionsName, GatewayResponseBase gatewayResponse, GatewayResponseGeekQuiz gatewayResponseGeekQuiz)
+        {
+            var triviaDialogGeekQuizDto = new TriviaDialogGeekQuizDto(appName, optionsName, popUpTitle)
+                {
+                    ErrorDetails = gatewayResponse.ErrorDetails,
+                    GeekQuizDifficulty = gatewayResponseGeekQuiz.DifficultyLevel,
+                    GeekQuizMultipleChoiceAnswers = gatewayResponseGeekQuiz.MultipleChoiceAnswers,
+                    GeekQuizMultipleChoiceCorrectAnswer = gatewayResponseGeekQuiz.MultipleChoiceCorrectAnswer,
+                    GeekQuizQuestion = gatewayResponseGeekQuiz.Question,
+                    GeekQuizQuestionType = gatewayResponseGeekQuiz.QuestionType,
+                };
+            return triviaDialogGeekQuizDto;
+        }
+
+        private static TriviaDialogJeopardyDto GetTriviaDialogJeopardyDto(AppName appName, string popUpTitle, string optionsName, GatewayResponseBase gatewayResponse, GatewayResponseJeopardy gatewayResponseJeopardy)
+        {
+            var triviaDialogJeopardyDto = new TriviaDialogJeopardyDto(appName, optionsName, popUpTitle)
+            {
+                    ErrorDetails = gatewayResponse.ErrorDetails,
+                    JeopardyAnswer = "A. " + gatewayResponseJeopardy.Answer,
+                    JeopardyQuestion = "Q. " + gatewayResponseJeopardy.Question,
+                };
+            return triviaDialogJeopardyDto;
+        }
+
+        private static TriviaDialogNumericTriviaDto GetTriviaDialogNumericTriviaDto(AppName appName, string popUpTitle, string optionsName, GatewayResponseBase gatewayResponse, GatewayResponseNumericTrivia gatewayResponseNumeric)
+        {
+            var triviaDialogNumericTriviaDto = new TriviaDialogNumericTriviaDto(appName, optionsName, popUpTitle)
+                {
+                    ErrorDetails = gatewayResponse.ErrorDetails,
+                    NumericTriviaFact = gatewayResponseNumeric.NumericFact,
+                };
+            return triviaDialogNumericTriviaDto;
         }
 
         void PersistHiddenOptions(int? totalQuestionsAsked, int? totalQuestionsAnsweredCorrectly)
@@ -109,22 +120,20 @@ namespace Trivial.Ui.Common
         private void DisplayPopUpMessageGeekQuiz(TriviaDialogGeekQuizDto triviaDialogDto, bool? suppressClosingWithoutSubmitingAnswerWarning, int? totalQuestionsAnsweredCorrectly, int? totalQuestionsAsked)
         {
             var triviaDialog = new TriviaDialog(
-                triviaDialogDto.AppName, 
-                triviaDialogDto.OptionsName)//,
-              //  suppressClosingWithoutSubmitingAnswerWarning,
-            //    triviaDialogDto.GeekQuizMultipleChoiceCorrectAnswer, 
-            //    triviaDialogDto.GeekQuizQuestionType,
-             //   totalQuestionsAnsweredCorrectly, 
-             //   totalQuestionsAsked)
-            {
-                AppTextBlockErrorDetails = { Text = triviaDialogDto.ErrorDetails },
-                Title = triviaDialogDto.PopUpTitle,
-                _suppressClosingWithoutSubmitingAnswerWarning = suppressClosingWithoutSubmitingAnswerWarning.HasValue ? suppressClosingWithoutSubmitingAnswerWarning.Value : false,
-                AppTextBlockQuestionGeekQuiz = { Text = triviaDialogDto.GeekQuizMultipleChoiceCorrectAnswer},
-                _questionType = triviaDialogDto.GeekQuizQuestionType,
-                _totalQuestionsAnsweredCorrectly = totalQuestionsAnsweredCorrectly, 
-             _totalQuestionsAsked = totalQuestionsAsked
-            };
+                    triviaDialogDto.AppName,
+                    triviaDialogDto.OptionsName) 
+                {
+                    AppTextBlockErrorDetails = {Text = triviaDialogDto.ErrorDetails},
+                    Title = triviaDialogDto.PopUpTitle,
+                    _suppressClosingWithoutSubmitingAnswerWarning =
+                        suppressClosingWithoutSubmitingAnswerWarning.HasValue
+                            ? suppressClosingWithoutSubmitingAnswerWarning.Value
+                            : false,
+                    AppTextBlockQuestionGeekQuiz = {Text = triviaDialogDto.GeekQuizMultipleChoiceCorrectAnswer},
+                    _questionType = triviaDialogDto.GeekQuizQuestionType,
+                    _totalQuestionsAnsweredCorrectly = totalQuestionsAnsweredCorrectly,
+                    _totalQuestionsAsked = totalQuestionsAsked
+                };
 
             triviaDialog.PersistHiddenOptionsEventHandler += PersistHiddenOptions;
 
@@ -203,7 +212,6 @@ namespace Trivial.Ui.Common
                     FontWeight = FontWeights.Bold
                 };
                 triviaDialog.AppTextBlockQuestionJeopardy.Inlines.Add(run);
-             ////////////////////   triviaDialog.AppTextBlockQuestionGeekQuiz.Inlines.Add(run);
             }
 
             if (!string.IsNullOrWhiteSpace(triviaDialog.AppTextBlockErrorDetails.Text))
