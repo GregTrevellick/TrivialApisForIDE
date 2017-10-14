@@ -134,14 +134,10 @@
     <Compile Include="TriviaDialogJeopardyDto.cs" />
     <Compile Include="TriviaDialogNumericTriviaDto.cs" />
     <Compile Include="TriviaDialogTrumpQuotesDto.cs" />
-    <Compile Include="TriviaMessage.cs" />
     <Compile Include="CommonConstants.cs" />
     <Compile Include="HiddenOptionsDto.cs" />
     <Compile Include="GeneralOptionsDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TriviaDialog.xaml.cs">
-      <DependentUpon>TriviaDialog.xaml</DependentUpon>
-    </Compile>
     <Compile Include="DecisionMaker.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -153,12 +149,6 @@
       <Project>{227d068d-a064-40b4-a372-7ce8fe0f7c26}</Project>
       <Name>Trivial.Entities</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Page Include="TriviaDialog.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

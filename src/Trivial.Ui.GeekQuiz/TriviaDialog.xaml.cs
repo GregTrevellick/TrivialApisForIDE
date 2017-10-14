@@ -1,14 +1,13 @@
 ﻿using System;
-using Microsoft.VisualStudio.PlatformUI;
-using System.Diagnostics;
 using System.Windows;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
+using Microsoft.VisualStudio.PlatformUI;
 using Trivial.Api.Gateway;
 using Trivial.Entities;
+using Trivial.Ui.Common;
 
-namespace Trivial.Ui.Common
+namespace Trivial.Ui.GeekQuiz
 {
     public partial class TriviaDialog : DialogWindow
     {
@@ -34,21 +33,7 @@ namespace Trivial.Ui.Common
 
             DataContext = this;
 
-            switch (_appName)
-            {
-                case AppName.GeekQuiz:
-                    StackPanelGeekQuiz.Visibility = Visibility.Visible;
-                    break;
-                case AppName.Jeopardy:
-                    StackPanelJeopardy.Visibility = Visibility.Visible;
-                    break;
-                case AppName.NumericTrivia:
-                    StackPanelNumericTrivia.Visibility = Visibility.Visible;
-                    break;
-                case AppName.TrumpQuotes:
-                    StackPanelTrumpQuotes.Visibility = Visibility.Visible;
-                    break;
-            }
+            StackPanelGeekQuiz.Visibility = Visibility.Visible;
         }
 
         private void InitializeTriviaDialog()
@@ -99,19 +84,6 @@ namespace Trivial.Ui.Common
             {
                 Close();
             }
-        }
-
-        #region not shared
-        private void AppHyperlink1_RequestNavigate(object sender, RequestNavigateEventArgs e)//TrumpQuotes
-        {
-            Process.Start(new ProcessStartInfo(e.Uri.AbsoluteUri));
-            e.Handled = true;
-        }
-
-        private void AppBtnRevealAnswer_OnClick(object sender, RoutedEventArgs e)//Jeopardy
-        {
-            AppBtnRevealAnswerJeopardy.Visibility = Visibility.Collapsed;
-            AppTextBlockAnswerJeopardy.Visibility = Visibility.Visible;
         }
 
         private void AppBtnSubmitMultiChoiceAnwser_OnClick(object sender, RoutedEventArgs e)//GeekQuiz
@@ -246,6 +218,5 @@ namespace Trivial.Ui.Common
 
             return rightAnswer;
         }
-        #endregion
     }
 }

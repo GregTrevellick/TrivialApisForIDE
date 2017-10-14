@@ -31,7 +31,7 @@
             <ColumnDefinition Width="Auto" />
         </Grid.ColumnDefinitions>
 
-        <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Vertical" Visibility="Collapsed" Name="StackPanelGeekQuiz">
+        <!--<StackPanel Grid.Row="0" Grid.Column="1" Orientation="Vertical" Visibility="Collapsed" Name="StackPanelGeekQuiz">
             <StackPanel Orientation="Vertical">
                 <Image Margin="10,10,10,10" Name="AppImageGeekQuiz" Stretch="None" Source="Resources/GeekQuiz/VsixExtensionIcon_16x16.png"/>
                 <TextBlock Margin="10,10,10,10" Name="AppTextBlockQuestionGeekQuiz" />
@@ -51,7 +51,7 @@
             <StackPanel>
                 <Button Content="Submit Answer" Margin="10,10,10,10" Padding="5,5,5,5" Click="AppBtnSubmitMultiChoiceAnwser_OnClick" Name="AppBtnGeekQuizSubmitMultiChoiceAnwser"/>
             </StackPanel>
-        </StackPanel>
+        </StackPanel>-->
 
         <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Vertical" Visibility="Collapsed" Name="StackPanelJeopardy">
             <StackPanel>
@@ -66,7 +66,7 @@
             </StackPanel>
         </StackPanel>
 
-        <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Vertical" Visibility="Collapsed" Name="StackPanelNumericTrivia">
+        <!--<StackPanel Grid.Row="0" Grid.Column="1" Orientation="Vertical" Visibility="Collapsed" Name="StackPanelNumericTrivia">
             <StackPanel Orientation="Horizontal">
                 <Image Margin="10,10,10,10" Name="AppImageNumericTrivia" Stretch="None" Source="Resources/NumericTrivia/VsixExtensionIcon_16x16.png"/>
                 <TextBlock Margin="10,10,10,10" Name="AppTextBlockFactNumericTrivia" FontWeight="Bold" />
@@ -84,7 +84,7 @@
                     <Hyperlink Name="AppHyperlink1TrumpQuotes" RequestNavigate="AppHyperlink1_RequestNavigate" />
                 </TextBlock>
             </StackPanel>
-        </StackPanel>
+        </StackPanel>-->
 
         <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Vertical" Name="StackPanelFooter">
             <StackPanel Orientation="Horizontal">
