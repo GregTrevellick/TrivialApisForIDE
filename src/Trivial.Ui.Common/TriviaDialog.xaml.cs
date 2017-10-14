@@ -15,38 +15,33 @@ namespace Trivial.Ui.Common
         private AppName _appName;
         private string _correctAnswer;
         private string _optionsName;
-        private QuestionType _questionType;
-        private bool _suppressClosingWithoutSubmitingAnswerWarning;
-        private int? _totalQuestionsAnsweredCorrectly;
-        private int? _totalQuestionsAsked;
+        public QuestionType _questionType;
+        public bool _suppressClosingWithoutSubmitingAnswerWarning;
+        public int? _totalQuestionsAnsweredCorrectly;
+        public int? _totalQuestionsAsked;
         private bool _userStatusTotalsIncremented;
         public delegate void MyEventHandler(int? totalQuestionsAsked, int? totalQuestionsAnsweredCorrectly);
         public event MyEventHandler PersistHiddenOptionsEventHandler;
 
-        //public TriviaDialog(AppName appName, string optionsName, bool? suppressClosingWithoutSubmitingAnswerWarning)
-        //{
-        //    Init(appName, optionsName, suppressClosingWithoutSubmitingAnswerWarning, null, QuestionType.None, null, null);
-        //}
-
         public TriviaDialog(AppName appName, string optionsName)
         {
-            Init(appName, optionsName, null, null, QuestionType.None, null, null);
-        }
+            //Init(appName, optionsName, null, null, QuestionType.None, null, null);
+        //}
 
-        public TriviaDialog(AppName appName, string optionsName, bool? suppressClosingWithoutSubmitingAnswerWarning, string correctAnswer, QuestionType questionType, int? totalQuestionsAnsweredCorrectly, int? totalQuestionsAsked)
-        {
-            Init(appName, optionsName, suppressClosingWithoutSubmitingAnswerWarning, correctAnswer, questionType, totalQuestionsAnsweredCorrectly, totalQuestionsAsked);
-        }
+     //   public TriviaDialog(AppName appName, string optionsName, bool? suppressClosingWithoutSubmitingAnswerWarning, string correctAnswer, QuestionType questionType, int? totalQuestionsAnsweredCorrectly, int? totalQuestionsAsked)
+      //  {
+         //   Init(appName, optionsName, suppressClosingWithoutSubmitingAnswerWarning, correctAnswer, questionType, totalQuestionsAnsweredCorrectly, totalQuestionsAsked);
+      //  }
 
-        private void Init(AppName appName, string optionsName, bool? suppressClosingWithoutSubmitingAnswerWarning, string correctAnswer, QuestionType questionType, int? totalQuestionsAnsweredCorrectly, int? totalQuestionsAsked)
-        {
+        //private void Init(AppName appName, string optionsName, bool? suppressClosingWithoutSubmitingAnswerWarning, string correctAnswer, QuestionType questionType, int? totalQuestionsAnsweredCorrectly, int? totalQuestionsAsked)
+        //{
             _appName = appName;
-            _correctAnswer = correctAnswer;
+            //_correctAnswer = correctAnswer;
             _optionsName = optionsName;
-            _questionType = questionType;
-            _suppressClosingWithoutSubmitingAnswerWarning = suppressClosingWithoutSubmitingAnswerWarning ?? false;
-            _totalQuestionsAnsweredCorrectly = totalQuestionsAnsweredCorrectly;
-            _totalQuestionsAsked = totalQuestionsAsked;
+            //_questionType = questionType;
+            //_suppressClosingWithoutSubmitingAnswerWarning = suppressClosingWithoutSubmitingAnswerWarning ?? false;
+            //_totalQuestionsAnsweredCorrectly = totalQuestionsAnsweredCorrectly;
+            //_totalQuestionsAsked = totalQuestionsAsked;
             _userStatusTotalsIncremented = false;
 
             InitializeComponent();
