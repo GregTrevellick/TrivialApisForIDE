@@ -4,9 +4,10 @@ namespace Trivial.Ui.Common
 {
     public class TriviaDialogDtoBase
     {
-        public TriviaDialogDtoBase(AppName appName, string optionsName, string popUpTitle)
+        public TriviaDialogDtoBase(AppName appName, string optionsName, string popUpTitle, string errorDetails)
         {
             AppName = appName;
+            ErrorDetails = errorDetails;
             OptionsName = optionsName;
             PopUpTitle = popUpTitle;
         }

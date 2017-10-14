@@ -4,7 +4,7 @@ namespace Trivial.Ui.Common
 {
     public class TriviaDialogJeopardyDto : TriviaDialogDtoBase
     {
-        public TriviaDialogJeopardyDto(AppName appName, string optionsName, string popUpTitle) : base(appName, optionsName, popUpTitle)
+        public TriviaDialogJeopardyDto(AppName appName, string optionsName, string popUpTitle, string errorDetails) : base(appName, optionsName, popUpTitle, errorDetails)
         {
         }
 

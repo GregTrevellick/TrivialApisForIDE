@@ -6,7 +6,7 @@ namespace Trivial.Ui.Common
 {
     public class TriviaDialogGeekQuizDto : TriviaDialogDtoBase
     {
-        public TriviaDialogGeekQuizDto(AppName appName, string optionsName, string popUpTitle) : base(appName, optionsName, popUpTitle)
+        public TriviaDialogGeekQuizDto(AppName appName, string optionsName, string popUpTitle, string errorDetails) : base(appName, optionsName, popUpTitle, errorDetails)
         {
         }
 
