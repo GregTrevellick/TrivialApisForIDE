@@ -67,10 +67,11 @@ namespace Trivial.Ui.Common
 
         private static TriviaDialogTrumpQuotesDto GetTriviaDialogTrumpQuotesDto(AppName appName, string popUpTitle, string optionsName, GatewayResponseBase gatewayResponse, GatewayResponseTrumpQuotes gatewayResponseTrump)
         {
-            var triviaDialogTrumpQuotesDto = new TriviaDialogTrumpQuotesDto(appName, optionsName, popUpTitle, gatewayResponse.ErrorDetails)
+            var triviaDialogTrumpQuotesDto =
+                new TriviaDialogTrumpQuotesDto(appName, optionsName, popUpTitle, gatewayResponse.ErrorDetails)
                 {
-                    ///////////////////ErrorDetails = gatewayResponse.ErrorDetails,
-                    TrumpQuotesAttribution = gatewayResponseTrump.QuotationAuthor + spacer + gatewayResponseTrump.QuotationDate + spacer,
+                    TrumpQuotesAttribution = gatewayResponseTrump.QuotationAuthor + spacer +
+                                             gatewayResponseTrump.QuotationDate + spacer,
                     TrumpQuotesHyperLinkUri = gatewayResponseTrump.HyperLinkUri,
                     TrumpQuotesQuotation = gatewayResponseTrump.TrumpQuote,
                 };
@@ -79,9 +80,9 @@ namespace Trivial.Ui.Common
 
         private static TriviaDialogGeekQuizDto GetTriviaDialogGeekQuizDto(AppName appName, string popUpTitle, string optionsName, GatewayResponseBase gatewayResponse, GatewayResponseGeekQuiz gatewayResponseGeekQuiz)
         {
-            var triviaDialogGeekQuizDto = new TriviaDialogGeekQuizDto(appName, optionsName, popUpTitle, gatewayResponse.ErrorDetails)
+            var triviaDialogGeekQuizDto =
+                new TriviaDialogGeekQuizDto(appName, optionsName, popUpTitle, gatewayResponse.ErrorDetails)
                 {
-                    ////////////ErrorDetails = gatewayResponse.ErrorDetails,
                     GeekQuizDifficulty = gatewayResponseGeekQuiz.DifficultyLevel,
                     GeekQuizMultipleChoiceAnswers = gatewayResponseGeekQuiz.MultipleChoiceAnswers,
                     GeekQuizMultipleChoiceCorrectAnswer = gatewayResponseGeekQuiz.MultipleChoiceCorrectAnswer,
@@ -93,9 +94,9 @@ namespace Trivial.Ui.Common
 
         private static TriviaDialogJeopardyDto GetTriviaDialogJeopardyDto(AppName appName, string popUpTitle, string optionsName, GatewayResponseBase gatewayResponse, GatewayResponseJeopardy gatewayResponseJeopardy)
         {
-            var triviaDialogJeopardyDto = new TriviaDialogJeopardyDto(appName, optionsName, popUpTitle, gatewayResponse.ErrorDetails)
-            {
-                    //////ErrorDetails = gatewayResponse.ErrorDetails,
+            var triviaDialogJeopardyDto =
+                new TriviaDialogJeopardyDto(appName, optionsName, popUpTitle, gatewayResponse.ErrorDetails)
+                {
                     JeopardyAnswer = "A. " + gatewayResponseJeopardy.Answer,
                     JeopardyQuestion = "Q. " + gatewayResponseJeopardy.Question,
                 };
@@ -104,9 +105,9 @@ namespace Trivial.Ui.Common
 
         private static TriviaDialogNumericTriviaDto GetTriviaDialogNumericTriviaDto(AppName appName, string popUpTitle, string optionsName, GatewayResponseBase gatewayResponse, GatewayResponseNumericTrivia gatewayResponseNumeric)
         {
-            var triviaDialogNumericTriviaDto = new TriviaDialogNumericTriviaDto(appName, optionsName, popUpTitle, gatewayResponse.ErrorDetails)
+            var triviaDialogNumericTriviaDto =
+                new TriviaDialogNumericTriviaDto(appName, optionsName, popUpTitle, gatewayResponse.ErrorDetails)
                 {
-                    //////////ErrorDetails = gatewayResponse.ErrorDetails,
                     NumericTriviaFact = gatewayResponseNumeric.NumericFact,
                 };
             return triviaDialogNumericTriviaDto;
