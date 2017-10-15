@@ -33,7 +33,7 @@
 
         <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Vertical" Visibility="Collapsed" Name="StackPanelGeekQuiz">
             <StackPanel Orientation="Vertical">
-                <Image Margin="10,10,10,10" Name="AppImageGeekQuiz" Stretch="None" Source="Resources/GeekQuiz/VsixExtensionIcon_16x16.png"/>
+                <!--<Image Margin="10,10,10,10" Name="AppImageGeekQuiz" Stretch="None" Source="Resources/GeekQuiz/VsixExtensionIcon_16x16.png"/>-->
                 <TextBlock Margin="10,10,10,10" Name="AppTextBlockQuestionGeekQuiz" />
                 <RadioButton Margin="10,5,5,5" Name="RadioBtn1"/>
                 <RadioButton Margin="10,5,5,5" Name="RadioBtn2"/>

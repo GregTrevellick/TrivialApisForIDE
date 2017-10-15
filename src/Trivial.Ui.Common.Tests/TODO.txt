@@ -18,6 +18,7 @@ FUTURE if (response?.Results?.Addresses?[0]?.Zip == "63368") { //stuff C# 6 null
 opentdb submitable questions - cmmi ? solid ? grunt ? gulp ?
 
 
+https://cocktail-trivia-api.herokuapp.com/
 
 
 http://jservice.io/popular/14968

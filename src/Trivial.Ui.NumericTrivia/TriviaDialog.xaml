@@ -1,4 +1,4 @@
-﻿<platformUi:DialogWindow x:Class="Trivial.Ui.Common.TriviaDialog"
+﻿<platformUi:DialogWindow x:Class="Trivial.Ui.NumericTrivia.TriviaDialog"
                          xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                          xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                          xmlns:platformUi="clr-namespace:Microsoft.VisualStudio.PlatformUI;assembly=Microsoft.VisualStudio.Shell.14.0"
@@ -33,7 +33,7 @@
 
         <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Vertical" Visibility="Collapsed" Name="StackPanelNumericTrivia">
             <StackPanel Orientation="Horizontal">
-                <Image Margin="10,10,10,10" Name="AppImageNumericTrivia" Stretch="None" Source="Resources/NumericTrivia/VsixExtensionIcon_16x16.png"/>
+                <!--<Image Margin="10,10,10,10" Name="AppImageNumericTrivia" Stretch="None" Source="Resources/NumericTrivia/VsixExtensionIcon_16x16.png"/>-->
                 <TextBlock Margin="10,10,10,10" Name="AppTextBlockFactNumericTrivia" FontWeight="Bold" />
             </StackPanel>
         </StackPanel>

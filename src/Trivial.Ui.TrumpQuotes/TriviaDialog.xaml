@@ -33,7 +33,7 @@
 
         <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Vertical" Visibility="Collapsed" Name="StackPanelTrumpQuotes">
             <StackPanel Orientation="Horizontal" >
-                <Image Margin="10,10,10,10" Name="AppImageTrumpQuotes" Stretch="None" Source="Resources/TrumpQuotes/VsixExtensionIcon_16x16.png"/>
+                <!--<Image Margin="10,10,10,10" Name="AppImageTrumpQuotes" Stretch="None" Source="Resources/TrumpQuotes/VsixExtensionIcon_16x16.png"/>-->
                 <TextBlock Margin="10,10,10,10" Name="AppTextBlockQuotationTrumpQuotes" FontWeight="Bold" />
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" >

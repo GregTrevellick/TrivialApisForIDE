@@ -7,18 +7,14 @@ using System.Windows.Documents;
 using Trivial.Api.Gateway;
 using Trivial.Api.Gateway.GeekQuiz;
 using Trivial.Entities;
+using Trivial.Ui.Common;
 
-namespace Trivial.Ui.Common
+namespace Trivial.Ui.GeekQuiz
 {
     public class TriviaMessage
     {
         public delegate void MyEventHandler2(int? totalQuestionsAsked, int? totalQuestionsAnsweredCorrectly);
         public event MyEventHandler2 PersistHiddenOptionsEventHandler2;//gregt rename to remove '2' suffix
-
-        //public HiddenOptionsDto ShowTrivia(AppName appName, string popUpTitle, DateTime lastPopUpDateTime, int popUpCountToday, int timeOutInMilliSeconds, string optionsName)
-        //{
-        //    return ShowTriviaMessage(appName, popUpTitle, lastPopUpDateTime, popUpCountToday, timeOutInMilliSeconds, optionsName, null, null, null);
-        //}
 
         public HiddenOptionsDto ShowTrivia(AppName appName, string popUpTitle, DateTime lastPopUpDateTime, int popUpCountToday, int timeOutInMilliSeconds, string optionsName, bool suppressClosingWithoutSubmitingAnswerWarning, int totalQuestionsAnsweredCorrectly, int totalQuestionsAsked)
         {
@@ -36,7 +32,7 @@ namespace Trivial.Ui.Common
             var triviaDialogGeekQuizDto = GetTriviaDialogGeekQuizDto(appName, popUpTitle, optionsName, gatewayResponseGeekQuiz);
             DisplayPopUpMessageGeekQuiz(triviaDialogGeekQuizDto, suppressClosingWithoutSubmitingAnswerWarning, totalQuestionsAnsweredCorrectly, totalQuestionsAsked);
 
-            hiddenOptionsDto = GeekQuizGetHiddenOptionsDto(lastPopUpDateTime, popUpCountToday);
+            hiddenOptionsDto = GetHiddenOptionsDto(lastPopUpDateTime, popUpCountToday);
 
             return hiddenOptionsDto;
         }
@@ -144,7 +140,7 @@ namespace Trivial.Ui.Common
             }
         }
 
-        private HiddenOptionsDto GeekQuizGetHiddenOptionsDto(DateTime lastPopUpDateTime, int popUpCountToday)
+        private HiddenOptionsDto GetHiddenOptionsDto(DateTime lastPopUpDateTime, int popUpCountToday)
         {
             var hiddenOptionsDto = new HiddenOptionsDto();
 

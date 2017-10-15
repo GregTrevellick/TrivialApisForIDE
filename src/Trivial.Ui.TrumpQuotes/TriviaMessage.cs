@@ -4,8 +4,9 @@ using System.Windows;
 using Trivial.Api.Gateway;
 using Trivial.Api.Gateway.TrumpQuotes;
 using Trivial.Entities;
+using Trivial.Ui.Common;
 
-namespace Trivial.Ui.Common
+namespace Trivial.Ui.TrumpQuotes
 {
     public class TriviaMessage
     {
@@ -18,11 +19,6 @@ namespace Trivial.Ui.Common
             return ShowTriviaMessage(appName, popUpTitle, lastPopUpDateTime, popUpCountToday, timeOutInMilliSeconds, optionsName, null, null, null);
         }
 
-        //public HiddenOptionsDto ShowTrivia(AppName appName, string popUpTitle, DateTime lastPopUpDateTime, int popUpCountToday, int timeOutInMilliSeconds, string optionsName, bool suppressClosingWithoutSubmitingAnswerWarning, int totalQuestionsAnsweredCorrectly, int totalQuestionsAsked)
-       // {
-         //   return ShowTriviaMessage(appName, popUpTitle, lastPopUpDateTime, popUpCountToday, timeOutInMilliSeconds, optionsName, suppressClosingWithoutSubmitingAnswerWarning, totalQuestionsAnsweredCorrectly, totalQuestionsAsked);
-        //}
-
         private HiddenOptionsDto ShowTriviaMessage(AppName appName, string popUpTitle, DateTime lastPopUpDateTime, int popUpCountToday, int timeOutInMilliSeconds, string optionsName, bool? suppressClosingWithoutSubmitingAnswerWarning, int? totalQuestionsAnsweredCorrectly, int? totalQuestionsAsked)
         {
             HiddenOptionsDto hiddenOptionsDto = null;
@@ -34,7 +30,33 @@ namespace Trivial.Ui.Common
             var triviaDialogTrumpQuotesDto = GetTriviaDialogTrumpQuotesDto(appName, popUpTitle, optionsName, gatewayResponseTrump);
             DisplayPopUpMessageTrumpQuotes(triviaDialogTrumpQuotesDto);
 
-            hiddenOptionsDto = GeekQuizGetHiddenOptionsDto(lastPopUpDateTime, popUpCountToday);
+            hiddenOptionsDto = GetHiddenOptionsDto(lastPopUpDateTime, popUpCountToday);
+
+            return hiddenOptionsDto;
+        }
+
+        private bool IsANewDay(DateTime lastPopUpDateTime, DateTime baseDateTime)
+        {
+            //If last pop up was yesterday, then we have gone past midnight, so this is first pop up for today
+            return lastPopUpDateTime.Date < baseDateTime.Date;
+        }
+
+        private HiddenOptionsDto GetHiddenOptionsDto(DateTime lastPopUpDateTime, int popUpCountToday)
+        {
+            var hiddenOptionsDto = new HiddenOptionsDto();
+
+            var baseDateTime = DateTime.Now;
+
+            if (IsANewDay(lastPopUpDateTime, baseDateTime))
+            {
+                hiddenOptionsDto.PopUpCountToday = 1;
+            }
+            else
+            {
+                hiddenOptionsDto.PopUpCountToday = popUpCountToday + 1;
+            }
+
+            hiddenOptionsDto.LastPopUpDateTime = baseDateTime;
 
             return hiddenOptionsDto;
         }

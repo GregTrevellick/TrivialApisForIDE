@@ -1,9 +1,9 @@
-﻿using Microsoft.VisualStudio.PlatformUI;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Media.Imaging;
+using Microsoft.VisualStudio.PlatformUI;
 using Trivial.Entities;
 
-namespace Trivial.Ui.Common
+namespace Trivial.Ui.NumericTrivia
 {
     public partial class TriviaDialog : DialogWindow
     {

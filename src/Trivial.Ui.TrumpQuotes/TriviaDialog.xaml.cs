@@ -4,7 +4,6 @@ using System.Windows;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using Trivial.Entities;
-using Trivial.Ui.Common;
 
 namespace Trivial.Ui.TrumpQuotes
 {
