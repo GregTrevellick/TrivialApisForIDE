@@ -6,7 +6,7 @@
                          xmlns:shell="clr-namespace:Microsoft.VisualStudio.Shell;assembly=Microsoft.VisualStudio.Shell.14.0"
                          xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
                          xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-                         xmlns:common="clr-namespace:Trivial.Ui.Common"
+                         xmlns:common="clr-namespace:Trivial.Ui.NumericTrivia"
                          mc:Ignorable="d"
                          Background="{DynamicResource VsBrush.Window}"
                          Foreground="{DynamicResource VsBrush.WindowText}"
