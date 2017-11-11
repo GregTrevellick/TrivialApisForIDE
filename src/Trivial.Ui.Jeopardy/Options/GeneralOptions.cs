@@ -115,16 +115,5 @@ namespace Trivial.Ui.Jeopardy.Options
                 }
             }
         }
-
-
-        [Category(CommonConstants.CategorySubLevel)]
-        [DisplayName(CommonConstants.ShowTriviaUponClosingSolutionOptionLabel)]
-        [Description(CommonConstants.ShowTriviaUponClosingSolutionOptionDetailedDescription)]
-        public bool ShowTriviaUponClosingSolution { get; set; } = false;
-
-        [Category(CommonConstants.CategorySubLevel)]
-        [DisplayName(CommonConstants.ShowTriviaUponOpeningSolutionOptionLabel)]
-        [Description(CommonConstants.ShowTriviaUponOpeningSolutionOptionDetailedDescription)]
-        public bool ShowTriviaUponOpeningSolution { get; set; } = true;
     }
 }

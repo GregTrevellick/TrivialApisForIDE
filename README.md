@@ -13,7 +13,7 @@
 [![Build status][AppVeyorProjectBuildStatusBadgeSvg]][AppVeyorProjectUrl]
 [![][VersionNumberBadgeURL]][VSMarketplaceUrl]
 
-Inspired by [Phil Haack's Encourage](https://marketplace.visualstudio.com/items?itemName=Haacked.Encourage) extension, this is a series of light-hearted and meaningless [Visual Studio][VisualStudioURL] extensions that display trivial quotations, questions or information when opening and/or closing a .Net solution file within the [Visual Studio][VisualStudioURL] IDE .
+Inspired by [Phil Haack's Encourage](https://marketplace.visualstudio.com/items?itemName=Haacked.Encourage) extension, this is a series of light-hearted and meaningless [Visual Studio][VisualStudioURL] extensions that display trivial quotations or information when opening a  solution.
 
 The [Visual Studio][VisualStudioURL] extensions are officially available at the [Visual Studio Marketplace][VSMarketplaceUrl].
 
@@ -25,19 +25,11 @@ See the [change log](CHANGELOG.md) for release history.
 
 ## Credits
 
-[jService](http://www.jservice.io)
-
-[Numbers API](http://www.numbersapi.com)
-
-[Open Trivia Database](https://opentdb.com/)
+[Todd Motto](https://github.com/toddmotto/public-apis)
 
 [Phil Haack](https://marketplace.visualstudio.com/items?itemName=Haacked.Encourage)
 
 [Phil Haack again](http://haacked.com/archive/2014/07/30/visual-studios-extensions-settings/)
-
-[Todd Motto](https://github.com/toddmotto/public-apis)
-
-[Tronald Dump](https://www.tronalddump.io)
 
 [Utkarsh Shigihalli](https://github.com/onlyutkarsh/XamlDialogInVSExtensionDemo)
 

@@ -46,10 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GeekQuiz\ClientGatewayGeekQuiz.cs" />
-    <Compile Include="GeekQuiz\GatewayResponseGeekQuiz.cs" />
-    <Compile Include="GeekQuiz\GeekQuizRootObject.cs" />
-    <Compile Include="QuestionType.cs" />
     <Compile Include="ResponseDto.cs" />
     <Compile Include="Jeopardy\JeopardyRootObject.cs" />
     <Compile Include="TrumpQuotes\TrumpQuotesRootObject.cs" />

@@ -4,6 +4,8 @@ namespace Trivial.Ui.Common
 {
     public static class CommonConstants
     {
+        public const int RecommendedMaximumTimeoutMilliSeconds = 3000;
+        public const int RecommendedMinimumTimeoutMilliSeconds = 400;
         public const string CategorySubLevel = "General";
         public const string DefaultMaximumPopUpsWeekDay = "7";
         public const string DefaultMaximumPopUpsWeekEnd = "99";
@@ -15,14 +17,6 @@ namespace Trivial.Ui.Common
         public const string MaximumPopUpsWeekEndOptionLabel = "Daily pop-up limit (weekend)";
         public const string PopUpIntervalInMinsOptionDetailedDescription = "Use this setting to reduce the overall frequency with which you see pop-up messages (especially if you open a lot of solution files in a short time frame). This is the minimum number of minutes after a pop-up message is displayed before you will see another pop-up message.";
         public const string PopUpIntervalInMinsOptionLabel = "Number of minutes between pop-ups";
-        public const int RecommendedMaximumTimeoutMilliSeconds = 3000;
-        public const int RecommendedMinimumTimeoutMilliSeconds = 400;
-        public const string ShowTriviaUponClosingSolutionOptionLabel = "Show pop-up when closing a solution";
-        public const string ShowTriviaUponClosingSolutionOptionDetailedDescription = ShowTriviaUponClosingSolutionOptionLabel + " (requires restart of Visual Studio).";
-        public const string ShowTriviaUponOpeningSolutionOptionLabel = "Show pop-up when opening a solution";
-        public const string ShowTriviaUponOpeningSolutionOptionDetailedDescription = ShowTriviaUponOpeningSolutionOptionLabel + " (requires restart of Visual Studio).";
-        public const string SuppressClosingWithoutSubmitingAnswerWarningOptionLabel = "Suppress early closure warning";
-        public const string SuppressClosingWithoutSubmitingAnswerWarningOptionDetailedDescription = "Suppress the warning that appears when closing the quiz window without having answered the question first. By showing the warning you can avoid being disappointed by closing the quiz question without ever knowing the answer.";
         public const string TimeOutInMilliSecondsOptionDetailedDescription = "The maximum time in milliseconds for this extension to spend retrieving the pop-up message data from the third party data source. This value is used as the timeout parameter when calling the external web service. A value of zero is ignored by the external web service call and will not cause an instant timeout.";
         public const string TimeOutInMilliSecondsOptionLabel = "Timeout limit (milliseconds)";
         public static string TimeOutInMilliSecondsIsOutsideRecommendedTimeoutLimits = $"Are you sure ?{Environment.NewLine}{Environment.NewLine}The value for '{TimeOutInMilliSecondsOptionLabel}' is outside the recommended limits, which means the data retrieval may timeout before completion or may wait for a long time to complete.";

@@ -3,7 +3,7 @@
 [GitHubRepoPullRequestsURL]: https://github.com/GregTrevellick/TrivialApisForIDE/pulls
 [VSMarketplaceUrl]: https://marketplace.visualstudio.com/items?itemName=GregTrevellick.Jeopardy#review-details
 
-A trivial extension that poses a Jeopardy question when opening and/or closing a solution file.
+A trivial extension that poses a Jeopardy question when opening a solution file.
 
 - Simple escapism from the day to day pressures of software development.
 
@@ -28,7 +28,5 @@ A trivial extension that poses a Jeopardy question when opening and/or closing a
 - Upper limit of pop-up messages per day configurable, with different values for midweek and weekends
 
 - Configurable timeout (in milliseconds) for third party data retrieval process 
-
-- Ability to request pop-up when opening and/or when closing a solution file
 
     ![](../../Trivial.Ui.Common/Resources/Generic_ReadMeScreenShot_OptionsGeneral.png)

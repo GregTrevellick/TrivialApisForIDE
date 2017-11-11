@@ -1,0 +1,53 @@
+﻿https://github.com/uberspot/OpenTriviaQA/blob/master/categories/science-technology
+add in rating review chaser
+jeopardy - "reveal answer" not showing
+
+
+
+RATING https://marketplace.visualstudio.com/services/VStudio/Extension.svc (use fiddler when running the Extension and Updates dialog)
+FUTURE close all popups when sln is closed
+FUTURE allow user to reset the % success back to zero
+FUTURE (geek quiz) if uptake is siginificant allow user to request a second question, but not anymore than that (show "go back to work" message)
+FUTURE (geek quiz) if uptake is siginificant add option for user to select easy / medium / hard
+FUTURE (geek quiz) if uptake is siginificant play correct / incorrect sound ?
+FUTURE set different default options for different apps
+FUTURE add clues to jeopardy
+FUTURE pop quiz https://opentdb.com/api.php?amount=10&category=18
+FUTURE if (response?.Results?.Addresses?[0]?.Zip == "63368") { //stuff C# 6 null conditional operator FUTURE }
+
+opentdb submitable questions - cmmi ? solid ? grunt ? gulp ?
+
+
+https://cocktail-trivia-api.herokuapp.com/
+
+
+http://jservice.io/popular/14968
+http://jservice.io/popular/16168
+http://jservice.io/popular/17037
+http://jservice.io/popular/17078
+http://jservice.io/popular/10511
+http://jservice.io/popular/12223
+http://jservice.io/popular/17308
+http://jservice.io/popular/17737
+http://jservice.io/popular/11075
+http://jservice.io/popular/348
+http://jservice.io/popular/950
+http://jservice.io/popular/9357
+http://jservice.io/popular/11877
+http://jservice.io/popular/8029
+http://jservice.io/popular/8571
+http://jservice.io/popular/18254
+http://jservice.io/popular/16244
+http://jservice.io/popular/16775
+http://jservice.io/popular/17140
+http://jservice.io/popular/15702
+http://jservice.io/popular/4521
+http://jservice.io/popular/5528
+http://jservice.io/popular/9539
+http://jservice.io/popular/9242
+http://jservice.io/popular/9726
+http://jservice.io/popular/10873
+http://jservice.io/popular/11626
+http://jservice.io/popular/10929
+http://jservice.io/popular/13365
+http://jservice.io/popular/13737

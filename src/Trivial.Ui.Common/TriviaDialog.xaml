@@ -1,0 +1,42 @@
+﻿<platformUi:DialogWindow x:Class="Trivial.Ui.Common.TriviaDialog"
+                         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                         xmlns:platformUi="clr-namespace:Microsoft.VisualStudio.PlatformUI;assembly=Microsoft.VisualStudio.Shell.14.0"
+                         xmlns:SamplingMode="clr-namespace:System;assembly=mscorlib"
+                         xmlns:shell="clr-namespace:Microsoft.VisualStudio.Shell;assembly=Microsoft.VisualStudio.Shell.14.0"
+                         Background="{DynamicResource VsBrush.Window}"
+                         Foreground="{DynamicResource VsBrush.WindowText}" >
+    <Grid ShowGridLines="false">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+
+        <Image Grid.Row="0" Grid.Column="0" Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Left" Name="AppImage" Stretch="None"/>
+
+        <TextBlock Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Visibility="Collapsed" Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Left" Name="AppTextBlockQuotation" FontWeight="Bold" />
+        <TextBlock Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Visibility="Collapsed" Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Left" Name="AppTextBlockErrorDetails" />
+        <TextBlock Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Visibility="Collapsed" Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Left" Name="AppTextBlockFact" FontWeight="Bold" />
+        <TextBlock Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Visibility="Collapsed" Margin="10,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Left" Name="AppTextBlockQuestion" FontWeight="Bold" />
+        
+        <TextBlock Grid.Row="1" Grid.Column="1" Visibility="Collapsed" Margin="10,10,0,10" VerticalAlignment="Center" HorizontalAlignment="Right" Name="AppTextBlockAttribution" />
+        <TextBlock Grid.Row="1" Grid.Column="2" Visibility="Collapsed" Margin="0,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Left" Name="AppTextBlockHyperLink">
+           <Hyperlink Name="AppHyperlink1" RequestNavigate="AppHyperlink1_RequestNavigate" />
+        </TextBlock>
+        <Button Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" Visibility="Collapsed" Content="Reveal Answer" Margin="10,10,10,10" Padding="5,5,5,5" VerticalAlignment="Center" HorizontalAlignment="Left" Click="AppBtnRevealAnswer_OnClick" Name="AppBtnRevealAnswer"/>
+        <TextBlock Grid.Row="1" Grid.Column="1" Visibility="Collapsed" Margin="10,10,0,10" VerticalAlignment="Center" HorizontalAlignment="Left" Name="AppTextBlockAnswer" FontWeight="Bold"/>
+
+        <Button Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" Content="Close" Margin="10,10,10,10" Padding="5,5,5,5" VerticalAlignment="Center" HorizontalAlignment="Center" Click="AppBtnClose_OnClick" Name="AppBtnClose"/>
+        <Button Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" Content="Help" Margin="10,10,10,10" Padding="5,5,5,5" VerticalAlignment="Center" HorizontalAlignment="Right" Click="AppBtnHelp_OnClick" Name="AppBtnHelp"/>
+        <TextBlock Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" Visibility="Collapsed" Margin="5,5,5,5" Padding="5,5,5,5" VerticalAlignment="Center" HorizontalAlignment="Right" Name="TextBlockHelp" />
+        
+    </Grid>
+</platformUi:DialogWindow>
+       

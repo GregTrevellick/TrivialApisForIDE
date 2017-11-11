@@ -3,7 +3,7 @@
 [GitHubRepoPullRequestsURL]: https://github.com/GregTrevellick/TrivialApisForIDE/pulls
 [VSMarketplaceUrl]: https://marketplace.visualstudio.com/items?itemName=GregTrevellick.NumericTrivia#review-details
 
-A light-hearted and meaningless extension that displays a random number-related fact / piece of trivia when opening and/or closing a solution file.
+A light-hearted and meaningless extension that displays a random number-related fact / piece of trivia when opening a solution file.
 
 - Impress your geek peers or bore your spouse/kids with your new found nerdy numerical knowledge.
 
@@ -22,7 +22,5 @@ A light-hearted and meaningless extension that displays a random number-related 
 - Upper limit of pop-up messages per day configurable, with different values for midweek and weekends
 
 - Configurable timeout (in milliseconds) for third party data retrieval process 
-
-- Ability to request pop-up when opening and/or when closing a solution file
 
     ![](../../Trivial.Ui.Common/Resources/Generic_ReadMeScreenShot_OptionsGeneral.png)

@@ -10,9 +10,6 @@ namespace Trivial.Api.Gateway
 
             switch (appName)
             {
-                case AppName.GeekQuiz://Consistent average response time 350ms peaking double that
-                    url = "https://opentdb.com/api.php?amount=1&category=18";
-                    break;
                 case AppName.Jeopardy://Consistent average response time 270ms
                     url = "http://www.jservice.io/api/random";
                     break;
@@ -25,6 +22,9 @@ namespace Trivial.Api.Gateway
                 //case AppName.ExchangeRates:
                 //    url = "http://api.fixer.io/latest";
                 //    http://api.fixer.io/latest?symbols=USD,GBP&base=GBP
+                //    break;
+                //case AppName.OpenTriviaDatabase:
+                //    url = "https://opentdb.com/api.php?amount=1&category=18&difficulty=easy&type=multiple"; //https://opentdb.com/api_config.php
                 //    break;
                 //case AppName.QruisityApp:
                 //    url = "https://qriusity.com/v1/questions?page=2&limit=1";
