@@ -2,7 +2,7 @@
 [GitHubRepoIssuesURL]: https://github.com/GregTrevellick/TrivialApisForIDE/issues
 [GitHubRepoPullRequestsURL]: https://github.com/GregTrevellick/TrivialApisForIDE/pulls
 [VSMarketplaceUrl]: https://marketplace.visualstudio.com/items?itemName=GregTrevellick.NumericTrivia#review-details
-[CharityWareURL]: https://github.com/GregTrevellick/MiscellaneousArtefacts/blob/master/MiscellaneousArtefacts/CharityWare.MD
+[CharityWareURL]: https://github.com/GregTrevellick/MiscellaneousArtefacts/wiki/Charity-Ware
 
 A light-hearted and meaningless extension that displays a random number-related fact / piece of trivia when opening a solution file.
 

@@ -2,7 +2,7 @@
 [GitHubRepoIssuesURL]: https://github.com/GregTrevellick/TrivialApisForIDE/issues
 [GitHubRepoPullRequestsURL]: https://github.com/GregTrevellick/TrivialApisForIDE/pulls
 [VSMarketplaceUrl]: https://marketplace.visualstudio.com/items?itemName=GregTrevellick.DrainTheSwamp#review-details
-[CharityWareURL]: https://github.com/GregTrevellick/MiscellaneousArtefacts/blob/master/MiscellaneousArtefacts/CharityWare.MD
+[CharityWareURL]: https://github.com/GregTrevellick/MiscellaneousArtefacts/wiki/Charity-Ware
 
 Enlighten your day with an insightful random quote from Donald Trump when opening a solution file.
 
