@@ -7,6 +7,7 @@
 [VisualStudioURL]: https://www.visualstudio.com/
 [VSMarketplaceUrl]: https://marketplace.visualstudio.com/search?term=trevellick&target=VS&sortBy=Relevance
 [CharityWareURL]: https://github.com/GregTrevellick/MiscellaneousArtefacts/wiki/Charity-Ware
+[WhyURL]: https://github.com/GregTrevellick/MiscellaneousArtefacts/wiki/Why
 
 # Trivial APIs for Visual Studio 
 
@@ -23,6 +24,8 @@ Contributions to this project are welcome, including from Mexicans, by raising a
 Bugs can be logged [here][GitHubRepoIssuesURL].
 
 See the [change log](CHANGELOG.md) for release history.
+
+[Why build this extension?][WhyURL] 
 
 ## Credits
 

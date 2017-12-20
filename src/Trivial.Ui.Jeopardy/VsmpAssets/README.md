@@ -3,6 +3,7 @@
 [GitHubRepoPullRequestsURL]: https://github.com/GregTrevellick/TrivialApisForIDE/pulls
 [VSMarketplaceUrl]: https://marketplace.visualstudio.com/items?itemName=GregTrevellick.Jeopardy#review-details
 [CharityWareURL]: https://github.com/GregTrevellick/MiscellaneousArtefacts/wiki/Charity-Ware
+[WhyURL]: https://github.com/GregTrevellick/MiscellaneousArtefacts/wiki/Why
 
 A trivial extension that poses a Jeopardy question when opening a solution file.
 
@@ -23,6 +24,8 @@ A trivial extension that poses a Jeopardy question when opening a solution file.
 - Example answer
 
    ![](ReadMeScreenShot_Answer.png)
+
+[Why?][WhyURL]   
 
 ### Options
 
