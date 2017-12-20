@@ -2,6 +2,7 @@
 [GitHubRepoIssuesURL]: https://github.com/GregTrevellick/TrivialApisForIDE/issues
 [GitHubRepoPullRequestsURL]: https://github.com/GregTrevellick/TrivialApisForIDE/pulls
 [VSMarketplaceUrl]: https://marketplace.visualstudio.com/items?itemName=GregTrevellick.NumericTrivia#review-details
+[CharityWareURL]: https://github.com/GregTrevellick/MiscellaneousArtefacts/blob/master/MiscellaneousArtefacts/CharityWare.MD
 
 A light-hearted and meaningless extension that displays a random number-related fact / piece of trivia when opening a solution file.
 
@@ -12,6 +13,8 @@ A light-hearted and meaningless extension that displays a random number-related 
 - Aided and abetted by the good folks at [Numbers API](http://www.numbersapi.com).
 
 - Inspired by [Phil Haack's Encourage](https://marketplace.visualstudio.com/items?itemName=Haacked.Encourage) extension. 
+
+- [Be good][CharityWareURL]
 
     ![](ReadMeScreenShot.png)
 

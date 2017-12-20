@@ -2,6 +2,7 @@
 [GitHubRepoIssuesURL]: https://github.com/GregTrevellick/TrivialApisForIDE/issues
 [GitHubRepoPullRequestsURL]: https://github.com/GregTrevellick/TrivialApisForIDE/pulls
 [VSMarketplaceUrl]: https://marketplace.visualstudio.com/items?itemName=GregTrevellick.DrainTheSwamp#review-details
+[CharityWareURL]: https://github.com/GregTrevellick/MiscellaneousArtefacts/blob/master/MiscellaneousArtefacts/CharityWare.MD
 
 Enlighten your day with an insightful random quote from Donald Trump when opening a solution file.
 
@@ -10,6 +11,8 @@ Enlighten your day with an insightful random quote from Donald Trump when openin
 - Trust me folks, I think this [guy's](https://www.tronalddump.io) gonna be alright.
 
 - Inspired by [Phil Haack's Encourage](https://marketplace.visualstudio.com/items?itemName=Haacked.Encourage) extension. 
+
+- [Be good][CharityWareURL]
 
     ![](ReadMeScreenShot.png)
 
