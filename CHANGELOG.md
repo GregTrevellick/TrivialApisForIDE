@@ -10,6 +10,10 @@ Individual releases are tagged as such in GitHub.
   - [x] Drain The Swamp
   - [x] Numeric Trivia
 
+## 1.1.1
+**2018-01-dd**
+- [x] Minor enhancements
+
 <!--
  https://github.com/Microsoft/UnitTestBoilerplateGenerator/blob/master/src/CreateUnitTestBoilerplateDialog.xaml
  http://www.c-sharpcorner.com/UploadFile/mahakgupta/simple-data-binding-in-wpf/

@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 using Trivial.Entities;
 using Trivial.Ui.Common;
 using Trivial.Ui.TrumpQuotes.Options;
+using VsixRatingChaser.Interfaces;
 
 namespace Trivial.Ui.TrumpQuotes
 {
@@ -44,6 +45,8 @@ namespace Trivial.Ui.TrumpQuotes
                 {
                     UpdateHiddenOptions(hiddenOptionsDto);
                 }
+
+                ChaseRating();
             }
         }
 
@@ -73,5 +76,13 @@ namespace Trivial.Ui.TrumpQuotes
                 };
             }
         }
+
+        private void ChaseRating()
+        {
+            var hiddenChaserOptions = (IRatingDetailsDto)GetDialogPage(typeof(HiddenRatingDetailsDto));
+            var packageRatingChaser = new PackageRatingChaser();
+            packageRatingChaser.Hunt(hiddenChaserOptions);
+        }
+
     }
 }

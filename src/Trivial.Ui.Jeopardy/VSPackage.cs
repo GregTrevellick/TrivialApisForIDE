@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 using Trivial.Entities;
 using Trivial.Ui.Common;
 using Trivial.Ui.Jeopardy.Options;
+using VsixRatingChaser.Interfaces;
 
 namespace Trivial.Ui.Jeopardy
 {
@@ -44,6 +45,8 @@ namespace Trivial.Ui.Jeopardy
                 {
                     UpdateHiddenOptions(hiddenOptionsDto);
                 }
+
+                ChaseRating();
             }
         }
 
@@ -73,5 +76,13 @@ namespace Trivial.Ui.Jeopardy
                 };
             }
         }
+
+        private void ChaseRating()
+        {
+            var hiddenChaserOptions = (IRatingDetailsDto)GetDialogPage(typeof(HiddenRatingDetailsDto));
+            var packageRatingChaser = new PackageRatingChaser();
+            packageRatingChaser.Hunt(hiddenChaserOptions);
+        }
+
     }
 }
