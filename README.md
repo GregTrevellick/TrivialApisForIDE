@@ -11,6 +11,9 @@
 
 # Trivial APIs for Visual Studio 
 
+<!--BadgesSTART-->
+<!--BadgesEND-->
+
 [![Licence](https://img.shields.io/github/license/gittools/gitlink.svg)](/LICENSE.txt)
 [![Build status][AppVeyorProjectBuildStatusBadgeSvg]][AppVeyorProjectUrl]
 [![][VersionNumberBadgeURL]][VSMarketplaceUrl]
