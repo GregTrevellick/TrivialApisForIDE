@@ -26,10 +26,6 @@
 [![Charity Ware](https://img.shields.io/badge/charity%20ware-thank%20you-brightgreen.svg)](https://github.com/GregTrevellick/MiscellaneousArtefacts/wiki/Charity-Ware)
 [![License](https://img.shields.io/github/license/gittools/gitlink.svg)](/LICENSE.txt)<!--BadgesEND-->
 
-[![Licence](https://img.shields.io/github/license/gittools/gitlink.svg)](/LICENSE.txt)
-[![Build status][AppVeyorProjectBuildStatusBadgeSvg]][AppVeyorProjectUrl]
-[![][VersionNumberBadgeURL]][VSMarketplaceUrl]
-
 Inspired by [Phil Haack's Encourage](https://marketplace.visualstudio.com/items?itemName=Haacked.Encourage) extension, this is a series of light-hearted and meaningless  [CharityWare][CharityWareURL] [Visual Studio][VisualStudioURL] extensions that display trivial quotations or information when opening a  solution.
 
 The [Visual Studio][VisualStudioURL] extensions are officially available at the [Visual Studio Marketplace][VSMarketplaceUrl].
