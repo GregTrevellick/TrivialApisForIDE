@@ -12,10 +12,10 @@
 # Trivial APIs for Visual Studio 
 
 <!--BadgesSTART-->
-
+<!-- Powered by https://github.com/GregTrevellick/ReadMeSynchronizer -->
 [![BetterCodeHub compliance](https://bettercodehub.com/edge/badge/GregTrevellick/TrivialApisForIDE?branch=master)](https://bettercodehub.com/results/GregTrevellick/TrivialApisForIDE)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/035ab76ee20d45c886d72be824507ab5)](https://www.codacy.com/project/gtrevellick/TrivialApisForIDE/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=GregTrevellick/TrivialApisForIDE&amp;utm_campaign=Badge_Grade_Dashboard)
-[![CodeFactor](https://www.codefactor.io/repository/github/gregtrevellick/TrivialApisForIDE/badge)](https://www.codefactor.io/repository/github/gregtrevellick/TrivialApisForIDE)
+[![CodeFactor](https://www.codefactor.io/repository/github/GregTrevellick/TrivialApisForIDE/badge)](https://www.codefactor.io/repository/github/GregTrevellick/TrivialApisForIDE)
 [![GitHub top language](https://img.shields.io/github/languages/top/GregTrevellick/TrivialApisForIDE.svg)](https://github.com/GregTrevellick/TrivialApisForIDE)
 [![Github language count](https://img.shields.io/github/languages/count/GregTrevellick/TrivialApisForIDE.svg)](https://github.com/GregTrevellick/TrivialApisForIDE)
 [![GitHub pull requests](https://img.shields.io/github/issues-pr-raw/GregTrevellick/TrivialApisForIDE.svg)](https://github.com/GregTrevellick/TrivialApisForIDE/pulls)
@@ -24,7 +24,12 @@
 [![Access Lint github](https://img.shields.io/badge/a11y-checked-green.svg)](https://www.accesslint.com)
 [![ImgBot](https://img.shields.io/badge/images-optimized-green.svg)](https://imgbot.net/)
 [![Charity Ware](https://img.shields.io/badge/charity%20ware-thank%20you-brightgreen.svg)](https://github.com/GregTrevellick/MiscellaneousArtefacts/wiki/Charity-Ware)
-[![License](https://img.shields.io/github/license/gittools/gitlink.svg)](/LICENSE.txt)<!--BadgesEND-->
+[![License](https://img.shields.io/github/license/gittools/gitlink.svg)](/LICENSE.txt)
+[![Visual Studio Marketplace downloads](https://vsmarketplacebadge.apphb.com/installs/GregTrevellick.TrivialApisForIDE.svg)](https://marketplace.visualstudio.com/items?itemName=GregTrevellick.TrivialApisForIDE)
+[![Visual Studio Marketplace ratings](https://vsmarketplacebadge.apphb.com/rating/GregTrevellick.TrivialApisForIDE.svg)](https://marketplace.visualstudio.com/items?itemName=GregTrevellick.TrivialApisForIDE)
+[![Visual Studio Marketplace version](https://vsmarketplacebadge.apphb.com/version/GregTrevellick.TrivialApisForIDE.svg)](https://marketplace.visualstudio.com/items?itemName=GregTrevellick.TrivialApisForIDE)
+<!--BadgesEND-->
+
 
 Inspired by [Phil Haack's Encourage](https://marketplace.visualstudio.com/items?itemName=Haacked.Encourage) extension, this is a series of light-hearted and meaningless  [CharityWare][CharityWareURL] [Visual Studio][VisualStudioURL] extensions that display trivial quotations or information when opening a  solution.
 
