@@ -13,6 +13,7 @@
 
 <!--BadgesSTART-->
 <!-- Powered by https://github.com/GregTrevellick/ReadMeSynchronizer -->
+
 [![BetterCodeHub compliance](https://bettercodehub.com/edge/badge/GregTrevellick/TrivialApisForIDE?branch=master)](https://bettercodehub.com/results/GregTrevellick/TrivialApisForIDE)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/035ab76ee20d45c886d72be824507ab5)](https://www.codacy.com/project/gtrevellick/TrivialApisForIDE/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=GregTrevellick/TrivialApisForIDE&amp;utm_campaign=Badge_Grade_Dashboard)
 [![CodeFactor](https://www.codefactor.io/repository/github/GregTrevellick/TrivialApisForIDE/badge)](https://www.codefactor.io/repository/github/GregTrevellick/TrivialApisForIDE)
@@ -29,6 +30,7 @@
 [![Visual Studio Marketplace ratings](https://vsmarketplacebadge.apphb.com/rating/GregTrevellick.TrivialApisForIDE.svg)](https://marketplace.visualstudio.com/items?itemName=GregTrevellick.TrivialApisForIDE)
 [![Visual Studio Marketplace version](https://vsmarketplacebadge.apphb.com/version/GregTrevellick.TrivialApisForIDE.svg)](https://marketplace.visualstudio.com/items?itemName=GregTrevellick.TrivialApisForIDE)
 <!--BadgesEND-->
+
 
 
 
