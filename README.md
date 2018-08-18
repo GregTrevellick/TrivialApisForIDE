@@ -26,9 +26,25 @@
 [![ImgBot](https://img.shields.io/badge/images-optimized-green.svg)](https://imgbot.net/)
 [![Charity Ware](https://img.shields.io/badge/charity%20ware-thank%20you-brightgreen.svg)](https://github.com/GregTrevellick/MiscellaneousArtefacts/wiki/Charity-Ware)
 [![License](https://img.shields.io/github/license/gittools/gitlink.svg)](/LICENSE.txt)
-[![Visual Studio Marketplace downloads](https://vsmarketplacebadge.apphb.com/installs/GregTrevellick.TrivialApisForIDE.svg)](https://marketplace.visualstudio.com/items?itemName=GregTrevellick.TrivialApisForIDE)
-[![Visual Studio Marketplace ratings](https://vsmarketplacebadge.apphb.com/rating/GregTrevellick.TrivialApisForIDE.svg)](https://marketplace.visualstudio.com/items?itemName=GregTrevellick.TrivialApisForIDE)
-[![Visual Studio Marketplace version](https://vsmarketplacebadge.apphb.com/version/GregTrevellick.TrivialApisForIDE.svg)](https://marketplace.visualstudio.com/items?itemName=GregTrevellick.TrivialApisForIDE)
+
+[![Visual Studio Marketplace version](https://img.shields.io/badge/-DrainTheSwamp-%23e2165e.svg)](https://marketplace.visualstudio.com/items?itemName=GregTrevellick.DrainTheSwamp)
+[![Visual Studio Marketplace downloads](https://vsmarketplacebadge.apphb.com/installs/GregTrevellick.DrainTheSwamp.svg)](https://marketplace.visualstudio.com/items?itemName=GregTrevellick.DrainTheSwamp)
+[![Visual Studio Marketplace ratings](https://vsmarketplacebadge.apphb.com/rating/GregTrevellick.DrainTheSwamp.svg)](https://marketplace.visualstudio.com/items?itemName=GregTrevellick.DrainTheSwamp)
+[![Visual Studio Marketplace version](https://vsmarketplacebadge.apphb.com/version/GregTrevellick.DrainTheSwamp.svg)](https://marketplace.visualstudio.com/items?itemName=GregTrevellick.DrainTheSwamp)
+
+
+[![Visual Studio Marketplace version](https://img.shields.io/badge/-Jeopardy-%23e2165e.svg)](https://marketplace.visualstudio.com/items?itemName=GregTrevellick.Jeopardy)
+[![Visual Studio Marketplace downloads](https://vsmarketplacebadge.apphb.com/installs/GregTrevellick.Jeopardy.svg)](https://marketplace.visualstudio.com/items?itemName=GregTrevellick.Jeopardy)
+[![Visual Studio Marketplace ratings](https://vsmarketplacebadge.apphb.com/rating/GregTrevellick.Jeopardy.svg)](https://marketplace.visualstudio.com/items?itemName=GregTrevellick.Jeopardy)
+[![Visual Studio Marketplace version](https://vsmarketplacebadge.apphb.com/version/GregTrevellick.Jeopardy.svg)](https://marketplace.visualstudio.com/items?itemName=GregTrevellick.Jeopardy)
+
+
+[![Visual Studio Marketplace version](https://img.shields.io/badge/-NumericTrivia-%23e2165e.svg)](https://marketplace.visualstudio.com/items?itemName=GregTrevellick.NumericTrivia)
+[![Visual Studio Marketplace downloads](https://vsmarketplacebadge.apphb.com/installs/GregTrevellick.NumericTrivia.svg)](https://marketplace.visualstudio.com/items?itemName=GregTrevellick.NumericTrivia)
+[![Visual Studio Marketplace ratings](https://vsmarketplacebadge.apphb.com/rating/GregTrevellick.NumericTrivia.svg)](https://marketplace.visualstudio.com/items?itemName=GregTrevellick.NumericTrivia)
+[![Visual Studio Marketplace version](https://vsmarketplacebadge.apphb.com/version/GregTrevellick.NumericTrivia.svg)](https://marketplace.visualstudio.com/items?itemName=GregTrevellick.NumericTrivia)
+
+
 <!--BadgesEND-->
 
 
