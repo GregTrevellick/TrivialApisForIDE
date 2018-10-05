@@ -20,6 +20,7 @@
 [![CodeFactor](https://www.codefactor.io/repository/github/GregTrevellick/TrivialApisForIDE/badge)](https://www.codefactor.io/repository/github/GregTrevellick/TrivialApisForIDE)
 [![GitHub top language](https://img.shields.io/github/languages/top/GregTrevellick/TrivialApisForIDE.svg)](https://github.com/GregTrevellick/TrivialApisForIDE)
 [![Github language count](https://img.shields.io/github/languages/count/GregTrevellick/TrivialApisForIDE.svg)](https://github.com/GregTrevellick/TrivialApisForIDE)
+[![GitHub issues](https://img.shields.io/github/issues-raw/GregTrevellick/TrivialApisForIDE.svg)](https://github.com/GregTrevellick/TrivialApisForIDE/issues)
 [![GitHub pull requests](https://img.shields.io/github/issues-pr-raw/GregTrevellick/TrivialApisForIDE.svg)](https://github.com/GregTrevellick/TrivialApisForIDE/pulls)
 [![Sonar&metric=alert_status](https://sonarcloud.io/api/project_badges/measure?project=TrivialApisForIDE&metric=alert_status)](https://sonarcloud.io/dashboard?id=TrivialApisForIDE)
 [![Sonar&metric=bugs](https://sonarcloud.io/api/project_badges/measure?project=TrivialApisForIDE&metric=bugs)](https://sonarcloud.io/component_measures?id=TrivialApisForIDE&metric=bugs)
