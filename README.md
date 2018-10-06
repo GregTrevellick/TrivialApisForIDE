@@ -15,6 +15,7 @@
 [![Read Me Synchronizer](https://img.shields.io/badge/-powered%20by%20read%20me%20synchronizer-brightgreen.svg)](https://github.com/GregTrevellick/ReadMeSynchronizer)
 <!-- Powered by https://github.com/GregTrevellick/ReadMeSynchronizer -->
 
+**[Subscribe](https://github.com/GregTrevellick/TrivialApisForIDE/subscription) to receive notificatons.**
 [![BetterCodeHub compliance](https://bettercodehub.com/edge/badge/GregTrevellick/TrivialApisForIDE?branch=master)](https://bettercodehub.com/results/GregTrevellick/TrivialApisForIDE)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/035ab76ee20d45c886d72be824507ab5)](https://www.codacy.com/project/gtrevellick/TrivialApisForIDE/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=GregTrevellick/TrivialApisForIDE&amp;utm_campaign=Badge_Grade_Dashboard)
 [![CodeFactor](https://www.codefactor.io/repository/github/GregTrevellick/TrivialApisForIDE/badge)](https://www.codefactor.io/repository/github/GregTrevellick/TrivialApisForIDE)
