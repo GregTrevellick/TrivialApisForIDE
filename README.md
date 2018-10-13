@@ -20,7 +20,9 @@
 [![BetterCodeHub compliance](https://bettercodehub.com/edge/badge/GregTrevellick/TrivialApisForIDE?branch=master)](https://bettercodehub.com/results/GregTrevellick/TrivialApisForIDE)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/035ab76ee20d45c886d72be824507ab5)](https://www.codacy.com/project/gtrevellick/TrivialApisForIDE/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=GregTrevellick/TrivialApisForIDE&amp;utm_campaign=Badge_Grade_Dashboard)
 [![CodeFactor](https://www.codefactor.io/repository/github/GregTrevellick/TrivialApisForIDE/badge)](https://www.codefactor.io/repository/github/GregTrevellick/TrivialApisForIDE)
-[![Inspecode Report](https://inspecode.rocro.com/badges/github.com/GregTrevellick/TrivialApisForIDE/report?token=GpxBDXnJYBS1ejM-qYJEc9YH74BN5Aios8h_jYBjC_M&branch=master)](https://inspecode.rocro.com/reports/github.com/GregTrevellick/TrivialApisForIDE/branch/master/summary)
+[![Inspecode Report](https://inspecode.rocro.com/badges/github.com/GregTrevellick/TrivialApisForIDE/report?token=GpxBDXnJYBS1ejM-qYJEc9YH74BN5Aios8h_jYBjC_M)](https://inspecode.rocro.com/reports/github.com/GregTrevellick/TrivialApisForIDE/branch/master/summary)
+
+
 [![GitHub top language](https://img.shields.io/github/languages/top/GregTrevellick/TrivialApisForIDE.svg)](https://github.com/GregTrevellick/TrivialApisForIDE)
 [![Github language count](https://img.shields.io/github/languages/count/GregTrevellick/TrivialApisForIDE.svg)](https://github.com/GregTrevellick/TrivialApisForIDE)
 [![GitHub issues](https://img.shields.io/github/issues-raw/GregTrevellick/TrivialApisForIDE.svg)](https://github.com/GregTrevellick/TrivialApisForIDE/issues)
