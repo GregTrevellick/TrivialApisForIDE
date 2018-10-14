@@ -21,7 +21,8 @@
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/035ab76ee20d45c886d72be824507ab5)](https://www.codacy.com/project/gtrevellick/TrivialApisForIDE/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=GregTrevellick/TrivialApisForIDE&amp;utm_campaign=Badge_Grade_Dashboard)
 
 [![CodeFactor](https://www.codefactor.io/repository/github/GregTrevellick/TrivialApisForIDE/badge)](https://www.codefactor.io/repository/github/GregTrevellick/TrivialApisForIDE)
-[![Inspecode Report](https://inspecode.rocro.com/badges/github.com/GregTrevellick/TrivialApisForIDE/report?token=GpxBDXnJYBS1ejM-qYJEc9YH74BN5Aios8h_jYBjC_M)](https://inspecode.rocro.com/reports/github.com/GregTrevellick/TrivialApisForIDE/branch/master/summary)
+[![DepShield](https://depshield.sonatype.org/badges/GregTrevellick/TrivialApisForIDE/depshield.svg)](https://depshield.github.io)
+[![InspecodeRocro Report](https://inspecode.rocro.com/badges/github.com/GregTrevellick/TrivialApisForIDE/report?token=GpxBDXnJYBS1ejM-qYJEc9YH74BN5Aios8h_jYBjC_M)](https://inspecode.rocro.com/reports/github.com/GregTrevellick/TrivialApisForIDE/branch/master/summary)
 
 
 [![GitHub top language](https://img.shields.io/github/languages/top/GregTrevellick/TrivialApisForIDE.svg)](https://github.com/GregTrevellick/TrivialApisForIDE)
@@ -42,7 +43,7 @@
 [![Appveyor Build status](https://ci.appveyor.com/api/projects/status/iapcrndog6fvdd9l?svg=true)](https://ci.appveyor.com/project/GregTrevellick/TrivialApisForIDE)
 [![Appveyor unit tests](https://img.shields.io/appveyor/tests/GregTrevellick/TrivialApisForIDE.svg)](https://ci.appveyor.com/project/GregTrevellick/TrivialApisForIDE/build/tests)
 [![Azure Build Status](https://gregtrevellick.visualstudio.com/TrivialApisForIDE/_apis/build/status/TrivialApisForIDE)](https://gregtrevellick.visualstudio.com/TrivialApisForIDE/_build/latest?definitionId=21)
-[![Inspecode Job Status](https://inspecode.rocro.com/badges/github.com/GregTrevellick/TrivialApisForIDE/status?token=GpxBDXnJYBS1ejM-qYJEc9YH74BN5Aios8h_jYBjC_M)](https://inspecode.rocro.com/jobs/github.com/GregTrevellick/TrivialApisForIDE/latest?completed=true)
+[![InspecodeRocro Job Status](https://inspecode.rocro.com/badges/github.com/GregTrevellick/TrivialApisForIDE/status?token=GpxBDXnJYBS1ejM-qYJEc9YH74BN5Aios8h_jYBjC_M)](https://inspecode.rocro.com/jobs/github.com/GregTrevellick/TrivialApisForIDE/latest?completed=true)
 [![Hound](https://img.shields.io/badge/hound_ci-checked-brightgreen.svg)](https://houndci.com/)
 [![Access Lint github](https://img.shields.io/badge/a11y-checked-brightgreen.svg)](https://www.accesslint.com)
 [![ImgBot](https://img.shields.io/badge/images-optimized-brightgreen.svg)](https://imgbot.net/)
