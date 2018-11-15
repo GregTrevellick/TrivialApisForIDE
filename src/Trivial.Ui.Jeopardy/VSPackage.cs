@@ -1,37 +1,56 @@
-﻿using EnvDTE;
+﻿using Microsoft.VisualStudio;
 using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Shell.Interop;
-using System.ComponentModel.Design;
+using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices;
+using System.Threading;
+using System.Threading.Tasks;
 using Trivial.Entities;
 using Trivial.Ui.Common;
 using Trivial.Ui.Jeopardy.Options;
+using SolutionEvents = Microsoft.VisualStudio.Shell.Events.SolutionEvents;
+using Task = System.Threading.Tasks.Task;
+
 
 namespace Trivial.Ui.Jeopardy
 {
-    [ProvideAutoLoad(UIContextGuids80.SolutionExists)]
-    [PackageRegistration(UseManagedResourcesOnly = true)]
+    [ProvideAutoLoad(UIContextGuids80.SolutionExists, PackageAutoLoadFlags.BackgroundLoad)]
+    [PackageRegistration(UseManagedResourcesOnly = true, AllowsBackgroundLoading = true)]
     [InstalledProductRegistration(productName: "#110", productDetails: "#112", productId: Vsix.Version, IconResourceID = 400)]
     [Guid(Vsix.Id)]
     [SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1650:ElementDocumentationMustBeSpelledCorrectly", Justification = "pkgdef, VS and vsixmanifest are valid VS terms")]
     [ProvideOptionPage(typeof(GeneralOptions), Vsix.Name, CommonConstants.CategorySubLevel, 0, 0, true)]
-    public sealed class VSPackage : Package
+    public sealed class VSPackage : AsyncPackage
     {
-        private DTE dte;
-        private SolutionEvents solutionEvents;
-
-        protected override void Initialize()
+        protected override async Task InitializeAsync(CancellationToken cancellationToken, IProgress<ServiceProgressData> progress)
         {
-            base.Initialize();
+            bool isSolutionLoaded = await IsSolutionLoadedAsync();
 
-            IServiceContainer serviceContainer = this as IServiceContainer;
-            dte = serviceContainer.GetService(typeof(SDTE)) as DTE;
-            solutionEvents = dte.Events.SolutionEvents;
-            solutionEvents.Opened += OnSolutionOpened;
+            if (isSolutionLoaded)
+            {
+                await HandleOpenSolutionAsync();
+            }
+
+            SolutionEvents.OnAfterOpenSolution += HandleOpenSolution;
         }
 
-        private void OnSolutionOpened()
+        private async Task<bool> IsSolutionLoadedAsync()
+        {
+            await JoinableTaskFactory.SwitchToMainThreadAsync();
+
+            var solService = await GetServiceAsync(typeof(SVsSolution)) as IVsSolution;
+            ErrorHandler.ThrowOnFailure(solService.GetProperty((int)__VSPROPID.VSPROPID_IsSolutionOpen, out object value));
+
+            return value is bool isSolOpen && isSolOpen;
+        }
+
+        private void HandleOpenSolution(object sender = null, EventArgs e = null)
+        {
+            Task.Run(async () => await HandleOpenSolutionAsync());
+        }
+
+        private async Task HandleOpenSolutionAsync(object sender = null, EventArgs e = null)
         {
             var shouldShowTrivia = new DecisionMaker().ShouldShowTrivia(GeneralOptionsDto);
 
