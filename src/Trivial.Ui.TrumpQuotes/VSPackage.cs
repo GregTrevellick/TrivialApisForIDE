@@ -7,7 +7,6 @@ using System.Runtime.InteropServices;
 using Trivial.Entities;
 using Trivial.Ui.Common;
 using Trivial.Ui.TrumpQuotes.Options;
-using VsixRatingChaser.Interfaces;
 
 namespace Trivial.Ui.TrumpQuotes
 {
