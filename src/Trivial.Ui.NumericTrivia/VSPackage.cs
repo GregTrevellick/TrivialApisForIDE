@@ -46,7 +46,7 @@ namespace Trivial.Ui.NumericTrivia
                     UpdateHiddenOptions(hiddenOptionsDto);
                 }
 
-                ChaseRating();
+                //ChaseRating();
             }
         }
 
@@ -77,12 +77,12 @@ namespace Trivial.Ui.NumericTrivia
             }
         }
 
-        private void ChaseRating()
-        {
-            var hiddenChaserOptions = (IRatingDetailsDto)GetDialogPage(typeof(HiddenRatingDetailsDto));
-            var packageRatingChaser = new PackageRatingChaser();
-            packageRatingChaser.Hunt(hiddenChaserOptions);
-        }
+        //private void ChaseRating()
+        //{
+        //    var hiddenChaserOptions = (IRatingDetailsDto)GetDialogPage(typeof(HiddenRatingDetailsDto));
+        //    var packageRatingChaser = new PackageRatingChaser();
+        //    packageRatingChaser.Hunt(hiddenChaserOptions);
+        //}
 
     }
 }

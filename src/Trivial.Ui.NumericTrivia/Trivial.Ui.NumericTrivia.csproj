@@ -68,7 +68,6 @@
     <Compile Include="Options\HiddenRatingDetailsDto.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="PackageRatingChaser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="source.extension.cs">
       <DependentUpon>source.extension.vsixmanifest</DependentUpon>
@@ -241,10 +240,6 @@
     <ProjectReference Include="..\Trivial.Entities\Trivial.Entities.csproj">
       <Project>{227D068D-A064-40B4-A372-7CE8FE0F7C26}</Project>
       <Name>Trivial.Entities</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Trivial.Rating\Trivial.Rating.csproj">
-      <Project>{f9947160-e662-4189-a4fc-3bae308e78f3}</Project>
-      <Name>Trivial.Rating</Name>
     </ProjectReference>
     <ProjectReference Include="..\Trivial.Ui.Common\Trivial.Ui.Common.csproj">
       <Project>{BCA9D5EC-655B-4CCA-8891-8EC7A7B7BAA3}</Project>

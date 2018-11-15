@@ -46,7 +46,7 @@ namespace Trivial.Ui.TrumpQuotes
                     UpdateHiddenOptions(hiddenOptionsDto);
                 }
 
-                ChaseRating();
+                //ChaseRating();
             }
         }
 
@@ -77,12 +77,12 @@ namespace Trivial.Ui.TrumpQuotes
             }
         }
 
-        private void ChaseRating()
-        {
-            var hiddenChaserOptions = (IRatingDetailsDto)GetDialogPage(typeof(HiddenRatingDetailsDto));
-            var packageRatingChaser = new PackageRatingChaser();
-            packageRatingChaser.Hunt(hiddenChaserOptions);
-        }
+        //private void ChaseRating()
+        //{
+        //    var hiddenChaserOptions = (IRatingDetailsDto)GetDialogPage(typeof(HiddenRatingDetailsDto));
+        //    var packageRatingChaser = new PackageRatingChaser();
+        //    packageRatingChaser.Hunt(hiddenChaserOptions);
+        //}
 
     }
 }

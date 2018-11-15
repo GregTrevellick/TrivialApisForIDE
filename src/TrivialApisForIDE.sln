@@ -27,8 +27,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trivial.Ui.Jeopardy", "Trivial.Ui.Jeopardy\Trivial.Ui.Jeopardy.csproj", "{3A8C5E31-2373-4A41-ABCC-7FADE07CB9BA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trivial.Rating", "Trivial.Rating\Trivial.Rating.csproj", "{F9947160-E662-4189-A4FC-3BAE308E78F3}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -67,10 +65,6 @@ Global
 		{3A8C5E31-2373-4A41-ABCC-7FADE07CB9BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3A8C5E31-2373-4A41-ABCC-7FADE07CB9BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3A8C5E31-2373-4A41-ABCC-7FADE07CB9BA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F9947160-E662-4189-A4FC-3BAE308E78F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F9947160-E662-4189-A4FC-3BAE308E78F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F9947160-E662-4189-A4FC-3BAE308E78F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F9947160-E662-4189-A4FC-3BAE308E78F3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
