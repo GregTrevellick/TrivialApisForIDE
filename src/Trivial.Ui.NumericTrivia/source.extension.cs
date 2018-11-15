@@ -11,7 +11,7 @@ namespace Trivial.Ui.NumericTrivia
         public const string Name = "Numeric Trivia";
         public const string Description = @"A random pop-up numeric fact whenever you open a solution.";
         public const string Language = "en-US";
-        public const string Version = "1.1.1";
+        public const string Version = "1.1.2";
         public const string Author = "Greg Trevellick";
         public const string Tags = "numbers, trivia, trivial, numeric, meaningless, fun, numeral, math";
     }

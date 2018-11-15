@@ -12,7 +12,6 @@ using Trivial.Ui.Jeopardy.Options;
 using SolutionEvents = Microsoft.VisualStudio.Shell.Events.SolutionEvents;
 using Task = System.Threading.Tasks.Task;
 
-
 namespace Trivial.Ui.Jeopardy
 {
     [ProvideAutoLoad(UIContextGuids80.SolutionExists, PackageAutoLoadFlags.BackgroundLoad)]

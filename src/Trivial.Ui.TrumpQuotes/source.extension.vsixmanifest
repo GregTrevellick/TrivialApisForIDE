@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
-        <Identity Id="bffa1350-ab1e-49d9-a8a7-a3f76d92398c" Version="1.1.1" Language="en-US" Publisher="Greg Trevellick" />
+        <Identity Id="bffa1350-ab1e-49d9-a8a7-a3f76d92398c" Version="1.1.2" Language="en-US" Publisher="Greg Trevellick" />
         <DisplayName>Drain The Swamp</DisplayName>
         <Description xml:space="preserve">A random Donald Trump quote in a pop-up whenever you open a solution.</Description>
         <MoreInfo>https://github.com/GregTrevellick/TrivialApisForIDE</MoreInfo>
@@ -12,9 +12,11 @@
         <Tags>tronalddump,  tronald, dump, donald trump, donald, trump, potus, drain, swamp, drain the swamp, usa, trivia</Tags>
     </Metadata>
     <Installation>
-        <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[11.0,16.0)" />
+        <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[11.0,17.0)" />
     </Installation>
     <Dependencies>
+        <Dependency d:Source="Manual" DisplayName="Microsoft .NET Framework" Id="Microsoft.Framework.NDP" Version="[4.5,)" />
+        <Dependency d:Source="Installed" Id="Microsoft.VisualStudio.MPF.15.0" DisplayName="Visual Studio MPF 15.0" Version="[15.0,16.0)" />
     </Dependencies>
     <Prerequisites>
         <Prerequisite Id="Microsoft.VisualStudio.Component.CoreEditor" Version="[15.0,16.0)" DisplayName="Visual Studio core editor" />
