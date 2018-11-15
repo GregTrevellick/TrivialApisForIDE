@@ -230,9 +230,6 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="VsixRatingChaser, Version=1.0.62.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\VsixRatingChaser.1.0.62\lib\net47\VsixRatingChaser.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Trivial.Entities\Trivial.Entities.csproj">
