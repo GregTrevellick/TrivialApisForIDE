@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json.schemastore.org/vsix-publish",
+  "assetFiles": [ //images used in VsmpReadMe.md
+    {
+      "pathOnDisk": "..\\..\\Src\\Trivial.Ui.NumericTrivia\\VsmpAssets\\ReadMeScreenShot.png",
+      "targetPath": "ReadMeScreenShot.png"
+    }
+  ],
+  "categories": [
+    "documentation",
+    "setup and deployment",
+    "team development"
+  ],
+  "identity": {
+    "internalName": "NumericTrivia"
+  },
+  "overview": "..\\..\\Src\\Trivial.Ui.NumericTrivia\\VsmpAssets\\README.md", //vsmp page content
+  "priceCategory": "free",
+  "publisher": "GregTrevellick",
+  "private": false,
+  "qna": true,
+  "repo": "https://github.com/GregTrevellick/TrivialApisForIDE"
+}
