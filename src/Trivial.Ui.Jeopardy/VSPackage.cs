@@ -55,6 +55,8 @@ namespace Trivial.Ui.Jeopardy
 
             if (shouldShowTrivia)
             {
+                await JoinableTaskFactory.SwitchToMainThreadAsync();
+
                 var popUpTitle = CommonConstants.GetCaption(Vsix.Name, Vsix.Version);
                 var hiddenOptionsDto = new TriviaMessage().ShowTrivia(AppName.Jeopardy, popUpTitle, GeneralOptionsDto.LastPopUpDateTime, GeneralOptionsDto.PopUpCountToday, GeneralOptionsDto.TimeOutInMilliSeconds, Vsix.Name);
 
