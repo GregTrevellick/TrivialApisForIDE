@@ -19,7 +19,7 @@ namespace Trivial.Ui.Jeopardy
     [InstalledProductRegistration(productName: "#110", productDetails: "#112", productId: Vsix.Version, IconResourceID = 400)]
     [Guid(Vsix.Id)]
     [SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1650:ElementDocumentationMustBeSpelledCorrectly", Justification = "pkgdef, VS and vsixmanifest are valid VS terms")]
-    [ProvideOptionPage(typeof(GeneralOptions), Vsix.Name, CommonConstants.CategorySubLevel, 0, 0, true)]
+    [ProvideOptionPage(typeof(DialogPageProvider.General), Vsix.Name, CommonConstants.CategorySubLevel, 0, 0, true)]
     public sealed class VSPackage : AsyncPackage
     {
         protected override async Task InitializeAsync(CancellationToken cancellationToken, IProgress<ServiceProgressData> progress)
@@ -51,6 +51,8 @@ namespace Trivial.Ui.Jeopardy
 
         private async Task HandleOpenSolutionAsync(object sender = null, EventArgs e = null)
         {
+            var GeneralOptionsDto = await GetGeneralOptionsDtoAsync();
+
             var shouldShowTrivia = new DecisionMaker().ShouldShowTrivia(GeneralOptionsDto);
 
             if (shouldShowTrivia)
@@ -71,29 +73,30 @@ namespace Trivial.Ui.Jeopardy
 
         private void UpdateHiddenOptions(HiddenOptionsDto hiddenOptionsDto)
         {
-            var hiddenOptions = (HiddenOptions)GetDialogPage(typeof(HiddenOptions));
+            var hiddenOptions = HiddenOptions.Instance;
             hiddenOptions.LastPopUpDateTime = hiddenOptionsDto.LastPopUpDateTime;
             hiddenOptions.PopUpCountToday = hiddenOptionsDto.PopUpCountToday;
-            hiddenOptions.SaveSettingsToStorage();
+            hiddenOptions.Save();
         }
 
-        private GeneralOptionsDto GeneralOptionsDto
+        private async Task<GeneralOptionsDto> GetGeneralOptionsDtoAsync()
         {
-            get
-            {
-                var generalOptions = (GeneralOptions)GetDialogPage(typeof(GeneralOptions));
-                var hiddenOptions = (HiddenOptions)GetDialogPage(typeof(HiddenOptions));
+            // Call from a background thread to avoid blocking the UI thread
+            //var generalOptions = GeneralOptions.Instance;
 
-                return new GeneralOptionsDto
-                {
-                    LastPopUpDateTime = hiddenOptions.LastPopUpDateTime,
-                    MaximumPopUpsWeekDay = generalOptions.MaximumPopUpsWeekDay.GetAsInteger(),
-                    MaximumPopUpsWeekEnd = generalOptions.MaximumPopUpsWeekEnd.GetAsInteger(),
-                    PopUpIntervalInMins = generalOptions.PopUpIntervalInMins.GetAsInteger(),
-                    PopUpCountToday = hiddenOptions.PopUpCountToday,
-                    TimeOutInMilliSeconds = generalOptions.TimeOutInMilliSeconds.GetAsInteger(),
-                };
-            }
+            // Call from a background thread to avoid blocking the UI thread
+            var generalOptions = await GeneralOptions.GetLiveInstanceAsync();
+            var hiddenOptions = await HiddenOptions.GetLiveInstanceAsync();
+
+            return new GeneralOptionsDto
+            {
+                LastPopUpDateTime = hiddenOptions.LastPopUpDateTime,
+                MaximumPopUpsWeekDay = generalOptions.MaximumPopUpsWeekDay.GetAsInteger(),
+                MaximumPopUpsWeekEnd = generalOptions.MaximumPopUpsWeekEnd.GetAsInteger(),
+                PopUpIntervalInMins = generalOptions.PopUpIntervalInMins.GetAsInteger(),
+                PopUpCountToday = hiddenOptions.PopUpCountToday,
+                TimeOutInMilliSeconds = generalOptions.TimeOutInMilliSeconds.GetAsInteger(),
+            };
         }
 
         //private void ChaseRating()
