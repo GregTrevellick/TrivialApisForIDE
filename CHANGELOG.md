@@ -10,9 +10,9 @@ Individual releases are tagged as such in GitHub.
   - [x] Drain The Swamp
   - [x] Numeric Trivia
 
-## 1.1.1
-**2018-01-dd**
-- [x] Minor enhancements
+## 1.1.3
+**2018-11-18**
+- [x] Async for VS2019
 
 <!--
  https://github.com/Microsoft/UnitTestBoilerplateGenerator/blob/master/src/CreateUnitTestBoilerplateDialog.xaml
