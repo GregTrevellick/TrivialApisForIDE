@@ -4,7 +4,7 @@ using Trivial.Ui.Common;
 
 namespace Trivial.Ui.TrumpQuotes.Options
 {
-    public class GeneralOptions : DialogPage
+    public class GeneralOptions : BaseOptionModel<GeneralOptions>//: DialogPage
     {
         private string caption = CommonConstants.GetCaption(Vsix.Name, Vsix.Version);
         private bool firstTimeOpeningOptions = true;

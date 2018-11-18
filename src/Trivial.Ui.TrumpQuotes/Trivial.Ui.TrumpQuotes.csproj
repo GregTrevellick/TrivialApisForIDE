@@ -59,12 +59,13 @@
     <VsixCompressTargets Condition=" '$(VsixCompressTargets)'=='' ">$([System.IO.Path]::GetFullPath( $(MSBuildProjectDirectory)\..\packages\VsixCompress.1.0.1\tools\vsix-compress.targets ))</VsixCompressTargets>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Options\HiddenOptions.cs">
+    <Compile Include="Options\HiddenOptions.cs" />
+    <Compile Include="Options\GeneralOptions.cs" />
+    <Compile Include="Options\Options\BaseOptionModel.cs" />
+    <Compile Include="Options\Options\BaseOptionPage.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Options\GeneralOptions.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="Options\Options\DialogPageProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="source.extension.cs">
       <DependentUpon>source.extension.vsixmanifest</DependentUpon>
