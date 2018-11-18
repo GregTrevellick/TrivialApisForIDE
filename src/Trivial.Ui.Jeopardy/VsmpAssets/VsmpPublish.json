@@ -2,11 +2,11 @@
   "$schema": "http://json.schemastore.org/vsix-publish",
   "assetFiles": [ //images used in VsmpReadMe.md
     {
-      "pathOnDisk": "..\\..\\Src\\Trivial.Ui.Jeopardy\\VsmpAssets\\ReadMeScreenShot.png",
+      "pathOnDisk": "..\\..\\..\\Src\\Trivial.Ui.Jeopardy\\VsmpAssets\\ReadMeScreenShot.png",
       "targetPath": "ReadMeScreenShot.png"
     },
     {
-      "pathOnDisk": "..\\..\\Src\\Trivial.Ui.Jeopardy\\VsmpAssets\\ReadMeScreenShot_Answer.png",
+      "pathOnDisk": "..\\..\\..\\Src\\Trivial.Ui.Jeopardy\\VsmpAssets\\ReadMeScreenShot_Answer.png",
       "targetPath": "ReadMeScreenShot_Answer.png"
     }
   ],
@@ -18,7 +18,7 @@
   "identity": {
     "internalName": "Jeopardy"
   },
-  "overview": "..\\..\\Src\\Trivial.Ui.Jeopardy\\VsmpAssets\\README.md", //vsmp page content
+  "overview": "..\\..\\..\\Src\\Trivial.Ui.Jeopardy\\VsmpAssets\\README.md", //vsmp page content
   "priceCategory": "free",
   "publisher": "GregTrevellick",
   "private": false,

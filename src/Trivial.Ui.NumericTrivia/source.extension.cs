@@ -13,6 +13,6 @@ namespace Trivial.Ui.NumericTrivia
         public const string Language = "en-US";
         public const string Version = "1.1.3";
         public const string Author = "Greg Trevellick";
-        public const string Tags = "numbers, trivia, trivial, numeric, meaningless, fun, numeral, math";
+        public const string Tags = "numbers, trivia, trivial, numeric, math";
     }
 }
