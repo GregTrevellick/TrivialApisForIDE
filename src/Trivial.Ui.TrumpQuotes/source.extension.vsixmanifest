@@ -9,7 +9,7 @@
         <ReleaseNotes>https://github.com/GregTrevellick/TrivialApisForIDE/blob/master/CHANGELOG.md</ReleaseNotes>
         <Icon>Resources\VsixExtensionIcon_90x90.png</Icon>
         <PreviewImage>Resources\VsixExtensionPreview_175x175.png</PreviewImage>
-        <Tags>donald trump, drain the swamp, trivia</Tags>
+        <Tags>Donald Trump; Trump; potus; drain the swamp; trivia; trivial; Twitter; USA; America;</Tags>
     </Metadata>
     <Installation>
         <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[11.0,17.0)" />
