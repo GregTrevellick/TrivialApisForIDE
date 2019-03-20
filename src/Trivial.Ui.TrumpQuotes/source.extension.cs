@@ -11,8 +11,8 @@ namespace Trivial.Ui.TrumpQuotes
         public const string Name = "Drain The Swamp";
         public const string Description = @"A random Donald Trump quote in a pop-up whenever you open a solution.";
         public const string Language = "en-US";
-        public const string Version = "1.1.3";
+        public const string Version = "1.1.5";
         public const string Author = "Greg Trevellick";
-        public const string Tags = "donald trump, drain the swamp, trivia";
+        public const string Tags = "Donald Trump; Trump; potus; drain the swamp; trivia; trivial; Twitter; USA; America;";
     }
 }

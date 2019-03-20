@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
-        <Identity Id="f39b9a5e-80dc-4b2c-9cc1-c015d8ff9840" Version="1.1.3" Language="en-US" Publisher="Greg Trevellick" />
+        <Identity Id="f39b9a5e-80dc-4b2c-9cc1-c015d8ff9840" Version="1.1.5" Language="en-US" Publisher="Greg Trevellick" />
         <DisplayName>Numeric Trivia</DisplayName>
         <Description xml:space="preserve">A random pop-up numeric fact whenever you open a solution.</Description>
         <MoreInfo>https://github.com/GregTrevellick/TrivialApisForIDE</MoreInfo>
@@ -16,7 +16,6 @@
     </Installation>
     <Dependencies>
         <Dependency d:Source="Manual" DisplayName="Microsoft .NET Framework" Id="Microsoft.Framework.NDP" Version="[4.5,)" />
-        <Dependency d:Source="Installed" Id="Microsoft.VisualStudio.MPF.15.0" DisplayName="Visual Studio MPF 15.0" Version="[15.0,16.0)" />
     </Dependencies>
     <Prerequisites>
         <Prerequisite Id="Microsoft.VisualStudio.Component.CoreEditor" Version="[15.0,16.0)" DisplayName="Visual Studio core editor" />
