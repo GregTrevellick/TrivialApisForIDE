@@ -16,10 +16,7 @@
 [![Read Me Synchronizer](https://img.shields.io/badge/-powered%20by%20ReadMeSynchronizer-brightgreen.svg)](https://github.com/GregTrevellick/ReadMeSynchronizer)
 [![BetterCodeHub compliance](https://bettercodehub.com/edge/badge/GregTrevellick/TrivialApisForIDE?branch=master)](https://bettercodehub.com/results/GregTrevellick/TrivialApisForIDE)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/035ab76ee20d45c886d72be824507ab5)](https://www.codacy.com/project/gtrevellick/TrivialApisForIDE/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=GregTrevellick/TrivialApisForIDE&amp;utm_campaign=Badge_Grade_Dashboard)
-
 [![CodeFactor](https://www.codefactor.io/repository/github/GregTrevellick/TrivialApisForIDE/badge)](https://www.codefactor.io/repository/github/GregTrevellick/TrivialApisForIDE)
-
-
 [![GitHub top language](https://img.shields.io/github/languages/top/GregTrevellick/TrivialApisForIDE.svg)](https://github.com/GregTrevellick/TrivialApisForIDE)
 [![Github language count](https://img.shields.io/github/languages/count/GregTrevellick/TrivialApisForIDE.svg)](https://github.com/GregTrevellick/TrivialApisForIDE)
 [![GitHub issues](https://img.shields.io/github/issues-raw/GregTrevellick/TrivialApisForIDE.svg)](https://github.com/GregTrevellick/TrivialApisForIDE/issues)
@@ -44,7 +41,6 @@
 [![Renovate Bot github](https://img.shields.io/badge/renovatebot-checked-brightgreen.svg)](https://renovatebot.com/)
 [![Charity Ware](https://img.shields.io/badge/charity%20ware-thank%20you-brightgreen.svg)](https://github.com/GregTrevellick/MiscellaneousArtefacts/wiki/Charity-Ware)
 [![License](https://img.shields.io/github/license/gittools/gitlink.svg)](/LICENSE.txt)
-
 [Subscribe](https://github.com/GregTrevellick/TrivialApisForIDE/subscription) to receive notificatons.
 
 [![Visual Studio Marketplace version](https://img.shields.io/badge/-DrainTheSwamp-%23e2165e.svg)](https://marketplace.visualstudio.com/items?itemName=GregTrevellick.DrainTheSwamp)
